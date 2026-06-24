@@ -1,0 +1,189 @@
+# SMA UII Yogyakarta — Engineering Playbook
+
+> Operating system untuk tim engineering PT Koneksi Jaringan Indonesia dalam membangun ekosistem aplikasi SMA UII Yogyakarta.
+
+**Version:** 1.0.0  
+**Last Updated:** Juni 2026  
+**Maintained by:** Sandikodev
+
+---
+
+## 🎯 Visi
+
+Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **tim engineering profesional** yang mampu delivery fitur dengan kualitas terukur dalam waktu 2 bulan:
+- **Bulan 1:** MVP Development
+- **Bulan 2:** Production Audit, Testing, Refining
+
+---
+
+## 👥 Tim Engineering
+
+| GitHub Username | Nama | Role | Fokus |
+|---|---|---|---|
+| [@Sandikodev](https://github.com/Sandikodev) | Sandiko | Project Manager, Architect, Tech Lead | Architecture, Code Review, Mentoring |
+| [@Rosyiii](https://github.com/Rosyiii) | Ahmad Hanif Hasan Rosyidi | Product Analyst | Requirement, User Story, UAT |
+| [@Hans02-Neo](https://github.com/Hans02-Neo) | Fathan Mubina | Junior Developer | Frontend (Livewire, React, Tailwind) |
+| [@Odauna](https://github.com/Odauna) | Ihsan | Junior Developer | Backend (Laravel API, Database) |
+
+**Stakeholder:**
+- **Pak Mahfud** — IT Manager SMA UII Yogyakarta (Client Representative)
+
+---
+
+## 📚 Struktur Playbook
+
+```
+docs/
+├── 01-getting-started/
+│   ├── onboarding.md              # Checklist hari pertama
+│   ├── environment-setup.md       # Setup local development
+│   └── team-roles.md              # Detail peran & tanggung jawab
+│
+├── 02-workflow/
+│   ├── git-github-workflow.md     # Branch, commit, PR
+│   ├── trello-workflow.md         # Product management
+│   └── communication.md           # WhatsApp, meeting, async
+│
+├── 03-sop/
+│   ├── code-review.md             # Checklist review
+│   ├── deployment.md              # Deploy staging & production
+│   ├── testing.md                 # Unit test, integration test
+│   └── incident-response.md       # Handling bug production
+│
+├── 04-templates/
+│   ├── user-story.md              # Template BA
+│   ├── github-issue.md            # Template Issue
+│   ├── pull-request.md            # Template PR
+│   └── sprint-planning.md         # Template planning
+│
+├── 05-adr/                        # Architecture Decision Record
+│   ├── 001-monorepo.md
+│   ├── 002-livewire-first.md
+│   └── 003-database-mysql.md
+│
+├── 06-learning-path/
+│   ├── junior-dev-roadmap.md      # 8 minggu learning path
+│   ├── laravel-fundamentals.md
+│   └── livewire-basics.md
+│
+└── 07-project/
+    ├── smart-absen-overview.md    # Project overview
+    ├── sprint-1-plan.md           # Sprint 1 (Minggu 1-2)
+    ├── sprint-2-plan.md           # Sprint 2 (Minggu 3-4)
+    └── mvp-scope.md               # MVP definition
+```
+
+---
+
+## 🚀 Quick Start
+
+### Untuk Product Analyst (Ahmad Hanif)
+1. Baca [`docs/04-templates/user-story.md`](docs/04-templates/user-story.md)
+2. Buat user story di Trello
+3. Link ke GitHub Issue
+
+### Untuk Developer (Fathan, Ihsan)
+1. Baca [`docs/01-getting-started/onboarding.md`](docs/01-getting-started/onboarding.md)
+2. Setup environment: [`docs/01-getting-started/environment-setup.md`](docs/01-getting-started/environment-setup.md)
+3. Pahami workflow: [`docs/02-workflow/git-github-workflow.md`](docs/02-workflow/git-github-workflow.md)
+4. Ambil Issue dari GitHub Project
+
+### Untuk Reviewer (Sandikodev)
+1. Code Review Checklist: [`docs/03-sop/code-review.md`](docs/03-sop/code-review.md)
+2. Sprint Planning Template: [`docs/04-templates/sprint-planning.md`](docs/04-templates/sprint-planning.md)
+
+---
+
+## 🛠️ Tech Stack
+
+### Current Architecture (MVP — Bulan 1)
+```
+Backend  : Laravel 13 (PHP 8.5.7)
+Frontend : Livewire 3 + Tailwind CSS 4 + Vite
+Database : MySQL 8.0.30
+Auth     : Laravel Sanctum
+Deploy   : Apache (Laragon) → Nginx (Production)
+```
+
+### Target Architecture (Bulan 2+)
+```
+Backend  : Laravel 13 API (Core)
+Frontend : Next.js 14 (Web App)
+Mobile   : Flutter (Mobile App)
+Auth     : SSO (Sanctum Identity Provider)
+```
+
+---
+
+## 📊 Project Management Tools
+
+| Tool | Purpose | Link |
+|---|---|---|
+| **Trello** | Product Roadmap, Sprint Board | [Board Link](https://trello.com/b/...) |
+| **GitHub Projects** | Engineering Task Tracking | [Project](https://github.com/orgs/SMA-UII-Yogyakarta/projects/1) |
+| **GitHub Issues** | Technical Task | [Issues](https://github.com/SMA-UII-Yogyakarta/core/issues) |
+| **WhatsApp Group** | Komunikasi Cepat | Private Group |
+
+---
+
+## ⏱️ Timeline & Milestones
+
+```
+Week 1-2  → Sprint 1: Authentication & SSO
+Week 3-4  → Sprint 2: Presensi Module (Core)
+Week 5-6  → Sprint 3: Laporan & Admin Panel
+Week 7-8  → Production Audit, Testing, Refining
+```
+
+**MVP Target:** Akhir Minggu 4  
+**Production Ready:** Akhir Minggu 8
+
+---
+
+## 📖 Repositori
+
+| Repo | Deskripsi | Link |
+|---|---|---|
+| **aksesekolah** | Monorepo Entrypoint | [GitHub](https://github.com/SMA-UII-Yogyakarta/aksesekolah) |
+| **core** | Backend Laravel | [GitHub](https://github.com/SMA-UII-Yogyakarta/core) |
+| **webapp** | Frontend (Next.js) | [GitHub](https://github.com/SMA-UII-Yogyakarta/webapp) |
+| **flutter** | Mobile App | [GitHub](https://github.com/SMA-UII-Yogyakarta/flutter) |
+| **playbook** | Engineering Handbook | [GitHub](https://github.com/SMA-UII-Yogyakarta/playbook) |
+
+---
+
+## 🎓 Learning Culture
+
+> "We don't just build software. We build engineers."
+
+Setiap Pull Request adalah kesempatan belajar.  
+Setiap Code Review adalah teaching moment.  
+Setiap Sprint Retrospective adalah improvement.
+
+### Expected Outcome (8 Minggu)
+- ✅ Fathan mampu develop fitur Livewire/React secara mandiri
+- ✅ Ihsan mampu develop fitur Laravel API secara mandiri
+- ✅ Ahmad mampu menulis requirement yang implementable
+- ✅ Sandikodev tidak menjadi bottleneck
+
+---
+
+## 📞 Kontak
+
+**PT Koneksi Jaringan Indonesia**  
+📧 Email: [hello@koneksi.id](mailto:hello@koneksi.id)  
+📱 WhatsApp: [Contact Link](https://wa.me/...)
+
+**SMA UII Yogyakarta**  
+📍 Alamat: Jl. Taman Siswa No.158, Wirogunan, Mergangsan, Kota Yogyakarta 55151  
+📞 Telp: (0274) 489693
+
+---
+
+## 📄 License
+
+Internal use only — PT Koneksi Jaringan Indonesia & SMA UII Yogyakarta
+
+---
+
+**Last Commit:** [See History](https://github.com/SMA-UII-Yogyakarta/playbook/commits/main)
