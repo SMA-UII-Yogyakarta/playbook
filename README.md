@@ -89,24 +89,58 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 | [`sprint-2-plan.md`](docs/07-project/sprint-2-plan.md) | Sprint 2: Presensi Module |
 | [`mvp-scope.md`](docs/07-project/mvp-scope.md) | MVP definition & scope |
 
+### [ROLES](ROLES) — Dinamic Role Definitions
+
+| Document | Description | For |
+|---|---|---|
+| [`_TEMPLATE.md`](ROLES/_TEMPLATE.md) | Template untuk buat role baru | Maintainer |
+| [`product-analyst.md`](ROLES/product-analyst.md) | Product Analyst — AI instructions, tanggung jawab | Ahmad Hanif |
+| [`junior-backend.md`](ROLES/junior-backend.md) | Junior Backend — AI instructions, learning path | Ihsan |
+| [`junior-frontend.md`](ROLES/junior-frontend.md) | Junior Frontend — AI instructions, learning path | Fathan |
+| [`senior-developer.md`](ROLES/senior-developer.md) | Senior Developer / Tech Lead — AI instructions | Sandikodev |
+| [`project-manager.md`](ROLES/project-manager.md) | Project Manager — AI instructions | Sandikodev |
+| [`stakeholder.md`](ROLES/stakeholder.md) | Stakeholder — AI instructions | Pak Mahfud |
+
+### [WORKFLOWS](WORKFLOWS) — AI Agent Workflows
+
+| Document | Description | For |
+|---|---|---|
+| [`ai-agent-workflow.md`](WORKFLOWS/ai-agent-workflow.md) | TACO Protocol: Trello → AI → Commit → Output | Semua developer |
+
+### [ACCESS](ACCESS) — Access Control Policies
+
+| Document | Description | For |
+|---|---|---|
+| [`matrix-per-role.md`](ACCESS/matrix-per-role.md) | Matriks akses GitHub, Trello, environment per role | All members |
+| [`outsourced-policy.md`](ACCESS/outsourced-policy.md) | Kebijakan keamanan pekerja outsourcing/mitra | Sandikodev |
+
 ---
 
 ## 🚀 Quick Start
 
 ### Untuk Product Analyst (Ahmad Hanif)
-1. Baca [`docs/04-templates/user-story.md`](docs/04-templates/user-story.md)
-2. Buat user story di Trello
-3. Link ke GitHub Issue
+1. Baca [`ROLES/product-analyst.md`](ROLES/product-analyst.md) — role & AI instructions
+2. Baca [`docs/04-templates/user-story.md`](docs/04-templates/user-story.md)
+3. Setup [OpenKB](https://github.com/SMA-UII-Yogyakarta/aksesekolah/blob/main/.openkb/TEMPLATE.md)
+4. Copy role file: `copy ROLES/product-analyst.md ~/.openkb/ROLES/`
+5. Buat user story di Trello, link ke GitHub Issue
 
 ### Untuk Developer (Fathan, Ihsan)
-1. Baca [`docs/01-getting-started/onboarding.md`](docs/01-getting-started/onboarding.md)
-2. Setup environment: [`docs/01-getting-started/environment-setup.md`](docs/01-getting-started/environment-setup.md)
-3. Pahami workflow: [`docs/02-workflow/git-github-workflow.md`](docs/02-workflow/git-github-workflow.md)
-4. Ambil Issue dari GitHub Project
+1. Baca [`ROLES/<role>.md`](ROLES/_TEMPLATE.md) — role & AI instructions
+2. Baca [`docs/01-getting-started/onboarding.md`](docs/01-getting-started/onboarding.md)
+3. Setup environment: [`docs/01-getting-started/environment-setup.md`](docs/01-getting-started/environment-setup.md)
+4. Setup OpenKB: `copy ROLES/<role>.md ~/.openkb/ROLES/`
+5. Pahami workflow AI Agent: [`WORKFLOWS/ai-agent-workflow.md`](WORKFLOWS/ai-agent-workflow.md)
+6. Ambil Issue dari GitHub Project, kerjakan dengan AI Agent
 
-### Untuk Reviewer (Sandikodev)
+### Untuk Reviewer / Tech Lead (Sandikodev)
 1. Code Review Checklist: [`docs/03-sop/code-review.md`](docs/03-sop/code-review.md)
 2. Sprint Planning Template: [`docs/04-templates/sprint-planning.md`](docs/04-templates/sprint-planning.md)
+3. Outsourced Policy: [`ACCESS/outsourced-policy.md`](ACCESS/outsourced-policy.md)
+
+### Untuk Stakeholder (Pak Mahfud)
+1. Baca [`ROLES/stakeholder.md`](ROLES/stakeholder.md) — role & ekspektasi
+2. Lihat progress di Trello Product Roadmap
 
 ---
 

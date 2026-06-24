@@ -1,0 +1,57 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "plan",
+  "instructions": [
+    ".opencode/SHARED/project-context.md",
+    ".opencode/SHARED/agent-rules.md"
+  ],
+  "references": {
+    "docs": {
+      "path": "docs",
+      "description": "Dokumentasi playbook — SOP, workflow, templates, ADR, learning path"
+    },
+    "roles": {
+      "path": "ROLES",
+      "description": "Definisi role dinamis — template, product-analyst, junior dev, senior dev, PM, stakeholder"
+    },
+    "workflows": {
+      "path": "WORKFLOWS",
+      "description": "AI Agent workflow — TACO protocol"
+    },
+    "access": {
+      "path": "ACCESS",
+      "description": "Access matrix & outsourced worker policy"
+    },
+    "core": {
+      "path": "../smauii-core",
+      "description": "Backend Laravel — main project"
+    },
+    "aksesekolah": {
+      "path": "../smauii-aksesekolah",
+      "description": "Monorepo entrypoint — dokumentasi, .opencode, .openkb"
+    },
+    "kaede": {
+      "path": "../kaede-powerup",
+      "description": "KAEDE Power-Up — integrasi Trello MCP"
+    }
+  },
+  "agent": {
+    "plan": {
+      "description": "Agent utama untuk playbook — analisis, dokumentasi, review SOP",
+      "mode": "primary",
+      "permission": {
+        "edit": "allow",
+        "bash": "deny"
+      }
+    },
+    "docs": {
+      "description": "Technical writer — buat & maintain dokumentasi playbook",
+      "mode": "subagent",
+      "permission": {
+        "edit": "allow",
+        "bash": "deny"
+      },
+      "prompt": "Kamu adalah technical writer untuk PT Koneksi Jaringan Indonesia. Buat dokumentasi yang jelas, terstruktur, dan mudah dipahami oleh seluruh tim (developer junior, senior, PM, bahkan stakeholder non-teknis). Gunakan bahasa Indonesia. Patuhi format yang konsisten."
+    }
+  }
+}
