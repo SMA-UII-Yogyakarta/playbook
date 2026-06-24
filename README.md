@@ -32,46 +32,62 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 
 ## 📚 Struktur Playbook
 
-```
-docs/
-├── 01-getting-started/
-│   ├── onboarding.md              # Checklist hari pertama
-│   ├── environment-setup.md       # Setup local development
-│   └── team-roles.md              # Detail peran & tanggung jawab
-│
-├── 02-workflow/
-│   ├── git-github-workflow.md     # Branch, commit, PR
-│   ├── trello-workflow.md         # Product management
-│   └── communication.md           # WhatsApp, meeting, async
-│
-├── 03-sop/
-│   ├── code-review.md             # Checklist review
-│   ├── deployment.md              # Deploy staging & production
-│   ├── testing.md                 # Unit test, integration test
-│   └── incident-response.md       # Handling bug production
-│
-├── 04-templates/
-│   ├── user-story.md              # Template BA
-│   ├── github-issue.md            # Template Issue
-│   ├── pull-request.md            # Template PR
-│   └── sprint-planning.md         # Template planning
-│
-├── 05-adr/                        # Architecture Decision Record
-│   ├── 001-monorepo.md
-│   ├── 002-livewire-first.md
-│   └── 003-database-mysql.md
-│
-├── 06-learning-path/
-│   ├── junior-dev-roadmap.md      # 8 minggu learning path
-│   ├── laravel-fundamentals.md
-│   └── livewire-basics.md
-│
-└── 07-project/
-    ├── smart-absen-overview.md    # Project overview
-    ├── sprint-1-plan.md           # Sprint 1 (Minggu 1-2)
-    ├── sprint-2-plan.md           # Sprint 2 (Minggu 3-4)
-    └── mvp-scope.md               # MVP definition
-```
+### [01-getting-started](docs/01-getting-started) — Onboarding & Setup
+
+| Document | Description | For |
+|---|---|---|
+| [`onboarding.md`](docs/01-getting-started/onboarding.md) | Checklist hari pertama | New members |
+| [`environment-setup.md`](docs/01-getting-started/environment-setup.md) | Setup local development | Developers |
+| [`team-roles.md`](docs/01-getting-started/team-roles.md) | Detail peran & tanggung jawab | All members |
+
+### [02-workflow](docs/02-workflow) — Git, Trello, Communication
+
+| Document | Description | For |
+|---|---|---|
+| [`git-github-workflow.md`](docs/02-workflow/git-github-workflow.md) | Branching, commit, PR workflow | Developers |
+| [`trello-workflow.md`](docs/02-workflow/trello-workflow.md) | Product management dengan Trello | Ahmad Hanif |
+| [`communication.md`](docs/02-workflow/communication.md) | WhatsApp, meeting, escalation | All members |
+| [`github-org-setup.md`](docs/02-workflow/github-org-setup.md) | GitHub Organization setup | Sandikodev |
+
+### [03-sop](docs/03-sop) — Standard Operating Procedures
+
+| Document | Description | For |
+|---|---|---|
+| [`code-review.md`](docs/03-sop/code-review.md) | Checklist & best practice review | Sandikodev |
+| [`deployment.md`](docs/03-sop/deployment.md) | Staging & production deployment | Sandikodev |
+| [`testing.md`](docs/03-sop/testing.md) | Unit test, integration, UAT | Developers |
+
+### [04-templates](docs/04-templates) — Ready-to-use Templates
+
+| Document | Description | For |
+|---|---|---|
+| [`user-story.md`](docs/04-templates/user-story.md) | Template user story | Ahmad Hanif |
+| [`github-issue.md`](docs/04-templates/github-issue.md) | Template GitHub Issue | All members |
+| [`pull-request.md`](docs/04-templates/pull-request.md) | Template Pull Request | Developers |
+| [`sprint-planning.md`](docs/04-templates/sprint-planning.md) | Template sprint planning | Sandikodev |
+
+### [05-adr](docs/05-adr) — Architecture Decision Record
+
+| Document | Description |
+|---|---|
+| [`001-monorepo.md`](docs/05-adr/001-monorepo.md) | Decision: Monorepo dengan submodule |
+| [`002-livewire-first.md`](docs/05-adr/002-livewire-first.md) | Decision: Livewire MVP, Next.js nanti |
+| [`003-database-mysql.md`](docs/05-adr/003-database-mysql.md) | Decision: MySQL 8 untuk production |
+
+### [06-learning-path](docs/06-learning-path) — Junior Developer Roadmap
+
+| Document | Description | For |
+|---|---|---|
+| [`junior-dev-roadmap.md`](docs/06-learning-path/junior-dev-roadmap.md) | 8 minggu learning path | Fathan, Ihsan |
+
+### [07-project](docs/07-project) — SMART Absen Project Plans
+
+| Document | Description |
+|---|---|
+| [`smart-absen-overview.md`](docs/07-project/smart-absen-overview.md) | Project overview lengkap |
+| [`sprint-1-plan.md`](docs/07-project/sprint-1-plan.md) | Sprint 1: Authentication & SSO |
+| [`sprint-2-plan.md`](docs/07-project/sprint-2-plan.md) | Sprint 2: Presensi Module |
+| [`mvp-scope.md`](docs/07-project/mvp-scope.md) | MVP definition & scope |
 
 ---
 
