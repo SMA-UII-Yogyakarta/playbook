@@ -24,7 +24,7 @@ Trello adalah **Source of Truth untuk Product Management**:
 
 ### Board 1: Product Roadmap
 
-**URL:** `https://trello.com/b/...` (invite-only)
+**URL:** [`https://trello.com/b/BHXA6ZcR/smart-absen-smauii`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii) (invite-only)
 
 **Kolom:**
 
@@ -82,7 +82,7 @@ Target: Sprint 2 (Minggu 3-4)
 
 ### Board 2: Sprint Board
 
-**URL:** `https://trello.com/b/...` (invite-only)
+**URL:** [`https://trello.com/b/BHXA6ZcR/smart-absen-smauii`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii) (invite-only)
 
 **Kolom:**
 

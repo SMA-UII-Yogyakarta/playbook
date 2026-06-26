@@ -386,7 +386,7 @@ Ihsan:
 ## 🔗 Related Links
 
 - [GitHub Project](https://github.com/orgs/SMA-UII-Yogyakarta/projects/1)
-- [Trello Board](https://trello.com/b/...)
+- [SMART ABSEN SMAUII Board](https://trello.com/b/BHXA6ZcR/smart-absen-smauii)
 - [GitHub Issues](https://github.com/SMA-UII-Yogyakarta/core/issues?q=is%3Aissue+milestone%3A%22Sprint+1%22)
 - [User Story Template](../04-templates/user-story.md)
 
