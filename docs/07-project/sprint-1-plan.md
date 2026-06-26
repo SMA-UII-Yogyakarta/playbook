@@ -383,6 +383,66 @@ Ihsan:
 
 ---
 
+## 🧑‍🏫 Learning Support — OpenKB Integration
+
+Sprint 1 berjalan paralel dengan learning journey tim junior. **Learning Mentor (Azis)** memfasilitasi proses belajar.
+
+### Learning Path Sprint 1
+
+| Developer | Fase OpenKB | Topik | Link ke Dokumen |
+|-----------|-------------|-------|-----------------|
+| **Ihsan** (Backend) | FASE-06 | Laravel Deep Dive | [`journey/FASE-06-LARAVEL-DEEP-DIVE/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-06-LARAVEL-DEEP-DIVE) |
+|  | 06-03 | Routing Web PHP | [06-03-routing-web-php.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-03-routing-web-php.md) |
+|  | 06-04 | Controller & Request | [06-04-controller-dan-request.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-04-controller-dan-request.md) |
+|  | 06-05 | Model & Eloquent ORM | [06-05-model-dan-eloquent-orm.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-05-model-dan-eloquent-orm.md) |
+|  | 06-07 | Middleware & Auth | [06-07-middleware-dan-auth.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-07-middleware-dan-auth.md) |
+| **Fathan** (Frontend) | FASE-06 | Laravel Deep Dive | [`journey/FASE-06-LARAVEL-DEEP-DIVE/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-06-LARAVEL-DEEP-DIVE) |
+|  | 06-06 | Blade Template Engine | [06-06-blade-template-engine.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-06-blade-template-engine.md) |
+|  | FASE-09 | Frontend di Laravel | [`journey/FASE-09-FRONTEND-DI-LARAVEL/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-09-FRONTEND-DI-LARAVEL) |
+|  | 09-02 | Tailwind CSS | [09-02-tailwind-css.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-09-FRONTEND-DI-LARAVEL/09-02-tailwind-css.md) |
+|  | 09-03 | Alpine.js | [09-03-alpine-js.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-09-FRONTEND-DI-LARAVEL/09-03-alpine-js.md) |
+| **Azis** (Mentor) | FASE-10 | Infrastruktur | [`journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT) |
+|  | 10-03 | Laragon di Windows | [10-03-laragon-di-windows.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md) |
+|  | FASE-11 | Tools & Workflow | [`journey/FASE-11-TOOLS-DAN-WORKFLOW/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-11-TOOLS-DAN-WORKFLOW) |
+|  | 11-04 | Artisan CLI | [11-04-artisan-cli.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-11-TOOLS-DAN-WORKFLOW/11-04-artisan-cli.md) |
+|  | 11-05 | Tinker & REPL | [11-05-tinker-dan-repl.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-11-TOOLS-DAN-WORKFLOW/11-05-tinker-dan-repl.md) |
+
+### Mentor Support Schedule
+
+| Session | Waktu | Topik | Led by |
+|---------|-------|-------|--------|
+| **Environment Setup** | Day 1 | Laragon, database, Git, SSH | Azis |
+| **Laravel Lifecycle** | Day 2 | Request flow, MVC, middleware | Azis |
+| **Debugging 101** | Day 3 | Telescope, Tinker, log reading | Azis |
+| **Code Review Session** | Day 4 | PR workflow, best practices | Sandikodev |
+| **Q&A Open Session** | Day 5 | Free discussion, blocker resolution | Azis + Sandikodev |
+
+### Escalation Path
+
+```
+Junior (Fathan/Ihsan)
+    │
+    ├── Environment/Setup issue
+    │   └── → Azis (Learning Mentor)
+    │
+    ├── Concept/Logic question
+    │   └── → Azis (Learning Mentor)
+    │
+    ├── Architecture/Decision
+    │   └── → Sandikodev (PM/Senior)
+    │
+    └── Blocker > 1 hari
+        └── → Sandikodev (PM/Senior)
+```
+
+### Resources
+
+- **Full curriculum:** [openkb-for-junior](https://github.com/konxc/openkb-for-junior)
+- **Learning path detail:** [`learning-resources.md`](../01-getting-started/learning-resources.md)
+- **Mentor role:** [`learning-mentor.md`](../ROLES/learning-mentor.md)
+
+---
+
 ## 🔗 Related Links
 
 - [GitHub Project](https://github.com/orgs/SMA-UII-Yogyakarta/projects/1)
