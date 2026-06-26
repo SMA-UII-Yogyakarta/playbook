@@ -248,7 +248,7 @@ core/ (Backend Laravel)
 
 ### Backend
 - **Framework:** Laravel 13
-- **PHP:** 8.5.7 NTS
+- **PHP:** 8.4 NTS
 - **Database:** MySQL 8.0.30
 - **Cache:** Redis 7.0 (optional)
 - **Queue:** Database driver

@@ -148,7 +148,7 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 
 ### Current Architecture (MVP — Bulan 1)
 ```
-Backend  : Laravel 13 (PHP 8.5.7)
+Backend  : Laravel 13 (PHP 8.4)
 Frontend : Livewire 3 + Tailwind CSS 4 + Vite
 Database : MySQL 8.0.30
 Auth     : Laravel Sanctum
@@ -169,7 +169,7 @@ Auth     : SSO (Sanctum Identity Provider)
 
 | Tool | Purpose | Link |
 |---|---|---|
-| **Trello** | Product Roadmap, Sprint Board | [Board Link](https://trello.com/b/...) |
+| **Trello** | Product Roadmap, Sprint Board | [SMART ABSEN SMAUII](https://trello.com/b/BHXA6ZcR/smart-absen-smauii) |
 | **GitHub Projects** | Engineering Task Tracking | [Project](https://github.com/orgs/SMA-UII-Yogyakarta/projects/1) |
 | **GitHub Issues** | Technical Task | [Issues](https://github.com/SMA-UII-Yogyakarta/core/issues) |
 | **WhatsApp Group** | Komunikasi Cepat | Private Group |
