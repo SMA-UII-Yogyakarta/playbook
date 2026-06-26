@@ -403,7 +403,7 @@ Sandikodev
 
 ```
 Web Server    : Nginx 1.24+
-PHP           : PHP 8.5.7 FPM
+PHP           : PHP 8.4 FPM
 Database      : MySQL 8.0.30
 Cache         : Redis 7.0
 Queue         : Database/Redis

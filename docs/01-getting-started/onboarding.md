@@ -48,7 +48,7 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 Ikuti panduan: [`environment-setup.md`](environment-setup.md)
 
-- [ ] Install PHP 8.5.7 (jika belum)
+- [ ] Install PHP 8.4 (jika belum)
 - [ ] Install Composer
 - [ ] Install Node.js 20+
 - [ ] Install MySQL 8.0

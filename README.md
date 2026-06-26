@@ -148,7 +148,7 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 
 ### Current Architecture (MVP — Bulan 1)
 ```
-Backend  : Laravel 13 (PHP 8.5.7)
+Backend  : Laravel 13 (PHP 8.4)
 Frontend : Livewire 3 + Tailwind CSS 4 + Vite
 Database : MySQL 8.0.30
 Auth     : Laravel Sanctum

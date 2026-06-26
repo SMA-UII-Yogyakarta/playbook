@@ -3,7 +3,7 @@
 > Panduan setup environment development untuk SMART Absen SMA UII.
 
 **OS:** Windows 10/11  
-**Stack:** Laragon 6.0, PHP 8.5.7, MySQL 8.0.30, Node.js 20+
+**Stack:** Laragon 6.0, PHP 8.4, MySQL 8.0.30, Node.js 20+
 
 ---
 
@@ -14,7 +14,7 @@
 | Software | Version | Download |
 |---|---|---|
 | **Laragon** | 6.0 | [laragon.org](https://laragon.org/download/) |
-| **PHP** | 8.5.7 NTS | Included in Laragon |
+| **PHP** | 8.4 NTS | Included in Laragon |
 | **Composer** | 2.x | [getcomposer.org](https://getcomposer.org/download/) |
 | **Node.js** | 20.x LTS | [nodejs.org](https://nodejs.org/) |
 | **Git** | Latest | [git-scm.com](https://git-scm.com/) |
@@ -30,7 +30,7 @@
 2. Install di `C:\laragon`
 3. Start Laragon
 4. Klik **Preferences** → Pastikan:
-   - PHP Version: 8.5.7 NTS
+   - PHP Version: 8.4 NTS
    - Apache: Enabled
    - MySQL: Enabled
    - Auto Start: On
@@ -185,7 +185,7 @@ php artisan serve
 
 ### PHP Configuration (`php.ini`)
 
-Lokasi: `C:\laragon\bin\php\php-8.5.7-nts-Win32-vs17-x64\php.ini`
+Lokasi: `C:\laragon\bin\php\php-8.4.22-nts-Win32-vs17-x64\php.ini`
 
 ```ini
 ; Timezone
@@ -224,7 +224,7 @@ Server Name: core.test
 ```bash
 # Check PHP version
 php --version
-# Expected: PHP 8.5.7
+# Expected: PHP 8.4
 
 # Check Composer
 composer --version
