@@ -22,8 +22,9 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 |---|---|---|---|
 | [@Sandikodev](https://github.com/Sandikodev) | Sandiko | Project Manager, Architect, Tech Lead | Architecture, Code Review, Mentoring |
 | [@Rosyiii](https://github.com/Rosyiii) | Ahmad Hanif Hasan Rosyidi | Product Analyst | Requirement, User Story, UAT |
-| [@Hans02-Neo](https://github.com/Hans02-Neo) | Fathan Mubina | Junior Developer | Frontend (Livewire, React, Tailwind) |
-| [@Odauna](https://github.com/Odauna) | Ihsan | Junior Developer | Backend (Laravel API, Database) |
+| [@Hans02-Neo](https://github.com/Hans02-Neo) | Fathan Mubina | Junior Developer | Frontend (Inertia+React, TypeScript, Tailwind) |
+| [@Odauna](https://github.com/Odauna) | Ihsan | Junior Developer | Backend (Laravel API, Database, PostgreSQL) |
+| | Azis | Learning Mentor | Discussion partner, debugging buddy, concept explainer, code review prep, learning tracker — membantu Fathan & Ihsan |
 
 **Stakeholder:**
 - **Pak Mahfud** — IT Manager SMA UII Yogyakarta (Client Representative)
@@ -71,8 +72,12 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 | Document | Description |
 |---|---|
 | [`001-monorepo.md`](docs/05-adr/001-monorepo.md) | Decision: Monorepo dengan submodule |
-| [`002-livewire-first.md`](docs/05-adr/002-livewire-first.md) | Decision: Livewire MVP, Next.js nanti |
-| [`003-database-mysql.md`](docs/05-adr/003-database-mysql.md) | Decision: MySQL 8 untuk production |
+| [`002-livewire-first.md`](docs/05-adr/002-livewire-first.md) | ⚠️ **Superseded** — lihat ADR-002-v2 |
+| [`002-v2-inertia-react.md`](docs/05-adr/002-v2-inertia-react.md) | Decision: InertiaJS + React sejak MVP |
+| [`003-database-mysql.md`](docs/05-adr/003-database-mysql.md) | ⚠️ **Superseded** — lihat ADR-003-v2 |
+| [`003-v2-database-postgresql.md`](docs/05-adr/003-v2-database-postgresql.md) | Decision: PostgreSQL via NeonDB untuk production |
+| [`004-neondb-sanctum.md`](docs/05-adr/004-neondb-sanctum.md) | Decision: NeonDB + Laravel Sanctum |
+| [`005-porting-strategy.md`](docs/05-adr/005-porting-strategy.md) | Decision: Porting strategy Monolith → API + Next.js |
 
 ### [06-learning-path](docs/06-learning-path) — Junior Developer Roadmap
 
@@ -97,6 +102,7 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 | [`product-analyst.md`](ROLES/product-analyst.md) | Product Analyst — AI instructions, tanggung jawab | Ahmad Hanif |
 | [`junior-backend.md`](ROLES/junior-backend.md) | Junior Backend — AI instructions, learning path | Ihsan |
 | [`junior-frontend.md`](ROLES/junior-frontend.md) | Junior Frontend — AI instructions, learning path | Fathan |
+| [`learning-mentor.md`](ROLES/learning-mentor.md) | Learning Mentor — AI instructions, mentoring scope | Azis |
 | [`senior-developer.md`](ROLES/senior-developer.md) | Senior Developer / Tech Lead — AI instructions | Sandikodev |
 | [`project-manager.md`](ROLES/project-manager.md) | Project Manager — AI instructions | Sandikodev |
 | [`stakeholder.md`](ROLES/stakeholder.md) | Stakeholder — AI instructions | Pak Mahfud |
@@ -146,21 +152,36 @@ Membangun **SMART Absen SMA UII** sebagai produk pertama, sekaligus membentuk **
 
 ## 🛠️ Tech Stack
 
-### Current Architecture (MVP — Bulan 1)
+### Current Architecture (MVP — Fase 1)
 ```
-Backend  : Laravel 13 (PHP 8.4)
-Frontend : Livewire 3 + Tailwind CSS 4 + Vite
-Database : MySQL 8.0.30
-Auth     : Laravel Sanctum
-Deploy   : Apache (Laragon) → Nginx (Production)
+Backend  : Laravel 13 (PHP 8.4) + Service Layer
+Frontend : InertiaJS 3 + React 19 + TypeScript 5.7 + Tailwind CSS 4 + Vite 8
+Database : PostgreSQL 16 via NeonDB
+Auth     : Laravel Sanctum + Spatie Laravel Permission (RBAC)
+Packages : Bun (frontend), Composer (backend)
+Queue    : Database driver (Redis nanti)
+Storage  : S3-compatible (Wasabi / MinIO)
+Deploy   : Laragon (dev) → Nginx (production)
 ```
 
-### Target Architecture (Bulan 2+)
+### Target Architecture (Fase 2 — Dedicated Backend + Multi Client)
 ```
-Backend  : Laravel 13 API (Core)
-Frontend : Next.js 14 (Web App)
-Mobile   : Flutter (Mobile App)
-Auth     : SSO (Sanctum Identity Provider)
+Backend  : Laravel 13 API-Only (Core) — Service Layer, Queue, SSO Provider
+Frontend : Next.js (Web App) — SSR/SSG, PWA
+Mobile   : React Native / Flutter (dipertimbangkan oleh tim & stakeholder)
+Auth     : SSO (Sanctum Identity Provider) — reusable oleh semua client
+Third-Party: SIAD, sistem eksternal via API Gateway
+```
+
+### Porting Strategy: Fase 1 → Fase 2
+```
+Fase 1 (Monolith + Inertia)    →    Fase 2 (API-Only + Multi Client)
+├── Controller tipis            →    Controller tipis (sama, reuse)
+├── Service Layer di App\Services → Service Layer (sama, reuse)
+├── Inertia merender React      →    Next.js / RN / Flutter consume API
+├── API routes (/api/*) aktif   →    API routes (sama, no change)
+├── Sanctum session auth        →    Sanctum token auth (switch mode)
+└── Zero rewrite — tinggal tambah frontend baru
 ```
 
 ---
@@ -179,14 +200,15 @@ Auth     : SSO (Sanctum Identity Provider)
 ## ⏱️ Timeline & Milestones
 
 ```
-Week 1-2  → Sprint 1: Authentication & SSO
-Week 3-4  → Sprint 2: Presensi Module (Core)
-Week 5-6  → Sprint 3: Laporan & Admin Panel
-Week 7-8  → Production Audit, Testing, Refining
+Week 1-2  → Sprint 1: Sinkronisasi & Setup — env, package, DB, Sanctum, docs sync
+Week 3-4  → Sprint 2: Authentication & SSO — registrasi, login, role, permission
+Week 5-6  → Sprint 3: Presensi Module (Core) — check-in, geolokasi, swafoto
+Week 7-8  → Sprint 4: Laporan, Admin Panel, UAT, Deployment
 ```
 
-**MVP Target:** Akhir Minggu 4  
-**Production Ready:** Akhir Minggu 8
+**MVP Target:** Akhir Minggu 6  
+**Production Ready:** Akhir Minggu 8  
+*Catatan: Timeline ini merefleksikan reset stack (dari Livewire/MySQL ke Inertia+React/PostgreSQL) dan penyesuaian learning path untuk Fathan, Ihsan, dan Azis.*
 
 ---
 

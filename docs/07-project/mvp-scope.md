@@ -6,10 +6,12 @@
 
 ## 🎯 MVP Goal
 
-**Target:** Minggu 4 (30 Juni 2026)
+**Target:** Akhir Sprint 3 (~18 Juli 2026)
 
 **Objective:**
-SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar, dashboard, dan laporan sederhana.
+SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (geolokasi, swafoto), dashboard per role, dan laporan sederhana.
+
+> **Catatan:** Target MVP bergeser dari minggu 4 ke minggu 6 karena reset stack (Livewire/MySQL → Inertia+React/PostgreSQL) dan penyesuaian learning path. Minggu 1-2 difokuskan pada sinkronisasi dokumentasi, instalasi stack baru, dan pembelajaran dasar React/TypeScript/PostgreSQL.
 
 ---
 
@@ -302,6 +304,6 @@ Week 7-8 → Sprint 4: Production Ready 🚀
 
 ---
 
-**Next:** [`mvp-scope.md`](mvp-scope.md) (this file)  
+**Next:** —  
 **Last Updated:** Juni 2026  
 **Maintained by:** Sandikodev

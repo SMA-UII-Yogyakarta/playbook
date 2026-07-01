@@ -1,7 +1,7 @@
-# ADR 002: Livewire First, React Later
+# ADR 002: Livewire First, React Later [SUPERSEDED]
 
 **Date:** 2026-06-21  
-**Status:** Accepted  
+**Status:** ❌ **Superseded** — oleh [ADR-002-v2](002-v2-inertia-react.md) pada 2026-06-30  
 **Deciders:** Sandikodev
 
 ---
@@ -13,7 +13,7 @@ Kita perlu memutuskan stack frontend untuk MVP (Bulan 1):
 - Opsi 2: Laravel API + React/Next.js
 - Opsi 3: Laravel API + Vue/Nuxt
 
-## Decision
+## Decision (Original — Not Applied)
 
 **Phase 1 (MVP — Bulan 1):** Laravel Blade + Livewire 3  
 **Phase 2 (Bulan 2+):** Laravel API + Next.js 14

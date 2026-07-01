@@ -192,7 +192,7 @@ Buffer: 0 points
 ## Task Assignment
 
 ### Fathan (Frontend)
-- [ ] Issue #34: Form Presensi Livewire (3 pts)
+- [ ] Issue #34: Form Presensi React + Inertia (3 pts)
 - [ ] Issue #35: Camera Integration (3 pts)
 - [ ] Issue #36: Responsive Design (1 pt)
 
@@ -231,7 +231,7 @@ Buffer: 0 points
 **Issues:**
 - #30: API Presensi (Backend - Ihsan)
 - #31: Geolocation Validation (Backend - Ihsan)
-- #34: Form Presensi Livewire (Frontend - Fathan)
+- #34: Form Presensi React + Inertia (Frontend - Fathan)
 - #35: Camera Integration (Frontend - Fathan)
 
 **Acceptance Criteria:**

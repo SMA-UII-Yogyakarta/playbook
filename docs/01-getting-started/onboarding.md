@@ -7,7 +7,7 @@
 ## ✅ Pre-Day 1 (HR/Admin)
 
 - [ ] Diundang ke GitHub Organization `SMA-UII-Yogyakarta`
-- [ ] Diundang ke Trello Board
+- [ ] Diundang ke Trello Board `SMART ABSEN SMAUII`
 - [ ] Ditambahkan ke WhatsApp Group
 - [ ] Diberikan akses ke Google Drive (jika ada)
 - [ ] Diberikan laptop & equipment (jika onsite)
@@ -24,9 +24,9 @@
 - Perkenalan tim
 - Overview project SMART Absen
 - Visi & misi PT Koneksi Jaringan Indonesia
-- Ekspektasi 2 bulan (MVP + Production)
+- Ekspektasi 8 minggu (MVP + Production)
 
-#### 2. GitHub Setup (30 menit)
+#### 2. GitHub & Git Setup (30 menit)
 **PIC:** Sandikodev
 
 - [ ] Accept invitation GitHub Organization
@@ -44,20 +44,21 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 
 #### 3. Environment Setup (2 jam)
-**PIC:** Developer masing-masing
+**PIC:** Developer masing-masing (dibantu Azis)
 
 Ikuti panduan: [`environment-setup.md`](environment-setup.md)
 
-- [ ] Install PHP 8.4 (jika belum)
+- [ ] Install Laragon 6.0
+- [ ] Setup PostgreSQL 16 (Laragon) atau daftar NeonDB
+- [ ] Install Bun (package manager frontend)
 - [ ] Install Composer
-- [ ] Install Node.js 20+
-- [ ] Install MySQL 8.0
-- [ ] Install Laragon (Windows)
-- [ ] Clone repository `core`
-- [ ] Setup `.env`
+- [ ] Install VS Code + extensions
+- [ ] Clone repository `core` ke `C:\laragon\www\smauii-core`
+- [ ] Setup `.env` (PostgreSQL connection)
 - [ ] Jalankan `composer install`
-- [ ] Jalankan `npm install`
-- [ ] Test: `php artisan serve`
+- [ ] Jalankan `bun install`
+- [ ] Test: `php artisan migrate`
+- [ ] Test: `bun run dev`
 
 #### 4. Git & GitHub Workflow (1 jam)
 **PIC:** Sandikodev
@@ -91,17 +92,23 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 - Latihan: Buat 3 user story untuk Sprint 1
 - Setup: Template acceptance criteria
 
-**Untuk Fathan (Frontend Developer):**
-- Review: Laravel Blade basics
-- Review: Livewire 3 documentation
-- Setup: VS Code extensions (Tailwind, Blade, PHP Intelephense)
-- Latihan: Buat komponen Livewire sederhana
+**Untuk Fathan (Junior Frontend Developer):**
+- Review: TypeScript dasar (tipe, interface)
+- Review: React hooks (useState, useEffect)
+- Setup: VS Code extensions (Tailwind CSS, ESLint, Prettier)
+- Latihan: Buat komponen React + TypeScript sederhana (Counter / Todo List)
+- Pastikan Vite + Tailwind berjalan: `bun run dev`
 
-**Untuk Ihsan (Backend Developer):**
-- Review: Eloquent ORM
-- Review: Laravel Validation
-- Review: REST API design
-- Latihan: Buat 1 endpoint API dengan validation
+**Untuk Ihsan (Junior Backend Developer):**
+- Review: Eloquent ORM + Service Layer concept
+- Review: PostgreSQL basics (connect, migration, query)
+- Setup: pgAdmin / DBeaver untuk PostgreSQL
+- Latihan: Buat migrasi + model + service + controller (CRUD satu tabel)
+
+**Untuk Azis (Learning Mentor):**
+- Review: Seluruh playbook (README, ADRs, team-roles, learning-resources)
+- Pahami Service Layer pattern + InertiaJS + React architecture
+- Pahami scope mentoring — diskusi, debugging, bukan ngoding fitur
 
 #### 7. Q&A Session (30 menit)
 **PIC:** Sandikodev
@@ -117,12 +124,12 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 ### Day 2
 
 #### Morning
-- [ ] Shadowing Sandikodev (lihat cara review code)
-- [ ] Baca dokumentasi existing di `aksesekolah/docs`
-- [ ] Pahami ERD database
+- [ ] Shadowing — lihat Azis atau Sandikodev ngoding
+- [ ] Baca dokumentasi existing di playbook + aksesekolah/docs
+- [ ] Pahami ERD database (PostgreSQL)
 
 #### Afternoon
-- [ ] Ambil first task (good first issue)
+- [ ] Ambil first task (good first issue) dari GitHub Project
 - [ ] Buat branch pertama
 - [ ] Commit pertama
 - [ ] Buat Pull Request pertama (dummy)
@@ -130,8 +137,9 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 ### Day 3
 
 #### Morning
-- [ ] Code review PR pertama
-- [ ] Fix berdasarkan review
+- [ ] Azis review awal PR
+- [ ] Fix berdasarkan review Azis
+- [ ] Sandikodev review final
 - [ ] Merge PR pertama
 
 #### Afternoon
@@ -142,7 +150,7 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 
 ## 📅 Week 1 Goals
 
-- [ ] Environment development berjalan
+- [ ] Environment development berjalan (Bun, PostgreSQL, Vite)
 - [ ] Minimal 1 PR merged ke main
 - [ ] Mengerti workflow Git → PR → Review → Merge
 - [ ] Mengerti cara baca user story
@@ -154,7 +162,7 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 
 - [ ] Minimal 2 task selesai di Sprint 1
 - [ ] Code review quality meningkat
-- [ ] Mulai mandiri (tidak perlu shadowing terus)
+- [ ] Mulai mandiri (bisa tanya Azis dulu sebelum eskalasi ke Sandikodev)
 - [ ] Aktif di standup meeting
 
 ---
@@ -181,11 +189,12 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 
 Diisi oleh Sandikodev di akhir Week 1
 
-- [ ] Environment setup ✅
+- [ ] Environment setup ✅ (Bun, PostgreSQL, Vite, Laragon)
 - [ ] Git workflow dipahami ✅
 - [ ] First PR merged ✅
 - [ ] Role understanding jelas ✅
 - [ ] Communication lancar ✅
+- [ ] Siapa Azis dan bagaimana cara minta bantuan ✅
 - [ ] Ready untuk Sprint 1 ✅
 
 **Notes:**
@@ -200,10 +209,12 @@ Diisi oleh Sandikodev di akhir Week 1
 | Masalah | Solusi | PIC |
 |---|---|---|
 | Git error | Re-clone, cek SSH key | Sandikodev |
-| Database tidak connect | Cek `.env`, MySQL service | Ihsan |
+| Database tidak connect | Cek `.env`, PostgreSQL service | Azis / Ihsan |
+| Bun / Vite error | Cek `bun install`, restart terminal | Azis / Fathan |
 | Port conflict | Cek Laragon virtual host | Sandikodev |
 | Requirement tidak jelas | Tanya Ahmad Hanif | Ahmad Hanif |
-| Task blocker > 2 jam | Escalate ke Sandikodev | Sandikodev |
+| Task blocker > 30 menit | Tanya Azis dulu | Azis |
+| Task blocker > 2 jam | Eskalasi ke Sandikodev | Sandikodev |
 
 ---
 

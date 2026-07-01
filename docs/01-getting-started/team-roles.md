@@ -15,9 +15,11 @@ PT Koneksi Jaringan Indonesia
     │
     ├── Ahmad Hanif (Product Analyst)
     │
-    ├── Fathan Mubina (Junior Developer - Frontend)
+    ├── Fathan Mubina (Junior Developer — Frontend: Inertia+React)
     │
-    └── Ihsan (Junior Developer - Backend)
+    ├── Ihsan (Junior Developer — Backend: Laravel API, PostgreSQL)
+    │
+    └── Azis (Learning Mentor — discussion partner, debugging buddy)
 ```
 
 ---
@@ -172,35 +174,36 @@ Acceptance Criteria:
 ### Primary Responsibilities
 
 #### 1. Frontend Development (60%)
-- Livewire components
-- Blade templates
-- Tailwind CSS styling
-- Alpine.js interactivity
-- React/Next.js (setelah MVP)
+- InertiaJS pages + React 19 components
+- TypeScript — semua kode frontend wajib .tsx
+- Tailwind CSS 4 styling (responsive, mobile-first)
+- Vite 8 asset bundling
+- API integration via Inertia (form submission, data fetching)
+- React hooks, state management, component lifecycle
 
 #### 2. Bug Fixing & Maintenance (20%)
 - Fix UI bug
-- Responsive testing
-- Cross-browser testing
-- Performance optimization (lazy loading, caching)
+- Responsive testing (mobile, tablet, desktop)
+- Cross-browser testing (Chrome, Firefox, Edge)
+- Performance optimization (lazy loading, code splitting)
 
 #### 3. Testing & Documentation (10%)
-- Unit test frontend (Jest untuk React)
+- Unit test frontend (Jest + React Testing Library)
 - Self-testing sebelum PR
-- Dokumentasi component usage
+- Dokumentasi component usage (props, state, events)
 
 #### 4. Learning & Growth (10%)
 - Ikuti learning path (8 minggu)
-- Pair programming dengan Sandikodev
+- Pair programming dengan Azis (Learning Mentor)
 - Code review feedback implementation
 
 ### Learning Path (8 Minggu)
 
 ```
-Week 1-2: Git, GitHub, Livewire basics
-Week 3-4: Tailwind CSS, Alpine.js, Vite
-Week 5-6: React fundamentals
-Week 7-8: Next.js routing, API integration
+Week 1-2: Git, GitHub, TypeScript dasar, React hooks
+Week 3-4: InertiaJS, Tailwind CSS 4, responsive design
+Week 5-6: React advanced (context, custom hooks, state management)
+Week 7-8: API integration, testing, deployment
 ```
 
 ### Key Metrics
@@ -210,16 +213,18 @@ Week 7-8: Next.js routing, API integration
 - Learning path progress
 
 ### Do's
-- ✅ Self-review sebelum submit PR
+- ✅ Self-review sebelum submit PR (cek TypeScript error, unused import, console.log)
 - ✅ Test di multiple browser (Chrome, Firefox, Edge)
 - ✅ Responsive testing (mobile, tablet, desktop)
-- ✅ Tanya jika stuck > 30 menit
+- ✅ Tanya Azis jika stuck > 30 menit, eskalasi ke Sandikodev jika > 2 jam
+- ✅ Gunakan TypeScript strict — hindari `any`
 
 ### Don'ts
-- ❌ Jangan commit console.log()
-- ❌ Jangan hardcode value
-- ❌ Jangan skip testing responsive
+- ❌ Jangan commit console.log() atau debugger
+- ❌ Jangan hardcode value (warna, spacing, font — pakai Tailwind utility)
+- ❌ Jangan skip responsive testing
 - ❌ Jangan copy-paste StackOverflow tanpa paham
+- ❌ Jangan gunakan `any` di TypeScript tanpa alasan jelas
 
 ---
 
@@ -230,35 +235,37 @@ Week 7-8: Next.js routing, API integration
 ### Primary Responsibilities
 
 #### 1. Backend Development (60%)
-- Laravel API endpoint
-- Eloquent model & relationship
-- Database migration & seeder
+- Laravel API endpoint (Inertia controller + API controller)
+- Service Layer pattern — logic di `app/Services/`, controller tipis
+- Eloquent model & relationship (PostgreSQL syntax)
+- Database migration & seeder (PostgreSQL/NeonDB)
 - Validation & Form Request
-- Policy & authorization
+- Sanctum token management
+- Spatie Laravel Permission (RBAC)
 
 #### 2. Database Management (20%)
-- Query optimization
-- Indexing
-- Data integrity
-- Backup & restore testing
+- PostgreSQL query optimization (eager loading, chunk, cursor)
+- Indexing untuk query sering (PostgreSQL)
+- Data integrity & constraint (CHECK, FK, unique)
+- NeonDB branching untuk testing
 
 #### 3. Testing & Documentation (10%)
-- Unit test (PHPUnit)
-- API documentation (Postman/Insomnia)
+- Unit test (PHPUnit) — minimal 70% coverage
+- API documentation (Postman/Insomnia/Stoplight)
 - Self-testing sebelum PR
 
 #### 4. Learning & Growth (10%)
 - Ikuti learning path (8 minggu)
-- Pair programming dengan Sandikodev
+- Pair programming dengan Azis (Learning Mentor)
 - Code review feedback implementation
 
 ### Learning Path (8 Minggu)
 
 ```
-Week 1-2: Git, GitHub, Laravel fundamentals
-Week 3-4: Eloquent, Migration, Seeder
-Week 5-6: API Design, Sanctum, Testing
-Week 7-8: Advanced (Queue, Event, Job)
+Week 1-2: Git, GitHub, Laravel fundamentals, Service Layer concept
+Week 3-4: Eloquent, Migration, Seeder, PostgreSQL specific
+Week 5-6: API Design, Sanctum, Spatie Permission, Testing
+Week 7-8: Advanced — Queue, Event, Job, NeonDB deployment
 ```
 
 ### Key Metrics
@@ -268,30 +275,87 @@ Week 7-8: Advanced (Queue, Event, Job)
 - Zero SQL injection vulnerability
 
 ### Do's
+- ✅ Service Layer pattern — logic di Service, controller hanya panggil service
 - ✅ Use Eloquent (raw query hanya jika necessary)
-- ✅ eager loading (`with()`) untuk cegah N+1
+- ✅ Eager loading (`with()`) untuk cegah N+1
 - ✅ Validation di Form Request class
 - ✅ Write test sebelum/sesudah code
+- ✅ PostgreSQL-native features (JSONB, array, window functions)
 
 ### Don'ts
 - ❌ Jangan commit `.env` atau credentials
 - ❌ Jangan skip validation
 - ❌ Jangan N+1 query di production
 - ❌ Jangan hardcode credentials
+- ❌ Jangan letakkan business logic di controller (harus di Service Layer)
+
+---
+
+## 🎓 Azis — Learning Mentor
+
+**GitHub:** (akan ditambahkan)
+
+### Primary Responsibilities
+
+Azis adalah **Learning Mentor** — bukan junior developer yang mengerjakan task fitur, melainkan **teman diskusi, debugging buddy, dan concept explainer** untuk Fathan & Ihsan.
+
+#### 1. Discussion Partner (30%)
+- Teman diskusi teknis untuk Fathan & Ihsan
+- Bantu resolve blocker teknis langsung (bukan eskalasi ke Sandikodev)
+- Pair programming untuk task yang Fathan/Ihsan anggap sulit
+
+#### 2. Concept Explainer (25%)
+- Jelasin konsep Laravel, React, TypeScript, Inertia, PostgreSQL
+- Jelaskan arsitektur — Service Layer, Sanctum, Spatie RBAC
+- Buat analogi dan contoh yang relevan dengan project
+
+#### 3. Code Review Prep (25%)
+- Review awal sebelum PR dikirim ke Sandikodev
+- Cari: typo, N+1 query, logical error, TypeScript type issue
+- Pastikan self-checklist tercentang
+
+#### 4. Learning Tracker (20%)
+- Bantu maintain progress learning path di Trello tracker
+- Fasilitasi environment setup (Laragon, Bun, PostgreSQL, NeonDB)
+- Dokumentasi common issues & solusi
+
+### Batasan (Apa yang Azis TIDAK lakukan)
+- ❌ **Tidak** membuat keputusan arsitektur — itu ranah Sandikodev
+- ❌ **Tidak** melakukan final code review / approve PR — itu ranah Sandikodev
+- ❌ **Tidak** manage sprint / backlog — itu ranah Sandikodev & Hanif
+- ❌ **Tidak** handle komunikasi stakeholder — itu ranah Sandikodev & Hanif
+
+### Key Metrics
+- Blocker resolution time untuk Fathan/Ihsan < 4 jam
+- Learning path progress sesuai target
+- Fathan & Ihsan semakin mandiri (target: independen di akhir Sprint 4)
+- Code review iteration < 3x per PR saat sampai ke Sandikodev
+
+### Do's
+- ✅ Pair programming — duduk bareng Fathan/Ihsan, bukan cuma chat
+- ✅ Document common issues — buat catatan di playbook atau openkb
+- ✅ Tanya "menurut kamu bagaimana?" sebelum kasih jawaban
+- ✅ Eskalasi ke Sandikodev jika blocker > 1 hari
+
+### Don'ts
+- ❌ Jangan ambil task fitur — bukan tanggung jawab Learning Mentor
+- ❌ Jangan jadi "walking encyclopedia" — ajarin cara cari jawaban, bukan kasih jawaban
+- ❌ Jangan bypass Sandikodev untuk keputusan arsitektur
+- ❌ Jangan biarkan Fathan/Ihsan bergantung — target akhir mereka mandiri
 
 ---
 
 ## 🤝 Collaboration Matrix
 
-| Activity | Sandikodev | Ahmad Hanif | Fathan | Ihsan |
-|---|---|---|---|---|
-| **Sprint Planning** | Lead | Co-lead | Participant | Participant |
-| **Daily Standup** | Facilitator | Participant | Participant | Participant |
-| **Requirement Review** | Reviewer | Author | Reviewer | Reviewer |
-| **Code Review** | Reviewer | - | Author | Author |
-| **UAT** | Support | Lead | Support | Support |
-| **Deployment** | Lead | - | Support | Support |
-| **Retrospective** | Facilitator | Participant | Participant | Participant |
+| Activity | Sandikodev | Ahmad Hanif | Fathan | Ihsan | Azis |
+|---|---|---|---|---|---|
+| **Sprint Planning** | Lead | Co-lead | Participant | Participant | Observer |
+| **Daily Standup** | Facilitator | Participant | Participant | Participant | Participant |
+| **Requirement Review** | Reviewer | Author | Reviewer | Reviewer | - |
+| **Code Review** | Final Reviewer | - | Author | Author | Initial Reviewer |
+| **UAT** | Support | Lead | Support | Support | - |
+| **Deployment** | Lead | - | Support | Support | - |
+| **Retrospective** | Facilitator | Participant | Participant | Participant | Participant |
 
 ---
 
@@ -330,11 +394,14 @@ Week 7-8: Advanced (Queue, Event, Job)
 ## 🆘 Escalation Path
 
 ```
-Problem Level 1 (Task blocker < 2 jam)
-→ Tanya di WhatsApp Group
+Problem Level 0 (Quick question / stuck < 30 menit)
+→ Tanya Azis (Learning Mentor) — WhatsApp / Discord
+
+Problem Level 1 (Task blocker 30 menit - 2 jam)
+→ Azis bantu debugging + discussion
 
 Problem Level 2 (Task blocker > 2 jam)
-→ Escalate ke Sandikodev
+→ Escalate ke Sandikodev via WhatsApp Group
 
 Problem Level 3 (Critical bug production)
 → Escalate ke Sandikodev + Pak Mahfud
@@ -348,11 +415,12 @@ Problem Level 4 (Requirement ambiguity)
 ## 📞 Contact & Availability
 
 | Role | WhatsApp | Email | Working Hours |
-|---|---|---|---|
+|---|---|---|---|---|
 | Sandikodev | [Link](https://wa.me/...) | sandiko@koneksi.id | 09:00 - 18:00 |
 | Ahmad Hanif | [Link](https://wa.me/...) | ahmad.hanif@smauiiyk.sch.id | 08:00 - 16:00 (onsite SMA UII) |
 | Fathan | [Link](https://wa.me/...) | fathan@koneksi.id | 09:00 - 18:00 |
 | Ihsan | [Link](https://wa.me/...) | ihsan@koneksi.id | 09:00 - 18:00 |
+| Azis | [Link](https://wa.me/...) | azis@koneksi.id | 09:00 - 18:00 |
 
 **Emergency Contact:**
 - Critical production bug: WhatsApp Group + Call Sandikodev

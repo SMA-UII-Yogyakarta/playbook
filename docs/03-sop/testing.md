@@ -23,16 +23,56 @@
 ```
 
 **Strategy:**
-- **70% Unit Test** — Fast, cheap, isolated
+- **70% Unit Test** — Fast, cheap, isolated (PHPUnit + Jest)
 - **20% Integration Test** — API endpoint, database
 - **10% E2E Test** — Critical user journey
 
+### Frontend — Jest + React Testing Library
+
+**Location:**
+```
+resources/js/
+├── Components/
+│   └── __tests__/
+│       ├── LoginForm.test.tsx
+│       └── AttendanceForm.test.tsx
+├── Pages/
+│   └── __tests__/
+│       ├── Dashboard.test.tsx
+│       └── Login.test.tsx
+```
+
+**Running:**
+```bash
+# Run all frontend tests
+bun run test
+
+# Watch mode
+bun run test:watch
+
+# Coverage
+bun run test:coverage
+```
+
+**What to test in frontend:**
+- Component rendering (with various props)
+- User interaction (button click, form submit)
+- State changes (loading, error, success)
+- Conditional rendering (role-based menu)
+- Form validation (error messages)
+
+**What NOT to test:**
+- Inertia routing behavior (tested in feature test)
+- Browser APIs (geolocation, camera — mock them)
+- Third-party library internals
+
 ---
 
-## 🧪 Unit Testing (PHPUnit)
+## 🧪 Unit Testing
 
-### Test Location
+### Backend — PHPUnit
 
+**Location:**
 ```
 tests/
 ├── Unit/
@@ -610,6 +650,6 @@ public function it_sends_sms_after_attendance()
 
 ---
 
-**Next:** [`incident-response.md`](incident-response.md)  
+**Next:** —  
 **Last Updated:** Juni 2026  
 **Maintained by:** Sandikodev

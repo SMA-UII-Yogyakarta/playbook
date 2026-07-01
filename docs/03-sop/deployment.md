@@ -94,8 +94,8 @@ git pull origin main
 
 # 4. Install dependencies
 composer install --no-dev --optimize-autoloader
-npm install
-npm run build
+bun install
+bun run build
 
 # 5. Clear cache
 php artisan cache:clear
@@ -135,13 +135,13 @@ git push origin v1.0.0
 
 # 2. Backup database production
 ssh user@smauiiyk.sch.id
-mysqldump -u root smauii_production > backup_$(date +%Y%m%d).sql
+pg_dump -U postgres smauii_production > backup_$(date +%Y%m%d).sql
 
 # 3. Download backup
 scp user@smauiiyk.sch.id:/home/user/backup_*.sql ./backups/
 
 # 4. Verify backup
-mysql -u root -e "CREATE DATABASE backup_test; USE backup_test; SOURCE backup_20260624.sql;"
+psql -U postgres -d smauii_production -f backup_20260624.sql
 ```
 
 ---
@@ -174,8 +174,8 @@ git pull origin main
 composer install --no-dev --optimize-autoloader
 
 # Build assets
-npm install
-npm run build
+bun install
+bun run build
 
 # Clear cache
 php artisan cache:clear
@@ -404,7 +404,7 @@ Sandikodev
 ```
 Web Server    : Nginx 1.24+
 PHP           : PHP 8.4 FPM
-Database      : MySQL 8.0.30
+Database      : PostgreSQL 16 (NeonDB)
 Cache         : Redis 7.0
 Queue         : Database/Redis
 SSL           : Let's Encrypt (Certbot)
@@ -554,8 +554,8 @@ cat public/build/manifest.json
 **Fix:**
 ```bash
 # Rebuild assets
-npm install
-npm run build
+bun install
+bun run build
 
 # Clear cache
 php artisan view:clear

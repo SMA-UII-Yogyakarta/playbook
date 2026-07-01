@@ -3,7 +3,7 @@
 > Panduan setup environment development untuk SMART Absen SMA UII.
 
 **OS:** Windows 10/11  
-**Stack:** Laragon 6.0, PHP 8.4, MySQL 8.0.30, Node.js 20+
+**Stack:** Laragon 6.0, PHP 8.4, PostgreSQL 16, Node.js 20+, Bun
 
 ---
 
@@ -13,12 +13,13 @@
 
 | Software | Version | Download |
 |---|---|---|
-| **Laragon** | 6.0 | [laragon.org](https://laragon.org/download/) |
+| **Laragon** | 6.0 | [laragon.org](https://laragon.org/download/) — pilih versi **Full** |
 | **PHP** | 8.4 NTS | Included in Laragon |
 | **Composer** | 2.x | [getcomposer.org](https://getcomposer.org/download/) |
-| **Node.js** | 20.x LTS | [nodejs.org](https://nodejs.org/) |
+| **Bun** | latest | `powershell -c "irm bun.sh/install.ps1 | iex"` |
 | **Git** | Latest | [git-scm.com](https://git-scm.com/) |
 | **VS Code** | Latest | [code.visualstudio.com](https://code.visualstudio.com/) |
+| **pgAdmin / DBeaver** | Latest | GUI tools untuk PostgreSQL |
 
 ---
 
@@ -26,96 +27,91 @@
 
 ### 1. Install Laragon
 
-1. Download Laragon 6.0
+1. Download Laragon 6.0 (versi **Full** direkomendasikan)
 2. Install di `C:\laragon`
 3. Start Laragon
 4. Klik **Preferences** → Pastikan:
    - PHP Version: 8.4 NTS
    - Apache: Enabled
-   - MySQL: Enabled
-   - Auto Start: On
+   - PostgreSQL: Tambahkan manual (lihat dokumentasi)
 
----
+### 2. Setup PostgreSQL di Laragon
 
-### 2. Install Composer
+PostgreSQL tidak included secara default di Laragon. Ikuti langkah berikut:
 
-1. Download Composer Setup
+1. Download PostgreSQL 16 zip dari [EnterpriseDB](https://www.enterprisedb.com/download-postgresql-binaries)
+2. Extract ke `C:\laragon\bin\postgresql\postgresql-16.x-winx64\`
+3. Buka Laragon > Menu > Tools > Service/Port > PostgreSQL
+4. Inisialisasi database cluster:
+   ```bash
+   "C:\laragon\bin\postgresql\postgresql-16.x-winx64\bin\initdb.exe" -D "C:/laragon/data/postgresql-16" --username=postgres
+   ```
+5. Start PostgreSQL dari Laragon
+
+Atau gunakan **NeonDB** langsung untuk development — daftar di [neon.tech](https://neon.tech) dan buat project baru.
+
+### 3. Install Bun (Package Manager)
+
+Bun digunakan sebagai package manager untuk frontend (menggantikan npm).
+
+```bash
+# Install via PowerShell (Admin recommended)
+powershell -c "irm bun.sh/install.ps1 | iex"
+
+# Verifikasi
+bun --version
+```
+
+### 4. Install Composer
+
+1. Download Composer Setup dari [getcomposer.org](https://getcomposer.org/download/)
 2. Install dengan default settings
 3. Test di terminal:
+   ```bash
+   composer --version
+   ```
 
-```bash
-composer --version
-```
+### 5. Install Git & Setup SSH
 
----
-
-### 3. Install Node.js
-
-1. Download Node.js 20.x LTS
-2. Install dengan default settings
-3. Test:
-
-```bash
-node --version
-npm --version
-```
-
----
-
-### 4. Install Git
-
-1. Download Git for Windows
+1. Download Git for Windows dari [git-scm.com](https://git-scm.com/)
 2. Install dengan default settings
 3. Setup SSH Key:
-
-```bash
-# Generate SSH Key
-ssh-keygen -t ed25519 -C "your_email@example.com"
-
-# Tekan Enter untuk default location
-# Masukkan passphrase (opsional)
-
-# Copy public key
-cat ~/.ssh/id_ed25519.pub
-```
-
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   cat ~/.ssh/id_ed25519.pub
+   ```
 4. Add ke GitHub:
    - Buka [github.com/settings/keys](https://github.com/settings/keys)
    - Klik **New SSH Key**
    - Paste isi `id_ed25519.pub`
    - Save
-
 5. Test koneksi:
+   ```bash
+   ssh -T git@github.com
+   ```
 
-```bash
-ssh -T git@github.com
-```
-
----
-
-### 5. Install VS Code Extensions
+### 6. Install VS Code Extensions
 
 Buka VS Code → Extensions → Install:
 
 | Extension | Publisher | Purpose |
 |---|---|---|
 | **PHP Intelephense** | Ben Mewburn | PHP IntelliSense |
-| **Laravel Blade Snippets** | Winnie Lin | Blade syntax highlight |
 | **Tailwind CSS IntelliSense** | Brad Cornes | Tailwind autocomplete |
 | **Prettier** | Prettier | Code formatter |
 | **GitLens** | GitKraken | Git blame, history |
-| **Thunder Client** | Ranga Vadhineni | API testing (alternatif Postman) |
+| **Thunder Client** | Ranga Vadhineni | API testing |
 
 ---
 
-## 📁 Clone Repositories
+## 📁 Clone & Setup Project
 
-### 1. Clone Core (Backend)
+### 1. Clone Core (Backend + Frontend)
 
 ```bash
 cd C:\laragon\www
-git clone git@github.com:SMA-UII-Yogyakarta/core.git
-cd core
+git clone git@github.com:SMA-UII-Yogyakarta/core.git smauii-core
+cd smauii-core
 ```
 
 ### 2. Setup Environment
@@ -127,32 +123,58 @@ copy .env.example .env
 # Generate APP_KEY
 php artisan key:generate
 
-# Install dependencies
+# Install PHP dependencies
 composer install
+
+# Install frontend dependencies (via Bun, bukan npm!)
+bun install
 ```
 
 ### 3. Setup Database
 
+**Opsi A — PostgreSQL Lokal (Laragon):**
 ```bash
-# Buat database di MySQL
-# Via phpMyAdmin atau Laragon MySQL
-
-CREATE DATABASE smauii_dev;
-CREATE DATABASE smauii_test;
+# Buat database via psql atau pgAdmin
+psql -U postgres -c "CREATE DATABASE smauii_core;"
 ```
 
 Edit `.env`:
-
 ```env
-DB_CONNECTION=mysql
+DB_CONNECTION=pgsql
 DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=smauii_dev
-DB_USERNAME=root
+DB_PORT=5432
+DB_DATABASE=smauii_core
+DB_USERNAME=postgres
 DB_PASSWORD=
 ```
 
-### 4. Migration & Seeder
+**Opsi B — NeonDB (Cloud):**
+1. Daftar di [neon.tech](https://neon.tech)
+2. Buat project → dapatkan connection string
+3. Edit `.env`:
+```env
+DB_CONNECTION=pgsql
+DB_HOST=ep-xxx-xxxx.us-east-2.aws.neon.tech
+DB_PORT=5432
+DB_DATABASE=smauii_dev
+DB_USERNAME=smauii_owner
+DB_PASSWORD=xxxxxx
+DB_SSLMODE=require
+```
+
+### 4. Install Packages Tambahan
+
+```bash
+# Laravel Sanctum (auth)
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+# Spatie Laravel Permission (RBAC)
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+```
+
+### 5. Migration & Seeder
 
 ```bash
 # Run migration
@@ -162,21 +184,16 @@ php artisan migrate
 php artisan db:seed
 ```
 
-### 5. Install Frontend Dependencies
+### 6. Jalankan Development Server
 
 ```bash
-npm install
-npm run dev
-```
+# Terminal 1: Vite dev server (frontend hot reload)
+bun run dev
 
-### 6. Test
-
-```bash
-# Start development server
+# Terminal 2: Laravel dev server
 php artisan serve
 
-# Atau via Laragon
-# Auto start di http://core.test
+# Atau via Laragon → auto start di http://smauii-core.test
 ```
 
 ---
@@ -199,7 +216,8 @@ upload_max_filesize = 10M
 post_max_size = 10M
 
 ; Extensions (ensure enabled)
-extension=pdo_mysql
+extension=pdo_pgsql
+extension=pgsql
 extension=mbstring
 extension=openssl
 extension=curl
@@ -211,8 +229,8 @@ extension=fileinfo
 Laragon auto-generate virtual host. Pastikan:
 
 ```
-DocumentRoot: C:\laragon\www\core\public
-Server Name: core.test
+DocumentRoot: C:\laragon\www\smauii-core\public
+Server Name: smauii-core.test
 ```
 
 ---
@@ -242,17 +260,14 @@ php artisan test
 ### Frontend
 
 ```bash
-# Check Node version
-node --version
-
-# Check NPM
-npm --version
+# Check Bun version
+bun --version
 
 # Build assets
-npm run build
+bun run build
 
 # Development server
-npm run dev
+bun run dev
 ```
 
 ### Git
@@ -263,56 +278,22 @@ git --version
 
 # Check SSH connection
 ssh -T git@github.com
-# Expected: Hi Sandikodev! You've successfully authenticated...
+# Expected: Hi <username>! You've successfully authenticated...
 ```
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Problem: Port 80/443 sudah digunakan
-
-**Solusi:**
-1. Stop Apache di Laragon
-2. Edit `httpd.conf` → ganti port 8080/8443
-3. Restart Apache
-
-### Problem: Composer install gagal
-
-**Solusi:**
-```bash
-composer clear-cache
-composer update --no-cache
-```
-
-### Problem: npm install error
-
-**Solusi:**
-```bash
-# Delete node_modules
-rmdir /s /q node_modules
-
-# Delete package-lock.json
-del package-lock.json
-
-# Install ulang
-npm install
-```
-
-### Problem: Database connection refused
-
-**Solusi:**
-1. Pastikan MySQL running di Laragon
-2. Cek `.env` DB_USERNAME, DB_PASSWORD
-3. Test koneksi via phpMyAdmin
-
-### Problem: Permission denied (storage/)
-
-**Solusi:**
-```bash
-# Windows (PowerShell Admin)
-icacls storage /grant Users:(OI)(CI)F /T
-```
+| Masalah | Solusi |
+|---|---|
+| **PostgreSQL connection refused** | Pastikan PostgreSQL running di Laragon (Menu > Tools > Service/Port > PostgreSQL) |
+| **pdo_pgsql not found** | Cek `php -m` — pastikan `pdo_pgsql` dan `pgsql` ada. Tambahkan `extension=pdo_pgsql` di php.ini jika belum |
+| **Port 5432 sudah dipakai** | Cek aplikasi lain yang menggunakan port PostgreSQL. Ganti port di `.env` jika perlu |
+| **Composer install gagal** | `composer clear-cache && composer update --no-cache` |
+| **Bun install error** | Jalankan PowerShell sebagai Administrator. Atau install via npm: `npm install -g bun` |
+| **Permission denied (storage/)** | `icacls storage /grant Users:(OI)(CI)F /T` (PowerShell Admin) |
+| **APP_KEY not set** | `php artisan key:generate` |
 
 ---
 
@@ -321,11 +302,12 @@ icacls storage /grant Users:(OI)(CI)F /T
 Setelah environment setup:
 
 1. [ ] Baca [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
-2. [ ] Ambil first task dari GitHub Project
-3. [ ] Buat branch pertama
-4. [ ] Start coding!
+2. [ ] Baca [`onboarding.md`](onboarding.md) untuk checklist lengkap
+3. [ ] Ambil first task dari GitHub Project
+4. [ ] Buat branch pertama
+5. [ ] Start coding!
 
 ---
 
-**Last Updated:** Juni 2026  
+**Last Updated:** 2026-06-30  
 **Maintained by:** Sandikodev

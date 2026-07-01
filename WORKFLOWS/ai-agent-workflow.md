@@ -79,7 +79,7 @@ claude -p "Kerjakan Issue #12 tentang attendance validation"
 2. AI baca kode existing yang relevan
 3. AI tulis kode baru / modifikasi
 4. Developer review output AI
-5. AI running test: composer test / npm test
+5. AI running test: composer test / bun run test
 6. Developer self-review
 7. Commit: feat(attendance): implementasi validasi presensi
 ```
@@ -204,7 +204,7 @@ Per Sprint:
 ### Yang Boleh
 - AI baca file `.md`, `.php`, `.js`, `.blade.php`, `.json`
 - AI tulis kode di branch fitur
-- AI running `composer test`, `npm run build`
+- AI running `composer test`, `bun run build`
 - AI akses Trello via MCP (baca card, update status)
 
 ### Yang Tidak Boleh
