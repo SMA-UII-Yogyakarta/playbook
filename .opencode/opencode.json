@@ -51,7 +51,7 @@
         "edit": "allow",
         "bash": "deny"
       },
-      "prompt": "You are a technical writer for PT Koneksi Jaringan Indonesia. Create clear, structured documentation that is easy to understand for the entire team (junior developers, senior developers, PM, even non-technical stakeholders). Use Indonesian. Follow consistent formatting."
+      "prompt": "You are a technical writer for PT Koneksi Jaringan Indonesia. Create clear, structured documentation that is easy to understand for the entire team (junior developers, senior developers, PM, even non-technical stakeholders). Use English. Follow consistent formatting."
     }
   }
 }
