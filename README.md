@@ -258,4 +258,4 @@ Internal use only — PT Koneksi Jaringan Indonesia & SMA UII Yogyakarta
 
 ---
 
-**Last Commit:** [See History](https://github.com/SMA-UII-Yogyakarta/playbook/commits/main).
+**Last Commit:** [See History](https://github.com/SMA-UII-Yogyakarta/playbook/commits/main)
