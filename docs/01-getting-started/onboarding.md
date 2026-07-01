@@ -1,16 +1,16 @@
-# Onboarding Checklist — Hari Pertama
+# Onboarding Checklist — First Day
 
-> Checklist untuk anggota tim baru bergabung di project SMA UII Yogyakarta.
+> Checklist for new team members joining the SMA UII Yogyakarta project.
 
 ---
 
 ## ✅ Pre-Day 1 (HR/Admin)
 
-- [ ] Diundang ke GitHub Organization `SMA-UII-Yogyakarta`
-- [ ] Diundang ke Trello Board `SMART ABSEN SMAUII`
-- [ ] Ditambahkan ke WhatsApp Group
-- [ ] Diberikan akses ke Google Drive (jika ada)
-- [ ] Diberikan laptop & equipment (jika onsite)
+- [ ] Invited to GitHub Organization `SMA-UII-Yogyakarta`
+- [ ] Invited to Trello Board `SMART ABSEN SMAUII`
+- [ ] Added to WhatsApp Group
+- [ ] Given access to Google Drive (if any)
+- [ ] Given laptop & equipment (if onsite)
 
 ---
 
@@ -18,104 +18,104 @@
 
 ### Morning (09:00 - 12:00)
 
-#### 1. Welcome Session (30 menit)
+#### 1. Welcome Session (30 minutes)
 **PIC:** Sandikodev
 
-- Perkenalan tim
-- Overview project SMART Absen
-- Visi & misi PT Koneksi Jaringan Indonesia
-- Ekspektasi 8 minggu (MVP + Production)
+- Team introduction
+- SMART Absen project overview
+- Vision & mission of PT Koneksi Jaringan Indonesia
+- 8-week expectations (MVP + Production)
 
-#### 2. GitHub & Git Setup (30 menit)
+#### 2. GitHub & Git Setup (30 minutes)
 **PIC:** Sandikodev
 
-- [ ] Accept invitation GitHub Organization
-- [ ] Setup 2FA di GitHub
+- [ ] Accept GitHub Organization invitation
+- [ ] Setup 2FA on GitHub
 - [ ] Generate SSH Key
-- [ ] Add SSH Key ke GitHub
+- [ ] Add SSH Key to GitHub
 - [ ] Test: `git clone git@github.com:SMA-UII-Yogyakarta/playbook.git`
 
 ```bash
 # Generate SSH Key
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
-# Add ke GitHub
+# Add to GitHub
 # Settings → SSH and GPG keys → New SSH Key
 ```
 
-#### 3. Environment Setup (2 jam)
-**PIC:** Developer masing-masing (dibantu Azis)
+#### 3. Environment Setup (2 hours)
+**PIC:** Each developer (assisted by Azis)
 
-Ikuti panduan: [`environment-setup.md`](environment-setup.md)
+Follow the guide: [`environment-setup.md`](environment-setup.md)
 
 - [ ] Install Laragon 6.0
-- [ ] Setup PostgreSQL 16 (Laragon) atau daftar NeonDB
-- [ ] Install Bun (package manager frontend)
+- [ ] Setup PostgreSQL 16 (Laragon) or register for NeonDB
+- [ ] Install Bun (frontend package manager)
 - [ ] Install Composer
 - [ ] Install VS Code + extensions
-- [ ] Clone repository `core` ke `C:\laragon\www\smauii-core`
+- [ ] Clone `core` repository to `C:\laragon\www\smauii-core`
 - [ ] Setup `.env` (PostgreSQL connection)
-- [ ] Jalankan `composer install`
-- [ ] Jalankan `bun install`
+- [ ] Run `composer install`
+- [ ] Run `bun install`
 - [ ] Test: `php artisan migrate`
 - [ ] Test: `bun run dev`
 
-#### 4. Git & GitHub Workflow (1 jam)
+#### 4. Git & GitHub Workflow (1 hour)
 **PIC:** Sandikodev
 
-Baca: [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
+Read: [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
 
-- [ ] Pahami branching strategy
-- [ ] Pahami conventional commits
-- [ ] Pahami Pull Request workflow
-- [ ] Pahami code review process
+- [ ] Understand branching strategy
+- [ ] Understand conventional commits
+- [ ] Understand Pull Request workflow
+- [ ] Understand code review process
 
 ---
 
 ### Afternoon (13:00 - 17:00)
 
-#### 5. Trello & Project Management (1 jam)
+#### 5. Trello & Project Management (1 hour)
 **PIC:** Ahmad Hanif
 
-Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
+Read: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 
 - [ ] Accept Trello invitation
-- [ ] Pahami board structure
-- [ ] Pahami cara baca card
-- [ ] Pahami Definition of Ready (DoR)
-- [ ] Pahami Definition of Done (DoD)
+- [ ] Understand board structure
+- [ ] Understand how to read cards
+- [ ] Understand Definition of Ready (DoR)
+- [ ] Understand Definition of Done (DoD)
 
-#### 6. Role-Specific Training (2 jam)
+#### 6. Role-Specific Training (2 hours)
 
-**Untuk Ahmad Hanif (Product Analyst):**
-- Baca: [`user-story.md`](../04-templates/user-story.md)
-- Latihan: Buat 3 user story untuk Sprint 1
-- Setup: Template acceptance criteria
+**For Ahmad Hanif (Product Analyst):**
+- Read: [`user-story.md`](../04-templates/user-story.md)
+- Practice: Create 3 user stories for Sprint 1
+- Setup: Acceptance criteria template
 
-**Untuk Fathan (Junior Frontend Developer):**
-- Review: TypeScript dasar (tipe, interface)
+**For Fathan (Junior Frontend Developer):**
+- Review: TypeScript basics (types, interface)
 - Review: React hooks (useState, useEffect)
 - Setup: VS Code extensions (Tailwind CSS, ESLint, Prettier)
-- Latihan: Buat komponen React + TypeScript sederhana (Counter / Todo List)
-- Pastikan Vite + Tailwind berjalan: `bun run dev`
+- Practice: Create a simple React + TypeScript component (Counter / Todo List)
+- Ensure Vite + Tailwind is running: `bun run dev`
 
-**Untuk Ihsan (Junior Backend Developer):**
+**For Ihsan (Junior Backend Developer):**
 - Review: Eloquent ORM + Service Layer concept
 - Review: PostgreSQL basics (connect, migration, query)
-- Setup: pgAdmin / DBeaver untuk PostgreSQL
-- Latihan: Buat migrasi + model + service + controller (CRUD satu tabel)
+- Setup: pgAdmin / DBeaver for PostgreSQL
+- Practice: Create migration + model + service + controller (CRUD for one table)
 
-**Untuk Azis (Learning Mentor):**
-- Review: Seluruh playbook (README, ADRs, team-roles, learning-resources)
-- Pahami Service Layer pattern + InertiaJS + React architecture
-- Pahami scope mentoring — diskusi, debugging, bukan ngoding fitur
+**For Azis (Learning Mentor):**
+- Review: Entire playbook (README, ADRs, team-roles, learning-resources)
+- Understand Service Layer pattern + InertiaJS + React architecture
+- Understand mentoring scope — discussion, debugging, not coding features
 
-#### 7. Q&A Session (30 menit)
+#### 7. Q&A Session (30 minutes)
 **PIC:** Sandikodev
 
-- Tanya jawab semua hal yang belum jelas
-- Diskusi ekspektasi role
-- Setting goals 2 minggu pertama
+- Q&A on everything unclear
+- Discuss role expectations
+- Set goals for the first 2 weeks
 
 ---
 
@@ -124,57 +124,57 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 ### Day 2
 
 #### Morning
-- [ ] Shadowing — lihat Azis atau Sandikodev ngoding
-- [ ] Baca dokumentasi existing di playbook + aksesekolah/docs
-- [ ] Pahami ERD database (PostgreSQL)
+- [ ] Shadowing — watch Azis or Sandikodev coding
+- [ ] Read existing documentation in playbook + aksesekolah/docs
+- [ ] Understand the database ERD (PostgreSQL)
 
 #### Afternoon
-- [ ] Ambil first task (good first issue) dari GitHub Project
-- [ ] Buat branch pertama
-- [ ] Commit pertama
-- [ ] Buat Pull Request pertama (dummy)
+- [ ] Take first task (good first issue) from GitHub Project
+- [ ] Create first branch
+- [ ] First commit
+- [ ] Create first Pull Request (dummy)
 
 ### Day 3
 
 #### Morning
-- [ ] Azis review awal PR
-- [ ] Fix berdasarkan review Azis
-- [ ] Sandikodev review final
-- [ ] Merge PR pertama
+- [ ] Azis initial PR review
+- [ ] Fix based on Azis's review
+- [ ] Sandikodev final review
+- [ ] Merge first PR
 
 #### Afternoon
-- [ ] Mulai task Sprint 1 yang sebenarnya
-- [ ] Standup meeting pertama (15 menit)
+- [ ] Start actual Sprint 1 task
+- [ ] First standup meeting (15 minutes)
 
 ---
 
 ## 📅 Week 1 Goals
 
-- [ ] Environment development berjalan (Bun, PostgreSQL, Vite)
-- [ ] Minimal 1 PR merged ke main
-- [ ] Mengerti workflow Git → PR → Review → Merge
-- [ ] Mengerti cara baca user story
-- [ ] Mengerti Definition of Ready & Done
+- [ ] Development environment working (Bun, PostgreSQL, Vite)
+- [ ] At least 1 PR merged to main
+- [ ] Understand Git → PR → Review → Merge workflow
+- [ ] Understand how to read user stories
+- [ ] Understand Definition of Ready & Done
 
 ---
 
 ## 📅 Week 2 Goals
 
-- [ ] Minimal 2 task selesai di Sprint 1
-- [ ] Code review quality meningkat
-- [ ] Mulai mandiri (bisa tanya Azis dulu sebelum eskalasi ke Sandikodev)
-- [ ] Aktif di standup meeting
+- [ ] At least 2 tasks completed in Sprint 1
+- [ ] Code review quality improving
+- [ ] Start working independently (ask Azis first before escalating to Sandikodev)
+- [ ] Active in standup meetings
 
 ---
 
-## 📚 Resources Wajib Dibaca
+## 📚 Required Reading
 
-### Semua Tim
-- [ ] [`README.md`](../README.md) — Overview playbook
-- [ ] [`team-roles.md`](team-roles.md) — Detail peran
-- [ ] [`communication.md`](../02-workflow/communication.md) — Komunikasi tim
+### All Team
+- [ ] [`README.md`](../README.md) — Playbook overview
+- [ ] [`team-roles.md`](team-roles.md) — Role details
+- [ ] [`communication.md`](../02-workflow/communication.md) — Team communication
 
-### Developer
+### Developers
 - [ ] [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
 - [ ] [`code-review.md`](../03-sop/code-review.md)
 - [ ] [`testing.md`](../03-sop/testing.md)
@@ -187,34 +187,34 @@ Baca: [`trello-workflow.md`](../02-workflow/trello-workflow.md)
 
 ## ✅ Onboarding Completion Checklist
 
-Diisi oleh Sandikodev di akhir Week 1
+Filled by Sandikodev at the end of Week 1
 
 - [ ] Environment setup ✅ (Bun, PostgreSQL, Vite, Laragon)
-- [ ] Git workflow dipahami ✅
+- [ ] Git workflow understood ✅
 - [ ] First PR merged ✅
-- [ ] Role understanding jelas ✅
-- [ ] Communication lancar ✅
-- [ ] Siapa Azis dan bagaimana cara minta bantuan ✅
-- [ ] Ready untuk Sprint 1 ✅
+- [ ] Role understanding clear ✅
+- [ ] Communication smooth ✅
+- [ ] Know who Azis is and how to ask for help ✅
+- [ ] Ready for Sprint 1 ✅
 
 **Notes:**
 ```
-[Isi catatan performance & area improvement]
+[Fill in performance notes & improvement areas]
 ```
 
 ---
 
-## 🆘 Jika Ada Masalah
+## 🆘 If There's a Problem
 
-| Masalah | Solusi | PIC |
+| Problem | Solution | PIC |
 |---|---|---|
-| Git error | Re-clone, cek SSH key | Sandikodev |
-| Database tidak connect | Cek `.env`, PostgreSQL service | Azis / Ihsan |
-| Bun / Vite error | Cek `bun install`, restart terminal | Azis / Fathan |
-| Port conflict | Cek Laragon virtual host | Sandikodev |
-| Requirement tidak jelas | Tanya Ahmad Hanif | Ahmad Hanif |
-| Task blocker > 30 menit | Tanya Azis dulu | Azis |
-| Task blocker > 2 jam | Eskalasi ke Sandikodev | Sandikodev |
+| Git error | Re-clone, check SSH key | Sandikodev |
+| Database won't connect | Check `.env`, PostgreSQL service | Azis / Ihsan |
+| Bun / Vite error | Check `bun install`, restart terminal | Azis / Fathan |
+| Port conflict | Check Laragon virtual host | Sandikodev |
+| Requirement unclear | Ask Ahmad Hanif | Ahmad Hanif |
+| Task blocker > 30 minutes | Ask Azis first | Azis |
+| Task blocker > 2 hours | Escalate to Sandikodev | Sandikodev |
 
 ---
 

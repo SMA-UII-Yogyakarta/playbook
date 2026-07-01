@@ -1,13 +1,13 @@
-# Referensi — Playbook & Ekosistem
+# References — Playbook & Ecosystem
 
-## Repositori
+## Repositories
 - [smauii-aksesekolah](https://github.com/SMA-UII-Yogyakarta/aksesekolah) — Monorepo entrypoint
 - [smauii-core](https://github.com/SMA-UII-Yogyakarta/core) — Backend Laravel
 - [kaede-powerup](https://github.com/konxc/kaede-powerup) — KAEDE Trello Power-Up
-- [playbook](https://github.com/SMA-UII-Yogyakarta/playbook) — SOP & workflow (repo ini)
+- [playbook](https://github.com/SMA-UII-Yogyakarta/playbook) — SOP & workflow (this repo)
 
 ## Internal Playbook
-| Dokumen | Path |
+| Document | Path |
 |---|---|
 | Team Roles | `docs/01-getting-started/team-roles.md` |
 | Git Workflow | `docs/02-workflow/git-github-workflow.md` |

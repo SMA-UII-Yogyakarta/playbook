@@ -56,7 +56,7 @@ Stakeholder adalah pemilik kepentingan bisnis dari SMA UII Yogyakarta. Role ini 
 Saya adalah **Stakeholder** dari SMA UII Yogyakarta. Saya tidak coding dan tidak perlu paham teknis. Saya perlu AI untuk membantu saya memahami progress project dan membuat keputusan bisnis yang tepat.
 
 ### Cara AI Harus Membantu
-1. **Non-technical explanation** — Jelaskan progress dan issue dalam bahasa Indonesia yang sederhana, tanpa jargon teknis.
+1. **Non-technical explanation** — Explain progress and issues in simple English, without technical jargon.
 2. **Decision support** — Saat ada trade-off, AI harus menyajikan opsi dengan konsekuensi masing-masing secara jelas.
 3. **Visual progress** — Bantu interpretasi data progress dalam format yang mudah dipahami (bullet points, perbandingan).
 4. **Risk communication** — Jika ada risiko, jelaskan dampak bisnisnya, bukan teknisnya.

@@ -1,4 +1,4 @@
-# ADR 002-v2: InertiaJS + React Sejak MVP
+# ADR 002-v2: InertiaJS + React From MVP
 
 **Date:** 2026-06-30  
 **Status:** Accepted  
@@ -9,19 +9,19 @@
 
 ## Context
 
-Keputusan awal (ADR-002) memilih Livewire 3 untuk MVP dengan alasan learning curve rendah dan development cepat. Setelah evaluasi lebih lanjut, tim memutuskan revisi karena:
+The initial decision (ADR-002) chose Livewire 3 for MVP due to low learning curve and fast development. After further evaluation, the team decided on a revision because:
 
-1. **Arahan stakeholder (Pak Mahfud)** — menginginkan aplikasi modern dengan arsitektur yang bisa diport ke mobile (React Native / Flutter) dan webapp terpisah (Next.js) di masa depan.
-2. **Tim composition berubah** — Azis bergabung sebagai Learning Mentor, memungkinkan Fathan & Ihsan belajar React/TypeScript lebih cepat dengan pendampingan langsung.
-3. **Porting cost** — Membangun dengan Livewire lalu migrasi ke React/Next.js di Fase 2 membutuhkan rewrite frontend total. Memulai dengan Inertia+React menghilangkan biaya porting.
-4. **Ecosystem maturity** — InertiaJS 3 + React 19 + TypeScript 5.7 sudah stabil dan mature untuk production.
+1. **Stakeholder direction (Pak Mahfud)** — wants a modern application with an architecture that can be ported to mobile (React Native / Flutter) and a separate web app (Next.js) in the future.
+2. **Team composition changed** — Azis joined as Learning Mentor, enabling Fathan & Ihsan to learn React/TypeScript faster with direct mentoring.
+3. **Porting cost** — Building with Livewire then migrating to React/Next.js in Phase 2 requires a complete frontend rewrite. Starting with Inertia+React eliminates the porting cost.
+4. **Ecosystem maturity** — InertiaJS 3 + React 19 + TypeScript 5.7 is already stable and mature for production.
 
 ## Decision
 
-**Fase 1 (MVP):** InertiaJS 3 + React 19 + TypeScript 5.7 + Tailwind CSS 4 + Vite 8  
-**Fase 2 (Dedicated Backend):** Laravel API-only + Next.js (Web App) + React Native / Flutter (Mobile)
+**Phase 1 (MVP):** InertiaJS 3 + React 19 + TypeScript 5.7 + Tailwind CSS 4 + Vite 8  
+**Phase 2 (Dedicated Backend):** Laravel API-only + Next.js (Web App) + React Native / Flutter (Mobile)
 
-### Arsitektur Fase 1
+### Phase 1 Architecture
 
 ```
 Browser
@@ -36,55 +36,55 @@ Browser
 ```
 
 ### Service Layer Pattern
-Seluruh business logic ditulis di `app/Services/` agar:
-- Controller tetap tipis — tinggal panggil service
-- API routes (`/api/*`) bisa reuse service yang sama
-- Porting ke Fase 2 tinggal ganti controller → API controller
+All business logic is written in `app/Services/` so that:
+- Controller stays thin — just call the service
+- API routes (`/api/*`) can reuse the same service
+- Porting to Phase 2 just replace controller → API controller
 
 ## Rationale
 
-### Kenapa Inertia + React, Bukan Livewire?
+### Why Inertia + React, Not Livewire?
 
-| Aspek | Livewire 3 | InertiaJS + React |
-|-------|-----------|-------------------|
-| **Learning curve** | Rendah (Blade familiar) | Sedang (React baru) |
-| **Porting ke Next.js** | Rewrite total | Partial (pindah routing) |
-| **Type safety** | Tidak ada (Blade/PHP) | TypeScript penuh |
-| **Component reusability** | Terbatas di Laravel | Bisa share dengan Next.js |
-| **Mobile API reuse** | Tidak langsung | Langsung (service layer) |
+| Aspect | Livewire 3 | InertiaJS + React |
+|--------|-----------|-------------------|
+| **Learning curve** | Low (Blade familiar) | Medium (React new) |
+| **Porting to Next.js** | Total rewrite | Partial (move routing) |
+| **Type safety** | None (Blade/PHP) | Full TypeScript |
+| **Component reusability** | Limited to Laravel | Can share with Next.js |
+| **Mobile API reuse** | Not directly | Direct (service layer) |
 | **Ecosystem** | Laravel-centric | React universal |
 
-### Kenapa React, Bukan Vue/Nuxt?
+### Why React, Not Vue/Nuxt?
 
-1. **Market dominance** — React paling banyak dipakai → lebih mudah cari referensi, library, hiring
-2. **InertiaJS first-class support** — InertiaJS dibuat oleh creator Laravel, dukungan React setara dengan Vue
-3. **Mobile pathway** — React Native adalah pilihan mobile yang paling natural dari React
-4. **Tim preference** — Sandikodev dan Azis lebih familiar React daripada Vue
+1. **Market dominance** — React is most widely used → easier to find references, libraries, hiring
+2. **InertiaJS first-class support** — InertiaJS was created by the creator of Laravel, React support is on par with Vue
+3. **Mobile pathway** — React Native is the most natural mobile choice from React
+4. **Team preference** — Sandikodev and Azis are more familiar with React than Vue
 
-### Kenapa TypeScript dari Awal?
+### Why TypeScript from the Start?
 
-1. **Type safety** — Mencegah error runtime yang umum di JS (undefined is not a function, wrong prop types)
-2. **IDE support** — Autocomplete, refactoring, type checking di VS Code
-3. **Learning investment** — Fathan & Ihsan belajar TypeScript sejak awal, bukan migrasi nanti
-4. **Next.js readiness** — Next.js berbasis TypeScript secara default
+1. **Type safety** — Prevents common runtime errors in JS (undefined is not a function, wrong prop types)
+2. **IDE support** — Autocomplete, refactoring, type checking in VS Code
+3. **Learning investment** — Fathan & Ihsan learn TypeScript from the start, not migrate later
+4. **Next.js readiness** — Next.js is TypeScript-based by default
 
 ## Consequences
 
 ### Pros
-- Zero rewrite ketika porting ke Next.js / React Native — reuse komponen React
-- Service layer bisa dipakai oleh API routes dan Inertia controller
-- TypeScript memberikan safety net untuk junior developer
-- Vite 8 memberikan HDR (Hot Data Replacement) untuk React
+- Zero rewrite when porting to Next.js / React Native — reuse React components
+- Service layer can be used by API routes and Inertia controllers
+- TypeScript provides a safety net for junior developers
+- Vite 8 provides HDR (Hot Data Replacement) for React
 
 ### Cons
-- Learning curve lebih tinggi untuk Fathan & Ihsan (harus belajar React + TS + Inertia)
-- InertiaJS menambah satu layer abstraksi (dibanding Livewire langsung Blade)
-- Development lebih lambat di awal karena learning phase
+- Higher learning curve for Fathan & Ihsan (must learn React + TS + Inertia)
+- InertiaJS adds one abstraction layer (compared to Livewire directly with Blade)
+- Slower development at the start due to learning phase
 
 ### Mitigation
-- Azis sebagai Learning Mentor akan melakukan pair programming dengan Fathan & Ihsan
-- Sprint 1 difokuskan untuk setup dan learning, bukan feature building
-- Learning path disesuaikan: React hooks dulu, Inertia nanti
+- Azis as Learning Mentor will do pair programming with Fathan & Ihsan
+- Sprint 1 is focused on setup and learning, not feature building
+- Learning path adjusted: React hooks first, Inertia later
 
 ---
 

@@ -1,6 +1,6 @@
 # Environment Setup — Development
 
-> Panduan setup environment development untuk SMART Absen SMA UII.
+> Development environment setup guide for SMART Absen SMA UII.
 
 **OS:** Windows 10/11  
 **Stack:** Laragon 6.0, PHP 8.4, PostgreSQL 16, Node.js 20+, Bun
@@ -9,17 +9,17 @@
 
 ## 📋 Prerequisites
 
-### Software Wajib
+### Required Software
 
 | Software | Version | Download |
 |---|---|---|
-| **Laragon** | 6.0 | [laragon.org](https://laragon.org/download/) — pilih versi **Full** |
+| **Laragon** | 6.0 | [laragon.org](https://laragon.org/download/) — choose the **Full** version |
 | **PHP** | 8.4 NTS | Included in Laragon |
 | **Composer** | 2.x | [getcomposer.org](https://getcomposer.org/download/) |
 | **Bun** | latest | `powershell -c "irm bun.sh/install.ps1 | iex"` |
 | **Git** | Latest | [git-scm.com](https://git-scm.com/) |
 | **VS Code** | Latest | [code.visualstudio.com](https://code.visualstudio.com/) |
-| **pgAdmin / DBeaver** | Latest | GUI tools untuk PostgreSQL |
+| **pgAdmin / DBeaver** | Latest | GUI tools for PostgreSQL |
 
 ---
 
@@ -27,72 +27,72 @@
 
 ### 1. Install Laragon
 
-1. Download Laragon 6.0 (versi **Full** direkomendasikan)
-2. Install di `C:\laragon`
+1. Download Laragon 6.0 (**Full** version recommended)
+2. Install at `C:\laragon`
 3. Start Laragon
-4. Klik **Preferences** → Pastikan:
+4. Click **Preferences** → Ensure:
    - PHP Version: 8.4 NTS
    - Apache: Enabled
-   - PostgreSQL: Tambahkan manual (lihat dokumentasi)
+   - PostgreSQL: Add manually (see documentation)
 
-### 2. Setup PostgreSQL di Laragon
+### 2. Setup PostgreSQL in Laragon
 
-PostgreSQL tidak included secara default di Laragon. Ikuti langkah berikut:
+PostgreSQL is not included by default in Laragon. Follow these steps:
 
-1. Download PostgreSQL 16 zip dari [EnterpriseDB](https://www.enterprisedb.com/download-postgresql-binaries)
-2. Extract ke `C:\laragon\bin\postgresql\postgresql-16.x-winx64\`
-3. Buka Laragon > Menu > Tools > Service/Port > PostgreSQL
-4. Inisialisasi database cluster:
+1. Download PostgreSQL 16 zip from [EnterpriseDB](https://www.enterprisedb.com/download-postgresql-binaries)
+2. Extract to `C:\laragon\bin\postgresql\postgresql-16.x-winx64\`
+3. Open Laragon > Menu > Tools > Service/Port > PostgreSQL
+4. Initialize the database cluster:
    ```bash
    "C:\laragon\bin\postgresql\postgresql-16.x-winx64\bin\initdb.exe" -D "C:/laragon/data/postgresql-16" --username=postgres
    ```
-5. Start PostgreSQL dari Laragon
+5. Start PostgreSQL from Laragon
 
-Atau gunakan **NeonDB** langsung untuk development — daftar di [neon.tech](https://neon.tech) dan buat project baru.
+Or use **NeonDB** directly for development — register at [neon.tech](https://neon.tech) and create a new project.
 
 ### 3. Install Bun (Package Manager)
 
-Bun digunakan sebagai package manager untuk frontend (menggantikan npm).
+Bun is used as the package manager for the frontend (replacing npm).
 
 ```bash
 # Install via PowerShell (Admin recommended)
 powershell -c "irm bun.sh/install.ps1 | iex"
 
-# Verifikasi
+# Verify
 bun --version
 ```
 
 ### 4. Install Composer
 
-1. Download Composer Setup dari [getcomposer.org](https://getcomposer.org/download/)
-2. Install dengan default settings
-3. Test di terminal:
+1. Download Composer Setup from [getcomposer.org](https://getcomposer.org/download/)
+2. Install with default settings
+3. Test in terminal:
    ```bash
    composer --version
    ```
 
 ### 5. Install Git & Setup SSH
 
-1. Download Git for Windows dari [git-scm.com](https://git-scm.com/)
-2. Install dengan default settings
+1. Download Git for Windows from [git-scm.com](https://git-scm.com/)
+2. Install with default settings
 3. Setup SSH Key:
    ```bash
    ssh-keygen -t ed25519 -C "your_email@example.com"
    cat ~/.ssh/id_ed25519.pub
    ```
-4. Add ke GitHub:
-   - Buka [github.com/settings/keys](https://github.com/settings/keys)
-   - Klik **New SSH Key**
-   - Paste isi `id_ed25519.pub`
+4. Add to GitHub:
+   - Open [github.com/settings/keys](https://github.com/settings/keys)
+   - Click **New SSH Key**
+   - Paste the contents of `id_ed25519.pub`
    - Save
-5. Test koneksi:
+5. Test connection:
    ```bash
    ssh -T git@github.com
    ```
 
 ### 6. Install VS Code Extensions
 
-Buka VS Code → Extensions → Install:
+Open VS Code → Extensions → Install:
 
 | Extension | Publisher | Purpose |
 |---|---|---|
@@ -126,15 +126,15 @@ php artisan key:generate
 # Install PHP dependencies
 composer install
 
-# Install frontend dependencies (via Bun, bukan npm!)
+# Install frontend dependencies (via Bun, not npm!)
 bun install
 ```
 
 ### 3. Setup Database
 
-**Opsi A — PostgreSQL Lokal (Laragon):**
+**Option A — Local PostgreSQL (Laragon):**
 ```bash
-# Buat database via psql atau pgAdmin
+# Create database via psql or pgAdmin
 psql -U postgres -c "CREATE DATABASE smauii_core;"
 ```
 
@@ -148,9 +148,9 @@ DB_USERNAME=postgres
 DB_PASSWORD=
 ```
 
-**Opsi B — NeonDB (Cloud):**
-1. Daftar di [neon.tech](https://neon.tech)
-2. Buat project → dapatkan connection string
+**Option B — NeonDB (Cloud):**
+1. Register at [neon.tech](https://neon.tech)
+2. Create a project → get connection string
 3. Edit `.env`:
 ```env
 DB_CONNECTION=pgsql
@@ -162,7 +162,7 @@ DB_PASSWORD=xxxxxx
 DB_SSLMODE=require
 ```
 
-### 4. Install Packages Tambahan
+### 4. Install Additional Packages
 
 ```bash
 # Laravel Sanctum (auth)
@@ -184,7 +184,7 @@ php artisan migrate
 php artisan db:seed
 ```
 
-### 6. Jalankan Development Server
+### 6. Run Development Server
 
 ```bash
 # Terminal 1: Vite dev server (frontend hot reload)
@@ -193,7 +193,7 @@ bun run dev
 # Terminal 2: Laravel dev server
 php artisan serve
 
-# Atau via Laragon → auto start di http://smauii-core.test
+# Or via Laragon → auto start at http://smauii-core.test
 ```
 
 ---
@@ -202,7 +202,7 @@ php artisan serve
 
 ### PHP Configuration (`php.ini`)
 
-Lokasi: `C:\laragon\bin\php\php-8.4.22-nts-Win32-vs17-x64\php.ini`
+Location: `C:\laragon\bin\php\php-8.4.22-nts-Win32-vs17-x64\php.ini`
 
 ```ini
 ; Timezone
@@ -226,7 +226,7 @@ extension=fileinfo
 
 ### Apache Virtual Host
 
-Laragon auto-generate virtual host. Pastikan:
+Laragon auto-generates virtual hosts. Ensure:
 
 ```
 DocumentRoot: C:\laragon\www\smauii-core\public
@@ -285,13 +285,13 @@ ssh -T git@github.com
 
 ## 🐛 Troubleshooting
 
-| Masalah | Solusi |
+| Problem | Solution |
 |---|---|
-| **PostgreSQL connection refused** | Pastikan PostgreSQL running di Laragon (Menu > Tools > Service/Port > PostgreSQL) |
-| **pdo_pgsql not found** | Cek `php -m` — pastikan `pdo_pgsql` dan `pgsql` ada. Tambahkan `extension=pdo_pgsql` di php.ini jika belum |
-| **Port 5432 sudah dipakai** | Cek aplikasi lain yang menggunakan port PostgreSQL. Ganti port di `.env` jika perlu |
-| **Composer install gagal** | `composer clear-cache && composer update --no-cache` |
-| **Bun install error** | Jalankan PowerShell sebagai Administrator. Atau install via npm: `npm install -g bun` |
+| **PostgreSQL connection refused** | Make sure PostgreSQL is running in Laragon (Menu > Tools > Service/Port > PostgreSQL) |
+| **pdo_pgsql not found** | Check `php -m` — ensure `pdo_pgsql` and `pgsql` are present. Add `extension=pdo_pgsql` to php.ini if not |
+| **Port 5432 already in use** | Check other applications using the PostgreSQL port. Change port in `.env` if needed |
+| **Composer install fails** | `composer clear-cache && composer update --no-cache` |
+| **Bun install error** | Run PowerShell as Administrator. Or install via npm: `npm install -g bun` |
 | **Permission denied (storage/)** | `icacls storage /grant Users:(OI)(CI)F /T` (PowerShell Admin) |
 | **APP_KEY not set** | `php artisan key:generate` |
 
@@ -299,12 +299,12 @@ ssh -T git@github.com
 
 ## 📚 Next Steps
 
-Setelah environment setup:
+After environment setup:
 
-1. [ ] Baca [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
-2. [ ] Baca [`onboarding.md`](onboarding.md) untuk checklist lengkap
-3. [ ] Ambil first task dari GitHub Project
-4. [ ] Buat branch pertama
+1. [ ] Read [`git-github-workflow.md`](../02-workflow/git-github-workflow.md)
+2. [ ] Read [`onboarding.md`](onboarding.md) for complete checklist
+3. [ ] Take first task from GitHub Project
+4. [ ] Create first branch
 5. [ ] Start coding!
 
 ---

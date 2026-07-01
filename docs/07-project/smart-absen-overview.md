@@ -1,15 +1,15 @@
 # SMART Absen — Project Overview
 
-> Dokumentasi lengkap project SMART Absen SMA UII Yogyakarta.
+> Complete documentation of the SMART Absen SMA UII Yogyakarta project.
 
 ---
 
 ## 🎯 Project Vision
 
-**SMART Absen** — Sistem Presensi Digital SMA UII Yogyakarta
+**SMART Absen** — Digital Attendance System for SMA UII Yogyakarta
 
 **Vision:**
-Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan disiplin dan monitoring kehadiran siswa, guru, dan staff SMA UII Yogyakarta.
+Build a modern, accurate, and real-time attendance system to improve discipline and monitoring of attendance for students, teachers, and staff of SMA UII Yogyakarta.
 
 ---
 
@@ -24,17 +24,17 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 | **Developers** | Fathan Mubina (Frontend), Ihsan (Backend) |
 | **Learning Mentor** | Azis |
 | **Stakeholder** | Pak Mahfud (IT Manager SMA UII) |
-| **Timeline** | 8 minggu (2 bulan) |
-| **Budget** | Rp 8.500.000 |
-| **Start Date** | Juni 2026 |
-| **Target MVP** | Juli 2026 (Minggu 4) |
-| **Production Ready** | Agustus 2026 (Minggu 8) |
+| **Timeline** | 8 weeks (2 months) |
+| **Budget** | Rp 8,500,000 |
+| **Start Date** | June 2026 |
+| **Target MVP** | July 2026 (Week 4) |
+| **Production Ready** | August 2026 (Week 8) |
 
 ---
 
 ## 🏗️ Architecture
 
-### Current Architecture (MVP — Fase 1: Monolith + Inertia)
+### Current Architecture (MVP — Phase 1: Monolith + Inertia)
 
 ```
 ┌─────────────────────────────────────┐
@@ -81,12 +81,12 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 └─────────────────────────────────────┘
 ```
 
-### Target Architecture (Fase 2 — API-Only + Multi Client)
+### Target Architecture (Phase 2 — API-Only + Multi Client)
 
 ```
 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
 │   Web Browser   │  │   Mobile App    │  │   Third-Party   │
-│   (Next.js)     │  │ (RN / Flutter)  │  │   (SIAD, dll)   │
+│   (Next.js)     │  │ (RN / Flutter)  │  │   (SIAD, etc)   │
 └────────┬────────┘  └────────┬────────┘  └────────┬────────┘
          │                    │                     │
          └────────────────────┼─────────────────────┘
@@ -108,7 +108,7 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
                   └───────────────────────┘
 ```
 
-**Porting Strategy:** Service Layer + dual controller (Web + API) sejak Fase 1 — zero rewrite saat migrasi ke Fase 2. Lihat [`ADR-005`](../05-adr/005-porting-strategy.md) untuk detail.
+**Porting Strategy:** Service Layer + dual controller (Web + API) from Phase 1 — zero rewrite when migrating to Phase 2. See [`ADR-005`](../05-adr/005-porting-strategy.md) for details.
 
 ---
 
@@ -117,54 +117,54 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 ### MVP Features (Sprint 1-2)
 
 #### 1. Authentication & Authorization
-- Login dengan email & password
-- Role-based access (Admin, Guru, Siswa, Staff)
+- Login with email & password
+- Role-based access (Admin, Teacher, Student, Staff)
 - Session management
 - Logout
 
-#### 2. Presensi Siswa
-- Form presensi dengan geolokasi
-- Swafoto kamera wajib
-- Validasi radius 50m dari sekolah
-- Validasi waktu (06:00 - 07:30 WIB)
+#### 2. Student Attendance
+- Attendance form with geolocation
+- Camera selfie mandatory
+- Radius validation 50m from school
+- Time validation (06:00 - 07:30 WIB)
 - Status: On Time, Late, Absent
-- Duplicate prevention (1x per hari)
-- Riwayat presensi
+- Duplicate prevention (1x per day)
+- Attendance history
 
-#### 3. Presensi Guru & Staff
-- Similar dengan presensi siswa
-- Tanpa swafoto (opsional)
-- Jadwal mengajar validation
+#### 3. Teacher & Staff Attendance
+- Similar to student attendance
+- Without selfie (optional)
+- Teaching schedule validation
 
 #### 4. Dashboard
-- Dashboard Admin: Statistik lengkap
-- Dashboard Guru: Jadwal mengajar, presensi sendiri
-- Dashboard Siswa: Presensi sendiri, riwayat
+- Admin Dashboard: Complete statistics
+- Teacher Dashboard: Teaching schedule, own attendance
+- Student Dashboard: Own attendance, history
 
-#### 5. Laporan
-- Export presensi per kelas (Excel)
-- Export presensi per siswa (PDF)
-- Filter per periode
+#### 5. Reports
+- Export attendance per class (Excel)
+- Export attendance per student (PDF)
+- Period filter
 
 ---
 
 ### Phase 2 Features (Sprint 3-4)
 
-#### 6. Pengajuan Izin
-- Siswa dapat mengajukan izin (sakit, izin, alfa)
-- Upload surat dokter (jika sakit)
-- Approval wali kelas
-- Notifikasi WhatsApp (opsional)
+#### 6. Leave Application
+- Students can submit leave (sick, permission, absent)
+- Upload medical certificate (if sick)
+- Homeroom teacher approval
+- WhatsApp notification (optional)
 
-#### 7. Jadwal Piket
-- Management jadwal piket
-- Presensi piket
-- Laporan piket
+#### 7. Duty Schedule
+- Duty schedule management
+- Duty attendance
+- Duty reports
 
-#### 8. Kalender Akademik
-- Management hari efektif
-- Management libur
-- Validasi presensi berdasarkan kalender
+#### 8. Academic Calendar
+- Effective days management
+- Holiday management
+- Attendance validation based on calendar
 
 ---
 
@@ -172,24 +172,24 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 
 ```
 Week 1-2  → Sprint 1: Setup & Auth Foundation
-            └─ Sinkronisasi docs, instalasi, setup NeonDB
+            └─ Docs synchronization, installation, NeonDB setup
             └─ Sanctum, Spatie, Service Layer
-            └─ Learning: React dasar, TypeScript, PostgreSQL
+            └─ Learning: React basics, TypeScript, PostgreSQL
 
 Week 3-4  → Sprint 2: Authentication & SSO
             └─ Login/Register, RBAC, Session Management
-            └─ Halaman Profile, Dashboard dasar
+            └─ Profile Page, Basic Dashboard
 
-Week 5-6  → Sprint 3: Presensi Module (MVP)
-            └─ Presensi Siswa (geolokasi + swafoto)
-            └─ Presensi Guru, Dashboard masing-masing role
+Week 5-6  → Sprint 3: Attendance Module (MVP)
+            └─ Student Attendance (geolocation + selfie)
+            └─ Teacher Attendance, Role-specific Dashboards
 
-Week 7-8  → Sprint 4: Laporan & Production
+Week 7-8  → Sprint 4: Reports & Production
             └─ Export Excel/PDF, Admin Panel
             └─ UAT, Bug fixing, Performance, Deployment
 ```
 
-> **Catatan:** Timeline ini merefleksikan reset stack dari Livewire/MySQL ke Inertia+React/PostgreSQL di minggu 1-2. MVP target bergeser ke akhir Sprint 3. Lihat ADR-002-v2 dan ADR-003-v2 untuk detail keputusan.
+> **Note:** This timeline reflects the stack reset from Livewire/MySQL to Inertia+React/PostgreSQL in weeks 1-2. MVP target shifts to end of Sprint 3. See ADR-002-v2 and ADR-003-v2 for decision details.
 
 ---
 
@@ -203,7 +203,7 @@ aksesekolah/ (Monorepo Entrypoint)
 │   ├── frontend/    → webapp (Next.js 14, Sprint 3+)
 │   └── mobile/      → flutter (Mobile app, Backlog)
 │
-├── docs/            → Dokumentasi lengkap
+├── docs/            → Complete documentation
 │   ├── 01-brief-project.md
 │   ├── 02-arsitektur-sistem.md
 │   ├── 03-database-erd.md
@@ -255,7 +255,7 @@ core/ (Backend Laravel)
 | **Product Analyst** | Ahmad Hanif | Requirement, User Story, UAT, Stakeholder Communication |
 | **Frontend Developer** | Fathan Mubina | React, TypeScript, Tailwind CSS, InertiaJS |
 | **Backend Developer** | Ihsan | Laravel API, Database, Validation, Testing |
-| **Learning Mentor** | Azis | Mentoring, Code Review, Konseptor, Debugging Buddy |
+| **Learning Mentor** | Azis | Mentoring, Code Review, Concept Explainer, Debugging Buddy |
 
 ---
 
@@ -264,29 +264,29 @@ core/ (Backend Laravel)
 ### Backend
 - **Framework:** Laravel 13
 - **PHP:** 8.4 NTS
-- **Architecture:** Service Layer (`app/Services/`) — controller tipis
+- **Architecture:** Service Layer (`app/Services/`) — thin controller
 - **Database:** PostgreSQL 16 via NeonDB (production), PostgreSQL 16 (local)
 - **Cache:** Redis 7.0 (optional)
-- **Queue:** Database driver (Redis nanti)
-- **Auth:** Laravel Sanctum (session untuk Inertia, token untuk API)
+- **Queue:** Database driver (Redis later)
+- **Auth:** Laravel Sanctum (session for Inertia, token for API)
 - **RBAC:** Spatie Laravel Permission
 - **Validation:** Form Request
 - **Testing:** PHPUnit + Feature Test
 
-### Frontend (MVP — Fase 1)
+### Frontend (MVP — Phase 1)
 - **Framework:** InertiaJS 3 + React 19 + TypeScript 5.7
 - **Styling:** Tailwind CSS 4
 - **Build:** Vite 8
 - **Package Manager:** Bun
 - **Testing:** Jest + React Testing Library
 
-### Frontend (Fase 2 — Dedicated)
+### Frontend (Phase 2 — Dedicated)
 - **Framework:** Next.js (Web App)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS 4
 - **State:** TanStack Query + React Context
 
-### Mobile (Fase 2 — Dipertimbangkan)
+### Mobile (Phase 2 — Under Consideration)
 - **Option 1:** React Native (reuse React knowledge)
 - **Option 2:** Flutter (cross-platform)
 
@@ -330,7 +330,7 @@ guru
 
 kelas
 ├── id
-├── nama (X-A, XI-IPA-1, dll)
+├── nama (X-A, XI-IPA-1, etc)
 ├── wali_murid_id
 └── timestamps
 
@@ -342,7 +342,7 @@ presensi
 ├── jam_pulang (optional)
 ├── latitude
 ├── longitude
-├── foto (URL ke object storage)
+├── foto (URL to object storage)
 ├── status (ontime, late, absent, izin, sakit, alfa)
 └── timestamps
 ```
@@ -359,14 +359,14 @@ presensi
 
 ### Authorization
 - Role-based access control (RBAC)
-- Policy untuk setiap resource
-- Middleware untuk route protection
+- Policy for each resource
+- Middleware for route protection
 
 ### Data Protection
 - Input validation
 - SQL injection prevention (Eloquent)
 - Mass assignment protection ($fillable)
-- Rate limiting untuk API
+- Rate limiting for API
 
 ---
 
@@ -375,11 +375,11 @@ presensi
 ### Development Metrics
 - Sprint velocity consistency
 - Code coverage > 70%
-- PR review time < 24 jam
+- PR review time < 24 hours
 - Bug rate < 5%
 
 ### Business Metrics
-- Presensi accuracy > 95%
+- Attendance accuracy > 95%
 - System uptime > 99%
 - User satisfaction > 4.0/5.0
 - Admin efficiency (time saved)
@@ -391,12 +391,12 @@ presensi
 ### Staging
 - URL: `staging.smauiiyk.sch.id`
 - Purpose: UAT, Testing
-- Deploy: Setiap merge ke main
+- Deploy: Every merge to main
 
 ### Production
 - URL: `smauiiyk.sch.id`
 - Purpose: Live users
-- Deploy: End of sprint (2 minggu)
+- Deploy: End of sprint (2 weeks)
 
 ---
 
@@ -414,5 +414,5 @@ presensi
 ---
 
 **Next:** [`sprint-1-plan.md`](sprint-1-plan.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

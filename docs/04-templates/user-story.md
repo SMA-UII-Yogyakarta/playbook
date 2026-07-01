@@ -1,6 +1,6 @@
 # User Story Template
 
-> Template untuk Product Analyst dalam menulis user story.
+> Template for Product Analyst writing user stories.
 
 ---
 
@@ -10,7 +10,7 @@
 ## User Story
 
 **ID:** SMART-001  
-**Title:** [Judul singkat]  
+**Title:** [Short title]  
 **Priority:** High/Medium/Low  
 **Sprint:** [Sprint number]
 
@@ -18,23 +18,23 @@
 
 ### Story
 
-**Sebagai** [role/user]  
-**Saya ingin** [fitur/kemampuan]  
-**Agar** [manfaat/business value]
+**As a** [role/user]  
+**I want** [feature/capability]  
+**So that** [benefit/business value]
 
 ---
 
 ### Acceptance Criteria
 
 #### Functional
-- [ ] Kriteria 1 (specific, testable)
-- [ ] Kriteria 2 (specific, testable)
-- [ ] Kriteria 3 (specific, testable)
+- [ ] Criterion 1 (specific, testable)
+- [ ] Criterion 2 (specific, testable)
+- [ ] Criterion 3 (specific, testable)
 
 #### Non-Functional
-- [ ] Performance: Load time < 2 detik
+- [ ] Performance: Load time < 2 seconds
 - [ ] Security: [security requirement]
-- [ ] UX: Responsive di mobile & desktop
+- [ ] UX: Responsive on mobile & desktop
 
 ---
 
@@ -55,20 +55,20 @@
 
 ### Mockup/Wireframe
 
-[Attach link ke Figma/Excalidraw/screenshot]
+[Attach link to Figma/Excalidraw/screenshot]
 
 ---
 
 ### Dependencies
 
-- [ ] Dependency 1 (link ke card/issue)
+- [ ] Dependency 1 (link to card/issue)
 - [ ] Dependency 2
 
 ---
 
 ### Out of Scope
 
-- Fitur yang TIDAK termasuk di story ini:
+- Features NOT included in this story:
   - Item 1
   - Item 2
 ```
@@ -83,7 +83,7 @@
 ## User Story
 
 **ID:** SMART-001  
-**Title:** Login dengan Email & Password  
+**Title:** Login with Email & Password  
 **Priority:** High  
 **Sprint:** 1
 
@@ -91,50 +91,50 @@
 
 ### Story
 
-**Sebagai** guru atau staff SMA UII  
-**Saya ingin** login dengan email dan password  
-**Agar** saya dapat mengakses sistem SMART Absen
+**As a** teacher or staff of SMA UII  
+**I want** to login with email and password  
+**So that** I can access the SMART Absen system
 
 ---
 
 ### Acceptance Criteria
 
 #### Functional
-- [ ] User dapat login dengan email & password valid
-- [ ] User mendapat error "Email atau password salah" jika credentials invalid
-- [ ] User mendapat error validation jika email kosong
-- [ ] User mendapat error validation jika password kosong
-- [ ] User di-redirect ke dashboard setelah login sukses
-- [ ] User dapat logout
+- [ ] User can login with valid email & password
+- [ ] User sees error "Email or password is wrong" if credentials invalid
+- [ ] User sees validation error if email is empty
+- [ ] User sees validation error if password is empty
+- [ ] User is redirected to dashboard after successful login
+- [ ] User can logout
 
 #### Non-Functional
-- [ ] Login page load < 2 detik
-- [ ] Password di-hash di database (bcrypt)
-- [ ] Session timeout setelah 2 jam tidak aktif
-- [ ] Responsive di mobile & desktop
+- [ ] Login page load < 2 seconds
+- [ ] Password hashed in database (bcrypt)
+- [ ] Session timeout after 2 hours of inactivity
+- [ ] Responsive on mobile & desktop
 
 ---
 
 ### Business Rules
 
-1. Password minimal 8 karakter
-2. Password harus mengandung huruf & angka
-3. User dapat reset password via email
-4. Login gagal 5x → account locked 15 menit
+1. Password minimum 8 characters
+2. Password must contain letters & numbers
+3. User can reset password via email
+4. Login failed 5x → account locked for 15 minutes
 
 ---
 
 ### Edge Cases
 
-- Email tidak terdaftar: Show generic error "Email atau password salah"
-- Password lupa: Link ke reset password page
-- Session expired: Redirect ke login dengan message
+- Email not registered: Show generic error "Email or password is wrong"
+- Forgot password: Link to reset password page
+- Session expired: Redirect to login with message
 
 ---
 
 ### Mockup/Wireframe
 
-[Link ke Figma]
+[Link to Figma]
 
 ---
 
@@ -147,19 +147,19 @@
 
 ### Out of Scope
 
-- Login dengan Google SSO (Sprint 3)
-- Login dengan NIP (Sprint 2)
+- Google SSO login (Sprint 3)
+- NIP login (Sprint 2)
 ```
 
 ---
 
-### Example 2: Presensi Siswa
+### Example 2: Student Attendance
 
 ```markdown
 ## User Story
 
 **ID:** SMART-012  
-**Title:** Presensi Siswa dengan Geolokasi & Swafoto  
+**Title:** Student Attendance with Geolocation & Selfie  
 **Priority:** High  
 **Sprint:** 2
 
@@ -167,55 +167,55 @@
 
 ### Story
 
-**Sebagai** siswa SMA UII  
-**Saya ingin** melakukan presensi dengan geolokasi dan swafoto  
-**Agar** kehadiran saya tercatat dengan valid
+**As a** SMA UII student  
+**I want** to do attendance with geolocation and selfie  
+**So that** my attendance is recorded validly
 
 ---
 
 ### Acceptance Criteria
 
 #### Functional
-- [ ] Siswa dapat melihat form presensi di dashboard
-- [ ] Form menampilkan preview kamera untuk swafoto
-- [ ] Form auto-detect geolokasi (latitude, longitude)
-- [ ] Submit presensi berhasil jika geolokasi dalam radius 50m dari sekolah
-- [ ] Submit presensi gagal jika geolokasi di luar radius
-- [ ] Swafoto wajib di-capture sebelum submit
-- [ ] Presensi hanya dapat dilakukan 1x per hari
-- [ ] Siswa dapat melihat riwayat presensi sendiri
+- [ ] Student can see attendance form on dashboard
+- [ ] Form shows camera preview for selfie
+- [ ] Form auto-detects geolocation (latitude, longitude)
+- [ ] Attendance submission succeeds if geolocation within 50m radius of school
+- [ ] Attendance submission fails if geolocation is outside radius
+- [ ] Selfie must be captured before submit
+- [ ] Attendance can only be done 1x per day
+- [ ] Student can view their own attendance history
 
 #### Non-Functional
-- [ ] Camera load < 3 detik
-- [ ] Geolocation detect < 5 detik
-- [ ] Submit presensi < 2 detik
-- [ ] Foto disimpan di object storage (S3)
-- [ ] Responsive di mobile (karena siswa pakai HP)
+- [ ] Camera load < 3 seconds
+- [ ] Geolocation detect < 5 seconds
+- [ ] Attendance submit < 2 seconds
+- [ ] Photo stored in object storage (S3)
+- [ ] Responsive on mobile (because students use phones)
 
 ---
 
 ### Business Rules
 
-1. Radius presensi: 50 meter dari koordinat sekolah (-7.7956, 110.3695)
-2. Waktu presensi: 06:00 - 07:30 WIB (ontime), setelahnya late
-3. Presensi duplicate: Ditolak dengan message "Anda sudah presensi hari ini"
-4. Foto: Min 640x480, max 2MB, format JPG/PNG
-5. Geolokasi: Wajib diaktifkan, jika tidak show error
+1. Attendance radius: 50 meters from school coordinates (-7.7956, 110.3695)
+2. Attendance time: 06:00 - 07:30 WIB (ontime), after that late
+3. Duplicate attendance: Rejected with message "You have already submitted attendance today"
+4. Photo: Min 640x480, max 2MB, format JPG/PNG
+5. Geolocation: Must be enabled, otherwise show error
 
 ---
 
 ### Edge Cases
 
-- GPS tidak akurat (accuracy > 100m): Show warning "Akurasi GPS rendah, coba di tempat terbuka"
-- Kamera tidak accessible: Show error "Akses kamera ditolak, mohon izinkan akses kamera di browser"
-- Internet lambat: Show loading spinner dengan timeout 30 detik
-- Submit gagal: Retry otomatis max 3x
+- GPS inaccurate (accuracy > 100m): Show warning "Low GPS accuracy, try in an open area"
+- Camera not accessible: Show error "Camera access denied, please allow camera access in browser"
+- Slow internet: Show loading spinner with 30 seconds timeout
+- Submit failed: Auto retry max 3x
 
 ---
 
 ### Mockup/Wireframe
 
-[Link ke Figma]
+[Link to Figma]
 
 ---
 
@@ -230,9 +230,9 @@
 
 ### Out of Scope
 
-- Presensi tanpa internet (offline mode) — Sprint 4
+- Attendance without internet (offline mode) — Sprint 4
 - Face recognition — Sprint 5
-- Presensi via WhatsApp bot — Backlog
+- Attendance via WhatsApp bot — Backlog
 ```
 
 ---
@@ -242,12 +242,12 @@
 ### Good User Story Characteristics (INVEST)
 
 ```
-I - Independent (dapat dikembangkan terpisah)
-N - Negotiable (dapat dinegosiasikan)
-V - Valuable (bernilai bisnis)
-E - Estimable (dapat diestimasi)
-S - Small (dapat selesai dalam 1 sprint)
-T - Testable (dapat di-test)
+I - Independent (can be developed separately)
+N - Negotiable (can be negotiated)
+V - Valuable (has business value)
+E - Estimable (can be estimated)
+S - Small (can be completed in 1 sprint)
+T - Testable (can be tested)
 ```
 
 ---
@@ -256,43 +256,43 @@ T - Testable (dapat di-test)
 
 ```gherkin
 Feature: Login
-  Scenario: Login dengan credentials valid
-    Given user ada di halaman login
+  Scenario: Login with valid credentials
+    Given user is on the login page
     When user input email "admin@smauiiyk.sch.id"
     And user input password "Admin123!"
-    And user klik tombol "Login"
-    Then user di-redirect ke dashboard
-    And user melihat welcome message "Selamat datang, Admin"
+    And user clicks "Login" button
+    Then user is redirected to dashboard
+    And user sees welcome message "Welcome, Admin"
 
-  Scenario: Login dengan credentials invalid
-    Given user ada di halaman login
+  Scenario: Login with invalid credentials
+    Given user is on the login page
     When user input email "wrong@email.com"
     And user input password "wrongpass"
-    And user klik tombol "Login"
-    Then user melihat error "Email atau password salah"
-    And user tetap di halaman login
+    And user clicks "Login" button
+    Then user sees error "Email or password is wrong"
+    And user stays on login page
 ```
 
 ---
 
 ### Common Mistakes
 
-**Buruk:**
+**Bad:**
 ```
-Sebagai user
-Saya ingin login
-Agar bisa pakai aplikasi
+As a user
+I want to login
+So that I can use the app
 ```
 
-**Baik:**
+**Good:**
 ```
-Sebagai guru SMA UII
-Saya ingin login dengan email & password
-Agar dapat mengakses SMART Absen untuk mengelola presensi
+As a SMA UII teacher
+I want to login with email & password
+So that I can access SMART Absen to manage attendance
 ```
 
 ---
 
 **Next:** [`github-issue.md`](github-issue.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Ahmad Hanif

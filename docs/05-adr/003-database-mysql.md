@@ -1,17 +1,17 @@
 # ADR 003: MySQL Database [SUPERSEDED]
 
 **Date:** 2026-06-22  
-**Status:** ❌ **Superseded** — oleh [ADR-003-v2](003-v2-database-postgresql.md) pada 2026-06-30  
+**Status:** ❌ **Superseded** — by [ADR-003-v2](003-v2-database-postgresql.md) on 2026-06-30  
 **Deciders:** Sandikodev
 
 ---
 
 ## Context
 
-Kita perlu memutuskan database untuk SMART Absen:
-- Opsi 1: MySQL 8.0
-- Opsi 2: PostgreSQL 15
-- Opsi 3: SQLite (development only)
+We need to decide the database for SMART Absen:
+- Option 1: MySQL 8.0
+- Option 2: PostgreSQL 15
+- Option 3: SQLite (development only)
 
 ## Decision (Original — Not Applied)
 
@@ -23,16 +23,16 @@ Kita perlu memutuskan database untuk SMART Absen:
 
 ### MySQL 8.0
 
-**Alasan:**
-1. **Team familiarity** — Ihsan & Fathan sudah familiar MySQL
-2. **Laragon default** — Easy setup di Windows
-3. **Performance** — Cukup untuk scale SMA UII (ribuan siswa)
-4. **Ecosystem** — Banyak tooling (phpMyAdmin, Workbench)
+**Reasons:**
+1. **Team familiarity** — Ihsan & Fathan are already familiar with MySQL
+2. **Laragon default** — Easy setup on Windows
+3. **Performance** — Sufficient for SMA UII scale (thousands of students)
+4. **Ecosystem** — Many tools (phpMyAdmin, Workbench)
 5. **Cost** — Free, open-source
 
-### SQLite untuk Testing
+### SQLite for Testing
 
-**Alasan:**
+**Reasons:**
 1. **Fast** — In-memory, no I/O
 2. **Simple** — No setup required
 3. **Laravel default** — `php artisan test` ready
@@ -65,8 +65,8 @@ DB_DATABASE=smauii_production
 
 ## Migration Path
 
-Jika perlu migrate ke PostgreSQL nanti:
-- Change `DB_CONNECTION` di `.env`
+If migration to PostgreSQL is needed later:
+- Change `DB_CONNECTION` in `.env`
 - Adjust data types (MySQL → PostgreSQL)
 - Test thoroughly
 

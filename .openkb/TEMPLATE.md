@@ -1,9 +1,9 @@
 # OpenKB — Playbook Knowledge Base
 
-> Struktur `.openkb/` untuk playbook PT Koneksi Jaringan Indonesia.
-> Copy dari template di `aksesekolah/.openkb/TEMPLATE.md` jika perlu referensi lengkap.
+> `.openkb/` structure for the PT Koneksi Jaringan Indonesia playbook.
+> Copy from the template at `aksesekolah/.openkb/TEMPLATE.md` if you need the full reference.
 
-## Struktur
+## Structure
 
 ```
 .openkb/
@@ -15,6 +15,6 @@
 └── PERSONAL/     (gitignored)
 ```
 
-## Catatan
-- **SHARED/**: Glossary istilah playbook, referensi eksternal, log keputusan
-- Lihat `aksesekolah/.openkb/TEMPLATE.md` untuk panduan setup personal
+## Notes
+- **SHARED/**: Playbook glossary, external references, decision log
+- See `aksesekolah/.openkb/TEMPLATE.md` for personal setup guide

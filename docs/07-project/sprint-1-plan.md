@@ -1,15 +1,15 @@
 # Sprint 1 Plan — Authentication & SSO
 
-> Sprint 1 (Minggu 1-2): Setup & Authentication Foundation
+> Sprint 1 (Weeks 1-2): Setup & Authentication Foundation
 
 ---
 
 ## 📋 Sprint Overview
 
-**Duration:** 2 minggu  
-**Start Date:** 30 Juni 2026  
-**End Date:** 11 Juli 2026  
-**Sprint Goal:** Stack ter-install & running, Learning path berjalan, Auth dasar berfungsi
+**Duration:** 2 weeks  
+**Start Date:** June 30, 2026  
+**End Date:** July 11, 2026  
+**Sprint Goal:** Stack installed & running, Learning path underway, Basic auth working
 
 **Theme:** "Reset & Foundation"
 
@@ -18,17 +18,17 @@
 ## 🎯 Sprint Goal
 
 **Objective:**
-Setup foundation: install stack baru (Bun, PostgreSQL/NeonDB, Sanctum, Spatie), sinkronisasi dokumentasi, dan membangun auth dasar.
+Setup foundation: install new stack (Bun, PostgreSQL/NeonDB, Sanctum, Spatie), synchronize documentation, and build basic auth.
 
 **Key Results:**
-- [ ] Semua dokumentasi (playbook, aksesekolah, core) sinkron dengan stack aktual
-- [ ] Bun, Vite 8, InertiaJS + React berjalan di local
-- [ ] PostgreSQL/NeonDB terhubung
-- [ ] Laravel Sanctum + Spatie Permission ter-install
-- [ ] Login dengan email & password berfungsi (Inertia + React)
-- [ ] Logout berfungsi
-- [ ] Role-based access control (RBAC) berfungsi
-- [ ] Fathan & Ihsan paham dasar React/TypeScript
+- [ ] All documentation (playbook, aksesekolah, core) synchronized with actual stack
+- [ ] Bun, Vite 8, InertiaJS + React running locally
+- [ ] PostgreSQL/NeonDB connected
+- [ ] Laravel Sanctum + Spatie Permission installed
+- [ ] Login with email & password working (Inertia + React)
+- [ ] Logout working
+- [ ] Role-based access control (RBAC) working
+- [ ] Fathan & Ihsan understand React/TypeScript basics
 - [ ] Azis onboarding completed
 
 ---
@@ -47,53 +47,53 @@ Setup foundation: install stack baru (Bun, PostgreSQL/NeonDB, Sanctum, Spatie), 
 
 ## 📦 User Stories
 
-### US-001: Login dengan Email & Password (5 pts)
+### US-001: Login with Email & Password (5 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai guru atau staff SMA UII
-Saya ingin login dengan email dan password
-Agar saya dapat mengakses sistem SMART Absen
+As a teacher or staff of SMA UII
+I want to login with email and password
+So that I can access the SMART Absen system
 ```
 
 **Acceptance Criteria:**
 ```gherkin
-Scenario: Login dengan credentials valid
-  Given user ada di halaman login
-  When user input email valid
-  And user input password valid
-  Then user di-redirect ke dashboard
-  And user melihat welcome message
+Scenario: Login with valid credentials
+  Given user is on the login page
+  When user input valid email
+  And user input valid password
+  Then user is redirected to dashboard
+  And user sees welcome message
 
-Scenario: Login dengan credentials invalid
-  Given user ada di halaman login
-  When user input email atau password salah
-  Then user melihat error "Email atau password salah"
-  And user tetap di halaman login
+Scenario: Login with invalid credentials
+  Given user is on the login page
+  When user inputs wrong email or password
+  Then user sees error "Email or password is wrong"
+  And user stays on login page
 ```
 
 **Tasks:**
 ```
 Backend (Ihsan):
 - [ ] Issue #1: Setup Laravel Sanctum + Spatie Permission
-- [ ] Issue #2: Buat User model + migration (PostgreSQL)
-- [ ] Issue #3: Buat AuthService (login, register, logout — Service Layer)
+- [ ] Issue #2: Create User model + migration (PostgreSQL)
+- [ ] Issue #3: Create AuthService (login, register, logout — Service Layer)
 - [ ] Issue #4: Login Web controller (Controllers/Web/AuthController)
-- [ ] Issue #5: Unit test untuk authentication
+- [ ] Issue #5: Unit test for authentication
 
 Frontend (Fathan):
 - [ ] Issue #6: Login page (React + Inertia + Tailwind)
-- [ ] Issue #7: TypeScript types untuk auth (User, LoginPayload, AuthResponse)
+- [ ] Issue #7: TypeScript types for auth (User, LoginPayload, AuthResponse)
 - [ ] Issue #8: Form validation + error display
-- [ ] Issue #9: Redirect setelah login (Inertia router)
+- [ ] Issue #9: Redirect after login (Inertia router)
 - [ ] Issue #10: Responsive design (mobile-first)
 
 Learning Mentor (Azis):
-- [ ] Issue #L1: Fasilitasi setup environment Fathan & Ihsan
-- [ ] Issue #L2: Pair programming React dasar + TypeScript untuk Fathan
-- [ ] Issue #L3: Pair programming Service Layer + Sanctum untuk Ihsan
+- [ ] Issue #L1: Facilitate environment setup for Fathan & Ihsan
+- [ ] Issue #L2: Pair programming basic React + TypeScript for Fathan
+- [ ] Issue #L3: Pair programming Service Layer + Sanctum for Ihsan
 ```
 
 **Dependencies:** Setup environment (Bun, PostgreSQL, Vite)  
@@ -103,35 +103,35 @@ Learning Mentor (Azis):
 
 ### US-002: Logout (3 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai user yang sudah login
-Saya ingin logout dari sistem
-Agar sesi saya berakhir dan aman
+As a logged-in user
+I want to logout from the system
+So that my session ends and is secure
 ```
 
 **Acceptance Criteria:**
 ```gherkin
-Scenario: Logout berhasil
-  Given user sudah login
-  When user klik tombol "Logout"
-  Then sesi user di-destroy
-  And user di-redirect ke halaman login
-  And user melihat message "Anda telah logout"
+Scenario: Logout successful
+  Given user is logged in
+  When user clicks "Logout" button
+  Then user session is destroyed
+  And user is redirected to login page
+  And user sees message "You have logged out"
 ```
 
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #11: Tambah method logout di AuthService
+- [ ] Issue #11: Add logout method in AuthService
 - [ ] Issue #12: Clear session + revoke token (Sanctum)
 
 Frontend (Fathan):
-- [ ] Issue #13: Logout button di navbar (React component)
+- [ ] Issue #13: Logout button in navbar (React component)
 - [ ] Issue #14: Confirmation modal (optional)
-- [ ] Issue #15: Redirect setelah logout via Inertia
+- [ ] Issue #15: Redirect after logout via Inertia
 ```
 
 **Dependencies:** US-001 ✅  
@@ -141,46 +141,46 @@ Frontend (Fathan):
 
 ### US-003: Role-Based Access Control (5 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai system administrator
-Saya ingin membatasi akses berdasarkan role user
-Agar setiap user hanya dapat mengakses fitur yang sesuai
+As a system administrator
+I want to restrict access based on user role
+So that each user can only access appropriate features
 ```
 
 **Acceptance Criteria:**
 ```gherkin
-Scenario: Admin dapat akses admin panel
-  Given user dengan role "admin" sudah login
-  When user akses route "/admin"
-  Then user dapat akses halaman admin
+Scenario: Admin can access admin panel
+  Given user with role "admin" is logged in
+  When user accesses route "/admin"
+  Then user can access admin page
 
-Scenario: Siswa tidak dapat akses admin panel
-  Given user dengan role "siswa" sudah login
-  When user akses route "/admin"
-  Then user mendapat error 403 Forbidden
+Scenario: Student cannot access admin panel
+  Given user with role "siswa" is logged in
+  When user accesses route "/admin"
+  Then user gets 403 Forbidden error
 ```
 
 **Roles:**
 ```
 admin  → Full access
-guru   → Dashboard guru, presensi sendiri, jadwal mengajar
-siswa  → Dashboard siswa, presensi sendiri, riwayat
-staff  → Dashboard staff, laporan
+guru   → Teacher dashboard, own attendance, teaching schedule
+siswa  → Student dashboard, own attendance, history
+staff  → Staff dashboard, reports
 ```
 
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #16: Setup Spatie Permission — seeder role & permission
+- [ ] Issue #16: Setup Spatie Permission — role & permission seeder
 - [ ] Issue #17: Middleware role + permission (Spatie middleware)
-- [ ] Issue #18: Policy untuk setiap resource
-- [ ] Issue #19: Unit test untuk role access
+- [ ] Issue #18: Policy for each resource
+- [ ] Issue #19: Unit test for role access
 
 Frontend (Fathan):
-- [ ] Issue #20: Hide/show menu berdasarkan role (Inertia shared data)
+- [ ] Issue #20: Hide/show menu based on role (Inertia shared data)
 - [ ] Issue #21: 403 page (React component)
 ```
 
@@ -191,20 +191,20 @@ Frontend (Fathan):
 
 ## 📅 Sprint Schedule
 
-> **Catatan:** Sprint 1 difokuskan pada setup stack baru dan learning. Fathan & Ihsan perlu waktu untuk adaptasi ke React/TypeScript/PostgreSQL.
+> **Note:** Sprint 1 is focused on new stack setup and learning. Fathan & Ihsan need time to adapt to React/TypeScript/PostgreSQL.
 
 ### Week 1 — Setup & Learning
 
 ```
 Monday (Day 1):
-├─ 09:00-10:30 → Sprint Planning Meeting (semua)
+├─ 09:00-10:30 → Sprint Planning Meeting (all)
 ├─ 10:30-12:00 → Install Bun, setup Vite + Inertia + React (Fathan + Azis)
 ├─ 13:00-15:00 → Setup PostgreSQL + NeonDB + Sanctum + Spatie (Ihsan + Azis)
 ├─ 15:00-17:00 → Learning: React hooks + TypeScript (Fathan + Azis)
 
 Tuesday (Day 2):
 ├─ 09:00-12:00 → Learning: Service Layer + Eloquent PostgreSQL (Ihsan + Azis)
-├─ 13:00-17:00 → Learning: React component + Tailwind (Fathan + Azis)
+├─ 13:00-17:00 → Learning: React components + Tailwind (Fathan + Azis)
 
 Wednesday (Day 3):
 ├─ 09:00-12:00 → AuthService + Sanctum setup (Ihsan)
@@ -215,8 +215,8 @@ Thursday (Day 4):
 ├─ 13:00-17:00 → Login form + validation (Fathan)
 
 Friday (Day 5):
-├─ 09:00-12:00 → Code review minggu 1
-├─ 13:00-17:00 → Sinkronisasi dokumentasi (Sandikodev)
+├─ 09:00-12:00 → Code review week 1
+├─ 13:00-17:00 → Documentation synchronization (Sandikodev)
 ```
 
 ### Week 2 — Auth Core
@@ -284,21 +284,21 @@ Friday (Day 10):
 ## UAT Checklist — Authentication
 
 ### Login
-- [ ] Login page loads (< 2 detik)
+- [ ] Login page loads (< 2 seconds)
 - [ ] Form validation (email required, password required)
-- [ ] Login dengan valid credentials → dashboard
-- [ ] Login dengan invalid credentials → error message
-- [ ] Responsive di mobile
+- [ ] Login with valid credentials → dashboard
+- [ ] Login with invalid credentials → error message
+- [ ] Responsive on mobile
 
 ### Logout
-- [ ] Logout button visible setelah login
-- [ ] Klik logout → redirect ke login
-- [ ] Session destroyed (tidak bisa akses dashboard tanpa login)
+- [ ] Logout button visible after login
+- [ ] Click logout → redirect to login
+- [ ] Session destroyed (cannot access dashboard without login)
 
 ### Role Access
-- [ ] Admin dapat akses /admin
-- [ ] Siswa tidak dapat akses /admin (403)
-- [ ] Menu sesuai role
+- [ ] Admin can access /admin
+- [ ] Student cannot access /admin (403)
+- [ ] Menu matches role
 ```
 
 ---
@@ -306,8 +306,8 @@ Friday (Day 10):
 ## 📊 Definition of Ready
 
 ```markdown
-✅ User story lengkap
-✅ Acceptance criteria jelas & testable
+✅ User story complete
+✅ Acceptance criteria clear & testable
 ✅ Technical breakdown done
 ✅ Dependencies resolved
 ✅ Story points assigned
@@ -318,11 +318,11 @@ Friday (Day 10):
 ## 📊 Definition of Done
 
 ```markdown
-✅ Code complete (semua task selesai)
+✅ Code complete (all tasks completed)
 ✅ Unit test written (>70% coverage)
 ✅ Feature test written
 ✅ Code review approved (Sandikodev)
-✅ PR merged ke main
+✅ PR merged to main
 ✅ UAT passed (Ahmad Hanif)
 ✅ Deploy staging
 ✅ No critical/open bugs
@@ -336,8 +336,8 @@ Friday (Day 10):
 | Risk | Impact | Probability | Mitigation |
 |---|---|---|---|
 | Sanctum setup complex | Medium | Low | Sandikodev pair programming |
-| Role logic bug | High | Medium | Unit test comprehensive |
-| UI tidak responsive | Medium | Low | Early testing di multiple devices |
+| Role logic bug | High | Medium | Comprehensive unit test |
+| UI not responsive | Medium | Low | Early testing on multiple devices |
 | UAT finding critical bug | High | Low | Early UAT (Day 8) |
 
 ---
@@ -346,10 +346,10 @@ Friday (Day 10):
 
 **Sprint Success:**
 ```
-✅ Semua user story completed (13/13 pts)
+✅ All user stories completed (13/13 pts)
 ✅ UAT passed (no critical bugs)
 ✅ Deploy staging successful
-✅ Velocity tracked untuk Sprint 2
+✅ Velocity tracked for Sprint 2
 ```
 
 **Individual Success:**
@@ -369,39 +369,39 @@ Ihsan:
 
 ## 📞 Daily Standup Schedule
 
-**Time:** 09:00 WIB (setiap hari)  
-**Duration:** 15 menit  
+**Time:** 09:00 WIB (every day)  
+**Duration:** 15 minutes  
 **Channel:** WhatsApp Group
 
 **Format:**
 ```
 📅 Daily Standup — Day [X]
-👤 [Nama]
+👤 [Name]
 
-✅ Kemarin:
+✅ Yesterday:
 - Task 1
 - Task 2
 
-🎯 Hari ini:
+🎯 Today:
 - Task 1
 - Task 2
 
 🚫 Blocker:
-- [Deskripsi atau "None"]
+- [Description or "None"]
 ```
 
 ---
 
 ## 🧑‍🏫 Learning Support — OpenKB Integration
 
-Sprint 1 berjalan paralel dengan learning journey tim junior. **Learning Mentor (Azis)** memfasilitasi proses belajar.
+Sprint 1 runs parallel with the junior team's learning journey. **Learning Mentor (Azis)** facilitates the learning process.
 
 ### Learning Path Sprint 1
 
-| Developer | Fase OpenKB | Topik | Link ke Dokumen |
+| Developer | OpenKB Phase | Topic | Link to Document |
 |-----------|-------------|-------|-----------------|
 | **Ihsan** (Backend) | FASE-06 | Laravel Deep Dive | [`journey/FASE-06-LARAVEL-DEEP-DIVE/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-06-LARAVEL-DEEP-DIVE) |
-|  | 06-03 | Routing Web PHP | [06-03-routing-web-php.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-03-routing-web-php.md) |
+|  | 06-03 | PHP Web Routing | [06-03-routing-web-php.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-03-routing-web-php.md) |
 |  | 06-04 | Controller & Request | [06-04-controller-dan-request.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-04-controller-dan-request.md) |
 |  | 06-05 | Model & Eloquent ORM | [06-05-model-dan-eloquent-orm.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-05-model-dan-eloquent-orm.md) |
 |  | 06-07 | Middleware & Auth | [06-07-middleware-dan-auth.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-07-middleware-dan-auth.md) |
@@ -409,18 +409,18 @@ Sprint 1 berjalan paralel dengan learning journey tim junior. **Learning Mentor 
 |  | 06-06 | Blade Template (email/notification only) | [06-06-blade-template-engine.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-06-blade-template-engine.md) |
 |  | FASE-12 | React + TypeScript + Inertia | [`journey/FASE-12-REACT-TS-INERTIA/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-12-REACT-TS-INERTIA) |
 |  | 12-01 | React Fundamentals + Hooks | [12-01-react-hooks.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-01-react-hooks.md) |
-|  | 12-02 | TypeScript untuk React | [12-02-typescript-react.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-02-typescript-react.md) |
+|  | 12-02 | TypeScript for React | [12-02-typescript-react.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-02-typescript-react.md) |
 |  | 12-03 | InertiaJS + React Setup | [12-03-inertia-react.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-03-inertia-react.md) |
 |  | 12-04 | Tailwind CSS 4 + Vite 8 | [12-04-tailwind-vite.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-04-tailwind-vite.md) |
-| **Azis** (Mentor) | FASE-10 | Infrastruktur | [`journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT) |
-|  | 10-03 | Laragon di Windows | [10-03-laragon-di-windows.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md) |
+| **Azis** (Mentor) | FASE-10 | Infrastructure | [`journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT) |
+|  | 10-03 | Laragon on Windows | [10-03-laragon-di-windows.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md) |
 |  | FASE-11 | Tools & Workflow | [`journey/FASE-11-TOOLS-DAN-WORKFLOW/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-11-TOOLS-DAN-WORKFLOW) |
 |  | 11-04 | Artisan CLI | [11-04-artisan-cli.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-11-TOOLS-DAN-WORKFLOW/11-04-artisan-cli.md) |
 |  | 11-05 | Tinker & REPL | [11-05-tinker-dan-repl.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-11-TOOLS-DAN-WORKFLOW/11-05-tinker-dan-repl.md) |
 
 ### Mentor Support Schedule
 
-| Session | Waktu | Topik | Led by |
+| Session | Time | Topic | Led by |
 |---------|-------|-------|--------|
 | **Environment Setup** | Day 1 | Laragon, database, Git, SSH | Azis |
 | **Laravel Lifecycle** | Day 2 | Request flow, MVC, middleware | Azis |
@@ -442,7 +442,7 @@ Junior (Fathan/Ihsan)
     ├── Architecture/Decision
     │   └── → Sandikodev (PM/Senior)
     │
-    └── Blocker > 1 hari
+    └── Blocker > 1 day
         └── → Sandikodev (PM/Senior)
 ```
 
@@ -464,5 +464,5 @@ Junior (Fathan/Ihsan)
 ---
 
 **Next:** [`sprint-2-plan.md`](sprint-2-plan.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

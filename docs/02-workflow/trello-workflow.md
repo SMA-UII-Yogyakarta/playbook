@@ -1,18 +1,18 @@
 # Trello Workflow — Product Management
 
-> Panduan menggunakan Trello untuk product management SMART Absen SMA UII.
+> Guide to using Trello for product management at SMART Absen SMA UII.
 
 ---
 
 ## 🎯 Purpose
 
-Trello adalah **Source of Truth untuk Product Management**:
+Trello is the **Source of Truth for Product Management**:
 - Product roadmap
 - Sprint planning
 - Requirement tracking
 - Stakeholder feedback
 
-**GitHub Project** adalah **Source of Truth untuk Engineering**:
+**GitHub Project** is the **Source of Truth for Engineering**:
 - Technical task
 - Code implementation
 - PR tracking
@@ -26,7 +26,7 @@ Trello adalah **Source of Truth untuk Product Management**:
 
 **URL:** [`https://trello.com/b/BHXA6ZcR/smart-absen-smauii`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii) (invite-only)
 
-**Kolom:**
+**Columns:**
 
 ```
 📌 Q2 2026 (Planned)
@@ -35,36 +35,36 @@ Trello adalah **Source of Truth untuk Product Management**:
 ✅ Released
 ```
 
-**Level:** Epic / Feature (bukan task teknis)
+**Level:** Epic / Feature (not technical tasks)
 
-**Contoh Card:**
+**Example Card:**
 
 ```
 ┌─────────────────────────────────────┐
-│ Presensi Siswa                      │
+│ Student Attendance                  │
 ├─────────────────────────────────────┤
-│ • Presensi dengan geolokasi         │
-│ • Swafoto kamera                    │
-│ • Validasi triple-layer             │
-│ • Riwayat presensi                  │
+│ • Attendance with geolocation       │
+│ • Camera selfie                     │
+│ • Triple-layer validation           │
+│ • Attendance history                │
 └─────────────────────────────────────┘
 ```
 
 **Card Detail:**
 ```markdown
 ## Description
-Fitur presensi untuk siswa dengan validasi lokasi dan swafoto.
+Attendance feature for students with location validation and selfie photo.
 
 ## Business Value
-- Memudahkan monitoring kehadiran siswa
-- Mencegah absensi titip
+- Simplifies student attendance monitoring
+- Prevents proxy attendance
 - Real-time tracking
 
 ## Acceptance Criteria
-- Siswa dapat presensi via web
-- Validasi geolokasi (radius 50m dari sekolah)
-- Swafoto wajib dengan face detection
-- Presensi hanya 1x per hari
+- Students can check in via web
+- Geolocation validation (50m radius from school)
+- Mandatory selfie with face detection
+- Attendance only once per day
 
 ## Dependencies
 - SSO (Authentication)
@@ -75,7 +75,7 @@ Fitur presensi untuk siswa dengan validasi lokasi dan swafoto.
 Pak Mahfud (SMA UII)
 
 ## Timeline
-Target: Sprint 2 (Minggu 3-4)
+Target: Sprint 2 (Weeks 3-4)
 ```
 
 ---
@@ -84,7 +84,7 @@ Target: Sprint 2 (Minggu 3-4)
 
 **URL:** [`https://trello.com/b/BHXA6ZcR/smart-absen-smauii`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii) (invite-only)
 
-**Kolom:**
+**Columns:**
 
 ```
 📋 Product Backlog
@@ -95,13 +95,13 @@ Target: Sprint 2 (Minggu 3-4)
 ✅ Done
 ```
 
-**Level:** Task per Sprint (2 minggu)
+**Level:** Task per Sprint (2 weeks)
 
-**Contoh Card:**
+**Example Card:**
 
 ```
 ┌─────────────────────────────────────┐
-│ [FE-01] Halaman Login               │
+│ [FE-01] Login Page                  │
 ├─────────────────────────────────────┤
 │ Assignee: Fathan                    │
 │ Sprint: 1                           │
@@ -117,69 +117,69 @@ Target: Sprint 2 (Minggu 3-4)
 
 | Label | Color | Meaning |
 |---|---|---|
-| `🔥 Critical` | Red | Harus selesai sprint ini |
-| `⚠️ High` | Orange | Prioritas tinggi |
+| `🔥 Critical` | Red | Must be completed this sprint |
+| `⚠️ High` | Orange | High priority |
 | `📌 Medium` | Yellow | Normal priority |
-| `🐌 Low` | Green | Dapat ditunda |
+| `🐌 Low` | Green | Can be postponed |
 
 ### Type Labels
 
 | Label | Color | Meaning |
 |---|---|---|
-| `📱 Frontend` | Blue | Task frontend |
-| `⚙️ Backend` | Purple | Task backend |
+| `📱 Frontend` | Blue | Frontend task |
+| `⚙️ Backend` | Purple | Backend task |
 | `🎨 UI/UX` | Pink | Design task |
-| `📄 Docs` | Gray | Dokumentasi |
+| `📄 Docs` | Gray | Documentation |
 | `🐛 Bug` | Red | Bug fix |
 
 ### Sprint Labels
 
 | Label | Color | Meaning |
 |---|---|---|
-| `Sprint 1` | Blue | Minggu 1-2 |
-| `Sprint 2` | Green | Minggu 3-4 |
-| `Sprint 3` | Orange | Minggu 5-6 |
-| `Sprint 4` | Purple | Minggu 7-8 |
+| `Sprint 1` | Blue | Weeks 1-2 |
+| `Sprint 2` | Green | Weeks 3-4 |
+| `Sprint 3` | Orange | Weeks 5-6 |
+| `Sprint 4` | Purple | Weeks 7-8 |
 
 ---
 
 ## 📝 Card Workflow
 
-### 1. Card Dibuat (Ahmad Hanif)
+### 1. Card Created (Ahmad Hanif)
 
 **PIC:** Ahmad Hanif
 
-**Aktivitas:**
-- Riset requirement
-- Tulis user story
+**Activities:**
+- Research requirements
+- Write user story
 - Define acceptance criteria
-- Add ke kolom `Product Backlog`
+- Add to `Product Backlog` column
 
 **Checklist:**
 ```markdown
 ## Requirement Checklist
-- [ ] User story jelas
+- [ ] User story is clear
 - [ ] Acceptance criteria testable
-- [ ] Business value terdefinisi
+- [ ] Business value defined
 - [ ] Stakeholder approved
 ```
 
 ---
 
-### 2. Card di-Review (Sandikodev)
+### 2. Card Reviewed (Sandikodev)
 
 **PIC:** Sandikodev
 
-**Aktivitas:**
+**Activities:**
 - Review requirement clarity
-- Breakdown jadi technical task
+- Break down into technical tasks
 - Estimate effort (Story Points)
-- Move ke `Ready for Dev` jika siap
+- Move to `Ready for Dev` if ready
 
 **Checklist:**
 ```markdown
 ## Technical Review
-- [ ] Requirement jelas (tidak ambigu)
+- [ ] Requirement is clear (not ambiguous)
 - [ ] Acceptance criteria testable
 - [ ] Technical feasibility confirmed
 - [ ] Dependencies identified
@@ -188,24 +188,24 @@ Target: Sprint 2 (Minggu 3-4)
 
 ---
 
-### 3. Developer Ambil Task (Fathan/Ihsan)
+### 3. Developer Takes Task (Fathan/Ihsan)
 
 **PIC:** Developer (Fathan/Ihsan)
 
-**Aktivitas:**
-- Assign nama ke card
-- Move ke `In Progress`
-- Buat GitHub Issue (link di card)
-- Mulai coding
+**Activities:**
+- Assign name to card
+- Move to `In Progress`
+- Create GitHub Issue (link in card)
+- Start coding
 
 **Checklist:**
 ```markdown
 ## Development Checklist
-- [ ] GitHub Issue dibuat
-- [ ] Branch dibuat
+- [ ] GitHub Issue created
+- [ ] Branch created
 - [ ] Coding in progress
 - [ ] Self-test done
-- [ ] PR dibuat
+- [ ] PR created
 ```
 
 **Update Card:**
@@ -223,10 +223,10 @@ Target: Sprint 2 (Minggu 3-4)
 
 **PIC:** Sandikodev
 
-**Aktivitas:**
-- Review PR di GitHub
-- Approve atau request changes
-- Move card ke `UAT / Testing` jika PR merged
+**Activities:**
+- Review PR on GitHub
+- Approve or request changes
+- Move card to `UAT / Testing` if PR merged
 
 **Checklist:**
 ```markdown
@@ -244,20 +244,20 @@ Target: Sprint 2 (Minggu 3-4)
 
 **PIC:** Ahmad Hanif
 
-**Aktivitas:**
-- Test di staging environment
-- Validasi acceptance criteria
-- Approve atau report bug
-- Move ke `Done` jika approved
+**Activities:**
+- Test in staging environment
+- Validate acceptance criteria
+- Approve or report bug
+- Move to `Done` if approved
 
 **Checklist:**
 ```markdown
 ## UAT Checklist
-- [ ] Semua acceptance criteria terpenuhi
+- [ ] All acceptance criteria met
 - [ ] No critical bug
-- [ ] UI/UX sesuai ekspektasi
-- [ ] Tested di staging
-- [ ] Stakeholder demo (jika perlu)
+- [ ] UI/UX meets expectations
+- [ ] Tested in staging
+- [ ] Stakeholder demo (if needed)
 ```
 
 ---
@@ -266,31 +266,31 @@ Target: Sprint 2 (Minggu 3-4)
 
 **PIC:** Sandikodev
 
-**Aktivitas:**
+**Activities:**
 - Update Trello card
-- Add ke Release Notes (jika sprint end)
-- Deploy ke production (jika scheduled)
+- Add to Release Notes (if sprint end)
+- Deploy to production (if scheduled)
 
 ---
 
 ## 📊 Definition of Ready (DoR)
 
-Card boleh pindah dari `Backlog` → `Ready for Dev` jika:
+Card may move from `Backlog` → `Ready for Dev` if:
 
 ```markdown
 ## Definition of Ready
 
-✅ User Story format lengkap:
-   - "Sebagai [role]..."
-   - "Saya ingin [fitur]..."
-   - "Agar [manfaat]..."
+✅ User Story format complete:
+   - "As a [role]..."
+   - "I want [feature]..."
+   - "So that [benefit]..."
 
-✅ Acceptance Criteria jelas:
+✅ Acceptance Criteria clear:
    - Specific
    - Measurable
    - Testable
 
-✅ Business value terdefinisi
+✅ Business value defined
 
 ✅ Dependencies identified
 
@@ -303,35 +303,35 @@ Card boleh pindah dari `Backlog` → `Ready for Dev` jika:
 
 ## 📊 Definition of Done (DoD)
 
-Card boleh pindah dari `Testing` → `Done` jika:
+Card may move from `Testing` → `Done` if:
 
 ```markdown
 ## Definition of Done
 
 ✅ Code complete
 
-✅ Unit test hijau (>70% coverage)
+✅ Unit test green (>70% coverage)
 
-✅ Code review approved (minimal 1)
+✅ Code review approved (minimum 1)
 
-✅ PR merged ke main
+✅ PR merged to main
 
 ✅ UAT passed (Ahmad Hanif)
 
 ✅ No critical/open bugs
 
-✅ Dokumentasi updated (jika perlu)
+✅ Documentation updated (if needed)
 
-✅ Deployed ke staging
+✅ Deployed to staging
 
-✅ Stakeholder demo (jika required)
+✅ Stakeholder demo (if required)
 ```
 
 ---
 
 ## 🔄 Sprint Cycle
 
-### Sprint Duration: 2 Minggu
+### Sprint Duration: 2 Weeks
 
 ```
 Week 1          Week 2
@@ -346,21 +346,21 @@ Mon Tue Wed Thu Fri Mon Tue Wed Thu Fri
 
 **Day 1 (Monday Week 1): Sprint Planning**
 - Review backlog
-- Commit ke sprint goal
-- Assign task
+- Commit to sprint goal
+- Assign tasks
 - Estimate story points
 
 **Day 1-8: Development**
-- Daily standup (15 menit, WhatsApp)
+- Daily standup (15 minutes, WhatsApp)
 - Update Trello card progress
 - PR & code review
 
 **Day 9 (Friday Week 2): Testing**
-- UAT oleh Ahmad Hanif
+- UAT by Ahmad Hanif
 - Bug fixing
 
 **Day 10 (Monday Week 3): Sprint Review & Retrospective**
-- Demo ke stakeholder (Pak Mahfud)
+- Demo to stakeholder (Pak Mahfud)
 - Retrospective: What went well, what to improve
 - Sprint 2 planning
 
@@ -372,10 +372,10 @@ Mon Tue Wed Thu Fri Mon Tue Wed Thu Fri
 
 **Fibonacci Scale:**
 ```
-1 — Tiny (1-2 jam)
-2 — Small (0.5 hari)
-3 — Medium (1 hari)
-5 — Large (2-3 hari)
+1 — Tiny (1-2 hours)
+2 — Small (0.5 day)
+3 — Medium (1 day)
+5 — Large (2-3 days)
 8 — XL (1 sprint)
 ```
 
@@ -395,7 +395,7 @@ Sprint 4 capacity: 13 points
 Task breakdown:
 - Login: 3 points
 - Dashboard: 5 points
-- Presensi: 5 points
+- Attendance: 5 points
 Total: 13 points ✅
 ```
 
@@ -405,14 +405,14 @@ Total: 13 points ✅
 
 ### Link Trello Card ↔ GitHub Issue
 
-**Di Trello Card:**
+**In Trello Card:**
 ```markdown
 ## Links
 - GitHub Issue: https://github.com/SMA-UII-Yogyakarta/core/issues/12
 - PR: https://github.com/SMA-UII-Yogyakarta/core/pull/34
 ```
 
-**Di GitHub Issue:**
+**In GitHub Issue:**
 ```markdown
 ## Context
 Trello: https://trello.com/c/ABC123
@@ -421,8 +421,8 @@ Trello: https://trello.com/c/ABC123
 ### Automation (Power-Ups)
 
 **GitHub Power-Up:**
-- Link GitHub repo ke Trello
-- Attach PR ke card
+- Link GitHub repo to Trello
+- Attach PR to card
 - Auto-update status
 
 **Card Mapping:**
@@ -438,19 +438,19 @@ Trello: Done         →  GitHub: Closed/Merged
 
 ### Do's ✅
 
-- Update card status real-time
-- Comment progress di card
-- Link GitHub Issue di card
-- Move card segera setelah status berubah
-- Checklist detail untuk task kompleks
+- Update card status in real-time
+- Comment progress on card
+- Link GitHub Issue on card
+- Move card immediately after status change
+- Detailed checklist for complex tasks
 
 ### Don'ts ❌
 
-- Jangan biarkan card stuck > 2 hari tanpa update
-- Jangan skip DoR/DoD checklist
-- Jangan gabungkan multiple fitur di 1 card
-- Jangan vague acceptance criteria
-- Jangan lupa move card ke Done setelah deploy
+- Don't let a card stay stuck > 2 days without an update
+- Don't skip DoR/DoD checklist
+- Don't combine multiple features in 1 card
+- Don't use vague acceptance criteria
+- Don't forget to move card to Done after deploy
 
 ---
 
@@ -471,27 +471,27 @@ Trello: Done         →  GitHub: Closed/Merged
 
 ## 🆘 Troubleshooting
 
-### Issue: Card tidak jelas requirement
+### Issue: Card requirement unclear
 
-**Solusi:**
-1. Comment di card: "@Ahmad Hanif mohon clarify requirement untuk..."
-2. Wait clarification
-3. Update card setelah jelas
+**Solution:**
+1. Comment on card: "@Ahmad Hanif please clarify requirement for..."
+2. Wait for clarification
+3. Update card after clear
 
-### Issue: Task blocker > 2 jam
+### Issue: Task blocker > 2 hours
 
-**Solusi:**
-1. Add label `🚫 Blocked` ke card
-2. Comment di card: "Blocker: [deskripsi masalah]"
-3. Tag Sandikodev: "@Sandikodev butuh help untuk..."
-4. Escalate di WhatsApp Group
+**Solution:**
+1. Add label `🚫 Blocked` to card
+2. Comment on card: "Blocker: [problem description]"
+3. Tag Sandikodev: "@Sandikodev need help for..."
+4. Escalate in WhatsApp Group
 
-### Issue: Card stuck di Code Review
+### Issue: Card stuck in Code Review
 
-**Solusi:**
-1. Tag reviewer: "@Sandikodev mohon review untuk PR #..."
-2. Wait max 24 jam
-3. Jika tidak ada response, ping di WhatsApp
+**Solution:**
+1. Tag reviewer: "@Sandikodev please review PR #..."
+2. Wait max 24 hours
+3. If no response, ping on WhatsApp
 
 ---
 
@@ -504,5 +504,5 @@ Trello: Done         →  GitHub: Closed/Merged
 ---
 
 **Next:** [`communication.md`](communication.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Ahmad Hanif

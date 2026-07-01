@@ -1,26 +1,26 @@
 # MVP Scope Definition
 
-> Definition of MVP untuk SMART Absen SMA UII Yogyakarta.
+> MVP Definition for SMART Absen SMA UII Yogyakarta.
 
 ---
 
 ## 🎯 MVP Goal
 
-**Target:** Akhir Sprint 3 (~18 Juli 2026)
+**Target:** End of Sprint 3 (~July 18, 2026)
 
 **Objective:**
-SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (geolokasi, swafoto), dashboard per role, dan laporan sederhana.
+SMART Absen can be used for student & teacher attendance with basic validation (geolocation, selfie), role-based dashboards, and simple reports.
 
-> **Catatan:** Target MVP bergeser dari minggu 4 ke minggu 6 karena reset stack (Livewire/MySQL → Inertia+React/PostgreSQL) dan penyesuaian learning path. Minggu 1-2 difokuskan pada sinkronisasi dokumentasi, instalasi stack baru, dan pembelajaran dasar React/TypeScript/PostgreSQL.
+> **Note:** MVP target shifted from week 4 to week 6 due to stack reset (Livewire/MySQL → Inertia+React/PostgreSQL) and learning path adjustments. Weeks 1-2 focused on documentation synchronization, new stack installation, and basic React/TypeScript/PostgreSQL learning.
 
 ---
 
 ## ✅ MVP Features
 
-### 1. Authentication (Wajib)
-- [x] Login dengan email & password
+### 1. Authentication (Mandatory)
+- [x] Login with email & password
 - [x] Logout
-- [x] Role-based access (Admin, Guru, Siswa, Staff)
+- [x] Role-based access (Admin, Teacher, Student, Staff)
 - [x] Session management
 
 **Priority:** 🔥 Critical  
@@ -28,61 +28,61 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 
 ---
 
-### 2. Presensi Siswa (Wajib)
-- [x] Form presensi dengan geolokasi
-- [x] Swafoto kamera wajib
-- [x] Validasi radius (50m dari sekolah)
-- [x] Validasi waktu (06:00 - 07:30 WIB)
-- [x] Duplicate prevention (1x per hari)
+### 2. Student Attendance (Mandatory)
+- [x] Attendance form with geolocation
+- [x] Camera selfie mandatory
+- [x] Radius validation (50m from school)
+- [x] Time validation (06:00 - 07:30 WIB)
+- [x] Duplicate prevention (1x per day)
 - [x] Status: On Time, Late
-- [x] Riwayat presensi (table view)
+- [x] Attendance history (table view)
 
 **Priority:** 🔥 Critical  
 **Sprint:** 2
 
 ---
 
-### 3. Presensi Guru (Wajib)
-- [x] Form presensi guru (tanpa swafoto)
-- [x] Validasi radius
-- [x] Validasi waktu
+### 3. Teacher Attendance (Mandatory)
+- [x] Teacher attendance form (without selfie)
+- [x] Radius validation
+- [x] Time validation
 - [x] Duplicate prevention
-- [x] Riwayat presensi
+- [x] Attendance history
 
 **Priority:** ⚠️ High  
 **Sprint:** 2
 
 ---
 
-### 4. Dashboard (Wajib)
-- [x] Dashboard Admin
-  - Statistik: Total siswa, guru, staff
-  - Kehadiran hari ini
-  - Grafik sederhana
-  
-- Dashboard Guru
-  - Jadwal mengajar hari ini
-  - Presensi sendiri
-  - Riwayat presensi
-  
-- Dashboard Siswa
-  - Presensi hari ini
-  - Riwayat presensi bulan ini
-  - Total hadir, sakit, izin, alfa
+### 4. Dashboard (Mandatory)
+- [x] Admin Dashboard
+  - Statistics: Total students, teachers, staff
+  - Today's attendance
+  - Simple charts
+   
+- Teacher Dashboard
+  - Today's teaching schedule
+  - Own attendance
+  - Attendance history
+   
+- Student Dashboard
+  - Today's attendance
+  - Monthly attendance history
+  - Total present, sick, permission, absent
 
 **Priority:** ⚠️ High  
 **Sprint:** 2
 
 ---
 
-### 5. Laporan Sederhana (Wajib)
-- [x] Export presensi per kelas (Excel)
-  - Filter: Kelas, Bulan
-  - Columns: Nama, Tanggal, Status, Jam
-  
-- [x] Export presensi per siswa (PDF)
-  - Filter: Siswa, Periode
-  - Summary: Total hadir, sakit, izin, alfa
+### 5. Simple Reports (Mandatory)
+- [x] Export attendance per class (Excel)
+  - Filter: Class, Month
+  - Columns: Name, Date, Status, Time
+   
+- [x] Export attendance per student (PDF)
+  - Filter: Student, Period
+  - Summary: Total present, sick, permission, absent
 
 **Priority:** 📌 Medium  
 **Sprint:** 3
@@ -93,11 +93,11 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 
 ### Sprint 4+
 ```
-❌ Pengajuan Izin (sakit, izin, alfa)
-❌ Approval wali kelas
-❌ Notifikasi WhatsApp
-❌ Jadwal Piket
-❌ Kalender Akademik
+❌ Leave Application (sick, permission, absent)
+❌ Homeroom teacher approval
+❌ WhatsApp Notification
+❌ Duty Schedule
+❌ Academic Calendar
 ❌ Face recognition
 ❌ Offline mode
 ❌ Mobile app (Flutter)
@@ -106,9 +106,9 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 
 ### Backlog
 ```
-❌ Integrasi dengan SIAD (Sistem Informasi Akademik)
-❌ QR Code presensi
-❌ Geofencing polygon (bukan radius)
+❌ SIAD Integration (Academic Information System)
+❌ QR Code attendance
+❌ Geofencing polygon (not radius)
 ❌ Multiple school support
 ❌ Parent notification
 ```
@@ -121,24 +121,24 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 
 ```markdown
 ✅ Authentication
-- User dapat login/logout
-- Role access berfungsi
+- User can login/logout
+- Role access works
 - Session secure
 
-✅ Presensi
-- Siswa dapat submit presensi
-- Geolokasi validated
-- Swafoto captured
+✅ Attendance
+- Student can submit attendance
+- Geolocation validated
+- Selfie captured
 - Duplicate prevented
 
 ✅ Dashboard
-- Dashboard loads untuk semua role
-- Statistik correct
-- Responsive di mobile
+- Dashboard loads for all roles
+- Statistics correct
+- Responsive on mobile
 
-✅ Laporan
-- Export Excel berfungsi
-- Export PDF berfungsi
+✅ Reports
+- Export Excel works
+- Export PDF works
 - Data correct
 ```
 
@@ -148,10 +148,10 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 
 ```markdown
 ✅ Performance
-- Login page load < 2 detik
-- Presensi submit < 3 detik
-- Dashboard load < 3 detik
-- Export generate < 10 detik
+- Login page load < 2 seconds
+- Attendance submit < 3 seconds
+- Dashboard load < 3 seconds
+- Export generate < 10 seconds
 
 ✅ Security
 - Password hashed (bcrypt)
@@ -165,7 +165,7 @@ SMART Absen dapat digunakan untuk presensi siswa & guru dengan validasi dasar (g
 - Error handling adequate
 
 ✅ Usability
-- Responsive di mobile
+- Responsive on mobile
 - User-friendly UI
 - Clear error messages
 ```
@@ -182,8 +182,8 @@ Target: 80%
 
 Critical modules:
 - Authentication: 90%
-- Presensi: 85%
-- Laporan: 70%
+- Attendance: 85%
+- Reports: 70%
 ```
 
 ---
@@ -200,10 +200,10 @@ Critical modules:
 **Test Scenarios:**
 - [ ] Login (valid & invalid)
 - [ ] Logout
-- [ ] Presensi siswa (geolokasi + swafoto)
-- [ ] Presensi guru
+- [ ] Student attendance (geolocation + selfie)
+- [ ] Teacher attendance
 - [ ] Dashboard (all roles)
-- [ ] Export laporan
+- [ ] Export reports
 
 **Issues Found:**
 - Critical: 0 (required)
@@ -238,8 +238,8 @@ Purpose: UAT + Stakeholder demo
 Date: Week 4, Day 10
 URL: smauiiyk.sch.id
 Purpose: MVP release
-Timing: Weekend (Sabtu/Minggu)
-Duration: 30 menit (estimasi)
+Timing: Weekend (Saturday/Sunday)
+Duration: 30 minutes (estimated)
 ```
 
 ---
@@ -249,8 +249,8 @@ Duration: 30 menit (estimasi)
 ### Week 5-6 (Sprint 3)
 ```
 ✅ Admin Panel Enhancement
-✅ Laporan Advanced
-✅ Bug fixing dari MVP feedback
+✅ Advanced Reports
+✅ Bug fixing from MVP feedback
 ✅ Performance optimization
 ```
 
@@ -271,13 +271,13 @@ Duration: 30 menit (estimasi)
 | Feature | MVP (Week 4) | Full Product (Week 8) |
 |---|---|---|
 | **Authentication** | ✅ Basic login | ✅ + Reset password, 2FA |
-| **Presensi Siswa** | ✅ Geolokasi + swafoto | ✅ + Face recognition (optional) |
-| **Presensi Guru** | ✅ Basic | ✅ + Jadwal mengajar validation |
+| **Student Attendance** | ✅ Geolocation + selfie | ✅ + Face recognition (optional) |
+| **Teacher Attendance** | ✅ Basic | ✅ + Teaching schedule validation |
 | **Dashboard** | ✅ Basic stats | ✅ + Advanced analytics |
-| **Laporan** | ✅ Excel + PDF basic | ✅ + Custom template, email |
-| **Pengajuan Izin** | ❌ | ✅ |
-| **Notifikasi WA** | ❌ | ✅ (optional) |
-| **Jadwal Piket** | ❌ | ✅ |
+| **Reports** | ✅ Excel + PDF basic | ✅ + Custom template, email |
+| **Leave Application** | ❌ | ✅ |
+| **WA Notification** | ❌ | ✅ (optional) |
+| **Duty Schedule** | ❌ | ✅ |
 | **Mobile App** | ❌ | ❌ (Backlog) |
 
 ---
@@ -286,8 +286,8 @@ Duration: 30 menit (estimasi)
 
 ```
 Week 1-2 → Sprint 1: Authentication
-Week 3-4 → Sprint 2: Presensi + Dashboard → MVP Ready 🎉
-Week 5-6 → Sprint 3: Laporan + Enhancement
+Week 3-4 → Sprint 2: Attendance + Dashboard → MVP Ready 🎉
+Week 5-6 → Sprint 3: Reports + Enhancement
 Week 7-8 → Sprint 4: Production Ready 🚀
 ```
 
@@ -297,13 +297,13 @@ Week 7-8 → Sprint 4: Production Ready 🚀
 
 | Risk | Impact | Mitigation |
 |---|---|---|
-| Geolocation tidak akurat | High | Manual override option |
-| Camera tidak accessible | Medium | Fallback: Upload foto |
-| Export timeout (data banyak) | Medium | Pagination, chunking |
+| Geolocation inaccurate | High | Manual override option |
+| Camera not accessible | Medium | Fallback: Upload photo |
+| Export timeout (large data) | Medium | Pagination, chunking |
 | UAT finding critical bug | High | Early UAT (Day 8) |
 
 ---
 
 **Next:** —  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

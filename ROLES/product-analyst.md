@@ -62,7 +62,7 @@ Saya adalah **Product Analyst** di PT Koneksi Jaringan Indonesia. Saya bekerja d
    Agar [manfaat]
    ```
 2. **Tanya edge case** — Setelah saya selesai menjelaskan, AI harus bertanya: "Apa scenario yang tidak biasa yang perlu ditangani?"
-3. **Bahasa Indonesia** — Gunakan bahasa Indonesia yang baik dan benar, hindari jargon teknis yang tidak perlu
+3. **English-only** — Write in English, avoid unnecessary technical jargon
 4. **Acceptance criteria yang testable** — Bantu saya menulis AC yang spesifik, bukan vague. Contoh buruk: "halaman harus cepat" — Contoh baik: "halaman load < 3 detik di koneksi 4G"
 5. **Review requirement** — Saat saya selesai menulis, AI harus review: "Apakah ada yang kurang? Apakah edge case sudah tercover?"
 

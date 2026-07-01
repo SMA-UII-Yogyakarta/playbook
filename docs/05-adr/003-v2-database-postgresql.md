@@ -1,4 +1,4 @@
-# ADR 003-v2: PostgreSQL via NeonDB untuk Production
+# ADR 003-v2: PostgreSQL via NeonDB for Production
 
 **Date:** 2026-06-30  
 **Status:** Accepted  
@@ -9,48 +9,48 @@
 
 ## Context
 
-Keputusan awal (ADR-003) memilih MySQL 8.0 dengan alasan team familiarity dan Laragon default. Setelah evaluasi lebih lanjut, tim memutuskan revisi karena:
+The initial decision (ADR-003) chose MySQL 8.0 due to team familiarity and Laragon default. After further evaluation, the team decided on a revision because:
 
-1. **NeonDB (serverless PostgreSQL)** — memberikan fitur yang tidak dimiliki MySQL untuk deployment modern: auto-scaling, branching untuk preview deployment, dan connection pooling built-in.
-2. **PostgreSQL features** — JSONB (untuk data presensi yang semi-structured), array column, window functions, dan full-text search yang lebih mature dari MySQL.
-3. **Laravel first-class support** — Laravel 13 memiliki dukungan penuh untuk PostgreSQL, termasuk migration type yang kompatibel.
-4. **Porting pathway** — Jika nanti core menjadi dedicated backend, PostgreSQL lebih cocok untuk multi-tenant dan analytical queries.
+1. **NeonDB (serverless PostgreSQL)** — provides features that MySQL doesn't have for modern deployment: auto-scaling, branching for preview deployment, and built-in connection pooling.
+2. **PostgreSQL features** — JSONB (for semi-structured attendance data), array column, window functions, and full-text search that is more mature than MySQL.
+3. **Laravel first-class support** — Laravel 13 has full support for PostgreSQL, including compatible migration types.
+4. **Porting pathway** — If core later becomes a dedicated backend, PostgreSQL is more suitable for multi-tenant and analytical queries.
 
 ## Decision
 
 **Production:** PostgreSQL 16 via NeonDB (serverless)  
-**Development:** PostgreSQL 16 (Laragon) atau NeonDB branch  
-**Testing:** SQLite (in-memory) untuk unit test, NeonDB branch untuk integration test
+**Development:** PostgreSQL 16 (Laragon) or NeonDB branch  
+**Testing:** SQLite (in-memory) for unit test, NeonDB branch for integration test
 
 ## Rationale
 
-### Kenapa PostgreSQL, Bukan MySQL?
+### Why PostgreSQL, Not MySQL?
 
-| Aspek | MySQL 8.0 | PostgreSQL 16 |
-|-------|-----------|---------------|
-| **JSON support** | JSON (teks) | JSONB (binary, indexable) |
-| **Full-text search** | Terbatas | Mature (tsvector, tsquery) |
+| Aspect | MySQL 8.0 | PostgreSQL 16 |
+|--------|-----------|---------------|
+| **JSON support** | JSON (text) | JSONB (binary, indexable) |
+| **Full-text search** | Limited | Mature (tsvector, tsquery) |
 | **Window functions** | Limited | Full support |
 | **Array column** | ❌ | ✅ Native |
-| **Concurrency** | Lock-based | MVCC lebih baik |
+| **Concurrency** | Lock-based | Better MVCC |
 | **NeonDB support** | ❌ | ✅ First-class |
-| **Laravel support** | ✅ | ✅ (sama baik) |
+| **Laravel support** | ✅ | ✅ (equally good) |
 
-### Kenapa NeonDB?
+### Why NeonDB?
 
-1. **Serverless** — Tidak perlu manage server, pooler, atau replicas
-2. **Branching** — Setiap PR bisa punya database branch sendiri → preview deployment dengan data isolasi
-3. **Connection pooling** — Built-in PgBouncer, tidak perlu setup tambahan
-4. **Free tier** — 500MB storage, cukup untuk development dan MVP
-5. **Point-in-time recovery** — Backup otomatis, bisa restore ke detik tertentu
-6. **Familiar ecosystem** — PostgreSQL tools (pgAdmin, DBeaver, TablePlus) mature di Windows
+1. **Serverless** — No need to manage server, pooler, or replicas
+2. **Branching** — Every PR can have its own database branch → preview deployment with data isolation
+3. **Connection pooling** — Built-in PgBouncer, no additional setup needed
+4. **Free tier** — 500MB storage, sufficient for development and MVP
+5. **Point-in-time recovery** — Automatic backup, can restore to a specific second
+6. **Familiar ecosystem** — PostgreSQL tools (pgAdmin, DBeaver, TablePlus) mature on Windows
 
-### Kenapa SQLite tetap untuk Unit Test?
+### Why SQLite still for Unit Test?
 
-1. **Kecepatan** — In-memory, tidak perlu koneksi TCP
-2. **Isolasi** — Setiap test dapat database bersih
-3. **Laravel default** — `php artisan test` siap pakai
-4. **Cukup untuk** — Unit test model, service, dan controller
+1. **Speed** — In-memory, no TCP connection needed
+2. **Isolation** — Each test gets a clean database
+3. **Laravel default** — `php artisan test` ready to use
+4. **Sufficient for** — Unit testing models, services, and controllers
 
 ## Consequences
 
@@ -95,14 +95,14 @@ DB_USERNAME=${{ secrets.NEON_DB_USER }}
 
 ### Migration Notes
 
-Beberapa perbedaan MySQL → PostgreSQL yang perlu diperhatikan:
+Some MySQL → PostgreSQL differences to note:
 
-| MySQL | PostgreSQL | Catatan |
-|-------|-----------|---------|
-| `INT AUTO_INCREMENT` | `SERIAL` / `BIGSERIAL` | Laravel migration handle otomatis |
-| `VARCHAR` | `VARCHAR` / `TEXT` | Sama |
-| `DATETIME` | `TIMESTAMP` | Laravel `timestamps()` kompatibel |
-| `JSON` | `JSONB` | Lebih baik untuk query |
+| MySQL | PostgreSQL | Notes |
+|-------|-----------|-------|
+| `INT AUTO_INCREMENT` | `SERIAL` / `BIGSERIAL` | Laravel migration handles automatically |
+| `VARCHAR` | `VARCHAR` / `TEXT` | Same |
+| `DATETIME` | `TIMESTAMP` | Laravel `timestamps()` compatible |
+| `JSON` | `JSONB` | Better for queries |
 | `BOOLEAN` TINYINT(1) | `BOOLEAN` | Native boolean |
 | `ENUM` | `VARCHAR` + CHECK | Laravel enum migration support |
 

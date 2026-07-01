@@ -8,77 +8,77 @@
 
 ## Context
 
-Setelah memutuskan PostgreSQL sebagai database (ADR-003-v2), kita perlu menentukan:
+After deciding on PostgreSQL as the database (ADR-003-v2), we need to determine:
 
 1. **Database hosting** — Self-managed vs serverless (NeonDB)
-2. **Auth strategy** — Laravel Sanctum murni vs kombinasi dengan Neon Auth
-3. **Dev/Prod parity** — Environment development dan produksi sedekat mungkin
+2. **Auth strategy** — Plain Laravel Sanctum vs combination with Neon Auth
+3. **Dev/Prod parity** — Development and production environments as close as possible
 
-### Opsi Database Hosting
-- Opsi 1: PostgreSQL self-managed di VPS (DigitalOcean, Linode)
-- Opsi 2: NeonDB serverless PostgreSQL
-- Opsi 3: Supabase (PostgreSQL + Auth + Storage bundled)
+### Database Hosting Options
+- Option 1: PostgreSQL self-managed on VPS (DigitalOcean, Linode)
+- Option 2: NeonDB serverless PostgreSQL
+- Option 3: Supabase (PostgreSQL + Auth + Storage bundled)
 
-### Opsi Auth
-- Opsi A: Laravel Sanctum (token-based, stateless)
-- Opsi B: Neon Auth (built-in auth dari Neon, JWT-based)
-- Opsi C: Laravel Sanctum + Socialite (untuk SSO nanti)
+### Auth Options
+- Option A: Laravel Sanctum (token-based, stateless)
+- Option B: Neon Auth (built-in auth from Neon, JWT-based)
+- Option C: Laravel Sanctum + Socialite (for SSO later)
 
 ## Decision
 
 **Database Hosting:** NeonDB (serverless PostgreSQL)  
-**Auth:** Laravel Sanctum murni + Spatie Laravel Permission untuk RBAC  
-**Dev Environment:** Laragon + PostgreSQL lokal + NeonDB branch untuk integration test
+**Auth:** Plain Laravel Sanctum + Spatie Laravel Permission for RBAC  
+**Dev Environment:** Laragon + PostgreSQL local + NeonDB branch for integration test
 
 ## Rationale
 
-### Kenapa NeonDB, Bukan Self-Managed atau Supabase?
+### Why NeonDB, Not Self-Managed or Supabase?
 
-| Aspek | Self-Managed | Supabase | NeonDB |
-|-------|-------------|----------|--------|
-| **Setup effort** | Tinggi | Rendah | Rendah |
-| **Dev/Prod parity** | Sempurna | Berbeda | Sempurna (branch) |
+| Aspect | Self-Managed | Supabase | NeonDB |
+|--------|-------------|----------|--------|
+| **Setup effort** | High | Low | Low |
+| **Dev/Prod parity** | Perfect | Different | Perfect (branch) |
 | **Free tier** | ❌ | ✅ | ✅ |
-| **Cold start** | Tidak ada | Ada | Minimal |
+| **Cold start** | None | Yes | Minimal |
 | **Branching** | ❌ | ❌ | ✅ |
-| **Vendor lock-in** | Tidak | Tinggi | Rendah (PostgreSQL standar) |
+| **Vendor lock-in** | No | High | Low (standard PostgreSQL) |
 
-**NeonDB dipilih karena:**
-1. **PostgreSQL standar** — Bisa migrate ke provider lain kapan saja (tidak ada lock-in)
-2. **Branching untuk preview** — Setiap fitur bisa punya database branch sendiri
-3. **Point-in-time recovery** — Aman untuk production
-4. **Built-in pooling** — Tidak perlu setup PgBouncer
-5. **Gratis untuk MVP** — 500MB storage cukup untuk development
+**NeonDB was chosen because:**
+1. **Standard PostgreSQL** — Can migrate to any other provider anytime (no lock-in)
+2. **Branching for preview** — Every feature can have its own database branch
+3. **Point-in-time recovery** — Safe for production
+4. **Built-in pooling** — No need to set up PgBouncer
+5. **Free for MVP** — 500MB storage is sufficient for development
 
-**Supabase tidak dipilih karena:**
-1. **Vendor lock-in** — Auth, Realtime, Storage semuanya proprietary
-2. **Cold start** — Instance tidur jika tidak dipakai, delay 1-5 detik
-3. **Kurang fleksibel** — Migration tooling terbatas dibanding native PostgreSQL
+**Supabase was not chosen because:**
+1. **Vendor lock-in** — Auth, Realtime, Storage are all proprietary
+2. **Cold start** — Instance sleeps when not in use, 1-5 second delay
+3. **Less flexible** — Migration tooling limited compared to native PostgreSQL
 
-### Kenapa Sanctum, Bukan Neon Auth?
+### Why Sanctum, Not Neon Auth?
 
-| Aspek | Laravel Sanctum | Neon Auth |
-|-------|----------------|-----------|
-| **Maturity** | Sangat matang (Laravel native) | Baru (preview) |
-| **Self-contained** | ✅ Dalam kontrol kita | ❌ Dependency ke Neon |
-| **SSO capability** | ✅ Bisa extend ke provider lain | ❌ Terbatas |
+| Aspect | Laravel Sanctum | Neon Auth |
+|--------|----------------|-----------|
+| **Maturity** | Very mature (Laravel native) | New (preview) |
+| **Self-contained** | ✅ Under our control | ❌ Dependency on Neon |
+| **SSO capability** | ✅ Can extend to other providers | ❌ Limited |
 | **Spatie integration** | ✅ First-class | ❌ Manual |
-| **Porting (Fase 2)** | ✅ API token mode | ❌ Perlu rewrite |
+| **Porting (Phase 2)** | ✅ API token mode | ❌ Needs rewrite |
 
-**Sanctum dipilih karena:**
-1. **Mature dan stabil** — Sudah production-ready sejak Laravel 7
-2. **Dual mode** — Session-based (Inertia) + Token-based (API) dalam satu paket
-3. **Porting friendly** — Fase 2 tinggal switch dari session ke token mode
-4. **Spatie integration** — Role & permission langsung terintegrasi
-5. **Self-contained** — Tidak tergantung pihak ketiga untuk auth
+**Sanctum was chosen because:**
+1. **Mature and stable** — Production-ready since Laravel 7
+2. **Dual mode** — Session-based (Inertia) + Token-based (API) in one package
+3. **Porting friendly** — Phase 2 just switch from session to token mode
+4. **Spatie integration** — Role & permission directly integrated
+5. **Self-contained** — Does not depend on third-party for auth
 
-### RBAC dengan Spatie Laravel Permission
+### RBAC with Spatie Laravel Permission
 
 ```php
 // Install
 // composer require spatie/laravel-permission
 
-// Contoh penggunaan
+// Usage example
 $user->assignRole('guru');
 $user->givePermissionTo('create-presensi');
 
@@ -110,16 +110,16 @@ DB_SSLMODE=require
 ```
 
 ### Production
-- Sanctum dengan **token-based** untuk API consumption dari Next.js / Mobile
-- SPA mode untuk Inertia pages (session-based)
-- Multiple token per user (satu untuk webapp, satu untuk mobile app)
-- Token abilities/scopes untuk fine-grained access control
+- Sanctum with **token-based** for API consumption from Next.js / Mobile
+- SPA mode for Inertia pages (session-based)
+- Multiple tokens per user (one for webapp, one for mobile app)
+- Token abilities/scopes for fine-grained access control
 
 ### Security Considerations
-- Sanctum token disimpan hashed di database
-- Token expiry configurable (default: tidak expire — bisa di-set per use case)
-- CSRF protection untuk Inertia session routes
-- Rate limiting untuk API endpoints
+- Sanctum token stored hashed in database
+- Token expiry configurable (default: no expiry — can be set per use case)
+- CSRF protection for Inertia session routes
+- Rate limiting for API endpoints
 
 ---
 

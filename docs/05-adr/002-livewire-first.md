@@ -1,54 +1,54 @@
 # ADR 002: Livewire First, React Later [SUPERSEDED]
 
 **Date:** 2026-06-21  
-**Status:** ❌ **Superseded** — oleh [ADR-002-v2](002-v2-inertia-react.md) pada 2026-06-30  
+**Status:** ❌ **Superseded** — by [ADR-002-v2](002-v2-inertia-react.md) on 2026-06-30  
 **Deciders:** Sandikodev
 
 ---
 
 ## Context
 
-Kita perlu memutuskan stack frontend untuk MVP (Bulan 1):
-- Opsi 1: Laravel Blade + Livewire
-- Opsi 2: Laravel API + React/Next.js
-- Opsi 3: Laravel API + Vue/Nuxt
+We need to decide the frontend stack for MVP (Month 1):
+- Option 1: Laravel Blade + Livewire
+- Option 2: Laravel API + React/Next.js
+- Option 3: Laravel API + Vue/Nuxt
 
 ## Decision (Original — Not Applied)
 
-**Phase 1 (MVP — Bulan 1):** Laravel Blade + Livewire 3  
-**Phase 2 (Bulan 2+):** Laravel API + Next.js 14
+**Phase 1 (MVP — Month 1):** Laravel Blade + Livewire 3  
+**Phase 2 (Month 2+):** Laravel API + Next.js 14
 
 ## Rationale
 
 ### Phase 1: Livewire
 
-**Alasan:**
-1. **Learning curve rendah** — Fathan & Ihsan sudah familiar Laravel
-2. **Development cepat** — Tidak perlu terpisah backend/frontend
-3. **Team kecil** — 2 developer, tidak perlu separation of concern ketat
-4. **Simpler deployment** — Satu deploy, selesai
-5. **Less complexity** — Tidak perlu manage API versioning, CORS, auth token
+**Reasons:**
+1. **Low learning curve** — Fathan & Ihsan are already familiar with Laravel
+2. **Fast development** — No need for separate backend/frontend
+3. **Small team** — 2 developers, no need for strict separation of concerns
+4. **Simpler deployment** — One deploy, done
+5. **Less complexity** — No need to manage API versioning, CORS, auth tokens
 
 ### Phase 2: Next.js
 
 **Trigger migration:**
-- UI complexity meningkat
-- Perlu PWA capability
-- Performance requirement lebih tinggi
-- Team bertambah (dedicated frontend developer)
+- UI complexity increases
+- PWA capability needed
+- Higher performance requirements
+- Team grows (dedicated frontend developer)
 
 ## Consequences
 
 ### Phase 1 (Livewire)
 
 **Pros:**
-- MVP selesai dalam 1 bulan
-- Developer fokus business logic, bukan API integration
+- MVP completed within 1 month
+- Developer focuses on business logic, not API integration
 - Simpler debugging
 
 **Cons:**
 - Coupling backend-frontend
-- Migration effort nanti
+- Migration effort later
 
 ### Phase 2 (Next.js)
 
@@ -56,11 +56,11 @@ Kita perlu memutuskan stack frontend untuk MVP (Bulan 1):
 - Separation of concern
 - Better performance (SSR, SSG)
 - PWA capable
-- Mobile app dapat reuse API
+- Mobile app can reuse API
 
 **Cons:**
 - Migration effort
-- Learning curve untuk tim
+- Learning curve for the team
 
 ---
 

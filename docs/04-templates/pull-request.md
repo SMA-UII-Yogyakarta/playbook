@@ -1,6 +1,6 @@
 # Pull Request Template
 
-> Template untuk Pull Request di repository SMA UII Yogyakarta.
+> Template for Pull Requests in the SMA UII Yogyakarta repository.
 
 ---
 
@@ -13,13 +13,13 @@ Fixes #[issue-number]
 
 ## Description
 
-Jelaskan secara singkat apa yang diubah dan kenapa.
+Briefly describe what was changed and why.
 
 **Context:**
-[Kenapa perubahan ini diperlukan?]
+[Why is this change necessary?]
 
 **Solution:**
-[Bagaimana solusi yang diimplementasikan?]
+[How was the solution implemented?]
 
 ## Changes
 
@@ -112,7 +112,7 @@ After:
 ### Backend
 - [ ] Conventional commit message
 - [ ] No `console.log()` or `dd()`
-- [ ] Service Layer pattern — logic di Service, controller tipis
+- [ ] Service Layer pattern — logic in Service, thin controller
 - [ ] PostgreSQL compatible syntax
 - [ ] Unit test written & passing
 - [ ] No N+1 query (eager loading used)
@@ -138,8 +138,8 @@ After:
 ## Notes for Reviewer
 
 - Focus review on: `AttendanceController.php` line 45-67 (geolocation validation)
-- Need clarification on: Error message format (apakah sudah sesuai UX standard?)
-- Performance concern: Query di line 89 (apakah perlu eager loading?)
+- Need clarification on: Error message format (is it already aligned with UX standards?)
+- Performance concern: Query at line 89 (is eager loading needed?)
 
 ## Deployment Notes
 
@@ -199,13 +199,13 @@ please review
 - Link related Issue
 - List changes clearly
 - Include testing result
-- Add screenshot untuk UI change
-- Note untuk reviewer (focus area)
+- Add screenshot for UI change
+- Note for reviewer (focus area)
 
 **Don'ts ❌**
 - Empty description
-- Hanya link Issue tanpa context
-- Multiple unrelated changes di 1 PR
+- Only Issue link without context
+- Multiple unrelated changes in 1 PR
 - No testing info
 
 ---
@@ -216,7 +216,7 @@ please review
 - < 400 lines changed
 - < 10 files changed
 - Single feature/fix
-- Reviewable dalam 30 menit
+- Reviewable within 30 minutes
 
 **Too Big PR:**
 - > 1000 lines changed
@@ -224,7 +224,7 @@ please review
 - Multiple features
 - Reviewer fatigue
 
-**Solution:** Split jadi multiple PR
+**Solution:** Split into multiple PRs
 
 ---
 
@@ -253,8 +253,8 @@ Closes #12
 ```
 fix(auth): resolve token expiration issue
 
-Token Sanctum tidak expire setelah logout.
-Fix dengan menambahkan token revoke di logout endpoint.
+Sanctum token does not expire after logout.
+Fixed by adding token revoke on the logout endpoint.
 
 Fixes #34
 ```
@@ -269,16 +269,16 @@ Fixes #34
 # Push branch
 git push origin feature/12-attendance
 
-# GitHub UI akan suggest create PR
-# Klik "Compare & pull request"
+# GitHub UI will suggest creating a PR
+# Click "Compare & pull request"
 ```
 
 ---
 
 ### 2. Fill Template
 
-- Copy template di atas
-- Isi semua section
+- Copy template above
+- Fill all sections
 - Assign reviewer (@Sandikodev)
 - Link Issue (`Fixes #12`)
 
@@ -286,8 +286,8 @@ git push origin feature/12-attendance
 
 ### 3. Auto-Checks
 
-GitHub akan auto-run:
-- CI workflow (jika ada)
+GitHub will auto-run:
+- CI workflow (if any)
 - Mergeability check
 - Conflict detection
 
@@ -295,23 +295,23 @@ GitHub akan auto-run:
 
 ### 4. Code Review
 
-**Reviewer akan:**
-- Review code dalam 24 jam
+**Reviewer will:**
+- Review code within 24 hours
 - Comment & request changes
-- Approve jika OK
+- Approve if OK
 
-**Author harus:**
-- Respond feedback dalam 24 jam
-- Fix sesuai request
+**Author must:**
+- Respond to feedback within 24 hours
+- Fix as requested
 - Re-request review
 
 ---
 
 ### 5. Merge
 
-**Setelah approve:**
+**After approval:**
 - Squash merge (default)
-- Delete branch setelah merge
+- Delete branch after merge
 - Pull latest main
 
 ```bash
@@ -326,34 +326,34 @@ git branch -d feature/12-attendance
 
 ### Draft PR
 
-**When:** Work in progress, belum siap review
+**When:** Work in progress, not yet ready for review
 
 **How:**
-- Klik "Create draft pull request"
+- Click "Create draft pull request"
 - Label: `🚧 WIP`
-- Convert to ready setelah selesai
+- Convert to ready after completion
 
 ---
 
 ### Ready for Review
 
-**When:** Semua checklist complete
+**When:** All checklist complete
 
 **How:**
-- Klik "Ready for review"
+- Click "Ready for review"
 - Assign reviewer
-- Tag di WhatsApp: "@Sandikodev PR ready untuk review"
+- Tag on WhatsApp: "@Sandikodev PR ready for review"
 
 ---
 
 ## 🐛 Common Issues
 
-### Issue: PR Stuck di Review > 24 jam
+### Issue: PR Stuck in Review > 24 hours
 
 **Solution:**
-1. Tag reviewer di PR comment: "@Sandikodev mohon review"
-2. Ping di WhatsApp: "PR #34 ready untuk review"
-3. Jika urgent, call/PM
+1. Tag reviewer in PR comment: "@Sandikodev please review"
+2. Ping on WhatsApp: "PR #34 ready for review"
+3. If urgent, call/PM
 
 ---
 
@@ -369,8 +369,8 @@ git pull origin main
 git checkout feature/12-attendance
 git rebase main
 
-# Fix conflict di file yang ditandai
-# Edit file → resolve <<<<<<< dan >>>>>>>
+# Fix conflict in marked files
+# Edit file → resolve <<<<<<< and >>>>>>>
 
 # Continue rebase
 git add .
@@ -385,9 +385,9 @@ git push origin feature/12-attendance --force-with-lease
 ### Issue: CI Failed
 
 **Solution:**
-1. Check CI log di GitHub Actions
-2. Fix error yang reported
-3. Push ulang (auto re-run CI)
+1. Check CI log in GitHub Actions
+2. Fix reported error
+3. Push again (auto re-run CI)
 
 ---
 
@@ -396,8 +396,8 @@ git push origin feature/12-attendance --force-with-lease
 ### Per PR
 
 ```
-- Time to first review (jam)
-- Time to merge (jam)
+- Time to first review (hours)
+- Time to merge (hours)
 - Comment count
 - Iteration count
 ```
@@ -413,7 +413,7 @@ git push origin feature/12-attendance --force-with-lease
 
 ---
 
-## 🎓 Tips untuk Junior Developer
+## 🎓 Tips for Junior Developer
 
 ### Before Submit PR
 
@@ -439,7 +439,7 @@ php artisan serve
 ### During Review
 
 **Mindset:**
-- Feedback = untuk code, bukan untuk person
+- Feedback = for code, not for person
 - Request changes = learning opportunity
 - Iteration = normal process
 
@@ -447,11 +447,11 @@ php artisan serve
 ```
 "Thanks for the review! Will fix."
 "Good catch, I missed that."
-"Question: Kenapa pakai eager loading di sini?"
+"Question: Why use eager loading here?"
 ```
 
 ---
 
 **Next:** [`sprint-planning.md`](sprint-planning.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

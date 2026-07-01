@@ -1,18 +1,18 @@
 # Code Review SOP
 
-> Standar code review untuk tim engineering SMA UII Yogyakarta.
+> Code review standards for the SMA UII Yogyakarta engineering team.
 
 ---
 
 ## 🎯 Purpose
 
-Code review bukan sekadar mencari bug. Code review adalah:
+Code review is not just about finding bugs. Code review is:
 - Knowledge sharing
 - Quality assurance
 - Best practice enforcement
 - Mentoring opportunity
 
-**Goal:** Setiap PR membuat codebase lebih baik dan developer lebih pintar.
+**Goal:** Every PR makes the codebase better and the developer smarter.
 
 ---
 
@@ -21,40 +21,40 @@ Code review bukan sekadar mencari bug. Code review adalah:
 ### Reviewer (Sandikodev)
 
 **Responsibilities:**
-- Review PR dalam 24 jam
-- Berikan feedback spesifik & actionable
-- Approve atau Request Changes
+- Review PR within 24 hours
+- Provide specific & actionable feedback
+- Approve or Request Changes
 - Ensure coding standard
 - Check security & performance
 
-**Time Allocation:** 20% dari total waktu kerja
+**Time Allocation:** 20% of total work time
 
 ---
 
 ### Author (Fathan/Ihsan)
 
 **Responsibilities:**
-- Self-review sebelum submit PR (cek TypeScript compile, lint, test)
-- Respond feedback dalam 24 jam
-- Fix sesuai request
-- Re-request review setelah fix
+- Self-review before submitting PR (check TypeScript compile, lint, test)
+- Respond to feedback within 24 hours
+- Fix as requested
+- Re-request review after fix
 
 ### Initial Reviewer (Azis — Learning Mentor)
 
 **Responsibilities:**
-- Review awal sebelum PR dikirim ke Sandikodev
-- Cari: typo, N+1 query, logical error, TypeScript type issue
-- Pastikan self-checklist tercentang
-- Bantu fix minor issues bersama author (pair programming)
-- Jika OK → forward ke Sandikodev untuk final review
+- Initial review before PR is sent to Sandikodev
+- Check for: typos, N+1 queries, logical errors, TypeScript type issues
+- Ensure self-checklist is completed
+- Help fix minor issues together with author (pair programming)
+- If OK → forward to Sandikodev for final review
 
-**Mindset:** Feedback adalah untuk code, bukan untuk person.
+**Mindset:** Feedback is for the code, not for the person.
 
 ---
 
 ## ✅ Pre-Review Checklist (Author)
 
-Sebelum request review, pastikan:
+Before requesting a review, ensure:
 
 ```markdown
 ## Self-Review Checklist
@@ -62,39 +62,39 @@ Sebelum request review, pastikan:
 ### Code Quality (Backend — PHP)
 - [ ] No `console.log()`, `dd()`, `var_dump()`
 - [ ] No commented-out code
-- [ ] No TODO tanpa Issue link
+- [ ] No TODO without Issue link
 - [ ] Follow Laravel conventions
 - [ ] PSR-12 compliance
-- [ ] Service Layer pattern — logic di Service, controller tipis
+- [ ] Service Layer pattern — logic in Service, thin controller
 
 ### Code Quality (Frontend — TypeScript/React)
 - [ ] No `console.log()`, `debugger`
-- [ ] TypeScript strict — no `any` type (kecuali darurat)
-- [ ] Functional component dengan hooks (no class component)
-- [ ] Props interface didefinisikan
+- [ ] TypeScript strict — no `any` type (unless emergency)
+- [ ] Functional component with hooks (no class component)
+- [ ] Props interface defined
 - [ ] No unused imports/variables (ESLint clean)
 
 ### Testing (Backend)
 - [ ] Unit test written (PHPUnit)
-- [ ] Test hijau (`php artisan test`)
-- [ ] Feature test untuk API endpoint (jika ada)
+- [ ] Test green (`php artisan test`)
+- [ ] Feature test for API endpoint (if any)
 
 ### Testing (Frontend)
 - [ ] Jest + React Testing Library test written
-- [ ] Test hijau (`bun run test`)
+- [ ] Test green (`bun run test`)
 - [ ] Manual test done (browser)
-- [ ] Screenshot attached (jika UI change)
+- [ ] Screenshot attached (if UI change)
 
 ### Responsive Testing
-- [ ] Test di mobile viewport (375px)
-- [ ] Test di tablet viewport (768px)
-- [ ] Test di desktop viewport (1280px+)
+- [ ] Test on mobile viewport (375px)
+- [ ] Test on tablet viewport (768px)
+- [ ] Test on desktop viewport (1280px+)
 
 ### Documentation
-- [ ] PR description lengkap
+- [ ] PR description complete
 - [ ] Related Issue linked (Fixes #12)
-- [ ] API documentation updated (jika ada)
-- [ ] CHANGELOG updated (jika perlu)
+- [ ] API documentation updated (if any)
+- [ ] CHANGELOG updated (if needed)
 
 ### Security
 - [ ] No hardcoded credentials
@@ -105,38 +105,38 @@ Sebelum request review, pastikan:
 
 ### Performance
 - [ ] No N+1 query (eager loading used)
-- [ ] Database index added (jika perlu)
-- [ ] Heavy operation queued (jika ada)
+- [ ] Database index added (if needed)
+- [ ] Heavy operation queued (if any)
 ```
 
 ---
 
 ## 🔍 Review Checklist (Reviewer)
 
-### 1. Code Quality (Bobot: 30%)
+### 1. Code Quality (Weight: 30%)
 
 ```markdown
 ## Code Quality Review
 
 ### Readability
-- [ ] Variable naming jelas
-- [ ] Function tidak terlalu panjang (< 50 baris ideal)
-- [ ] Class tidak terlalu besar (< 500 baris ideal)
+- [ ] Variable naming is clear
+- [ ] Function is not too long (< 50 lines ideal)
+- [ ] Class is not too big (< 500 lines ideal)
 - [ ] Consistent formatting
 
 ### Laravel Conventions
-- [ ] Controller: thin controller (logic di Model/Service)
+- [ ] Controller: thin controller (logic in Model/Service)
 - [ ] Model: Eloquent relationship defined
 - [ ] Validation: Form Request class used
-- [ ] Service Layer: logic di `app/Services/`, controller tipis
-- [ ] Naming: camelCase, snake_case sesuai konvensi
+- [ ] Service Layer: logic in `app/Services/`, thin controller
+- [ ] Naming: camelCase, snake_case according to convention
 
 ### Frontend Conventions (React + TypeScript)
 - [ ] TypeScript strict — no `any` type
-- [ ] Functional component dengan hooks (no class component)
+- [ ] Functional component with hooks (no class component)
 - [ ] Props interface defined & exported
 - [ ] Inertia best practices (`useForm`, `usePage`) vs manual fetch
-- [ ] Tailwind utility classes digunakan (no custom CSS unless necessary)
+- [ ] Tailwind utility classes used (no custom CSS unless necessary)
 - [ ] Component splitting — single responsibility
 
 ### DRY (Don't Repeat Yourself)
@@ -144,46 +144,46 @@ Sebelum request review, pastikan:
 - [ ] Reusable logic extracted to method/class
 ```
 
-**Contoh Comment:**
+**Example Comment:**
 ```
-💡 Suggestion: Function ini 80 baris, bisa dipecah jadi:
+💡 Suggestion: This function is 80 lines, could be split into:
 - validateInput()
 - processAttendance()
 - saveToDatabase()
 
-Lebih mudah test & maintain.
+Easier to test & maintain.
 ```
 
 ---
 
-### 2. Functionality (Bobot: 25%)
+### 2. Functionality (Weight: 25%)
 
 ```markdown
 ## Functionality Review
 
 ### Requirement Match
-- [ ] Code sesuai requirement (cek Issue link)
-- [ ] Acceptance criteria terpenuhi
-- [ ] Edge case handled (null, empty, error)
+- [ ] Code matches requirements (check Issue link)
+- [ ] Acceptance criteria met
+- [ ] Edge cases handled (null, empty, error)
 
 ### Logic Correctness
-- [ ] Business logic benar
-- [ ] Conditional logic tepat
-- [ ] Loop tidak infinite
+- [ ] Business logic is correct
+- [ ] Conditional logic is accurate
+- [ ] Loop is not infinite
 - [ ] Error handling adequate
 ```
 
-**Contoh Comment:**
+**Example Comment:**
 ```
-❓ Question: Di requirement disebut "presensi hanya 1x per hari".
-Apakah sudah ada validasi untuk cek presensi duplicate di hari yang sama?
+❓ Question: The requirement says "attendance only 1x per day".
+Is there validation to check for duplicate attendance on the same day?
 
-Cek di: Attendance.php line 45
+Check at: Attendance.php line 45
 ```
 
 ---
 
-### 3. Security (Bobot: 20%) ⚠️ CRITICAL
+### 3. Security (Weight: 20%) ⚠️ CRITICAL
 
 ```markdown
 ## Security Review
@@ -196,22 +196,22 @@ Cek di: Attendance.php line 45
 
 ### Authentication & Authorization
 - [ ] Auth middleware present
-- [ ] Policy/ability check untuk resource access
+- [ ] Policy/ability check for resource access
 - [ ] No hard-coded user ID
 
 ### Common Vulnerabilities
 - [ ] SQL Injection: Eloquent used (no raw query)
-- [ ] XSS: Output escaped ({{ }} di Blade)
-- [ ] CSRF: Token present di form
+- [ ] XSS: Output escaped ({{ }} in Blade)
+- [ ] CSRF: Token present in form
 - [ ] Mass Assignment: $fillable/$guarded defined
 ```
 
-**Contoh Comment:**
+**Example Comment:**
 ```
 🚨 Security Issue:
 Line 23: User::find($request->id)
 
-Ini vulnerable karena ID dari user input tanpa validasi.
+This is vulnerable because the ID comes from user input without validation.
 
 Fix:
 1. Validate: 'id' => 'required|integer|exists:users,id'
@@ -220,29 +220,29 @@ Fix:
 
 ---
 
-### 4. Performance (Bobot: 15%)
+### 4. Performance (Weight: 15%)
 
 ```markdown
 ## Performance Review
 
 ### Database
 - [ ] No N+1 query (with() used)
-- [ ] Index added untuk frequently queried column
+- [ ] Index added for frequently queried columns
 - [ ] Select specific columns (no select *)
 
 ### Caching
 - [ ] Heavy query cached (Cache::remember)
-- [ ] Config cached (env() only di config file)
+- [ ] Config cached (env() only in config file)
 
 ### Queue
 - [ ] Heavy operation queued (email, report, export)
-- [ ] Timeout set untuk long-running task
+- [ ] Timeout set for long-running tasks
 ```
 
-**Contoh Comment:**
+**Example Comment:**
 ```
 ⚡ Performance:
-Line 67: Loop 100x dengan query di dalam loop
+Line 67: Loop 100x with query inside the loop
 
 Before:
 foreach ($students as $student) {
@@ -255,7 +255,7 @@ $attendances = Attendance::whereIn('student_id', $studentIds)->get();
 
 ---
 
-### 5. Testing (Bobot: 10%)
+### 5. Testing (Weight: 10%)
 
 ```markdown
 ## Testing Review
@@ -263,7 +263,7 @@ $attendances = Attendance::whereIn('student_id', $studentIds)->get();
 ### Unit Test
 - [ ] Test file created
 - [ ] Test coverage > 70%
-- [ ] Edge case tested
+- [ ] Edge cases tested
 - [ ] Test naming clear
 
 ### Manual Test
@@ -272,14 +272,14 @@ $attendances = Attendance::whereIn('student_id', $studentIds)->get();
 - [ ] No regression
 ```
 
-**Contoh Comment:**
+**Example Comment:**
 ```
 ✅ Test:
-Test coverage bagus (85%).
+Test coverage is good (85%).
 
-Suggestion: Tambah test untuk edge case:
-- Student presensi 2x di hari yang sama
-- Geolokasi outside radius
+Suggestion: Add tests for edge cases:
+- Student checks in 2x on the same day
+- Geolocation outside radius
 ```
 
 ---
@@ -289,42 +289,42 @@ Suggestion: Tambah test untuk edge case:
 ### Use Standard Labels
 
 ```
-❌ Critical Issue — Harus fix sebelum merge
-⚠️  Major Issue — Penting, tapi bisa diskusi
-💡 Suggestion — Improvement, tidak wajib
-✅ Approved — Tidak ada issue
-❓ Question — Perlu clarification
+❌ Critical Issue — Must fix before merge
+⚠️  Major Issue — Important, but can be discussed
+💡 Suggestion — Improvement, not mandatory
+✅ Approved — No issues
+❓ Question — Needs clarification
 ```
 
 ### Be Specific
 
-**Buruk:**
+**Bad:**
 ```
 "This code is bad, fix it."
 ```
 
-**Baik:**
+**Good:**
 ```
-"💡 Suggestion di AttendanceController.php line 45:
+"💡 Suggestion at AttendanceController.php line 45:
 
-Function processAttendance() terlalu panjang (80 baris).
-Bisa dipecah jadi validateInput(), calculateStatus(), saveToDatabase().
+Function processAttendance() is too long (80 lines).
+Can be split into validateInput(), calculateStatus(), saveToDatabase().
 
-Referensi: https://laravel.com/docs/controllers#controller-best-practices"
+Reference: https://laravel.com/docs/controllers#controller-best-practices"
 ```
 
 ### Be Kind
 
-**Buruk:**
+**Bad:**
 ```
 "Kenapa pakai query builder? Harus Eloquent!"
 ```
 
-**Baik:**
+**Good:**
 ```
-"❓ Question: Ada pertimbangan khusus pakai query builder di sini?
+"❓ Question: Any specific reason for using query builder here?
 
-Kalau tidak ada, mungkin kita bisa pakai Eloquent untuk consistency:
+If not, maybe we could use Eloquent for consistency:
 
 Attendance::create([...])
 
@@ -338,15 +338,15 @@ DB::table('attendances')->insert([...])"
 ## 🔄 Review Process Flow
 
 ```
-1. Author buat PR
+1. Author creates PR
    ↓
-2. GitHub notify Reviewer
+2. GitHub notifies Reviewer
    ↓
-3. Reviewer review (max 24 jam)
+3. Reviewer reviews (max 24 hours)
    ↓
 4a. Request Changes          4b. Approve
     ↓                           ↓
-    Author fix                 Merge
+    Author fixes               Merge
     ↓
     Re-request review
     ↓
@@ -357,12 +357,12 @@ DB::table('attendances')->insert([...])"
 
 | Step | SLA | Owner |
 |---|---|---|
-| PR dibuat → Review start | < 24 jam | Reviewer |
-| Review → Feedback | < 24 jam | Reviewer |
-| Feedback → Fix | < 24 jam | Author |
-| Fix → Re-review | < 24 jam | Reviewer |
+| PR created → Review start | < 24 hours | Reviewer |
+| Review → Feedback | < 24 hours | Reviewer |
+| Feedback → Fix | < 24 hours | Author |
+| Fix → Re-review | < 24 hours | Reviewer |
 
-**Total:** Max 4 hari untuk PR merge (ideal < 2 hari)
+**Total:** Max 4 days for PR merge (ideal < 2 days)
 
 ---
 
@@ -371,8 +371,8 @@ DB::table('attendances')->insert([...])"
 ### Approve ✅
 
 **Criteria:**
-- No critical issue
-- No major security issue
+- No critical issues
+- No major security issues
 - Test coverage adequate
 - Code quality acceptable
 
@@ -385,14 +385,14 @@ DB::table('attendances')->insert([...])"
 ### Request Changes ❌
 
 **Criteria:**
-- Ada critical bug
-- Ada security vulnerability
+- There is a critical bug
+- There is a security vulnerability
 - Test coverage < 70%
-- Code quality tidak acceptable
+- Code quality not acceptable
 
 **Action:**
 - Click "Request Changes"
-- Comment detail issue
+- Comment with detailed issue
 - Tag author
 
 ---
@@ -400,13 +400,13 @@ DB::table('attendances')->insert([...])"
 ### Comment Only 💬
 
 **Criteria:**
-- Ada suggestion improvement
-- Tidak blocking merge
+- There is a suggestion for improvement
+- Not blocking merge
 - Nice to have
 
 **Action:**
-- Comment tanpa request changes
-- Author decide apakah fix sekarang atau nanti
+- Comment without requesting changes
+- Author decides whether to fix now or later
 
 ---
 
@@ -479,13 +479,13 @@ $apiKey = config('services.api.key');
 ```php
 // Bad
 $user = User::find($id);
-return $user->name; // Error jika null
+return $user->name; // Error if null
 ```
 
 **Fix:**
 ```php
 // Good
-$user = User::findOrFail($id); // 404 jika tidak ada
+$user = User::findOrFail($id); // 404 if not found
 return $user->name;
 
 // Or
@@ -502,16 +502,16 @@ if (!$user) {
 ### Per PR
 
 ```
-- Review time (jam)
+- Review time (hours)
 - Comment count
-- Iteration count (berapa kali fix)
-- Time to merge (jam)
+- Iteration count (how many fixes)
+- Time to merge (hours)
 ```
 
 ### Per Sprint
 
 ```
-- Total PR reviewed
+- Total PRs reviewed
 - Average review time
 - Critical issues found
 - Security issues found
@@ -520,7 +520,7 @@ if (!$user) {
 ### Per Developer
 
 ```
-- PR submitted
+- PRs submitted
 - Average iteration count
 - Code quality trend
 ```
@@ -529,23 +529,23 @@ if (!$user) {
 
 ## 🎓 Learning from Review
 
-### Untuk Junior Developer
+### For Junior Developers
 
-Setiap review comment adalah kesempatan belajar:
+Every review comment is a learning opportunity:
 
-1. **Baca dokumentasi** yang di-link reviewer
-2. **Tanya "kenapa"** jika tidak paham
-3. **Fix dengan paham**, bukan copy-paste
-4. **Catat pattern** yang sering dikomentari
+1. **Read the documentation** linked by the reviewer
+2. **Ask "why"** if you don't understand
+3. **Fix with understanding**, not copy-paste
+4. **Note patterns** that are frequently commented on
 
-### Untuk Reviewer
+### For Reviewer
 
-Setiap review adalah teaching moment:
+Every review is a teaching moment:
 
-1. **Jelaskan "kenapa"**, bukan hanya "apa"
-2. **Link dokumentasi** untuk reference
-3. **Give example** code, bukan hanya teori
-4. **Praise good code** juga, bukan hanya critique
+1. **Explain "why"**, not just "what"
+2. **Link documentation** for reference
+3. **Give code examples**, not just theory
+4. **Praise good code** too, not just critique
 
 ---
 
@@ -553,23 +553,23 @@ Setiap review adalah teaching moment:
 
 ### Do's ✅
 
-- ✅ Review dalam 24 jam
-- ✅ Feedback spesifik dengan line reference
-- ✅ Explain "kenapa", bukan hanya "apa"
-- ✅ Link dokumentasi
+- ✅ Review within 24 hours
+- ✅ Specific feedback with line reference
+- ✅ Explain "why", not just "what"
+- ✅ Link documentation
 - ✅ Praise good code
 - ✅ Use conventional comment labels (❌, ⚠️, 💡, ✅)
-- ✅ Test code locally jika kompleks
+- ✅ Test code locally if complex
 
 ### Don'ts ❌
 
-- ❌ Review > 24 jam (bottleneck)
+- ❌ Review > 24 hours (bottleneck)
 - ❌ Vague comment ("fix this")
 - ❌ Personal attack ("this is bad code")
-- ❌ Nitpick semua (prioritize)
-- ❌ Merge tanpa review
+- ❌ Nitpick everything (prioritize)
+- ❌ Merge without review
 - ❌ Skip test check
-- ❌ Assume author tahu (explain context)
+- ❌ Assume author knows (explain context)
 
 ---
 
@@ -582,5 +582,5 @@ Setiap review adalah teaching moment:
 ---
 
 **Next:** [`deployment.md`](deployment.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

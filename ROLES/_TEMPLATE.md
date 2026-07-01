@@ -7,28 +7,28 @@
 
 ## Metadata
 
-| Atribut | Value |
+| Attribute | Value |
 |---|---|
-| **Role ID** | `nama-role` (slug, lowercase, pakai hypen) |
-| **Dibuat** | YYYY-MM-DD |
-| **Maintainer** | Nama PIC |
+| **Role ID** | `role-name` (slug, lowercase, use hyphens) |
+| **Created** | YYYY-MM-DD |
+| **Maintainer** | PIC Name |
 | **Level** | Junior / Mid / Senior / Lead / Stakeholder |
 
 ---
 
-## Ringkasan
+## Summary
 
-[Jelaskan role ini dalam 2-3 kalimat. Siapa dia, apa yang dilakukan, di project apa.]
+[Describe this role in 2-3 sentences. Who they are, what they do, in which project.]
 
 ---
 
-## Tanggung Jawab
+## Responsibilities
 
-### 1. [Area 1 — Persentase Waktu]
+### 1. [Area 1 — Time Allocation]
 - [Task detail]
 - [Task detail]
 
-### 2. [Area 2 — Persentase Waktu]
+### 2. [Area 2 — Time Allocation]
 - [Task detail]
 - [Task detail]
 
@@ -36,21 +36,21 @@
 
 ## AI Instructions
 
-> Bagian ini dibaca oleh AI Agent setiap kali membantu role ini.
-> Tulis dalam bahasa Indonesia, gunakan kalimat perintah langsung.
+> This section is read by the AI Agent every time it assists this role.
+> Write in English, use direct command sentences.
 
-### Konteks Role
-- [Role ini bertanggung jawab atas apa]
-- [Apa yang AI harus prioritaskan saat membantu]
+### Role Context
+- [What this role is responsible for]
+- [What the AI should prioritize when assisting]
 
-### Cara AI Harus Membantu
-- [Instruksi spesifik tentang format output]
-- [Bahasa yang digunakan]
-- [Hal yang harus dihindari]
+### How AI Should Help
+- [Specific instructions on output format]
+- [Language to use]
+- [Things to avoid]
 
 ### Constraints
-- [Apa yang tidak boleh dilakukan AI]
-- [Batasan akses informasi]
+- [What the AI is not allowed to do]
+- [Information access limitations]
 
 ---
 
@@ -58,15 +58,15 @@
 
 | Tool | Access Level | Notes |
 |---|---|---|
-| GitHub (source code) | read / write / admin | Project spesifik |
+| GitHub (source code) | read / write / admin | Project specific |
 | GitHub Issues | create / comment / triage | - |
-| Trello | view / edit / admin | Board spesifik |
+| Trello | view / edit / admin | Board specific |
 | Environment (staging) | view / operate | - |
 | Environment (production) | view / operate | - |
 
 ---
 
-## Output yang Diharapkan
+## Expected Outputs
 
 - [Output 1]
 - [Output 2]
@@ -76,12 +76,12 @@
 
 ## Growth Path
 
-> Untuk role yang bersifat growth (junior → senior), tuliskan kemungkinan transisi.
+> For growth-oriented roles (junior → senior), write possible transitions.
 
-| Level | Role Target | Prasyarat |
+| Level | Target Role | Prerequisites |
 |---|---|---|
-| Current | [Role saat ini] | - |
-| Next | [Role berikutnya] | [Skill / waktu] |
+| Current | [Current role] | - |
+| Next | [Next role] | [Skill / time] |
 
 ---
 
@@ -92,7 +92,7 @@
 
 ---
 
-## Contoh Penggunaan di opencode.json
+## Example Usage in opencode.json
 
 ```json
 {
@@ -105,4 +105,4 @@
 
 ---
 
-*Template ini adalah bagian dari [playbook Koneksi](../../README.md).*
+*This template is part of the [Koneksi playbook](../../README.md).*

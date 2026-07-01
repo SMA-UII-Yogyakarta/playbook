@@ -1,6 +1,6 @@
 # Testing SOP
 
-> Standar testing untuk SMART Absen SMA UII.
+> Testing standards for SMART Absen SMA UII.
 
 ---
 
@@ -180,7 +180,7 @@ public function test_user_cannot_login_with_invalid_password()
 
 // Arrange-Act-Assert pattern
 // One assertion per test (ideal)
-// Factory untuk data creation
+// Factory for data creation
 // Mock external services
 ```
 
@@ -189,9 +189,9 @@ public function test_user_cannot_login_with_invalid_password()
 // Bad naming
 public function test_login()
 
-// Multiple assertions tanpa context
+// Multiple assertions without context
 // Hardcoded data
-// Test yang depend on order
+// Tests that depend on order
 ```
 
 ---
@@ -300,14 +300,14 @@ class StudentAttendanceTest extends DuskTestCase
                 ->type('password', 'password')
                 ->press('Login')
                 ->waitForLocation('/dashboard')
-                ->clickLink('Presensi')
+                ->clickLink('Attendance')
                 ->waitForLocation('/attendance')
-                ->assertSee('Form Presensi')
+                ->assertSee('Attendance Form')
                 ->script('navigator.geolocation.getCurrentPosition(function(p) { window.testLat = p.coords.latitude; window.testLng = p.coords.longitude; })')
                 ->pause(1000)
-                ->press('Kirim Presensi')
-                ->waitForText('Presensi berhasil')
-                ->assertSee('Presensi berhasil dikirim');
+                ->press('Submit Attendance')
+                ->waitForText('Attendance successful')
+                ->assertSee('Attendance submitted successfully');
         });
     }
 }
@@ -332,11 +332,11 @@ class StudentAttendanceTest extends DuskTestCase
 ### Coverage Check
 
 ```bash
-# Run test dengan coverage
+# Run test with coverage
 php artisan test --coverage
 
-# Coverage minimum 70%
-# Fail jika dibawah 70%
+# Minimum coverage 70%
+# Fails if below 70%
 ```
 
 **phpunit.xml:**
@@ -367,31 +367,31 @@ php artisan test --coverage
 ## Authentication Module
 
 ### Login
-- [ ] Login dengan email & password valid
-- [ ] Login dengan email invalid (show error)
-- [ ] Login dengan password invalid (show error)
-- [ ] Login dengan empty field (show validation)
+- [ ] Login with valid email & password
+- [ ] Login with invalid email (show error)
+- [ ] Login with invalid password (show error)
+- [ ] Login with empty field (show validation)
 - [ ] Remember me functionality
 - [ ] Logout
 
 ### Dashboard
-- [ ] Dashboard loads setelah login
-- [ ] Statistik correct (hadir, sakit, izin, alfa)
-- [ ] Menu accessible sesuai role
+- [ ] Dashboard loads after login
+- [ ] Statistics correct (present, sick, leave, absent)
+- [ ] Menu accessible according to role
 ```
 
 ```markdown
-## Presensi Module
+## Attendance Module
 
 ### Student Attendance
-- [ ] Form presensi accessible
+- [ ] Attendance form accessible
 - [ ] Camera preview working
 - [ ] Geolocation detected
-- [ ] Submit presensi berhasil
-- [ ] Duplicate presensi prevented
+- [ ] Submit attendance successful
+- [ ] Duplicate attendance prevented
 - [ ] Outside radius prevented
 - [ ] Photo saved to storage
-- [ ] Riwayat presensi tampil
+- [ ] Attendance history displayed
 ```
 
 ---
@@ -401,19 +401,19 @@ php artisan test --coverage
 ```markdown
 ## UAT Sign-off
 
-**Feature:** Presensi Siswa  
+**Feature:** Student Attendance  
 **Version:** v1.0.0  
-**Date:** 24 Juni 2026  
+**Date:** 24 June 2026  
 **Tester:** Ahmad Hanif
 
 ### Test Results
 
 | Test Case | Expected | Actual | Status |
 |---|---|---|---|
-| Login valid | Success | Success | ✅ |
-| Login invalid | Error | Error | ✅ |
-| Submit presensi | Success | Success | ✅ |
-| Duplicate presensi | Error | Error | ✅ |
+| Valid login | Success | Success | ✅ |
+| Invalid login | Error | Error | ✅ |
+| Submit attendance | Success | Success | ✅ |
+| Duplicate attendance | Error | Error | ✅ |
 
 ### Issues Found
 
@@ -429,7 +429,7 @@ php artisan test --coverage
 ❌ **REJECTED** — Fix critical issues first
 
 **Notes:**
-Fix major & minor issues di Sprint berikutnya.
+Fix major & minor issues in the next sprint.
 Critical issues: None.
 
 **Signature:**
@@ -442,17 +442,17 @@ Product Analyst
 ## 🔄 Testing Workflow
 
 ```
-1. Developer tulis code
+1. Developer writes code
    ↓
-2. Developer tulis unit test
+2. Developer writes unit test
    ↓
 3. Run test locally (php artisan test)
    ↓
-4. Test hijau → Commit
+4. Test green → Commit
    ↓
-5. Push → CI run test (GitHub Actions)
+5. Push → CI runs test (GitHub Actions)
    ↓
-6. CI hijau → Code review
+6. CI green → Code review
    ↓
 7. Code review approved → Merge
    ↓
@@ -535,20 +535,20 @@ $attendances = Attendance::factory()->count(10)->create();
 ```markdown
 ## Bug Report
 
-**Title:** Presensi gagal submit saat geolokasi null
+**Title:** Attendance submit fails when geolocation is null
 
 **Severity:** Critical
 
 **Environment:** Production
 
 **Steps to Reproduce:**
-1. Login sebagai siswa
-2. Klik menu Presensi
-3. Disable GPS di browser
-4. Klik "Kirim Presensi"
+1. Login as student
+2. Click Attendance menu
+3. Disable GPS in browser
+4. Click "Submit Attendance"
 
 **Expected Result:**
-Show error "Geolokasi wajib diaktifkan"
+Show error "Geolocation must be enabled"
 
 **Actual Result:**
 Error 500, page crash
@@ -561,7 +561,7 @@ Error 500, page crash
 **Device:** Desktop
 
 **Reported by:** Ahmad Hanif  
-**Date:** 24 Juni 2026
+**Date:** 24 June 2026
 ```
 
 ---
@@ -574,8 +574,8 @@ Error 500, page crash
 - Total tests: 150
 - New tests: 25
 - Test coverage: 75%
-- Bug found in staging: 5
-- Bug found in production: 0
+- Bugs found in staging: 5
+- Bugs found in production: 0
 ```
 
 ### Per Developer
@@ -651,5 +651,5 @@ public function it_sends_sms_after_attendance()
 ---
 
 **Next:** —  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

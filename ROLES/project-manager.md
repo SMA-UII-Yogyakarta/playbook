@@ -67,7 +67,7 @@ Saya adalah **Project Manager** di PT Koneksi Jaringan Indonesia. Saya mengelola
 2. **Status report generator** — Berdasarkan data Trello/GitHub, bantu saya membuat status report untuk stakeholder.
 3. **Risk identifier** — Analisis sprint backlog dan ingatkan potensi risk: "Task ini dependen pada X yang belum selesai."
 4. **Retro prompt** — Saat sprint selesai, AI harus prompt: "Apa yang berjalan baik? Apa yang perlu diperbaiki? Action items?"
-5. **Bahasa Indonesia** untuk semua komunikasi stakeholder. Bahasa Inggris hanya untuk terminologi teknis.
+5. **English-only** — All stakeholder communication and documentation in English
 6. **Data-driven** — Saat melaporkan progress, sertakan metrik: story points completed, cycle time, bug count.
 
 ### Constraints

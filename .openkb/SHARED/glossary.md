@@ -1,16 +1,16 @@
-# Glossary — Playbook & Ekosistem Koneksi
+# Glossary — Playbook & Koneksi Ecosystem
 
-| Istilah | Deskripsi |
+| Term | Description |
 |---|---|
-| **Playbook** | SOP, workflow, dan standar engineering PT Koneksi Jaringan Indonesia |
-| **ROLES** | Definisi role dinamis yang bisa di-copy dan di-load oleh AI Agent |
-| **TACO** | Trello → AI → Commit → Output — alur kerja AI Agent 4 langkah |
-| **OpenKB** | Open Knowledge Base — protokol komunikasi AI ↔ Human via file markdown |
-| **OpenCode** | AI Agent CLI/TUI untuk coding berbasis konteks project |
+| **Playbook** | SOP, workflow, and engineering standards of PT Koneksi Jaringan Indonesia |
+| **ROLES** | Dynamic role definitions that can be copied and loaded by AI Agent |
+| **TACO** | Trello → AI → Commit → Output — 4-step AI Agent workflow |
+| **OpenKB** | Open Knowledge Base — AI ↔ Human communication protocol via markdown files |
+| **OpenCode** | AI Agent CLI/TUI for project-context-based coding |
 | **KAEDE** | Koneksi Automated Environment DE — Trello Power-Up + MCP bridge |
-| **MCP** | Model Context Protocol — protokol standar untuk komunikasi AI dengan tools |
-| **ADR** | Architecture Decision Record — catatan keputusan arsitektur |
-| **DoR** | Definition of Ready — kriteria task siap dikerjakan |
-| **DoD** | Definition of Done — kriteria task selesai |
-| **UAT** | User Acceptance Testing — validasi oleh product analyst/stakeholder |
-| **Trello MCP Server** | Server open source yang menghubungkan Trello API dengan AI Agent via MCP |
+| **MCP** | Model Context Protocol — standard protocol for AI communication with tools |
+| **ADR** | Architecture Decision Record — architectural decision records |
+| **DoR** | Definition of Ready — criteria for a task to be ready |
+| **DoD** | Definition of Done — criteria for a task to be complete |
+| **UAT** | User Acceptance Testing — validation by product analyst/stakeholder |
+| **Trello MCP Server** | Open source server that connects Trello API with AI Agent via MCP |

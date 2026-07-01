@@ -1,27 +1,27 @@
 # Learning Resources — SMART Absen SMAUII
 
-> Panduan belajar terstruktur untuk tim development SMART Absen.
+> Structured learning guide for the SMART Absen development team.
 
 ---
 
-## 📚 Kurikulum Utama — OpenKB for Junior
+## 📚 Main Curriculum — OpenKB for Junior
 
-Tim menggunakan **[openkb-for-junior](https://github.com/konxc/openkb-for-junior)** sebagai kurikulum belajar utama. Repo ini berisi **15 fase** pembelajaran Laravel dari nol sampai siap kerja.
+The team uses **[openkb-for-junior](https://github.com/konxc/openkb-for-junior)** as the main learning curriculum. This repo contains **15 phases** of Laravel learning from zero to job-ready.
 
-### Cara Mengakses
+### How to Access
 
 ```bash
-# Clone kurikulum
+# Clone curriculum
 git clone git@github.com:konxc/openkb-for-junior.git
 cd openkb-for-junior
 ```
 
-**Struktur:**
+**Structure:**
 ```
 openkb-for-junior/
-├── journey/                    ← Kurikulum utama (15 fase)
-│   ├── 00-CURRICULUM.md        ← Peta belajar induk
-│   ├── FASE-01-FONDASI-MUTLAK/ ← Programming dasar
+├── journey/                    ← Main curriculum (15 phases)
+│   ├── 00-CURRICULUM.md        ← Master learning map
+│   ├── FASE-01-FONDASI-MUTLAK/ ← Programming basics
 │   ├── FASE-02-PHP-FUNDAMENTAL/
 │   ├── FASE-03-OOP/
 │   ├── FASE-04-FUNCTIONAL/
@@ -36,7 +36,7 @@ openkb-for-junior/
 │   ├── FASE-13-CODE-QUALITY/
 │   ├── FASE-14-PORTFOLIO/
 │   └── FASE-15-BISNIS/
-└── PRAKTIK-CODING/             ← Latihan praktik
+└── PRAKTIK-CODING/             ← Practice exercises
 ```
 
 ---
@@ -45,53 +45,53 @@ openkb-for-junior/
 
 ### Fathan — Junior Frontend Developer
 
-**Fokus:** Frontend track dengan InertiaJS + React 19 + TypeScript
+**Focus:** Frontend track with InertiaJS + React 19 + TypeScript
 
-| Fase | Topik | Estimasi | Prioritas |
-|------|-------|----------|-----------|
-| 01 | Fondasi Mutlak | 1-2 minggu | ✅ Wajib |
-| 02 | PHP Fundamental | 2-3 minggu | ✅ Wajib |
-| 03 | OOP | 2-3 minggu | ✅ Wajib |
-| 05 | Web Fundamental | 2 minggu | ✅ Wajib |
-| 06 | Laravel Deep Dive | 4-6 minggu | ✅ Wajib |
-| 09 | Frontend di Laravel | 1-2 minggu | ✅ **Fokus utama** |
-| 11 | Tools & Workflow | 1-2 minggu | ✅ Wajib |
+| Phase | Topic | Estimated Time | Priority |
+|-------|-------|----------------|----------|
+| 01 | Absolute Foundation | 1-2 weeks | ✅ Required |
+| 02 | PHP Fundamental | 2-3 weeks | ✅ Required |
+| 03 | OOP | 2-3 weeks | ✅ Required |
+| 05 | Web Fundamental | 2 weeks | ✅ Required |
+| 06 | Laravel Deep Dive | 4-6 weeks | ✅ Required |
+| 09 | Frontend in Laravel | 1-2 weeks | ✅ **Main focus** |
+| 11 | Tools & Workflow | 1-2 weeks | ✅ Required |
 
-**Dokumen Kunci:**
+**Key Documents:**
 - `FASE-09/09-01-cara-kerja-vite.md`
 - `FASE-09/09-02-tailwind-css.md`
-- `FASE-09/09-06-inertiajs-dan-react.md` (jika ada)
+- `FASE-09/09-06-inertiajs-dan-react.md` (if available)
 - `FASE-09/09-05-hot-reload-hmr.md`
 - React + TypeScript official docs
 
-**Tambahan Materi:**
+**Additional Materials:**
 - [React 19 Documentation](https://react.dev/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
 - [InertiaJS Documentation](https://inertiajs.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
-**Target Sprint 1:**
-- US-005: Halaman login (React + Inertia + Tailwind)
-- Integrasi dengan backend Sanctum via Inertia
+**Sprint 1 Target:**
+- US-005: Login page (React + Inertia + Tailwind)
+- Integration with backend Sanctum via Inertia
 
 ---
 
 ### Ihsan — Junior Backend Developer
 
-**Fokus:** Backend track dengan Laravel Sanctum & Database
+**Focus:** Backend track with Laravel Sanctum & Database
 
-| Fase | Topik | Estimasi | Prioritas |
-|------|-------|----------|-----------|
-| 01 | Fondasi Mutlak | 1-2 minggu | ✅ Wajib |
-| 02 | PHP Fundamental | 2-3 minggu | ✅ Wajib |
-| 03 | OOP | 2-3 minggu | ✅ Wajib |
-| 05 | Web Fundamental | 2 minggu | ✅ Wajib |
-| 06 | Laravel Deep Dive | 4-6 minggu | ✅ **Fokus utama** |
-| 07 | Database & SQL | 2 minggu | ✅ **Fokus utama** |
-| 08 | Design Pattern | 2-3 minggu | ✅ Wajib |
-| 11 | Tools & Workflow | 1-2 minggu | ✅ Wajib |
+| Phase | Topic | Estimated Time | Priority |
+|-------|-------|----------------|----------|
+| 01 | Absolute Foundation | 1-2 weeks | ✅ Required |
+| 02 | PHP Fundamental | 2-3 weeks | ✅ Required |
+| 03 | OOP | 2-3 weeks | ✅ Required |
+| 05 | Web Fundamental | 2 weeks | ✅ Required |
+| 06 | Laravel Deep Dive | 4-6 weeks | ✅ **Main focus** |
+| 07 | Database & SQL | 2 weeks | ✅ **Main focus** |
+| 08 | Design Pattern | 2-3 weeks | ✅ Required |
+| 11 | Tools & Workflow | 1-2 weeks | ✅ Required |
 
-**Dokumen Kunci:**
+**Key Documents:**
 - `FASE-06/06-03-routing-web-php.md`
 - `FASE-06/06-04-controller-dan-request.md`
 - `FASE-06/06-05-model-dan-eloquent-orm.md`
@@ -100,8 +100,8 @@ openkb-for-junior/
 - `FASE-07/07-03-relationship-dan-join.md`
 - `FASE-07/07-06-n-plus-one-problem.md`
 
-**Target Sprint 1:**
-- US-001: Login dengan Sanctum token
+**Sprint 1 Target:**
+- US-001: Login with Sanctum token
 - US-002: Logout + revoke token
 - US-003: RBAC middleware
 - US-004: Session management
@@ -110,20 +110,20 @@ openkb-for-junior/
 
 ### Azis — Learning Mentor / Technical Guide
 
-**Fokus:** Menguasai seluruh stack untuk mentoring
+**Focus:** Master the entire stack for mentoring
 
-| Fase | Topik | Estimasi | Prioritas |
-|------|-------|----------|-----------|
-| 01-05 | Fondasi (review) | 1-2 minggu | ⚡ Review cepat |
-| 06 | Laravel Deep Dive | 2-3 minggu | ✅ Wajib |
-| 07 | Database & SQL | 1-2 minggu | ✅ Wajib |
-| 08 | Design Pattern | 1-2 minggu | ✅ Wajib |
-| 09 | Frontend di Laravel | 1 minggu | ⚡ Overview |
-| 10 | Infrastruktur & Deployment | 2 minggu | ✅ **Fokus utama** |
-| 11 | Tools & Workflow | 1 minggu | ✅ Wajib |
-| 12 | Testing & QA | 1-2 minggu | ✅ Wajib |
+| Phase | Topic | Estimated Time | Priority |
+|-------|-------|----------------|----------|
+| 01-05 | Foundation (review) | 1-2 weeks | ⚡ Quick review |
+| 06 | Laravel Deep Dive | 2-3 weeks | ✅ Required |
+| 07 | Database & SQL | 1-2 weeks | ✅ Required |
+| 08 | Design Pattern | 1-2 weeks | ✅ Required |
+| 09 | Frontend in Laravel | 1 week | ⚡ Overview |
+| 10 | Infrastructure & Deployment | 2 weeks | ✅ **Main focus** |
+| 11 | Tools & Workflow | 1 week | ✅ Required |
+| 12 | Testing & QA | 1-2 weeks | ✅ Required |
 
-**Dokumen Kunci:**
+**Key Documents:**
 - `FASE-10/10-03-laragon-di-windows.md`
 - `FASE-10/10-05-ssh-dan-terminal.md`
 - `FASE-10/10-06-docker-dasar.md`
@@ -132,26 +132,26 @@ openkb-for-junior/
 - `laravel-telescope.md`
 - `laragon-vs-artisan-serve.md`
 
-**Tanggung Jawab:**
-- Fasilitasi environment setup (Laragon, database, Node.js)
+**Responsibilities:**
+- Facilitate environment setup (Laragon, database, Node.js)
 - Debugging session (Telescope, log reading, Tinker)
 - Concept explanation (Laravel lifecycle, middleware, Eloquent)
-- Code review awal sebelum submit ke PM/Senior
+- Initial code review before submitting to PM/Senior
 
 ---
 
 ### Hanif — Product Analyst
 
-**Fokus:** Understanding technical constraints & possibilities
+**Focus:** Understanding technical constraints & possibilities
 
-| Fase | Topik | Estimasi | Prioritas |
-|------|-------|----------|-----------|
-| 01 | Fondasi Mutlak | 1 minggu | ⚡ Overview |
-| 05 | Web Fundamental | 1 minggu | ✅ Wajib |
-| 06 | Laravel Deep Dive | 2 minggu | ⚡ Overview |
-| 15 | Bisnis & Industri | 1 minggu | ✅ Wajib |
+| Phase | Topic | Estimated Time | Priority |
+|-------|-------|----------------|----------|
+| 01 | Absolute Foundation | 1 week | ⚡ Overview |
+| 05 | Web Fundamental | 1 week | ✅ Required |
+| 06 | Laravel Deep Dive | 2 weeks | ⚡ Overview |
+| 15 | Business & Industry | 1 week | ✅ Required |
 
-**Dokumen Kunci:**
+**Key Documents:**
 - `FASE-05/05-01-cara-kerja-web.md`
 - `FASE-05/05-02-http-dan-rest.md`
 - `FASE-06/06-02-arsitektur-laravel.md`
@@ -160,9 +160,9 @@ openkb-for-junior/
 - `FASE-15/15-03-peran-tim-pengembang.md`
 
 **Target:**
-- Memahami technical feasibility fitur
-- Mapping requirement → technical implementation
-- Komunikasi efektif dengan dev team
+- Understand technical feasibility of features
+- Map requirement → technical implementation
+- Effective communication with dev team
 
 ---
 
@@ -170,8 +170,8 @@ openkb-for-junior/
 
 ### Development Stack (Laragon 6.0)
 
-| Tool | Versi | Path |
-|------|-------|------|
+| Tool | Version | Path |
+|------|---------|------|
 | PHP | 8.4.22 NTS | `C:\laragon\bin\php\php-8.4.22-nts-Win32-vs17-x64\` |
 | Apache | 2.4.54 | `C:\laragon\bin\apache\` |
 | PostgreSQL | 16 | `C:\laragon\bin\postgresql\postgresql-16.x-winx64\` |
@@ -182,54 +182,54 @@ openkb-for-junior/
 
 **Setup Guide:**
 - [`02-lingkungan-development.md` (aksesekolah)](https://github.com/SMA-UII-Yogyakarta/aksesekolah/blob/main/docs/02-lingkungan-development.md)
-- [OpenKB FASE-10: Laragon di Windows](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md)
+- [OpenKB FASE-10: Laragon on Windows](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md)
 
 ---
 
-## 📖 Cara Belajar Efektif
+## 📖 How to Learn Effectively
 
-### Metode 1: Belajar Berurutan (Rekomendasi)
+### Method 1: Sequential Learning (Recommended)
 
-1. Buka `journey/00-CURRICULUM.md` — pahami peta belajar
-2. Mulai dari `FASE-01/01-01-apa-itu-pemrograman.md`
-3. Setiap dokumen punya bagian **Latihan** — kerjakan!
-4. Setelah beberapa fase, buka `PRAKTIK-CODING/` untuk latihan langsung
-5. Lanjut ke fase berikutnya
+1. Open `journey/00-CURRICULUM.md` — understand the learning map
+2. Start from `FASE-01/01-01-what-is-programming.md`
+3. Each document has a **Practice** section — do it!
+4. After a few phases, open `PRAKTIK-CODING/` for hands-on practice
+5. Continue to the next phase
 
-### Metode 2: Belajar Per Topik
+### Method 2: Topic-Based Learning
 
-| Butuh | Buka |
-|-------|------|
-| Paham MVC di Laravel | `FASE-08/08-02-mvc-architecture.md` |
-| Cara kerja Eloquent | `FASE-06/06-05-model-dan-eloquent-orm.md` |
-| Deploy ke hosting | `FASE-10/10-07-cpanel-dan-hosting.md` |
-| Persiapan interview | `FASE-14/14-06-pertanyaan-interview-laravel.md` |
+| Need | Open |
+|------|------|
+| Understand MVC in Laravel | `FASE-08/08-02-mvc-architecture.md` |
+| How Eloquent works | `FASE-06/06-05-model-dan-eloquent-orm.md` |
+| Deploy to hosting | `FASE-10/10-07-cpanel-dan-hosting.md` |
+| Interview preparation | `FASE-14/14-06-pertanyaan-interview-laravel.md` |
 
-### Metode 3: Belajar Sambil Praktek
+### Method 3: Learn by Doing
 
-Setelah membaca beberapa fase, langsung praktek di `PRAKTIK-CODING/`:
-- `latihan-01` — Variabel dan tipe data ⚡
-- `latihan-02` — Loop dan kondisi ⚡
-- `latihan-03` — Class sederhana
-- `latihan-04` — Routing dan controller ⚡
+After reading a few phases, jump straight into practice in `PRAKTIK-CODING/`:
+- `latihan-01` — Variables and data types ⚡
+- `latihan-02` — Loops and conditions ⚡
+- `latihan-03` — Simple class
+- `latihan-04` — Routing and controller ⚡
 - `latihan-05` — Eloquent query ⚡
-- `latihan-06` — Membuat fitur CRUD ⚡
-- `latihan-07` — Integrasi API payment
-- `capstone` — Buat fitur sederhana ⚡
+- `latihan-06` — Building CRUD features ⚡
+- `latihan-07` — Payment API integration
+- `capstone` — Create a simple feature ⚡
 
 ---
 
 ## 🧪 Progress Tracking
 
-Progress belajar di-track di **Trello board** [`SMART ABSEN SMAUII`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii).
+Learning progress is tracked on the **Trello board** [`SMART ABSEN SMAUII`](https://trello.com/b/BHXA6ZcR/smart-absen-smauii).
 
 **List:** `📚 Learning Path (Azis)`
 
-Setiap anggota tim punya card dengan:
-- Checklist fase yang harus diselesaikan
-- Link ke dokumen openkb-for-junior
-- Status progress (To Do / In Progress / Done)
-- Diskusi & blocker di comments
+Each team member has a card with:
+- Checklist of phases to complete
+- Link to openkb-for-junior documents
+- Progress status (To Do / In Progress / Done)
+- Discussion & blockers in comments
 
 ---
 
@@ -238,41 +238,41 @@ Setiap anggota tim punya card dengan:
 | Role | Person | Scope |
 |------|--------|-------|
 | **Learning Mentor** | Azis | Environment, debugging, concept explanation |
-| **Project Manager** | Sandikodev | Code review final, sprint planning, merge PR |
+| **Project Manager** | Sandikodev | Final code review, sprint planning, merge PR |
 | **Senior Developer** | Sandikodev | Architecture decision, technical guidance |
 
-**Cara Minta Bantuan:**
-1. Coba baca dokumentasi openkb-for-junior dulu
-2. Jika masih stuck, tanya di Trello card (comment) atau Discord/WhatsApp
-3. Untuk debugging, siapkan: error message, log, screenshot
+**How to Ask for Help:**
+1. Try reading openkb-for-junior documentation first
+2. If still stuck, ask on the Trello card (comment) or Discord/WhatsApp
+3. For debugging, prepare: error message, log, screenshot
 
 ---
 
-## 📊 Estimasi Timeline
+## 📊 Estimated Timeline
 
-| Minggu | Aktivitas |
-|--------|-----------|
-| 1-2 | **Sprint 1 — Setup:** Sinkronisasi docs, instalasi (Bun, NeonDB, PostgreSQL), setup Sanctum & Spatie. Fathan: React dasar + TypeScript. Ihsan: Laravel Service Layer + PostgreSQL. Azis: Onboarding + fasilitasi setup |
-| 3-4 | **Sprint 2 — Auth:** Login/register Sanctum, RBAC Spatie, halaman profile (React+Inertia). Fathan: InertiaJS + React hooks. Ihsan: API Sanctum, Spatie middleware |
-| 5-6 | **Sprint 3 — Presensi:** Presensi dengan geolokasi, swafoto. Fathan: React advanced. Ihsan: API presensi, upload foto |
-| 7-8 | **Sprint 4 — Laporan:** Laporan presensi, admin panel, UAT. Review & final assessment |
+| Week | Activity |
+|------|----------|
+| 1-2 | **Sprint 1 — Setup:** Sync docs, installation (Bun, NeonDB, PostgreSQL), setup Sanctum & Spatie. Fathan: React basics + TypeScript. Ihsan: Laravel Service Layer + PostgreSQL. Azis: Onboarding + facilitate setup |
+| 3-4 | **Sprint 2 — Auth:** Sanctum login/register, Spatie RBAC, profile page (React+Inertia). Fathan: InertiaJS + React hooks. Ihsan: Sanctum API, Spatie middleware |
+| 5-6 | **Sprint 3 — Attendance:** Attendance with geolocation, selfie photo. Fathan: React advanced. Ihsan: Attendance API, photo upload |
+| 7-8 | **Sprint 4 — Reports:** Attendance reports, admin panel, UAT. Review & final assessment |
 
-**Catatan:** Timeline fleksibel — yang penting **pahami konsep** sebelum lanjut.
+**Note:** Timeline is flexible — the important thing is to **understand the concepts** before moving on.
 
 ---
 
-## 🔗 Referensi Eksternal
+## 🔗 External References
 
-| Resource | Deskripsi |
-|----------|-----------|
+| Resource | Description |
+|----------|-------------|
 | [Laravel Documentation](https://laravel.com/docs) | Official docs — always up to date |
 | [Laracasts](https://laracasts.com) | Video tutorials (free + paid) |
-| [PHP The Right Way](https://phptherightway.com) | Best practices PHP |
+| [PHP The Right Way](https://phptherightway.com) | PHP best practices |
 | [Stack Overflow](https://stackoverflow.com/questions/tagged/laravel) | Q&A community |
 
 ---
 
 <p align="center">
-  <b>Belajar itu proses seumur hidup — nikmati setiap langkahnya! 🚀</b><br>
+  <b>Learning is a lifelong process — enjoy every step! 🚀</b><br>
   <i>"The expert in anything was once a beginner."</i>
 </p>

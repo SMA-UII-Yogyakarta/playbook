@@ -8,16 +8,16 @@
 
 ## Context
 
-Kita perlu memutuskan struktur repository untuk project SMART Absen SMA UII:
-- Opsi 1: Single repository (Laravel monolith)
-- Opsi 2: Multiple repositories (backend, frontend, mobile terpisah)
-- Opsi 3: Monorepo dengan submodule
+We need to decide the repository structure for the SMART Absen SMA UII project:
+- Option 1: Single repository (Laravel monolith)
+- Option 2: Multiple repositories (backend, frontend, mobile separate)
+- Option 3: Monorepo with submodule
 
 ## Decision
 
-Dipilih: **Opsi 3 — Monorepo dengan Submodule**
+Chosen: **Option 3 — Monorepo with Submodule**
 
-Struktur:
+Structure:
 ```
 aksesekolah/ (entrypoint)
 ├── apps/
@@ -29,22 +29,22 @@ aksesekolah/ (entrypoint)
 
 ## Rationale
 
-**Keuntungan:**
-1. Single entry point untuk dokumentasi & onboarding
-2. Backend (`core`) dapat dikembangkan terpisah
-3. Frontend dapat evolve ke Next.js tanpa breaking backend
-4. Mobile app dapat standalone
+**Advantages:**
+1. Single entry point for documentation & onboarding
+2. Backend (`core`) can be developed separately
+3. Frontend can evolve to Next.js without breaking backend
+4. Mobile app can be standalone
 5. Versioning per module
 
-**Kerugian:**
+**Disadvantages:**
 1. Complexity git submodule
-2. CI/CD lebih kompleks
+2. CI/CD more complex
 
 ## Consequences
 
-- Developer harus paham git submodule
-- `core` dapat di-deploy terpisah
-- Frontend dapat consume API `core` tanpa deploy bersama
+- Developer must understand git submodule
+- `core` can be deployed separately
+- Frontend can consume `core` API without co-deployment
 
 ---
 

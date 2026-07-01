@@ -1,6 +1,6 @@
 # Communication Guidelines
 
-> Standar komunikasi tim engineering SMA UII Yogyakarta.
+> Communication standards for the SMA UII Yogyakarta engineering team.
 
 ---
 
@@ -8,12 +8,12 @@
 
 | Channel | Purpose | Response Time | Members |
 |---|---|---|---|
-| **WhatsApp Group** | Komunikasi cepat, daily standup, urgent issue | < 1 jam | Semua tim |
-| **GitHub Issues** | Technical discussion, task tracking | < 24 jam | Developer |
-| **GitHub PR Comments** | Code review discussion | < 24 jam | Developer + Reviewer |
-| **Trello Card Comments** | Product discussion, requirement clarification | < 24 jam | Semua tim |
-| **Email** | Formal communication, stakeholder report | < 48 jam | Semua tim |
-| **Meeting (Google Meet)** | Sprint planning, retrospective, demo | Scheduled | Semua tim |
+| **WhatsApp Group** | Quick communication, daily standup, urgent issues | < 1 hour | All team |
+| **GitHub Issues** | Technical discussion, task tracking | < 24 hours | Developers |
+| **GitHub PR Comments** | Code review discussion | < 24 hours | Developer + Reviewer |
+| **Trello Card Comments** | Product discussion, requirement clarification | < 24 hours | All team |
+| **Email** | Formal communication, stakeholder report | < 48 hours | All team |
+| **Meeting (Google Meet)** | Sprint planning, retrospective, demo | Scheduled | All team |
 
 ---
 
@@ -30,53 +30,53 @@
 ### Etiquette
 
 **Do's ✅**
-- Standup update setiap pagi (format di bawah)
-- Share progress harian
-- Tanya jika stuck > 30 menit
-- Share blocker segera
-- Tag orang yang dituju: `@Sandikodev`
-- Use thread untuk bahas topik spesifik
+- Standup update every morning (format below)
+- Share daily progress
+- Ask if stuck > 30 minutes
+- Share blockers immediately
+- Tag the intended person: `@Sandikodev`
+- Use threads to discuss specific topics
 
 **Don'ts ❌**
-- Jangan spam (kirim 1 pesan lengkap, bukan 10 pesan pendek)
-- Jangan bahas technical detail terlalu dalam (pindah ke GitHub Issue)
-- Jangan lupa tag jika butuh response
-- Jangan skip standup tanpa info
+- Don't spam (send 1 complete message, not 10 short messages)
+- Don't discuss technical details too deeply (move to GitHub Issue)
+- Don't forget to tag if you need a response
+- Don't skip standup without notice
 
 ### Daily Standup Format
 
-**Waktu:** Setiap hari jam 09:00 WIB  
+**Time:** Every day at 09:00 WIB  
 **Format:**
 
 ```
-📅 Daily Standup — [Tanggal]
-👤 [Nama]
+📅 Daily Standup — [Date]
+👤 [Name]
 
-✅ Kemarin:
+✅ Yesterday:
 - Task 1
 - Task 2
 
-🎯 Hari ini:
+🎯 Today:
 - Task 1
 - Task 2
 
 🚫 Blocker:
-- [Deskripsi blocker, atau "None"]
+- [Blocker description, or "None"]
 ```
 
-**Contoh:**
+**Example:**
 
 ```
-📅 Daily Standup — 24 Juni 2026
+📅 Daily Standup — 24 June 2026
 👤 Fathan
 
-✅ Kemarin:
+✅ Yesterday:
 - Login page UI (completed)
 - Responsive testing (completed)
 
-🎯 Hari ini:
+🎯 Today:
 - Dashboard component
-- Fix bug di presensi form
+- Fix bug in attendance form
 
 🚫 Blocker:
 - None
@@ -86,25 +86,25 @@
 
 ## 🐛 Escalation Matrix
 
-### Level 1: Task Blocker (< 2 jam)
+### Level 1: Task Blocker (< 2 hours)
 
 **Channel:** WhatsApp Group  
-**Response:** Tim  
-**Contoh:**
+**Response:** Team  
+**Example:**
 ```
-"Guys, ada yang tau cara handle timezone di React?"
+"Guys, anyone know how to handle timezone in React?"
 ```
 
 ---
 
-### Level 2: Task Blocker (> 2 jam)
+### Level 2: Task Blocker (> 2 hours)
 
 **Channel:** WhatsApp Group + Tag Sandikodev  
 **Response:** Sandikodev  
-**Contoh:**
+**Example:**
 ```
-"@Sandikodev, stuck di validasi geolokasi sudah 2 jam. 
-Bisa bantu pair programming siang ini?"
+"@Sandikodev, stuck on geolocation validation for 2 hours.
+Can you help with pair programming this afternoon?"
 ```
 
 ---
@@ -113,11 +113,11 @@ Bisa bantu pair programming siang ini?"
 
 **Channel:** WhatsApp Group + Call Sandikodev  
 **Response:** Immediate  
-**Contoh:**
+**Example:**
 ```
-🚨 CRITICAL: Login error production
-User tidak bisa login sejak 10 menit lalu.
-Error 500 di /auth/login.
+🚨 CRITICAL: Login error in production
+Users cannot log in since 10 minutes ago.
+Error 500 at /auth/login.
 @sandikodev checking logs now.
 ```
 
@@ -127,11 +127,11 @@ Error 500 di /auth/login.
 
 **Channel:** Trello Card Comment + Tag Ahmad Hanif  
 **Response:** Ahmad Hanif  
-**Contoh:**
+**Example:**
 ```
-"@Ahmad Hanif, untuk user story 'export laporan', 
-perlu clarify: format export apa? Excel atau PDF?
-Dan periode export per bulan atau custom date range?"
+"@Ahmad Hanif, for the 'export report' user story,
+need clarification: what export format? Excel or PDF?
+And export period per month or custom date range?"
 ```
 
 ---
@@ -140,35 +140,35 @@ Dan periode export per bulan atau custom date range?"
 
 **Channel:** Email + WhatsApp (urgent)  
 **Response:** Pak Mahfud + Sandikodev  
-**Contoh:**
+**Example:**
 ```
-"Pak Mahfud, untuk fitur presensi, ada 2 opsi:
-1. Presensi sekali per hari (simple)
-2. Presensi masuk & pulang (lebih detail)
+"Pak Mahfud, for the attendance feature, there are 2 options:
+1. Attendance once per day (simple)
+2. Check-in & check-out attendance (more detailed)
 
-Rekomendasi kami opsi 1 untuk MVP. 
-Mohon keputusannya agar tim bisa lanjut development."
+Our recommendation is option 1 for MVP.
+Please advise so the team can proceed with development."
 ```
 
 ---
 
 ## 📧 Email Templates
 
-### Sprint Report (Ke Stakeholder)
+### Sprint Report (To Stakeholder)
 
 **To:** Pak Mahfud  
-**CC:** Tim  
-**Subject:** Sprint [X] Report — SMART Absen — [Tanggal]
+**CC:** Team  
+**Subject:** Sprint [X] Report — SMART Absen — [Date]
 
 ```
 Assalamu'alaikum Pak Mahfud,
 
-Berikut laporan Sprint [X] development SMART Absen:
+Here is the Sprint [X] report for SMART Absen development:
 
 ✅ COMPLETED (Sprint [X])
-- Fitur 1
-- Fitur 2
-- Fitur 3
+- Feature 1
+- Feature 2
+- Feature 3
 
 🚧 IN PROGRESS
 - Task 1 (50%)
@@ -180,15 +180,15 @@ Berikut laporan Sprint [X] development SMART Absen:
 - Sprint completion: [X]%
 
 📅 NEXT SPRINT
-- Fitur 1
-- Fitur 2
+- Feature 1
+- Feature 2
 
 🚫 BLOCKER
-- [Deskripsi blocker, atau "None"]
+- [Blocker description, or "None"]
 
-Mohon feedback dan arahannya.
+Please provide feedback and direction.
 
-Terima kasih.
+Thank you.
 
 Best regards,
 Sandikodev
@@ -200,30 +200,30 @@ PT Koneksi Jaringan Indonesia
 ### Production Deployment Notice
 
 **To:** Pak Mahfud, SMA UII Staff  
-**CC:** Tim  
-**Subject:** Production Deployment — SMART Absen v1.0 — [Tanggal]
+**CC:** Team  
+**Subject:** Production Deployment — SMART Absen v1.0 — [Date]
 
 ```
 Assalamu'alaikum,
 
-Kami informasikan akan ada deployment SMART Absen versi 1.0:
+We would like to inform you that there will be a SMART Absen version 1.0 deployment:
 
-📅 Tanggal: [Hari, Tanggal]
-⏰ Waktu: [Jam] WIB
-⏱️ Durasi: [X] jam (estimasi)
+📅 Date: [Day, Date]
+⏰ Time: [Time] WIB
+⏱️ Duration: [X] hours (estimated)
 🔧 Impact: [Downtime / No downtime]
 
-FITUR BARU
-- Fitur 1
-- Fitur 2
+NEW FEATURES
+- Feature 1
+- Feature 2
 
 BUG FIX
 - Fix issue 1
 - Fix issue 2
 
-Mohon informasikan ke pengguna jika ada downtime.
+Please inform users if there is any downtime.
 
-Terima kasih.
+Thank you.
 
 Best regards,
 Sandikodev
@@ -235,32 +235,32 @@ Sandikodev
 
 ### Sprint Planning Meeting
 
-**Frequency:** Setiap 2 minggu (Senin pagi Week 1)  
-**Duration:** 60-90 menit  
-**Attendees:** Semua tim  
+**Frequency:** Every 2 weeks (Monday morning Week 1)  
+**Duration:** 60-90 minutes  
+**Attendees:** All team  
 **Agenda:**
-1. Review sprint sebelumnya (15 menit)
-2. Presentasi backlog untuk sprint berikutnya (15 menit)
-3. Estimasi story points (30 menit)
-4. Commit sprint goal (15 menit)
-5. Assign task (15 menit)
+1. Review previous sprint (15 minutes)
+2. Present backlog for next sprint (15 minutes)
+3. Story point estimation (30 minutes)
+4. Commit sprint goal (15 minutes)
+5. Assign tasks (15 minutes)
 
 **Preparation:**
-- Ahmad: Backlog ready di Trello
+- Ahmad: Backlog ready in Trello
 - Sandikodev: Technical breakdown ready
-- Developer: Review backlog sebelum meeting
+- Developer: Review backlog before meeting
 
 ---
 
 ### Sprint Review & Demo
 
-**Frequency:** Setiap 2 minggu (Senin pagi Week 3)  
-**Duration:** 60 menit  
-**Attendees:** Semua tim + Pak Mahfud  
+**Frequency:** Every 2 weeks (Monday morning Week 3)  
+**Duration:** 60 minutes  
+**Attendees:** All team + Pak Mahfud  
 **Agenda:**
-1. Demo fitur yang selesai (30 menit)
-2. Feedback stakeholder (15 menit)
-3. Q&A (15 menit)
+1. Demo completed features (30 minutes)
+2. Stakeholder feedback (15 minutes)
+3. Q&A (15 minutes)
 
 **Preparation:**
 - Developer: Demo environment ready
@@ -270,41 +270,41 @@ Sandikodev
 
 ### Sprint Retrospective
 
-**Frequency:** Setiap 2 minggu (setelah Sprint Review)  
-**Duration:** 45-60 menit  
-**Attendees:** Tim internal (tanpa stakeholder)  
+**Frequency:** Every 2 weeks (after Sprint Review)  
+**Duration:** 45-60 minutes  
+**Attendees:** Internal team (without stakeholder)  
 **Agenda:**
-1. What went well? (15 menit)
-2. What could be improved? (15 menit)
-3. Action items untuk sprint berikutnya (15 menit)
+1. What went well? (15 minutes)
+2. What could be improved? (15 minutes)
+3. Action items for next sprint (15 minutes)
 
 **Format:**
 ```
 😊 Went Well
-- Code review lebih cepat
-- Communication lancar
+- Code review faster
+- Communication smooth
 
 🤔 To Improve
-- Task estimation meleset
-- Blocker lama tidak di-escalate
+- Task estimation off
+- Blocker not escalated promptly
 
 ✅ Action Items
-- Sandikodev: Daily check-in blocker
-- Fathan: Update status Trello lebih rajin
+- Sandikodev: Daily blocker check-in
+- Fathan: Update Trello status more diligently
 ```
 
 ---
 
 ### Daily Standup (Async)
 
-**Frequency:** Setiap hari (Senin-Jumat) jam 09:00  
-**Duration:** 15 menit (sync) atau async di WhatsApp  
-**Attendees:** Developer + Sandikodev  
-**Format:** Lihat "Daily Standup Format" di atas
+**Frequency:** Every day (Monday-Friday) at 09:00  
+**Duration:** 15 minutes (sync) or async on WhatsApp  
+**Attendees:** Developers + Sandikodev  
+**Format:** See "Daily Standup Format" above
 
 **Note:**
-- Sync meeting hanya jika ada diskusi kompleks
-- Default: async di WhatsApp
+- Sync meeting only if there are complex discussions
+- Default: async on WhatsApp
 
 ---
 
@@ -312,21 +312,21 @@ Sandikodev
 
 ### GitHub Issue Discussion
 
-**When:** Technical discussion untuk task spesifik  
+**When:** Technical discussion for specific tasks  
 **Format:**
 
 ```markdown
 ## Question
-[Deskripsi pertanyaan]
+[Question description]
 
 ## Context
-[Link code, screenshot, error log]
+[Code link, screenshot, error log]
 
 ## Proposed Solution
-[Usulan solusi]
+[Proposed solution]
 
 ## Question for Reviewer
-@Sandikodev apakah approach ini sudah tepat?
+@Sandikodev is this approach correct?
 ```
 
 ---
@@ -338,7 +338,7 @@ Sandikodev
 
 ```markdown
 ## Review Comment
-[Feedback spesifik dengan line reference]
+[Specific feedback with line reference]
 
 ## Suggestion
 ```php
@@ -350,7 +350,7 @@ $user = User::with('roles')->findOrFail($id);
 ```
 
 ## Question
-@Hans02-Neo apakah ada pertimbangan performance untuk query ini?
+@Hans02-Neo are there any performance considerations for this query?
 ```
 
 ---
@@ -363,19 +363,19 @@ $user = User::with('roles')->findOrFail($id);
 ```markdown
 @Ahmad Hanif
 
-Need clarification untuk acceptance criteria:
+Need clarification for acceptance criteria:
 
-"Export laporan maksimal 1000 baris"
+"Export report max 1000 rows"
 
-Pertanyaan:
-1. Apa yang terjadi jika data > 1000 baris?
+Questions:
+1. What happens if data > 1000 rows?
    - Error?
    - Paginate?
    - Truncate?
 
-2. Apakah ada filter periode untuk limit 1000 baris ini?
+2. Is there a period filter for this 1000 row limit?
 
-Mohon bantuannya.
+Please advise.
 ```
 
 ---
@@ -384,37 +384,37 @@ Mohon bantuannya.
 
 ### Context is King
 
-**Buruk:**
+**Bad:**
 ```
-"Error nih, gimana fixnya?"
+"Got an error, how to fix it?"
 ```
 
-**Baik:**
+**Good:**
 ```
-"Error 500 di endpoint POST /api/attendance.
-Sudah coba debug, ternyata null pointer di line 45 AttendanceController.php.
+"Error 500 at endpoint POST /api/attendance.
+Tried debugging, turns out null pointer at line 45 AttendanceController.php.
 Stack trace: [paste error]
-Sudah coba: null check, tetap error.
-Ada ide?"
+Already tried: null check, still error.
+Any ideas?"
 ```
 
 ---
 
 ### One Message, Complete Info
 
-**Buruk:**
+**Bad:**
 ```
-Pesan 1: "Guys"
-Pesan 2: "ada yang bisa Java?"
-Pesan 3: "urgent"
+Message 1: "Guys"
+Message 2: "anyone knows Java?"
+Message 3: "urgent"
 ```
 
-**Baik:**
+**Good:**
 ```
-"Guys, ada yang experienced dengan Laravel Sanctum?
-Need help untuk implement multi-device auth.
-Urgent untuk sprint ini.
-@Sandikodev bisa bantu siang ini?"
+"Guys, anyone experienced with Laravel Sanctum?
+Need help implementing multi-device auth.
+Urgent for this sprint.
+@Sandikodev can you help this afternoon?"
 ```
 
 ---
@@ -436,12 +436,12 @@ Stakeholder decision → @Pak Mahfud
 
 | Channel | Priority | Expected Response |
 |---|---|---|
-| WhatsApp (urgent) | Critical | < 15 menit |
-| WhatsApp (general) | High | < 1 jam |
-| GitHub Issue | Medium | < 24 jam |
-| GitHub PR Review | High | < 24 jam |
-| Trello Comment | Medium | < 24 jam |
-| Email | Low | < 48 jam |
+| WhatsApp (urgent) | Critical | < 15 minutes |
+| WhatsApp (general) | High | < 1 hour |
+| GitHub Issue | Medium | < 24 hours |
+| GitHub PR Review | High | < 24 hours |
+| Trello Comment | Medium | < 24 hours |
+| Email | Low | < 48 hours |
 
 ---
 
@@ -452,29 +452,29 @@ Stakeholder decision → @Pak Mahfud
 **Step 1:** WhatsApp Group + Call Sandikodev
 ```
 🚨 CRITICAL: Production down
-Error: [deskripsi]
-Impact: [jumlah user affected]
-Started: [jam]
+Error: [description]
+Impact: [number of users affected]
+Started: [time]
 ```
 
 **Step 2:** Sandikodev investigating
 ```
 Checking logs...
-ETA fix: 30 menit
+ETA fix: 30 minutes
 ```
 
-**Step 3:** Update berkala (setiap 15 menit)
+**Step 3:** Periodic updates (every 15 minutes)
 ```
 Update 1: Root cause identified (database connection)
 Update 2: Fix in progress
 Update 3: Fix deployed, monitoring...
 ```
 
-**Step 4:** Post-mortem (setelah fix)
+**Step 4:** Post-mortem (after fix)
 ```
 ✅ Resolved
-Root cause: [deskripsi]
-Fix: [deskripsi]
+Root cause: [description]
+Fix: [description]
 Prevention: [action items]
 ```
 
@@ -485,15 +485,15 @@ Prevention: [action items]
 ### Team Health Check (Monthly)
 
 **Questions:**
-1. Apakah komunikasi lancar? (1-5)
-2. Apakah blocker cepat di-resolve? (1-5)
-3. Apakah requirement jelas? (1-5)
-4. Apakah feedback constructive? (1-5)
+1. Is communication smooth? (1-5)
+2. Are blockers resolved quickly? (1-5)
+3. Are requirements clear? (1-5)
+4. Is feedback constructive? (1-5)
 
 **Target:** Average score > 4.0
 
 ---
 
 **Next:** [`code-review.md`](../03-sop/code-review.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

@@ -2,49 +2,49 @@
 
 Format:
 ```
-## YYYY-MM-DD — [Judul Keputusan]
+## YYYY-MM-DD — [Decision Title]
 **Status**: [Proposed / Accepted / Deprecated]
-**Pemutus**: [Nama]
-**Konteks**: [Latar belakang / masalah]
-**Keputusan**: [Apa yang diputuskan]
-**Konsekuensi**: [Dampak positif & negatif]
+**Decider**: [Name]
+**Context**: [Background / problem]
+**Decision**: [What was decided]
+**Consequences**: [Positive & negative impacts]
 ```
 
 ---
 
-## 2026-06-25 — Dinamic Role Definitions via ROLES/ Directory
+## 2026-06-25 — Dynamic Role Definitions via ROLES/ Directory
 
 **Status**: Accepted
-**Pemutus**: Sandikodev
-**Konteks**: Perlu cara standar untuk mendefinisikan role yang dinamis — bisa dipakai ulang antar project, bisa di-load oleh AI Agent, dan bisa berkembang seiring pertumbuhan anggota tim.
-**Keputusan**: Buat direktori `ROLES/` di playbook dengan template (_TEMPLATE.md) dan role spesifik. Setiap role punya AI Instructions yang bisa dibaca oleh Opencode, Claude Code, Cursor, dan tools lain via `~/.openkb/ROLES/`.
-**Konsekuensi**:
-- (+) Role bisa dipakai ulang di project berbeda
-- (+) AI Agent bisa behave sesuai role tanpa config ulang
-- (-) Perlu maintenance agar role tetap up-to-date
+**Decider**: Sandikodev
+**Context**: Need a standard way to define dynamic roles — reusable across projects, loadable by AI Agent, and evolvable as the team grows.
+**Decision**: Create a `ROLES/` directory in the playbook with a template (_TEMPLATE.md) and specific roles. Each role has AI Instructions that can be read by Opencode, Claude Code, Cursor, and other tools via `~/.openkb/ROLES/`.
+**Consequences**:
+- (+) Roles can be reused across different projects
+- (+) AI Agent can behave according to role without reconfiguration
+- (-) Requires maintenance to keep roles up-to-date
 
 ---
 
-## 2026-06-25 — TACO Protocol untuk AI Agent Workflow
+## 2026-06-25 — TACO Protocol for AI Agent Workflow
 
 **Status**: Accepted
-**Pemutus**: Sandikodev
-**Konteks**: Developer menggunakan AI Agent (Opencode, Claude Code, Cursor) tanpa workflow yang standar — perlu alur baku dari Trello → AI → Commit → Output.
-**Keputusan**: Buat TACO Protocol (Trello → AI → Commit → Output) sebagai standar workflow AI Agent. Dokumentasi di WORKFLOWS/ai-agent-workflow.md.
-**Konsekuensi**:
-- (+) Semua developer pakai workflow yang sama
-- (+) Integrasi Trello + GitHub + AI Agent jadi terstandarisasi
-- (-) Perlu sosialisasi ke tim agar diadopsi
+**Decider**: Sandikodev
+**Context**: Developers use AI Agents (Opencode, Claude Code, Cursor) without a standardized workflow — need a standard flow from Trello → AI → Commit → Output.
+**Decision**: Create TACO Protocol (Trello → AI → Commit → Output) as the standard AI Agent workflow. Documentation in WORKFLOWS/ai-agent-workflow.md.
+**Consequences**:
+- (+) All developers use the same workflow
+- (+) Trello + GitHub + AI Agent integration becomes standardized
+- (-) Needs team socialization for adoption
 
 ---
 
 ## 2026-06-25 — Multi-Tool AI Agent Strategy
 
 **Status**: Accepted
-**Pemutus**: Sandikodev
-**Konteks**: Tim perlu fleksibilitas tools AI Agent — tidak vendor lock-in ke satu platform. Opencode sebagai primary, tapi perlu support Claude Code, Cursor, Claw Code.
-**Keputusan**: Config untuk multi-tool disimpan di tiap repo: `.opencode/` (opencode), `.cursorrules` (Cursor), `.claude/settings.json` (Claude Code). Semua tool membaca konteks dari file yang sama (`.opencode/SHARED/`, `.openkb/`).
-**Konsekuensi**:
-- (+) Bebas pilih tool tanpa kehilangan konteks
-- (+) Anti vendor lock-in (Claw Code sebagai opsi open source)
-- (-) Perlu maintain config di 3 format berbeda
+**Decider**: Sandikodev
+**Context**: The team needs AI Agent tool flexibility — no vendor lock-in to a single platform. Opencode as primary, but needs support for Claude Code, Cursor, Claw Code.
+**Decision**: Multi-tool config is stored in each repo: `.opencode/` (opencode), `.cursorrules` (Cursor), `.claude/settings.json` (Claude Code). All tools read context from the same files (`.opencode/SHARED/`, `.openkb/`).
+**Consequences**:
+- (+) Free to choose tools without losing context
+- (+) Anti vendor lock-in (Claw Code as open source option)
+- (-) Need to maintain config in 3 different formats

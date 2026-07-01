@@ -1,18 +1,18 @@
 # Junior Developer Learning Path
 
-> Roadmap 8 minggu untuk Fathan (Frontend) & Ihsan (Backend) menjadi mandiri.
-> Azis (Learning Mentor) sebagai discussion partner, debugging buddy, dan concept explainer.
+> 8-week roadmap for Fathan (Frontend) & Ihsan (Backend) to become independent.
+> Azis (Learning Mentor) as discussion partner, debugging buddy, and concept explainer.
 
 ---
 
 ## 🎯 Goal
 
-Setelah 8 minggu:
-- ✅ **Fathan** mampu develop fitur Inertia+React secara mandiri (TypeScript, hooks, state management, testing)
-- ✅ **Ihsan** mampu develop fitur Laravel API secara mandiri (Service Layer, Sanctum, Spatie, PostgreSQL)
-- ✅ Code quality sesuai standard (PSR-12, TypeScript strict, Laravel conventions)
-- ✅ Proactive communication — tanya Azis dulu, eskalasi ke Sandikodev jika perlu
-- ✅ Self-debugging capability — baca error message, cari solusi, tanya jika stuck > 30 menit
+After 8 weeks:
+- ✅ **Fathan** able to develop Inertia+React features independently (TypeScript, hooks, state management, testing)
+- ✅ **Ihsan** able to develop Laravel API features independently (Service Layer, Sanctum, Spatie, PostgreSQL)
+- ✅ Code quality according to standards (PSR-12, TypeScript strict, Laravel conventions)
+- ✅ Proactive communication — ask Azis first, escalate to Sandikodev if needed
+- ✅ Self-debugging capability — read error messages, find solutions, ask if stuck > 30 minutes
 
 ---
 
@@ -34,9 +34,9 @@ Week 8 → Final assessment (independence level)
 ```
 ✅ Git basics (clone, add, commit, push, pull, branch)
 ✅ Pull Request workflow + conventional commits
-✅ TypeScript dasar: tipe data, interface, type alias, generic sederhana
+✅ TypeScript basics: data types, interface, type alias, simple generics
 ✅ React hooks: useState, useEffect, props & state
-✅ Functional component dengan TypeScript (props interface)
+✅ Functional component with TypeScript (props interface)
 ✅ JSX + Tailwind CSS 4 utility classes
 ```
 
@@ -45,9 +45,9 @@ Week 8 → Final assessment (independence level)
 ✅ Git basics (clone, add, commit, push, pull, branch)
 ✅ Pull Request workflow + conventional commits
 ✅ Laravel fundamentals: routing, controller, request lifecycle
-✅ Service Layer pattern: apa, kenapa, bagaimana
+✅ Service Layer pattern: what, why, how
 ✅ Eloquent ORM: model, migration, seeder
-✅ PostgreSQL basics: connect via Laragon, buat database, running migration
+✅ PostgreSQL basics: connect via Laragon, create database, run migration
 ```
 
 ### Tasks
@@ -55,22 +55,22 @@ Week 8 → Final assessment (independence level)
 #### Fathan
 ```
 - Clone repository core, setup Bun + Vite
-- Buat branch: `feature/learning-frontend`
-- Buat komponen React sederhana: Counter, Todo List (TypeScript)
-- Implementasi Tailwind responsive (mobile-first)
-- Commit & PR pertama
-- Fix berdasarkan review (Azis → Sandikodev)
+- Create branch: `feature/learning-frontend`
+- Create simple React components: Counter, Todo List (TypeScript)
+- Implement Tailwind responsive (mobile-first)
+- First commit & PR
+- Fix based on review (Azis → Sandikodev)
 ```
 
 #### Ihsan
 ```
 - Clone repository core, setup PostgreSQL + Laragon
-- Buat branch: `feature/learning-backend`
-- Buat migration: `create_books_table` (PostgreSQL syntax)
-- Buat Model: `Book` + Seeder
-- Buat Service: `BookService` → panggil dari controller
+- Create branch: `feature/learning-backend`
+- Create migration: `create_books_table` (PostgreSQL syntax)
+- Create Model: `Book` + Seeder
+- Create Service: `BookService` → call from controller
 - CRUD: GET/POST/PUT/DELETE via web.php (Inertia)
-- Commit & PR pertama
+- First commit & PR
 ```
 
 ### Assessment
@@ -79,18 +79,18 @@ Week 8 → Final assessment (independence level)
 ## Week 2 Assessment
 
 **Fathan:**
-- [ ] Dapat clone + setup environment (Bun, Vite, Laragon)
-- [ ] Paham Git workflow (branch, commit, PR)
-- [ ] Dapat buat komponen React + TypeScript sederhana
-- [ ] Paham useState, useEffect
-- [ ] Dapat styling dengan Tailwind utility classes
+- [ ] Can clone + setup environment (Bun, Vite, Laragon)
+- [ ] Understands Git workflow (branch, commit, PR)
+- [ ] Can create simple React + TypeScript components
+- [ ] Understands useState, useEffect
+- [ ] Can style with Tailwind utility classes
 
 **Ihsan:**
-- [ ] Dapat clone + setup PostgreSQL di Laragon
-- [ ] Paham Git workflow (branch, commit, PR)
-- [ ] Dapat buat migration & seeder
-- [ ] Paham Service Layer pattern
-- [ ] Dapat buat CRUD dengan Eloquent
+- [ ] Can clone + setup PostgreSQL in Laragon
+- [ ] Understands Git workflow (branch, commit, PR)
+- [ ] Can create migration & seeder
+- [ ] Understands Service Layer pattern
+- [ ] Can create CRUD with Eloquent
 ```
 
 ---
@@ -102,30 +102,30 @@ Week 8 → Final assessment (independence level)
 #### Fathan — Frontend Track
 ```
 ✅ InertiaJS: Inertia::render, Link, useForm, usePage
-✅ React hooks lanjutan: useCallback, useMemo, custom hooks
+✅ React advanced hooks: useCallback, useMemo, custom hooks
 ✅ TypeScript: generic, union type, type narrowing
-✅ Form handling + validation display (error messages dari Laravel)
+✅ Form handling + validation display (error messages from Laravel)
 ✅ Shared data via Inertia (app name, user, permissions)
 ```
 
 #### Ihsan — Backend Track
 ```
-✅ Laravel Sanctum: install, konfigurasi, token management
+✅ Laravel Sanctum: install, configuration, token management
 ✅ Spatie Laravel Permission: install, role & permission seeder
 ✅ Form Request validation
 ✅ Middleware: auth:sanctum, role, permission
-✅ PostgreSQL: JSONB untuk metadata, indexing, query optimization
+✅ PostgreSQL: JSONB for metadata, indexing, query optimization
 ```
 
 ### Tasks
 
 #### Fathan
 ```
-- Setup InertiaJS di core (resources/js/Pages/)
-- Buat halaman Login (React + Inertia + Tailwind)
-- Buat halaman Dashboard setelah login
-- Implementasi form validation display
-- Buat layout component (sidebar, navbar, content area)
+- Setup InertiaJS in core (resources/js/Pages/)
+- Create Login page (React + Inertia + Tailwind)
+- Create Dashboard page after login
+- Implement form validation display
+- Create layout component (sidebar, navbar, content area)
 - Responsive: mobile sidebar → desktop sidebar
 ```
 
@@ -133,11 +133,11 @@ Week 8 → Final assessment (independence level)
 ```
 - Install & setup Sanctum
 - Install & setup Spatie Permission
-- Buat migration users + roles + permissions
-- Buat AuthService: login, register, logout
-- Buat API + Web controller untuk auth
-- Buat middleware: role:admin, permission:view-dashboard
-- Unit test untuk auth endpoint
+- Create migration users + roles + permissions
+- Create AuthService: login, register, logout
+- Create API + Web controller for auth
+- Create middleware: role:admin, permission:view-dashboard
+- Unit test for auth endpoint
 ```
 
 ### Assessment
@@ -146,16 +146,16 @@ Week 8 → Final assessment (independence level)
 ## Week 4 Assessment (Mid-term)
 
 **Fathan:**
-- [ ] Paham InertiaJS: routing, form, shared data
-- [ ] Dapat buat halaman login + dashboard
+- [ ] Understands InertiaJS: routing, form, shared data
+- [ ] Can create login page + dashboard
 - [ ] Form validation display OK
 - [ ] Responsive layout OK
 - [ ] TypeScript type-safe
 
 **Ihsan:**
 - [ ] Sanctum login/register/logout working
-- [ ] Spatie RBAC terintegrasi
-- [ ] Service Layer pattern konsisten
+- [ ] Spatie RBAC integrated
+- [ ] Service Layer pattern consistent
 - [ ] Form Request validation
 - [ ] Unit test > 50% coverage
 ```
@@ -169,7 +169,7 @@ Week 8 → Final assessment (independence level)
 #### Fathan — Frontend Track
 ```
 ✅ React advanced: context API, useReducer, custom hooks
-✅ Camera API: getUserMedia untuk swafoto
+✅ Camera API: getUserMedia for selfie
 ✅ Geolocation API: getCurrentPosition, watchPosition
 ✅ Image upload + preview
 ✅ Loading & error states pattern
@@ -178,34 +178,34 @@ Week 8 → Final assessment (independence level)
 
 #### Ihsan — Backend Track
 ```
-✅ API endpoint design untuk presensi
+✅ API endpoint design for attendance
 ✅ Geolocation validation (latitude, longitude, radius)
 ✅ File upload handling (S3 Wasabi/MinIO)
 ✅ Rate limiting (throttle)
-✅ Feature test untuk API
-✅ PostgreSQL: JSONB untuk metadata presensi
+✅ Feature test for API
+✅ PostgreSQL: JSONB for attendance metadata
 ```
 
 ### Tasks
 
 #### Fathan
 ```
-- Buat halaman Presensi (check-in form)
-- Implementasi camera preview (swafoto)
-- Implementasi geolocation (latitude, longitude)
+- Create Attendance page (check-in form)
+- Implement camera preview (selfie)
+- Implement geolocation (latitude, longitude)
 - Form submission via Inertia
 - Loading state, error state, success state
-- Buat halaman Riwayat Presensi (table)
+- Create Attendance History page (table)
 ```
 
 #### Ihsan
 ```
-- Buat migration presensi (PostgreSQL)
-- Buat PresensiService: check-in, riwayat, rekap
-- Validasi geolokasi (radius dari sekolah)
-- Upload swafoto ke S3 / Wasabi
-- Rate limiting: 1x per hari per siswa
-- Feature test untuk presensi endpoint
+- Create attendance migration (PostgreSQL)
+- Create PresensiService: check-in, history, recap
+- Geolocation validation (radius from school)
+- Upload selfie to S3 / Wasabi
+- Rate limiting: 1x per day per student
+- Feature test for attendance endpoint
 ```
 
 ### Assessment
@@ -221,55 +221,55 @@ Week 8 → Final assessment (independence level)
 - [ ] Responsive design OK
 
 **Ihsan:**
-- [ ] Presensi API endpoint working
+- [ ] Attendance API endpoint working
 - [ ] Geolocation validation OK
 - [ ] File upload OK
 - [ ] Rate limiting OK
-- [ ] Service Layer pattern konsisten
+- [ ] Service Layer pattern consistent
 - [ ] Feature test > 70% coverage
 ```
 
 ---
 
-## 📅 Week 7-8: Laporan & Finalisasi
+## 📅 Week 7-8: Reports & Finalization
 
 ### Topics
 
 #### Fathan — Frontend Track
 ```
-✅ React: table dengan sorting, filtering, pagination
-✅ Export: download laporan (Excel/PDF)
+✅ React: table with sorting, filtering, pagination
+✅ Export: download reports (Excel/PDF)
 ✅ Testing: Jest + React Testing Library
 ✅ Performance: React.memo, lazy loading
-✅ Final project: halaman admin panel
+✅ Final project: admin panel page
 ```
 
 #### Ihsan — Backend Track
 ```
-✅ Laporan: export Excel (maatwebsite/Laravel Excel)
-✅ Laporan: export PDF (barryvdh/laravel-dompdf)
-✅ Queue & Job untuk export besar
+✅ Reports: export Excel (maatwebsite/Laravel Excel)
+✅ Reports: export PDF (barryvdh/laravel-dompdf)
+✅ Queue & Job for large exports
 ✅ Integration test (API + database)
 ✅ Performance optimization (query, indexing)
-✅ NeonDB: branch untuk deployment preview
+✅ NeonDB: branch for deployment preview
 ```
 
 ### Tasks
 
 #### Fathan
 ```
-- Halaman Laporan (table + filter + export button)
-- Halaman Admin Panel (manage siswa, guru, kelas)
-- Integration test dengan Inertia pages
+- Reports page (table + filter + export button)
+- Admin Panel page (manage students, teachers, classes)
+- Integration test with Inertia pages
 - Final responsive polish
 - Self-review: TypeScript strict, zero console.log
 ```
 
 #### Ihsan
 ```
-- Export Excel: laporan presensi bulanan
-- Export PDF: rekap presensi per siswa
-- Queue job untuk export besar
+- Export Excel: monthly attendance report
+- Export PDF: attendance recap per student
+- Queue job for large exports
 - Integration test
 - API documentation (Postman / Stoplight)
 - Final security review
@@ -283,73 +283,73 @@ Week 8 → Final assessment (independence level)
 **Fathan:**
 - [ ] Inertia+React mastery
 - [ ] TypeScript strict (zero any)
-- [ ] Responsive design OK semua halaman
+- [ ] Responsive design OK all pages
 - [ ] Testing OK
-- [ ] MANDIRI: dapat develop fitur tanpa supervision ketat
+- [ ] INDEPENDENT: can develop features without tight supervision
 
 **Ihsan:**
-- [ ] Service Layer pattern konsisten
+- [ ] Service Layer pattern consistent
 - [ ] Sanctum + Spatie OK
 - [ ] PostgreSQL optimization OK
 - [ ] Testing > 70% coverage
-- [ ] API documentation lengkap
-- [ ] MANDIRI: dapat develop fitur tanpa supervision ketat
+- [ ] API documentation complete
+- [ ] INDEPENDENT: can develop features without tight supervision
 ```
 
 ---
 
 ## 🎓 Learning Methods
 
-### 1. Pair Programming (2x/minggu)
+### 1. Pair Programming (2x/week)
 
 **Schedule:**
-- Selasa 14:00 — Ihsan + Azis (backend focus)
-- Kamis 14:00 — Fathan + Azis (frontend focus)
-- Jumat 14:00 — Review & Q&A dengan Sandikodev
+- Tuesday 14:00 — Ihsan + Azis (backend focus)
+- Thursday 14:00 — Fathan + Azis (frontend focus)
+- Friday 14:00 — Review & Q&A with Sandikodev
 
 **Format:**
-- Azis atau Sandikodev drive (share screen)
-- Developer navigate (observe, tanya, coba sendiri)
-- Swap setelah 30 menit
+- Azis or Sandikodev drives (share screen)
+- Developer navigates (observe, ask, try themselves)
+- Swap after 30 minutes
 
 ### 2. Code Review as Learning
 
-**Tahapan review:**
-1. Developer self-review (ceklist)
-2. Azis review awal — cari typo, N+1, logical error
-3. Sandikodev review final — arsitektur, best practices
+**Review stages:**
+1. Developer self-review (checklist)
+2. Azis initial review — find typos, N+1, logical errors
+3. Sandikodev final review — architecture, best practices
 
-**Reviewer wajib:**
-- Explain "kenapa", bukan hanya "apa"
-- Link dokumentasi
+**Reviewer must:**
+- Explain "why", not just "what"
+- Link documentation
 - Example code snippet
-- Developer fix dengan paham
+- Developer fixes with understanding
 
 ### 3. Weekly Knowledge Sharing
 
-**Schedule:** Jumat 16:00-17:00
+**Schedule:** Friday 16:00-17:00
 **Format:**
-- Minggu 1: Sandikodev (Arsitektur SMART Absen + Tech Stack)
-- Minggu 2: Azis (Service Layer Pattern + TypeScript tips)
-- Minggu 3: Fathan (Share learning React/Inertia)
-- Minggu 4: Ihsan (Share learning Sanctum/Spatie/PostgreSQL)
-- Minggu 5+: Bergantian presentasi progress
+- Week 1: Sandikodev (SMART Absen Architecture + Tech Stack)
+- Week 2: Azis (Service Layer Pattern + TypeScript tips)
+- Week 3: Fathan (Share learning React/Inertia)
+- Week 4: Ihsan (Share learning Sanctum/Spatie/PostgreSQL)
+- Week 5+: Alternate progress presentations
 
 ### 4. Learning Journal
 
-Setiap developer wajib maintain `.openkb/PERSONAL/<nama>/sessions/`:
+Every developer must maintain `.openkb/PERSONAL/<name>/sessions/`:
 
 ```markdown
 ## Week [X] Learning Journal
 
-**Nama:** [Fathan/Ihsan]
+**Name:** [Fathan/Ihsan]
 
 ### What I Learned
 - Topic 1
 - Topic 2
 
 ### Challenges
-- Challenge 1 + how I solved it (dengan/tanpa Azis)
+- Challenge 1 + how I solved it (with/without Azis)
 - Challenge 2
 
 ### Questions for Next Week
@@ -365,9 +365,9 @@ Setiap developer wajib maintain `.openkb/PERSONAL/<nama>/sessions/`:
 
 ## 📊 Progress Tracking
 
-### Weekly Check-in (Jumat 15:00)
+### Weekly Check-in (Friday 15:00)
 
-Azis maintain Trello card `📚 Learning Path` untuk tracking:
+Azis maintains Trello card `📚 Learning Path` for tracking:
 
 **Skill Assessment (1-5):**
 
@@ -386,7 +386,7 @@ Azis maintain Trello card `📚 Learning Path` untuk tracking:
 | Testing | - | - | 4 |
 
 **Notes:**
-[Catatan Azis tentang progress, blocker, adjustment]
+[Azis's notes on progress, blockers, adjustments]
 
 ---
 
@@ -395,27 +395,27 @@ Azis maintain Trello card `📚 Learning Path` untuk tracking:
 ### Week 8 — Independence Level
 
 **Level 1: Dependent**
-- Perlu instruction detail langkah demi langkah
-- Code quality rendah (banyak TypeScript error, logical bug)
-- Tidak bisa debug sendiri
-- Communication kurang
+- Needs detailed step-by-step instructions
+- Low code quality (many TypeScript errors, logical bugs)
+- Cannot debug independently
+- Poor communication
 
 **Level 2: Guided**
-- Perlu guidance untuk task kompleks
+- Needs guidance for complex tasks
 - Code quality OK (minor TypeScript error)
-- Bisa debug sederhana dengan bantuan Azis
+- Can do simple debugging with Azis's help
 - Communication OK
 
 **Level 3: Independent** ✅ TARGET
-- Dapat develop fitur standar mandiri
-- TypeScript strict, code quality sesuai standard
-- Bisa debug sendiri (baca error, cari solusi)
-- Proactive communication — tanya Azis jika perlu, eskalasi ke Sandikodev jika urgent
+- Can develop standard features independently
+- TypeScript strict, code quality according to standards
+- Can debug independently (read errors, find solutions)
+- Proactive communication — ask Azis if needed, escalate to Sandikodev if urgent
 
 **Level 4: Advanced**
-- Dapat develop fitur kompleks mandiri
+- Can develop complex features independently
 - Code quality excellent
-- Bisa bantu developer lain
+- Can help other developers
 - Zero supervision needed
 
 ---
@@ -439,7 +439,7 @@ Azis maintain Trello card `📚 Learning Path` untuk tracking:
 - [NeonDB Documentation](https://neon.tech/docs)
 - [Laracasts: Laravel from Scratch](https://laracasts.com/series/laravel-from-scratch)
 
-### Bersama
+### Together
 
 - "Clean Code" — Robert C. Martin
 - "The Pragmatic Programmer" — Andrew Hunt

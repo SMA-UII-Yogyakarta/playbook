@@ -1,6 +1,6 @@
 # GitHub Issue Template
 
-> Template untuk membuat Issue di GitHub repository SMA UII Yogyakarta.
+> Template for creating Issues in the SMA UII Yogyakarta GitHub repository.
 
 ---
 
@@ -17,24 +17,24 @@ assignees: ''
 
 ## Problem Statement
 
-Jelaskan masalah yang ingin diselesaikan:
-- Apa masalahnya?
-- Siapa yang mengalami?
-- Seberapa sering terjadi?
-- Apa impact-nya?
+Describe the problem to be solved:
+- What is the problem?
+- Who experiences it?
+- How often does it happen?
+- What is the impact?
 
 ## Proposed Solution
 
-Jelaskan solusi yang diusulkan:
-- Fitur seperti apa?
-- Bagaimana cara kerjanya?
-- Apa benefit-nya?
+Describe the proposed solution:
+- What kind of feature?
+- How does it work?
+- What are the benefits?
 
 ## User Story
 
-**Sebagai** [role]  
-**Saya ingin** [fitur]  
-**Agar** [manfaat]
+**As a** [role]  
+**I want** [feature]  
+**So that** [benefit]
 
 ## Acceptance Criteria
 
@@ -60,13 +60,13 @@ Feature: [Feature name]
 
 ## Out of Scope
 
-- Fitur yang TIDAK termasuk
+- Features NOT included
 
 ## References
 
-- [Link ke Trello card](...)
-- [Link ke design](...)
-- [Link ke dokumentasi](...)
+- [Link to Trello card](...)
+- [Link to design](...)
+- [Link to documentation](...)
 
 ## Priority
 
@@ -95,7 +95,7 @@ assignees: ''
 
 ## Bug Description
 
-Jelaskan bug secara singkat dan jelas.
+Describe the bug briefly and clearly.
 
 ## Severity
 
@@ -113,15 +113,15 @@ Jelaskan bug secara singkat dan jelas.
 
 ## Expected Behavior
 
-Apa yang seharusnya terjadi.
+What should have happened.
 
 ## Actual Behavior
 
-Apa yang sebenarnya terjadi.
+What actually happened.
 
 ## Screenshots
 
-Jika ada, attach screenshot untuk memperjelas.
+If any, attach screenshots for clarity.
 
 ## Environment
 
@@ -139,7 +139,7 @@ Jika ada, attach screenshot untuk memperjelas.
 ## Error Logs
 
 ```
-Paste error log dari:
+Paste error logs from:
 - Laravel log: storage/logs/laravel.log
 - Browser console: F12 → Console
 - Network tab: Request/Response
@@ -147,14 +147,14 @@ Paste error log dari:
 
 ## Possible Solution
 
-Jika ada usulan fix:
+If you have a suggested fix:
 ```php
-// Code snippet atau penjelasan
+// Code snippet or explanation
 ```
 
 ## Additional Context
 
-Informasi lain yang relevan.
+Other relevant information.
 ```
 
 ---
@@ -172,11 +172,11 @@ assignees: ''
 
 ## Context
 
-Link ke Trello card: [Card name](URL)
+Link to Trello card: [Card name](URL)
 
 ## Description
 
-Jelaskan task yang harus dikerjakan.
+Describe the task to be done.
 
 ## Technical Requirements
 
@@ -200,7 +200,7 @@ Jelaskan task yang harus dikerjakan.
 
 ## Definition of Ready
 
-- [ ] Requirement jelas (Trello card)
+- [ ] Requirement clear (Trello card)
 - [ ] Acceptance criteria defined
 - [ ] Technical approach confirmed
 - [ ] Dependencies resolved
@@ -217,10 +217,10 @@ Jelaskan task yang harus dikerjakan.
 
 ## Estimated Time
 
-- [ ] < 4 jam (0.5 day)
-- [ ] 4-8 jam (1 day)
-- [ ] 2-3 hari
-- [ ] > 3 hari (break down lagi)
+- [ ] < 4 hours (0.5 day)
+- [ ] 4-8 hours (1 day)
+- [ ] 2-3 days
+- [ ] > 3 days (break down further)
 
 ## References
 
@@ -252,7 +252,7 @@ assignees: ''
 
 ## Description
 
-Jelaskan dokumentasi apa yang perlu dibuat/diupdate.
+Describe what documentation needs to be created/updated.
 
 ## Target Audience
 
@@ -269,7 +269,7 @@ Jelaskan dokumentasi apa yang perlu dibuat/diupdate.
 
 ## Existing Documentation
 
-Link ke dokumentasi yang sudah ada (jika ada).
+Link to existing documentation (if any).
 
 ## Priority
 
@@ -305,17 +305,17 @@ Help
 ### Issue Description
 
 **Do's ✅**
-- Context lengkap
-- Screenshot jika UI bug
-- Error log jika backend bug
-- Steps to reproduce detail
+- Complete context
+- Screenshot if UI bug
+- Error log if backend bug
+- Detailed steps to reproduce
 - Environment info
 
 **Don'ts ❌**
 - Vague description
 - No reproduction steps
 - No error log
-- Multiple bugs di 1 issue
+- Multiple bugs in 1 issue
 
 ---
 
@@ -357,23 +357,23 @@ Part of milestone #3
 ## 🔄 Issue Workflow
 
 ```
-1. Issue dibuat (Ahmad/Sandikodev/Developer)
+1. Issue created (Ahmad/Sandikodev/Developer)
    ↓
-2. Label ditambahkan
+2. Label added
    ↓
-3. Sprint Planning → Assigned ke developer
+3. Sprint Planning → Assigned to developer
    ↓
-4. Developer mulai kerja → Status: In Progress
+4. Developer starts work → Status: In Progress
    ↓
-5. PR dibuat → Link PR di Issue
+5. PR created → Link PR in Issue
    ↓
 6. PR merged → Issue auto-close
    ↓
-7. Move card di GitHub Project
+7. Move card in GitHub Project
 ```
 
 ---
 
 **Next:** [`pull-request.md`](pull-request.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

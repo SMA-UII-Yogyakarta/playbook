@@ -8,11 +8,11 @@
   "references": {
     "docs": {
       "path": "docs",
-      "description": "Dokumentasi playbook — SOP, workflow, templates, ADR, learning path"
+      "description": "Playbook documentation — SOP, workflow, templates, ADR, learning path"
     },
     "roles": {
       "path": "ROLES",
-      "description": "Definisi role dinamis — template, product-analyst, junior dev, senior dev, PM, stakeholder"
+      "description": "Dynamic role definitions — template, product-analyst, junior dev, senior dev, PM, stakeholder"
     },
     "workflows": {
       "path": "WORKFLOWS",
@@ -28,16 +28,16 @@
     },
     "aksesekolah": {
       "path": "../smauii-aksesekolah",
-      "description": "Monorepo entrypoint — dokumentasi, .opencode, .openkb"
+      "description": "Monorepo entrypoint — documentation, .opencode, .openkb"
     },
     "kaede": {
       "path": "../kaede-powerup",
-      "description": "KAEDE Power-Up — integrasi Trello MCP"
+      "description": "KAEDE Power-Up — Trello MCP integration"
     }
   },
   "agent": {
     "plan": {
-      "description": "Agent utama untuk playbook — analisis, dokumentasi, review SOP",
+      "description": "Main agent for playbook — analysis, documentation, SOP review",
       "mode": "primary",
       "permission": {
         "edit": "allow",
@@ -45,13 +45,13 @@
       }
     },
     "docs": {
-      "description": "Technical writer — buat & maintain dokumentasi playbook",
+      "description": "Technical writer — create & maintain playbook documentation",
       "mode": "subagent",
       "permission": {
         "edit": "allow",
         "bash": "deny"
       },
-      "prompt": "Kamu adalah technical writer untuk PT Koneksi Jaringan Indonesia. Buat dokumentasi yang jelas, terstruktur, dan mudah dipahami oleh seluruh tim (developer junior, senior, PM, bahkan stakeholder non-teknis). Gunakan bahasa Indonesia. Patuhi format yang konsisten."
+      "prompt": "You are a technical writer for PT Koneksi Jaringan Indonesia. Create clear, structured documentation that is easy to understand for the entire team (junior developers, senior developers, PM, even non-technical stakeholders). Use Indonesian. Follow consistent formatting."
     }
   }
 }

@@ -1,6 +1,6 @@
 # GitHub Organization — SMA UII Yogyakarta
 
-> Panduan setup dan management GitHub Organization untuk tim engineering SMA UII Yogyakarta.
+> Setup and management guide for the SMA UII Yogyakarta engineering team's GitHub Organization.
 
 ---
 
@@ -36,7 +36,7 @@
 Base Permission: Read
 ```
 
-Artinya: Member default hanya bisa read repository, tidak bisa push/create.
+This means: Members can only read repositories by default, cannot push/create.
 
 ---
 
@@ -52,7 +52,7 @@ Artinya: Member default hanya bisa read repository, tidak bisa push/create.
 - ✅ Manage billing & billing plans
 
 #### 2. `maintainers`
-**Members:** (Empty untuk saat ini)  
+**Members:** (Empty for now)  
 **Permission:**
 - ✅ Manage repository settings
 - ✅ Manage team members (add/remove)
@@ -122,11 +122,11 @@ Branch name pattern: main
 ```
 
 **Result:**
-- Semua perubahan ke `main` harus via PR
-- Minimal 1 approval (dari owner/maintainer)
-- Admin (bahkan Sandikodev) harus via PR
-- Tidak ada force push ke main
-- Tidak ada merge tanpa approval
+- All changes to `main` must go through PR
+- Minimum 1 approval (from owner/maintainer)
+- Admin (even Sandikodev) must go through PR
+- No force push to main
+- No merge without approval
 
 ---
 
@@ -142,7 +142,7 @@ Branch name pattern: main
 ❌ Disable allow rebase merging
 ```
 
-**Reason:** Squash merge menjaga history bersih (1 commit = 1 feature).
+**Reason:** Squash merge keeps history clean (1 commit = 1 feature).
 
 ---
 
@@ -161,22 +161,22 @@ assignees: ''
 ---
 
 ## Problem Statement
-[Jelaskan masalah yang ingin diselesaikan]
+[Describe the problem to be solved]
 
 ## Proposed Solution
-[Jelaskan solusi yang diusulkan]
+[Describe the proposed solution]
 
 ## User Story
-**Sebagai** [role]
-**Saya ingin** [fitur]
-**Agar** [manfaat]
+**As a** [role]
+**I want** [feature]
+**So that** [benefit]
 
 ## Acceptance Criteria
-- [ ] Kriteria 1
-- [ ] Kriteria 2
+- [ ] Criterion 1
+- [ ] Criterion 2
 
 ## Additional Context
-[Link ke Trello, design, atau referensi lain]
+[Link to Trello, design, or other references]
 ```
 
 **Template 2: Bug Report** (`bug-report.md`)
@@ -190,7 +190,7 @@ assignees: ''
 ---
 
 ## Bug Description
-[Jelaskan bug secara singkat]
+[Describe the bug briefly]
 
 ## Severity
 - [ ] 🔥 Critical (production down, data loss)
@@ -203,10 +203,10 @@ assignees: ''
 3. See error
 
 ## Expected Behavior
-[APA yang seharusnya terjadi]
+[WHAT should happen]
 
 ## Actual Behavior
-[Apa yang sebenarnya terjadi]
+[What actually happens]
 
 ## Environment
 - OS: Windows 11
@@ -214,11 +214,11 @@ assignees: ''
 - Version: v1.0.0
 
 ## Screenshots
-[Attach screenshot jika ada]
+[Attach screenshot if any]
 
 ## Error Logs
 ```
-Paste error log di sini
+Paste error log here
 ```
 ```
 
@@ -233,7 +233,7 @@ Paste error log di sini
 Fixes #[issue-number]
 
 ## Description
-[Jelaskan apa yang diubah dan kenapa]
+[Describe what was changed and why]
 
 ## Changes
 ### Backend
@@ -266,7 +266,7 @@ Result: [Paste result]
 - [ ] Documentation updated
 
 ## Notes for Reviewer
-[@Sandikodev: Focus review pada file X line Y]
+[@Sandikodev: Focus review on file X line Y]
 ```
 
 ---
@@ -369,8 +369,8 @@ Due date: [End date of sprint]
 **Sprint Milestones:**
 ```
 Sprint 1 — Authentication & SSO (Week 1-2)
-Sprint 2 — Presensi Module (Week 3-4)
-Sprint 3 — Laporan & Admin (Week 5-6)
+Sprint 2 — Attendance Module (Week 3-4)
+Sprint 3 — Reports & Admin (Week 5-6)
 Sprint 4 — Production Ready (Week 7-8)
 ```
 
@@ -383,15 +383,15 @@ Sprint 4 — Production Ready (Week 7-8)
 **Power-Up:** GitHub for Trello
 
 **Setup:**
-1. Buka Trello Board
+1. Open Trello Board
 2. Power-Ups → Add "GitHub"
 3. Connect GitHub account
 4. Link repository
 
-**Benefit:**
-- Attach PR ke Trello card
-- Lihat status PR langsung di Trello
-- Auto-update card saat PR status berubah
+**Benefits:**
+- Attach PR to Trello card
+- View PR status directly in Trello
+- Auto-update card when PR status changes
 
 ---
 
@@ -434,7 +434,7 @@ jobs:
 
 ### Repository Insights
 
-**Insights tab di setiap repository:**
+**Insights tab on each repository:**
 
 ```
 - Contributors
@@ -461,7 +461,7 @@ jobs:
 
 ### 1. Two-Factor Authentication (2FA)
 
-**Requirement:** Semua member wajib enable 2FA
+**Requirement:** All members must enable 2FA
 
 **How to enable:**
 ```
@@ -560,7 +560,7 @@ Set permission: Read & Write
 **WhatsApp:** [Group Link]
 
 **For Issues:**
-- Technical issues → Create Issue di repository terkait
+- Technical issues → Create Issue in relevant repository
 - Organization issues → Contact Sandikodev directly
 
 ---
@@ -574,5 +574,5 @@ Set permission: Read & Write
 
 ---
 
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

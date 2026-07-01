@@ -1,15 +1,15 @@
-# Sprint 2 Plan — Presensi Module
+# Sprint 2 Plan — Attendance Module
 
-> Sprint 2 (Minggu 3-4): Presensi Siswa & Guru Module
+> Sprint 2 (Weeks 3-4): Student & Teacher Attendance Module
 
 ---
 
 ## 📋 Sprint Overview
 
-**Duration:** 2 minggu  
-**Start Date:** 14 Juli 2026  
-**End Date:** 25 Juli 2026  
-**Sprint Goal:** Presensi Siswa & Guru berfungsi penuh dengan geolokasi & swafoto
+**Duration:** 2 weeks  
+**Start Date:** July 14, 2026  
+**End Date:** July 25, 2026  
+**Sprint Goal:** Student & Teacher Attendance fully working with geolocation & selfie
 
 **Theme:** "Core Features — Inertia + React"
 
@@ -18,14 +18,14 @@
 ## 🎯 Sprint Goal
 
 **Objective:**
-Selesaikan modul presensi untuk siswa (dengan geolokasi & swafoto) dan guru, serta dashboard untuk menampilkan statistik dan riwayat presensi.
+Complete the attendance module for students (with geolocation & selfie) and teachers, along with dashboards to display attendance statistics and history.
 
 **Key Results:**
-- [ ] Presensi siswa dengan geolokasi berfungsi
-- [ ] Swafoto kamera berfungsi
-- [ ] Validasi radius & waktu OK
-- [ ] Presensi guru berfungsi
-- [ ] Dashboard semua role berfungsi
+- [ ] Student attendance with geolocation working
+- [ ] Camera selfie working
+- [ ] Radius & time validation OK
+- [ ] Teacher attendance working
+- [ ] All role dashboards working
 - [ ] UAT passed
 - [ ] Deploy staging → MVP Ready
 
@@ -45,42 +45,42 @@ Selesaikan modul presensi untuk siswa (dengan geolokasi & swafoto) dan guru, ser
 
 ## 📦 User Stories
 
-### US-004: Presensi Siswa dengan Geolokasi (8 pts)
+### US-004: Student Attendance with Geolocation (8 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai siswa SMA UII
-Saya ingin melakukan presensi dengan geolokasi dan swafoto
-Agar kehadiran saya tercatat dengan valid
+As a SMA UII student
+I want to do attendance with geolocation and selfie
+So that my attendance is recorded validly
 ```
 
 **Acceptance Criteria:**
 ```gherkin
-Scenario: Presensi berhasil dalam radius
-  Given siswa ada di halaman presensi
-  And geolokasi dalam radius 50m dari sekolah
-  When siswa submit presensi
-  Then presensi berhasil disimpan
-  And status "On Time" atau "Late"
+Scenario: Attendance successful within radius
+  Given student is on the attendance page
+  And geolocation within 50m radius from school
+  When student submits attendance
+  Then attendance is saved successfully
+  And status "On Time" or "Late"
 
-Scenario: Presensi ditolak di luar radius
-  Given siswa ada di halaman presensi
-  And geolokasi di luar radius 50m
-  When siswa submit presensi
-  Then presensi ditolak
-  And error message "Anda berada di luar area sekolah"
+Scenario: Attendance rejected outside radius
+  Given student is on the attendance page
+  And geolocation outside 50m radius
+  When student submits attendance
+  Then attendance is rejected
+  And error message "You are outside the school area"
 ```
 
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #22: Presensi model + migration (PostgreSQL)
-- [ ] Issue #23: PresensiService (geolokasi validation)
+- [ ] Issue #22: Attendance model + migration (PostgreSQL)
+- [ ] Issue #23: PresensiService (geolocation validation)
 - [ ] Issue #24: Duplicate check logic (Service Layer)
 - [ ] Issue #25: Status calculation (On Time/Late)
-- [ ] Issue #26: Photo upload ke S3 (Wasabi/MinIO)
+- [ ] Issue #26: Photo upload to S3 (Wasabi/MinIO)
 - [ ] Issue #27: Unit test validation
 
 Frontend (Fathan):
@@ -92,8 +92,8 @@ Frontend (Fathan):
 - [ ] Issue #33: Success feedback
 
 Learning Mentor (Azis):
-- [ ] Issue #L4: Debugging camera & geolokasi integration
-- [ ] Issue #L5: Pair programming upload foto S3
+- [ ] Issue #L4: Debugging camera & geolocation integration
+- [ ] Issue #L5: Pair programming photo upload S3
 ```
 
 **Dependencies:** US-001 (Authentication) ✅, Spatie RBAC ✅  
@@ -101,24 +101,24 @@ Learning Mentor (Azis):
 
 ---
 
-### US-005: Presensi Guru (5 pts)
+### US-005: Teacher Attendance (5 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai guru SMA UII
-Saya ingin melakukan presensi kehadiran saya
-Agar rekaman kehadiran saya tercatat
+As a SMA UII teacher
+I want to record my attendance
+So that my attendance record is logged
 ```
 
 **Acceptance Criteria:**
 ```gherkin
-Scenario: Guru presensi berhasil
-  Given guru ada di halaman presensi
-  And geolokasi valid
-  When guru submit presensi
-  Then presensi berhasil
+Scenario: Teacher attendance successful
+  Given teacher is on the attendance page
+  And geolocation valid
+  When teacher submits attendance
+  Then attendance is successful
   And status calculated
 ```
 
@@ -141,32 +141,32 @@ Frontend (Fathan):
 
 ### US-006: Dashboard All Roles (6 pts)
 
-**Trello:** [Link ke card](...)
+**Trello:** [Link to card](...)
 
 **User Story:**
 ```
-Sebagai admin/guru/siswa
-Saya ingin melihat dashboard dengan statistik presensi
-Agar saya dapat melihat ringkasan kehadiran
+As an admin/teacher/student
+I want to see a dashboard with attendance statistics
+So that I can view attendance summary
 ```
 
 **Acceptance Criteria:**
 ```gherkin
 Scenario: Admin dashboard
   Given admin login
-  When admin akses dashboard
-  Then admin melihat:
-    - Total siswa, guru, staff
-    - Kehadiran hari ini
-    - Grafik kehadiran
+  When admin accesses dashboard
+  Then admin sees:
+    - Total students, teachers, staff
+    - Today's attendance
+    - Attendance chart
 
-Scenario: Siswa dashboard
-  Given siswa login
-  When siswa akses dashboard
-  Then siswa melihat:
-    - Presensi hari ini
-    - Riwayat bulan ini
-    - Total hadir, sakit, izin, alfa
+Scenario: Student dashboard
+  Given student login
+  When student accesses dashboard
+  Then student sees:
+    - Today's attendance
+    - Monthly history
+    - Total present, sick, permission, absent
 ```
 
 **Tasks:**
@@ -174,7 +174,7 @@ Scenario: Siswa dashboard
 Backend (Ihsan):
 - [ ] Issue #39: Dashboard API via Inertia shared data
 - [ ] Issue #40: Attendance history API endpoint
-- [ ] Issue #41: Chart data (JSON) dari Service Layer
+- [ ] Issue #41: Chart data (JSON) from Service Layer
 
 Frontend (Fathan):
 - [ ] Issue #42: Admin dashboard (React + Inertia page)
@@ -190,16 +190,16 @@ Frontend (Fathan):
 
 ## 📅 Sprint Schedule
 
-### Week 3 — Presensi Core
+### Week 3 — Attendance Core
 
 ```
 Monday (Day 1):
 ├─ 09:00-10:30 → Sprint Planning Meeting
-├─ 10:30-12:00 → Presensi model + migration PostgreSQL (Ihsan + Azis)
-├─ 13:00-17:00 → Presensi form design React (Fathan + Azis)
+├─ 10:30-12:00 → Attendance model + migration PostgreSQL (Ihsan + Azis)
+├─ 13:00-17:00 → Attendance form design React (Fathan + Azis)
 
 Tuesday (Day 2):
-├─ 09:00-12:00 → PresensiService geolokasi validation (Ihsan)
+├─ 09:00-12:00 → PresensiService geolocation validation (Ihsan)
 ├─ 13:00-17:00 → Camera preview + capture (Fathan)
 
 Wednesday (Day 3):
@@ -207,7 +207,7 @@ Wednesday (Day 3):
 ├─ 13:00-17:00 → Geolocation detection + form integration (Fathan)
 
 Thursday (Day 4):
-├─ 09:00-12:00 → Photo upload ke S3 (Ihsan + Azis)
+├─ 09:00-12:00 → Photo upload to S3 (Ihsan + Azis)
 ├─ 13:00-17:00 → Full form submission integration (Fathan + Ihsan)
 
 Friday (Day 5):
@@ -246,7 +246,7 @@ Friday (Day 10):
 ## 🎯 MVP Demo (Day 10)
 
 **Attendees:**
-- Tim Engineering
+- Engineering Team
 - Pak Mahfud (Stakeholder)
 - SMA UII Representatives (optional)
 
@@ -255,8 +255,8 @@ Friday (Day 10):
 13:00-13:15 → Opening (Sandikodev)
 13:15-13:45 → Live Demo:
                - Login
-               - Presensi Siswa
-               - Presensi Guru
+               - Student Attendance
+               - Teacher Attendance
                - Dashboard
 13:45-14:15 → Feedback Session
 14:15-14:30 → Next Steps (Sprint 3-4)
@@ -293,28 +293,28 @@ Friday (Day 10):
 ### UAT Checklist (Ahmad Hanif)
 
 ```markdown
-## UAT Checklist — Presensi Module
+## UAT Checklist — Attendance Module
 
-### Presensi Siswa
-- [ ] Form loads dengan camera preview
+### Student Attendance
+- [ ] Form loads with camera preview
 - [ ] Geolocation detected
-- [ ] Submit dalam radius → success
-- [ ] Submit di luar radius → error
-- [ ] Swafoto captured
+- [ ] Submit within radius → success
+- [ ] Submit outside radius → error
+- [ ] Selfie captured
 - [ ] Duplicate prevented
-- [ ] Riwayat tampil
+- [ ] History displayed
 
-### Presensi Guru
+### Teacher Attendance
 - [ ] Form loads
-- [ ] Submit berhasil
+- [ ] Submit successful
 - [ ] Duplicate prevented
 
 ### Dashboard
 - [ ] Admin dashboard loads
 - [ ] Student dashboard loads
 - [ ] Teacher dashboard loads
-- [ ] Statistik correct
-- [ ] Responsive di mobile
+- [ ] Statistics correct
+- [ ] Responsive on mobile
 ```
 
 ---
@@ -322,11 +322,11 @@ Friday (Day 10):
 ## ✅ Definition of Done
 
 ```markdown
-✅ Code complete (semua task selesai)
+✅ Code complete (all tasks completed)
 ✅ Unit test written (>70% coverage)
 ✅ Feature test written
 ✅ Code review approved
-✅ PR merged ke main
+✅ PR merged to main
 ✅ UAT passed
 ✅ Deploy staging
 ✅ MVP Demo successful
@@ -339,18 +339,18 @@ Friday (Day 10):
 
 **Functional:**
 ```
-✅ Login/Logout berfungsi
-✅ Presensi Siswa berfungsi
-✅ Presensi Guru berfungsi
-✅ Dashboard semua role berfungsi
-✅ Export laporan basic berfungsi
+✅ Login/Logout working
+✅ Student Attendance working
+✅ Teacher Attendance working
+✅ All role dashboards working
+✅ Basic report export working
 ```
 
 **Non-Functional:**
 ```
-✅ Performance OK (< 3 detik)
+✅ Performance OK (< 3 seconds)
 ✅ Security OK (no critical vulnerability)
-✅ Responsive di mobile
+✅ Responsive on mobile
 ✅ Uptime > 95% (staging)
 ```
 
@@ -372,6 +372,6 @@ Friday (Day 10):
 
 ---
 
-**Next:** *Sprint 3 — belum tersedia*  
-**Last Updated:** Juni 2026  
+**Next:** *Sprint 3 — not yet available*  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

@@ -1,6 +1,6 @@
 # Deployment SOP
 
-> Standar deployment SMART Absen ke staging & production.
+> Deployment standards for staging & production of SMART Absen.
 
 ---
 
@@ -9,7 +9,7 @@
 | Environment | URL | Purpose | Access |
 |---|---|---|---|
 | **Local** | `http://core.test` | Development | Developer |
-| **Staging** | `http://staging.smauiiyk.sch.id` | UAT, Testing | Tim + Stakeholder |
+| **Staging** | `http://staging.smauiiyk.sch.id` | UAT, Testing | Team + Stakeholder |
 | **Production** | `https://smauiiyk.sch.id` | Live users | Public |
 
 ---
@@ -22,24 +22,24 @@
 ## Staging Checklist
 
 ### Code
-- [ ] PR merged ke main
+- [ ] PR merged to main
 - [ ] All tests passed
 - [ ] Code review approved
 
 ### Database
-- [ ] Migration tested di local
-- [ ] Seeder tested (jika ada)
-- [ ] Backup database staging
+- [ ] Migration tested locally
+- [ ] Seeder tested (if any)
+- [ ] Backup staging database
 
 ### Environment
-- [ ] .env.staging updated (jika ada config change)
+- [ ] .env.staging updated (if there are config changes)
 - [ ] Cache cleared
 - [ ] Config cached
 
 ### Testing
 - [ ] Smoke test passed
 - [ ] UAT by Ahmad Hanif
-- [ ] Stakeholder demo (jika perlu)
+- [ ] Stakeholder demo (if needed)
 ```
 
 ---
@@ -52,7 +52,7 @@
 ### Pre-Deployment
 - [ ] Staging UAT passed
 - [ ] Stakeholder approval (Pak Mahfud)
-- [ ] Backup database production
+- [ ] Backup production database
 - [ ] Rollback plan ready
 - [ ] Deployment time scheduled (outside school hours)
 
@@ -78,12 +78,12 @@
 
 ### Staging Deployment (Automated)
 
-**Frequency:** Setiap ada merge ke `main`  
+**Frequency:** Every time there's a merge to `main`  
 **PIC:** Sandikodev  
-**Duration:** 5-10 menit
+**Duration:** 5-10 minutes
 
 ```bash
-# 1. SSH ke staging server
+# 1. SSH to staging server
 ssh user@staging.smauiiyk.sch.id
 
 # 2. Navigate to project
@@ -107,10 +107,10 @@ php artisan config:cache
 php artisan route:cache
 php artisan view:cache
 
-# 7. Run migration (jika ada)
+# 7. Run migration (if any)
 php artisan migrate --force
 
-# 8. Restart queue worker (jika ada)
+# 8. Restart queue worker (if any)
 php artisan queue:restart
 
 # 9. Test staging
@@ -121,19 +121,19 @@ curl http://staging.smauiiyk.sch.id
 
 ### Production Deployment (Manual)
 
-**Frequency:** End of sprint (setiap 2 minggu) atau critical fix  
+**Frequency:** End of sprint (every 2 weeks) or critical fix  
 **PIC:** Sandikodev + Pak Mahfud (approval)  
-**Duration:** 15-30 menit  
-**Timing:** Weekend atau malam (outside school hours)
+**Duration:** 15-30 minutes  
+**Timing:** Weekend or night (outside school hours)
 
-#### Phase 1: Pre-Deployment (H-1)
+#### Phase 1: Pre-Deployment (D-1)
 
 ```bash
 # 1. Create git tag
 git tag -a v1.0.0 -m "Production Release v1.0.0"
 git push origin v1.0.0
 
-# 2. Backup database production
+# 2. Backup production database
 ssh user@smauiiyk.sch.id
 pg_dump -U postgres smauii_production > backup_$(date +%Y%m%d).sql
 
@@ -148,7 +148,7 @@ psql -U postgres -d smauii_production -f backup_20260624.sql
 
 #### Phase 2: Deployment Day
 
-**Step 1: Maintenance Mode (5 menit)**
+**Step 1: Maintenance Mode (5 minutes)**
 
 ```bash
 # Enable maintenance mode
@@ -158,10 +158,10 @@ php artisan down
 touch storage/framework/down
 ```
 
-**Step 2: Deploy Code (10 menit)**
+**Step 2: Deploy Code (10 minutes)**
 
 ```bash
-# SSH ke production
+# SSH to production
 ssh user@smauiiyk.sch.id
 
 # Navigate to project
@@ -191,7 +191,7 @@ php artisan view:cache
 composer dump-autoload --optimize
 ```
 
-**Step 3: Database Migration (5 menit)**
+**Step 3: Database Migration (5 minutes)**
 
 ```bash
 # Run migration
@@ -201,13 +201,13 @@ php artisan migrate --force
 php artisan migrate:status
 ```
 
-**Step 4: Post-Deployment (5 menit)**
+**Step 4: Post-Deployment (5 minutes)**
 
 ```bash
 # Restart queue worker
 php artisan queue:restart
 
-# Restart Octane (jika pakai)
+# Restart Octane (if using)
 php artisan octane:reload
 
 # Clear compiled files
@@ -217,7 +217,7 @@ php artisan optimize:clear
 curl http://localhost:8000
 ```
 
-**Step 5: Bring Up (2 menit)**
+**Step 5: Bring Up (2 minutes)**
 
 ```bash
 # Disable maintenance mode
@@ -234,27 +234,27 @@ rm storage/framework/down
 **Smoke Test Checklist:**
 
 ```markdown
-## Smoke Test (5 menit)
+## Smoke Test (5 minutes)
 
 ### Authentication
 - [ ] Login page accessible
-- [ ] Login dengan valid credentials
-- [ ] Logout berfungsi
+- [ ] Login with valid credentials
+- [ ] Logout works
 - [ ] Invalid login shows error
 
 ### Core Features
 - [ ] Dashboard loads
-- [ ] Presensi form accessible
-- [ ] Submit presensi berhasil
-- [ ] Laporan accessible
+- [ ] Attendance form accessible
+- [ ] Submit attendance successful
+- [ ] Reports accessible
 
 ### Performance
-- [ ] Page load < 2 detik
+- [ ] Page load < 2 seconds
 - [ ] No console errors
 - [ ] No 500 errors
 
 ### Mobile
-- [ ] Responsive di mobile
+- [ ] Responsive on mobile
 - [ ] Camera accessible
 - [ ] Geolocation working
 ```
@@ -265,7 +265,7 @@ rm storage/framework/down
 
 ### When to Rollback
 
-- Critical bug production
+- Critical production bug
 - Data corruption
 - Performance degradation > 50%
 - Security vulnerability
@@ -280,13 +280,13 @@ php artisan down
 git revert HEAD
 git push origin main
 
-# OR checkout ke tag sebelumnya
+# OR checkout to previous tag
 git checkout v0.9.0
 
 # 3. Rollback database migration
 php artisan migrate:rollback --step=1
 
-# 4. Restore database backup (jika perlu)
+# 4. Restore database backup (if needed)
 mysql -u root smauii_production < backup_20260624.sql
 
 # 5. Clear cache
@@ -305,34 +305,34 @@ curl https://smauiiyk.sch.id
 
 ## 📊 Deployment Communication
 
-### Pre-Deployment Notice (H-1)
+### Pre-Deployment Notice (D-1)
 
 **To:** Pak Mahfud, SMA UII Staff  
-**Subject:** [NOTICE] Production Deployment — SMART Absen v1.0 — 25 Juni 2026
+**Subject:** [NOTICE] Production Deployment — SMART Absen v1.0 — 25 June 2026
 
 ```
 Assalamu'alaikum Pak Mahfud,
 
-Kami informasikan akan ada deployment SMART Absen versi 1.0:
+We would like to inform you that there will be a SMART Absen version 1.0 deployment:
 
-📅 Tanggal: Selasa, 25 Juni 2026
-⏰ Waktu: 20:00 - 21:00 WIB
-⏱️ Durasi: 60 menit (estimasi)
-🔧 Impact: Downtime (sistem tidak dapat diakses)
+📅 Date: Tuesday, 25 June 2026
+⏰ Time: 20:00 - 21:00 WIB
+⏱️ Duration: 60 minutes (estimated)
+🔧 Impact: Downtime (system will be inaccessible)
 
-FITUR BARU
-- Presensi Siswa dengan Geolokasi
-- Presensi Guru & Staff
-- Dashboard Admin
-- Export Laporan Excel
+NEW FEATURES
+- Student Attendance with Geolocation
+- Teacher & Staff Attendance
+- Admin Dashboard
+- Excel Report Export
 
 BUG FIX
 - Fix login error
-- Fix presensi duplicate
+- Fix duplicate attendance
 
-Mohon informasikan ke seluruh staff & guru.
+Please inform all staff & teachers.
 
-Terima kasih.
+Thank you.
 
 Best regards,
 Sandikodev
@@ -344,36 +344,36 @@ PT Koneksi Jaringan Indonesia
 ### Deployment Complete Notice
 
 **To:** Pak Mahfud, SMA UII Staff  
-**Subject:** [SUCCESS] Deployment SMART Absen v1.0 Completed
+**Subject:** [SUCCESS] SMART Absen v1.0 Deployment Completed
 
 ```
 Assalamu'alaikum Pak Mahfud,
 
-Deployment SMART Absen versi 1.0 telah selesai:
+SMART Absen version 1.0 deployment has been completed:
 
 ✅ Status: SUCCESS
-⏰ Completed: 20:45 WIB (45 menit)
+⏰ Completed: 20:45 WIB (45 minutes)
 🐛 Issues: None
 
-SISTEM SUDAH DAPAT DIAKSES KEMBALI
+THE SYSTEM IS NOW ACCESSIBLE AGAIN
 
-FITUR YANG AKTIF
+ACTIVE FEATURES
 ✅ Login & Authentication
-✅ Presensi Siswa
-✅ Presensi Guru
-✅ Dashboard Admin
-✅ Export Laporan
+✅ Student Attendance
+✅ Teacher Attendance
+✅ Admin Dashboard
+✅ Report Export
 
 KNOWN ISSUES
-- Export laporan max 1000 baris (limitasi MVP)
-- Belum ada notifikasi WhatsApp (roadmap Sprint 3)
+- Report export max 1000 rows (MVP limitation)
+- WhatsApp notification not yet available (Sprint 3 roadmap)
 
 SUPPORT
-Jika ada kendala, silakan hubungi:
+If you experience any issues, please contact:
 WhatsApp: [Group Link]
 Email: support@koneksi.id
 
-Terima kasih.
+Thank you.
 
 Best regards,
 Sandikodev
@@ -453,13 +453,13 @@ server {
 
 ## 📈 Monitoring & Alerting
 
-### Post-Deployment Monitoring (24 jam)
+### Post-Deployment Monitoring (24 hours)
 
 **Metrics to Watch:**
 - Response time (< 200ms)
 - Error rate (< 0.1%)
 - Database query time (< 100ms)
-- Queue lag (< 1 menit)
+- Queue lag (< 1 minute)
 
 **Tools:**
 - Laravel Telescope (local monitoring)
@@ -478,7 +478,7 @@ server {
 **Warning Alerts (WhatsApp):**
 - Response time > 500ms
 - Disk usage > 80%
-- Queue lag > 10 menit
+- Queue lag > 10 minutes
 
 ---
 
@@ -572,5 +572,5 @@ php artisan view:clear
 ---
 
 **Next:** [`testing.md`](testing.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev

@@ -1,11 +1,11 @@
 # Access Matrix — Per Role
 
-> Matriks akses untuk setiap role di ekosistem PT Koneksi Jaringan Indonesia.
-> Digunakan untuk onboarding, audit, dan keamanan.
+> Access matrix for each role in the PT Koneksi Jaringan Indonesia ecosystem.
+> Used for onboarding, audit, and security.
 
 ---
 
-## Matriks Akses
+## Access Matrix
 
 | Resource | PM | Senior Dev | Junior Backend | Junior Frontend | Product Analyst | Stakeholder |
 |---|---|---|---|---|---|---|
@@ -29,16 +29,16 @@
 
 ## Level Definitions
 
-| Level | Arti |
+| Level | Meaning |
 |---|---|
 | **admin** | Full control — manage, invite, delete |
-| **write (branch)** | Push ke branch fitur, buat PR, review PR |
+| **write (branch)** | Push to feature branch, create PR, review PR |
 | **write** | Edit, create, delete |
-| **edit** | Edit content tapi tidak bisa manage |
-| **create/comment** | Buat issue baru + komentar |
-| **view/comment** | Lihat + komentar (tidak create) |
+| **edit** | Edit content but cannot manage |
+| **create/comment** | Create new issue + comment |
+| **view/comment** | View + comment (cannot create) |
 | **view** | Read-only |
-| **operate** | Bisa deploy, restart, view logs |
+| **operate** | Can deploy, restart, view logs |
 | **full** | Root access |
 | **❌** | No access |
 
@@ -46,7 +46,7 @@
 
 ## Privilege Escalation Path
 
-Untuk sementara akses terbatas, bisa dinaikkan dengan approval:
+For temporary limited access, can be escalated with approval:
 
 | Current | Request | Approval Needed |
 |---|---|---|
@@ -58,11 +58,11 @@ Untuk sementara akses terbatas, bisa dinaikkan dengan approval:
 
 ## Policy
 
-1. **Privilege minimum** — Setiap role hanya dapat akses minimum yang dibutuhkan
-2. **Periodic review** — Akses direview setiap bulan oleh Tech Lead
-3. **Revoke** — Akses dicabut saat role berubah atau kontrak berakhir
-4. **Audit trail** — Semua perubahan akses tercatat di decision-log
+1. **Minimum privilege** — Each role only gets the minimum access needed
+2. **Periodic review** — Access is reviewed every month by Tech Lead
+3. **Revoke** — Access is revoked when role changes or contract ends
+4. **Audit trail** — All access changes are recorded in decision-log
 
 ---
 
-*Dokumen ini adalah bagian dari [playbook Koneksi](../../README.md).*
+*This document is part of the [Koneksi playbook](../../README.md).*

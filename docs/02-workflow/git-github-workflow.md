@@ -1,29 +1,29 @@
 # Git & GitHub Workflow
 
-> Standar workflow Git & GitHub untuk tim engineering SMA UII Yogyakarta.
+> Standard Git & GitHub workflow for the SMA UII Yogyakarta engineering team.
 
 ---
 
-## 🎯 Prinsip Dasar
+## 🎯 Basic Principles
 
-1. **Main Branch adalah Sacred**
-   - `main` selalu deployable
-   - Tidak ada commit langsung ke `main`
-   - Semua perubahan via Pull Request
+1. **Main Branch is Sacred**
+   - `main` is always deployable
+   - No direct commits to `main`
+   - All changes via Pull Request
 
-2. **Satu Task = Satu Branch = Satu PR**
-   - Jangan gabungkan fitur berbeda di branch sama
-   - Jangan gabungkan bugfix dengan fitur
+2. **One Task = One Branch = One PR**
+   - Don't combine different features in the same branch
+   - Don't combine bugfix with feature
 
-3. **Commit Message yang Jelas**
+3. **Clear Commit Message**
    - Conventional Commits
-   - Bahasa Inggris
-   - Jelaskan "kenapa", bukan "apa"
+   - Use English
+   - Explain "why", not "what"
 
-4. **Review Sebelum Merge**
-   - Minimal 1 approval (Sandikodev)
-   - CI check harus hijau
-   - Self-review sebelum request review
+4. **Review Before Merge**
+   - Minimum 1 approval (Sandikodev)
+   - CI check must be green
+   - Self-review before requesting review
 
 ---
 
@@ -34,11 +34,11 @@
 ```
 main
 │
-├── feature/ISSUE-12-login-api          # Fitur baru
+├── feature/ISSUE-12-login-api          # New feature
 ├── bugfix/ISSUE-34-fix-null-pointer    # Bug fix
 ├── hotfix/fix-critical-login-error     # Critical production fix
-├── refactor/ISSUE-56-optimize-query    # Refactor tanpa perubahan logic
-├── docs/update-readme                  # Dokumentasi
+├── refactor/ISSUE-56-optimize-query    # Refactor without logic changes
+├── docs/update-readme                  # Documentation
 └── chore/upgrade-laravel               # Maintenance
 ```
 
@@ -48,7 +48,7 @@ main
 {type}/{ISSUE-ID}-{short-description}
 ```
 
-**Contoh:**
+**Examples:**
 ```
 feature/12-student-attendance
 bugfix/34-fix-validation-error
@@ -65,7 +65,7 @@ chore/upgrade-laravel-13
 git checkout main
 git pull origin main
 
-# 2. Buat branch baru
+# 2. Create new branch
 git checkout -b feature/12-attendance-api
 
 # 3. Coding... commit... commit...
@@ -73,9 +73,9 @@ git checkout -b feature/12-attendance-api
 # 4. Push branch
 git push origin feature/12-attendance-api
 
-# 5. Buat Pull Request di GitHub
+# 5. Create Pull Request on GitHub
 
-# 6. Setelah merge, delete branch
+# 6. After merge, delete branch
 git branch -d feature/12-attendance-api
 git push origin --delete feature/12-attendance-api
 ```
@@ -98,13 +98,13 @@ git push origin --delete feature/12-attendance-api
 
 | Type | Description |
 |---|---|
-| `feat` | Fitur baru |
+| `feat` | New feature |
 | `fix` | Bug fix |
-| `docs` | Dokumentasi |
+| `docs` | Documentation |
 | `style` | Formatting (semicolon, spacing, etc) |
-| `refactor` | Refactor code (bukan fitur, bukan bugfix) |
-| `test` | Menambah/memperbaiki test |
-| `chore` | Maintenance (upgrade package, config, etc) |
+| `refactor` | Code refactor (not a feature, not a bugfix) |
+| `test` | Adding/fixing tests |
+| `chore` | Maintenance (package upgrade, config, etc) |
 
 ### Examples
 
@@ -122,8 +122,8 @@ Closes #12
 ```
 fix(auth): resolve token expiration issue
 
-Token Sanctum tidak expire setelah logout.
-Fix dengan menambahkan token revoke di logout endpoint.
+Sanctum token does not expire after logout.
+Fix by adding token revoke at logout endpoint.
 
 Fixes #34
 ```
@@ -145,23 +145,23 @@ perbaikan presensi
 
 ## 🔄 Pull Request Workflow
 
-### 1. Sebelum Buat PR
+### 1. Before Creating PR
 
 **Checklist:**
 - [ ] Code complete
-- [ ] Self-review (baca ulang code sendiri)
-- [ ] Unit test hijau
-- [ ] No `console.log()` atau `dd()`
+- [ ] Self-review (reread own code)
+- [ ] Unit test green
+- [ ] No `console.log()` or `dd()`
 - [ ] No commented-out code
 - [ ] Follow Laravel conventions
-- [ ] Update dokumentasi (jika perlu)
+- [ ] Update documentation (if needed)
 
-### 2. Buat Pull Request
+### 2. Create Pull Request
 
 **GitHub UI:**
-1. Buka repository di GitHub
-2. Klik "Compare & pull request"
-3. Isi template PR
+1. Open repository on GitHub
+2. Click "Compare & pull request"
+3. Fill in PR template
 4. Assign reviewer (Sandikodev)
 5. Link Issue (`Fixes #12`)
 
@@ -172,7 +172,7 @@ perbaikan presensi
 Fixes #12
 
 ## Description
-Jelaskan apa yang diubah dan kenapa
+Describe what was changed and why
 
 ## Changes
 - `AttendanceController.php`: add geolocation validation
@@ -180,10 +180,10 @@ Jelaskan apa yang diubah dan kenapa
 
 ## Testing
 - [ ] Unit test
-- [ ] Manual test (screenshot jika perlu)
+- [ ] Manual test (screenshot if needed)
 
 ## Screenshots
-<!-- Jika ada perubahan UI -->
+<!-- If there are UI changes -->
 
 ## Checklist
 - [ ] Conventional commit
@@ -195,27 +195,27 @@ Jelaskan apa yang diubah dan kenapa
 ### 4. Code Review Process
 
 **Reviewer (Sandikodev):**
-- Review dalam 24 jam
-- Berikan feedback spesifik
-- Request changes atau Approve
+- Review within 24 hours
+- Provide specific feedback
+- Request changes or Approve
 
 **Author (Fathan/Ihsan):**
-- Respond feedback
-- Fix sesuai request
+- Respond to feedback
+- Fix as requested
 - Re-request review
 
 **Merge Criteria:**
-- ✅ Minimal 1 approval
-- ✅ CI check hijau (jika ada)
+- ✅ Minimum 1 approval
+- ✅ CI check green (if any)
 - ✅ No unresolved comments
 - ✅ Squash merge (default)
 
-### 5. Setelah Merge
+### 5. After Merge
 
 **Author:**
 - Delete branch
 - Pull latest main
-- Test di local
+- Test locally
 
 ```bash
 git checkout main
@@ -227,7 +227,7 @@ git branch -d feature/12-attendance-api
 
 ## 🚨 Handling Conflicts
 
-### Jika Ada Merge Conflict
+### If There Is a Merge Conflict
 
 ```bash
 # 1. Update main
@@ -238,22 +238,22 @@ git pull origin main
 git checkout feature/12-attendance-api
 git rebase main
 
-# 3. Fix conflict di file yang ditandai
-# Edit file → resolve <<<<<<< dan >>>>>>>
+# 3. Fix conflict in marked files
+# Edit file → resolve <<<<<<< and >>>>>>>
 
 # 4. Continue rebase
 git add .
 git rebase --continue
 
-# 5. Force push (karena history berubah)
+# 5. Force push (because history changed)
 git push origin feature/12-attendance-api --force-with-lease
 ```
 
 ### Prevent Conflict
 
-- Update `main` sering (setiap hari jika possible)
-- Komunikasi di WhatsApp jika ada file yang overlap
-- Pecah task kecil-kecil
+- Update `main` often (daily if possible)
+- Communicate on WhatsApp if there are overlapping files
+- Break tasks into small pieces
 
 ---
 
@@ -265,12 +265,12 @@ git push origin feature/12-attendance-api --force-with-lease
 # Check status
 git status
 
-# Lihat perubahan
+# View changes
 git diff
 
 # Stage file
 git add file.php
-git add .  # semua file
+git add .  # all files
 
 # Commit
 git commit -m "feat: add attendance validation"
@@ -282,7 +282,7 @@ git push origin feature/12-attendance-api
 git checkout main
 git pull origin main
 
-# Buat branch baru
+# Create new branch
 git checkout -b feature/12-new-feature
 
 # Switch branch
@@ -298,14 +298,14 @@ git push origin --delete feature/12-attendance-api
 ### Advanced Commands
 
 ```bash
-# Stash perubahan (simpan untuk nanti)
+# Stash changes (save for later)
 git stash
 git stash pop
 
-# Lihat log
+# View log
 git log --oneline -10
 
-# Undo commit (belum push)
+# Undo commit (not yet pushed)
 git reset --hard HEAD~1
 
 # Rebase interactive
@@ -319,7 +319,7 @@ git cherry-pick <commit-hash>
 
 ## 🔐 Security Best Practices
 
-### Jangan Pernah Commit
+### Never Commit
 
 - [ ] `.env` file
 - [ ] API keys, tokens, passwords
@@ -328,16 +328,16 @@ git cherry-pick <commit-hash>
 - [ ] `vendor/` directory
 - [ ] `node_modules/`
 
-### Jika Tidak Sengaja Commit Secret
+### If You Accidentally Commit a Secret
 
 ```bash
-# 1. Revert commit yang ada secret
+# 1. Revert commit that contains the secret
 git revert <commit-hash>
 
-# 2. Rotate secret yang ter-expose
-# Ganti API key, password, dll
+# 2. Rotate exposed secret
+# Change API key, password, etc.
 
-# 3. Force push (jika perlu)
+# 3. Force push (if necessary)
 git push origin main --force
 ```
 
@@ -345,21 +345,21 @@ git push origin main --force
 
 ## 📊 GitHub Project Integration
 
-### Update Status Otomatis
+### Automatic Status Update
 
-GitHub Project akan auto-update:
+GitHub Project will auto-update:
 
-1. **Issue dibuat** → `Backlog`
+1. **Issue created** → `Backlog`
 2. **Issue assigned** → `In Progress`
-3. **PR dibuat** → `Code Review`
+3. **PR created** → `Code Review`
 4. **PR merged** → `Done`
 
 ### Manual Update
 
-Jika automation tidak jalan:
-1. Buka GitHub Project
-2. Drag & drop card ke kolom yang sesuai
-3. Update status di Trello juga
+If automation doesn't work:
+1. Open GitHub Project
+2. Drag & drop card to the appropriate column
+3. Update status in Trello too
 
 ---
 
@@ -367,7 +367,7 @@ Jika automation tidak jalan:
 
 ### Issue: "You need to resolve your current index first"
 
-**Solusi:**
+**Solution:**
 ```bash
 git stash
 git pull origin main
@@ -376,14 +376,14 @@ git stash pop
 
 ### Issue: "Permission denied (publickey)"
 
-**Solusi:**
+**Solution:**
 1. Regenerate SSH key
-2. Add ke GitHub
+2. Add to GitHub
 3. Test: `ssh -T git@github.com`
 
 ### Issue: "Changes not staged for commit"
 
-**Solusi:**
+**Solution:**
 ```bash
 git add .
 git commit -m "fix: your commit message"
@@ -391,12 +391,12 @@ git commit -m "fix: your commit message"
 
 ### Issue: Wrong branch
 
-**Solusi:**
+**Solution:**
 ```bash
-# Stash perubahan
+# Stash changes
 git stash
 
-# Checkout branch yang benar
+# Checkout correct branch
 git checkout correct-branch
 
 # Apply stash
@@ -415,5 +415,5 @@ git stash pop
 ---
 
 **Next:** [`trello-workflow.md`](trello-workflow.md)  
-**Last Updated:** Juni 2026  
+**Last Updated:** June 2026  
 **Maintained by:** Sandikodev
