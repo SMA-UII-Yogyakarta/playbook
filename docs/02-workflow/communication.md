@@ -92,7 +92,7 @@
 **Response:** Tim  
 **Contoh:**
 ```
-"Guys, ada yang tau cara handle timezone di Livewire?"
+"Guys, ada yang tau cara handle timezone di React?"
 ```
 
 ---

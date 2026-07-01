@@ -7,11 +7,11 @@
 ## 📋 Sprint Overview
 
 **Duration:** 2 minggu  
-**Start Date:** 7 Juli 2026  
-**End Date:** 18 Juli 2026  
+**Start Date:** 14 Juli 2026  
+**End Date:** 25 Juli 2026  
 **Sprint Goal:** Presensi Siswa & Guru berfungsi penuh dengan geolokasi & swafoto
 
-**Theme:** "Core Features"
+**Theme:** "Core Features — Inertia + React"
 
 ---
 
@@ -76,23 +76,27 @@ Scenario: Presensi ditolak di luar radius
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #22: Attendance model + migration
-- [ ] Issue #23: Geolocation validation service
-- [ ] Issue #24: Duplicate check logic
+- [ ] Issue #22: Presensi model + migration (PostgreSQL)
+- [ ] Issue #23: PresensiService (geolokasi validation)
+- [ ] Issue #24: Duplicate check logic (Service Layer)
 - [ ] Issue #25: Status calculation (On Time/Late)
-- [ ] Issue #26: Photo storage (S3-compatible)
+- [ ] Issue #26: Photo upload ke S3 (Wasabi/MinIO)
 - [ ] Issue #27: Unit test validation
 
 Frontend (Fathan):
-- [ ] Issue #28: Attendance form (Livewire)
-- [ ] Issue #29: Camera preview + capture
-- [ ] Issue #30: Geolocation detection
-- [ ] Issue #31: Loading states
-- [ ] Issue #32: Error handling
+- [ ] Issue #28: Attendance form (React + Inertia)
+- [ ] Issue #29: Camera preview + capture (getUserMedia)
+- [ ] Issue #30: Geolocation detection (navigator.geolocation)
+- [ ] Issue #31: Loading states (React state)
+- [ ] Issue #32: Error handling (TypeScript union type)
 - [ ] Issue #33: Success feedback
+
+Learning Mentor (Azis):
+- [ ] Issue #L4: Debugging camera & geolokasi integration
+- [ ] Issue #L5: Pair programming upload foto S3
 ```
 
-**Dependencies:** US-001 (Authentication) ✅  
+**Dependencies:** US-001 (Authentication) ✅, Spatie RBAC ✅  
 **Priority:** 🔥 Critical
 
 ---
@@ -168,15 +172,15 @@ Scenario: Siswa dashboard
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #39: Dashboard API (statistics)
-- [ ] Issue #40: Attendance history API
-- [ ] Issue #41: Chart data API
+- [ ] Issue #39: Dashboard API via Inertia shared data
+- [ ] Issue #40: Attendance history API endpoint
+- [ ] Issue #41: Chart data (JSON) dari Service Layer
 
 Frontend (Fathan):
-- [ ] Issue #42: Admin dashboard view
-- [ ] Issue #43: Student dashboard view
-- [ ] Issue #44: Teacher dashboard view
-- [ ] Issue #45: Chart component (Chart.js/Alpine)
+- [ ] Issue #42: Admin dashboard (React + Inertia page)
+- [ ] Issue #43: Student dashboard (React + Tailwind)
+- [ ] Issue #44: Teacher dashboard
+- [ ] Issue #45: Chart component (Recharts / Chart.js + React)
 ```
 
 **Dependencies:** US-001 ✅, US-004 ✅  
@@ -186,49 +190,49 @@ Frontend (Fathan):
 
 ## 📅 Sprint Schedule
 
-### Week 3
+### Week 3 — Presensi Core
 
 ```
 Monday (Day 1):
 ├─ 09:00-10:30 → Sprint Planning Meeting
-├─ 10:30-12:00 → Attendance model + migration (Ihsan)
-├─ 13:00-17:00 → Attendance form design (Fathan)
+├─ 10:30-12:00 → Presensi model + migration PostgreSQL (Ihsan + Azis)
+├─ 13:00-17:00 → Presensi form design React (Fathan + Azis)
 
 Tuesday (Day 2):
-├─ 09:00-12:00 → Geolocation validation (Ihsan)
-├─ 13:00-17:00 → Camera integration (Fathan)
+├─ 09:00-12:00 → PresensiService geolokasi validation (Ihsan)
+├─ 13:00-17:00 → Camera preview + capture (Fathan)
 
 Wednesday (Day 3):
-├─ 09:00-12:00 → Duplicate check logic (Ihsan)
-├─ 13:00-17:00 → Geolocation detection (Fathan)
+├─ 09:00-12:00 → Duplicate check + status calculation (Ihsan)
+├─ 13:00-17:00 → Geolocation detection + form integration (Fathan)
 
 Thursday (Day 4):
-├─ 09:00-12:00 → Photo storage setup (Ihsan)
-├─ 13:00-17:00 → Form submission integration (Fathan + Ihsan)
+├─ 09:00-12:00 → Photo upload ke S3 (Ihsan + Azis)
+├─ 13:00-17:00 → Full form submission integration (Fathan + Ihsan)
 
 Friday (Day 5):
-├─ 09:00-12:00 → Teacher attendance (Ihsan)
-├─ 13:00-17:00 → Code review PR #22-30
+├─ 09:00-12:00 → Teacher attendance endpoint (Ihsan)
+├─ 13:00-17:00 → Code review + testing (Azis → Sandikodev)
 ```
 
-### Week 4
+### Week 4 — Dashboard & MVP Demo
 
 ```
 Monday (Day 6):
-├─ 09:00-12:00 → Dashboard API (Ihsan)
-├─ 13:00-17:00 → Admin dashboard view (Fathan)
+├─ 09:00-12:00 → Dashboard API + Inertia shared data (Ihsan)
+├─ 13:00-17:00 → Admin dashboard React view (Fathan)
 
 Tuesday (Day 7):
-├─ 09:00-12:00 → Student dashboard API (Ihsan)
-├─ 13:00-17:00 → Student dashboard view (Fathan)
+├─ 09:00-12:00 → Student/Teacher dashboard API (Ihsan)
+├─ 13:00-17:00 → Dashboard views + chart component (Fathan)
 
 Wednesday (Day 8):
-├─ 09:00-12:00 → Unit test (Ihsan)
-├─ 13:00-17:00 → Responsive testing (Fathan)
+├─ 09:00-12:00 → Unit test + feature test (Ihsan + Azis)
+├─ 13:00-17:00 → Responsive testing + TypeScript fixes (Fathan + Azis)
 
 Thursday (Day 9):
 ├─ 09:00-12:00 → Bug fixing
-├─ 13:00-17:00 → Deploy staging
+├─ 13:00-17:00 → Deploy staging + integration test
 
 Friday (Day 10):
 ├─ 09:00-12:00 → UAT testing (Ahmad + Pak Mahfud)
@@ -368,6 +372,6 @@ Friday (Day 10):
 
 ---
 
-**Next:** [`sprint-3-plan.md`](sprint-3-plan.md)  
+**Next:** *Sprint 3 — belum tersedia*  
 **Last Updated:** Juni 2026  
 **Maintained by:** Sandikodev

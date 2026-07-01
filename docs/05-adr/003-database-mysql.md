@@ -1,7 +1,7 @@
-# ADR 003: MySQL Database
+# ADR 003: MySQL Database [SUPERSEDED]
 
 **Date:** 2026-06-22  
-**Status:** Accepted  
+**Status:** ❌ **Superseded** — oleh [ADR-003-v2](003-v2-database-postgresql.md) pada 2026-06-30  
 **Deciders:** Sandikodev
 
 ---
@@ -13,7 +13,7 @@ Kita perlu memutuskan database untuk SMART Absen:
 - Opsi 2: PostgreSQL 15
 - Opsi 3: SQLite (development only)
 
-## Decision
+## Decision (Original — Not Applied)
 
 **Production:** MySQL 8.0.30  
 **Development:** MySQL 8.0.30 (Laragon)  

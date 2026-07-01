@@ -34,10 +34,19 @@ Code review bukan sekadar mencari bug. Code review adalah:
 ### Author (Fathan/Ihsan)
 
 **Responsibilities:**
-- Self-review sebelum submit PR
+- Self-review sebelum submit PR (cek TypeScript compile, lint, test)
 - Respond feedback dalam 24 jam
 - Fix sesuai request
 - Re-request review setelah fix
+
+### Initial Reviewer (Azis — Learning Mentor)
+
+**Responsibilities:**
+- Review awal sebelum PR dikirim ke Sandikodev
+- Cari: typo, N+1 query, logical error, TypeScript type issue
+- Pastikan self-checklist tercentang
+- Bantu fix minor issues bersama author (pair programming)
+- Jika OK → forward ke Sandikodev untuk final review
 
 **Mindset:** Feedback adalah untuk code, bukan untuk person.
 
@@ -50,18 +59,36 @@ Sebelum request review, pastikan:
 ```markdown
 ## Self-Review Checklist
 
-### Code Quality
+### Code Quality (Backend — PHP)
 - [ ] No `console.log()`, `dd()`, `var_dump()`
 - [ ] No commented-out code
 - [ ] No TODO tanpa Issue link
 - [ ] Follow Laravel conventions
 - [ ] PSR-12 compliance
+- [ ] Service Layer pattern — logic di Service, controller tipis
 
-### Testing
-- [ ] Unit test written
-- [ ] Test hijau (php artisan test)
-- [ ] Manual test done
+### Code Quality (Frontend — TypeScript/React)
+- [ ] No `console.log()`, `debugger`
+- [ ] TypeScript strict — no `any` type (kecuali darurat)
+- [ ] Functional component dengan hooks (no class component)
+- [ ] Props interface didefinisikan
+- [ ] No unused imports/variables (ESLint clean)
+
+### Testing (Backend)
+- [ ] Unit test written (PHPUnit)
+- [ ] Test hijau (`php artisan test`)
+- [ ] Feature test untuk API endpoint (jika ada)
+
+### Testing (Frontend)
+- [ ] Jest + React Testing Library test written
+- [ ] Test hijau (`bun run test`)
+- [ ] Manual test done (browser)
 - [ ] Screenshot attached (jika UI change)
+
+### Responsive Testing
+- [ ] Test di mobile viewport (375px)
+- [ ] Test di tablet viewport (768px)
+- [ ] Test di desktop viewport (1280px+)
 
 ### Documentation
 - [ ] PR description lengkap
@@ -101,7 +128,16 @@ Sebelum request review, pastikan:
 - [ ] Controller: thin controller (logic di Model/Service)
 - [ ] Model: Eloquent relationship defined
 - [ ] Validation: Form Request class used
+- [ ] Service Layer: logic di `app/Services/`, controller tipis
 - [ ] Naming: camelCase, snake_case sesuai konvensi
+
+### Frontend Conventions (React + TypeScript)
+- [ ] TypeScript strict — no `any` type
+- [ ] Functional component dengan hooks (no class component)
+- [ ] Props interface defined & exported
+- [ ] Inertia best practices (`useForm`, `usePage`) vs manual fetch
+- [ ] Tailwind utility classes digunakan (no custom CSS unless necessary)
+- [ ] Component splitting — single responsibility
 
 ### DRY (Don't Repeat Yourself)
 - [ ] No duplicate code

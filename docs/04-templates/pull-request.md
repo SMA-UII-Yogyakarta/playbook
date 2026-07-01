@@ -29,11 +29,11 @@ Jelaskan secara singkat apa yang diubah dan kenapa.
 - `StoreAttendanceRequest.php`: New form request
 
 ### Frontend
-- `attendance-form.blade.php`: Add camera preview
-- `AttendanceForm.php` Livewire: Handle photo capture
+- `resources/js/Components/AttendanceForm.tsx`: Add camera preview
+- `resources/js/Pages/Presensi.tsx`: Handle photo capture & geolocation
 
-### Database
-- `create_attendances_table`: Add latitude, longitude columns
+### Database (PostgreSQL)
+- `create_attendances_table`: Add latitude, longitude columns (PostgreSQL)
 
 ### Testing
 - `AttendanceTest.php`: Add geolocation validation test
@@ -71,6 +71,8 @@ Coverage: 78%
 - [ ] Geolocation validation test
 - [ ] Duplicate attendance test
 - [ ] Photo upload test
+- [ ] Responsive test (mobile 375px, tablet 768px, desktop 1280px)
+- [ ] TypeScript compile check (`bun run tsc --noEmit`)
 
 **Screenshots:**
 
@@ -107,13 +109,24 @@ After:
 
 ## Checklist
 
+### Backend
 - [ ] Conventional commit message
 - [ ] No `console.log()` or `dd()`
-- [ ] No commented-out code
+- [ ] Service Layer pattern — logic di Service, controller tipis
+- [ ] PostgreSQL compatible syntax
+- [ ] Unit test written & passing
+- [ ] No N+1 query (eager loading used)
+
+### Frontend (if applicable)
+- [ ] TypeScript strict (no `any`)
+- [ ] React hooks pattern (no class component)
+- [ ] Responsive tested (mobile first)
+- [ ] Loading/error/empty states handled
+- [ ] No `console.log()` or `debugger`
+
+### General
 - [ ] Self-review completed
-- [ ] Code follows Laravel conventions
 - [ ] Documentation updated (if needed)
-- [ ] CHANGELOG updated (if needed)
 - [ ] No merge conflicts
 
 ## Screenshots (if UI change)
@@ -415,7 +428,7 @@ php artisan test
 ./vendor/bin/pint --test
 
 # Build assets
-npm run build
+bun run build
 
 # Test locally
 php artisan serve

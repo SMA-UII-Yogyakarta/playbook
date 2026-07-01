@@ -45,7 +45,7 @@ openkb-for-junior/
 
 ### Fathan — Junior Frontend Developer
 
-**Fokus:** Frontend track dengan Laravel Livewire
+**Fokus:** Frontend track dengan InertiaJS + React 19 + TypeScript
 
 | Fase | Topik | Estimasi | Prioritas |
 |------|-------|----------|-----------|
@@ -60,13 +60,19 @@ openkb-for-junior/
 **Dokumen Kunci:**
 - `FASE-09/09-01-cara-kerja-vite.md`
 - `FASE-09/09-02-tailwind-css.md`
-- `FASE-09/09-03-alpine-js.md`
+- `FASE-09/09-06-inertiajs-dan-react.md` (jika ada)
 - `FASE-09/09-05-hot-reload-hmr.md`
-- `FASE-06/06-06-blade-template-engine.md`
+- React + TypeScript official docs
+
+**Tambahan Materi:**
+- [React 19 Documentation](https://react.dev/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
+- [InertiaJS Documentation](https://inertiajs.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
 **Target Sprint 1:**
-- US-005: Halaman login (Blade + Tailwind)
-- Integrasi dengan backend API Sanctum
+- US-005: Halaman login (React + Inertia + Tailwind)
+- Integrasi dengan backend Sanctum via Inertia
 
 ---
 
@@ -168,13 +174,14 @@ openkb-for-junior/
 |------|-------|------|
 | PHP | 8.4.22 NTS | `C:\laragon\bin\php\php-8.4.22-nts-Win32-vs17-x64\` |
 | Apache | 2.4.54 | `C:\laragon\bin\apache\` |
-| MySQL | 8.0.30 | `C:\laragon\bin\mysql\mysql-8.0.30-winx64\` |
+| PostgreSQL | 16 | `C:\laragon\bin\postgresql\postgresql-16.x-winx64\` |
 | Node.js | 22.14.0 | `C:\laragon\bin\nodejs\` |
+| **Bun** | latest | `C:\Users\<user>\.bun\bin\bun.exe` |
 | Composer | latest | `C:\laragon\bin\composer\composer.phar` |
 | Redis | 5.0.14.1 | `C:\laragon\bin\redis\` |
 
 **Setup Guide:**
-- [`02-lingkungan-development.md`](02-lingkungan-development.md)
+- [`02-lingkungan-development.md` (aksesekolah)](https://github.com/SMA-UII-Yogyakarta/aksesekolah/blob/main/docs/02-lingkungan-development.md)
 - [OpenKB FASE-10: Laragon di Windows](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md)
 
 ---
@@ -245,10 +252,10 @@ Setiap anggota tim punya card dengan:
 
 | Minggu | Aktivitas |
 |--------|-----------|
-| 1-2 | Fathan & Ihsan: Fase 01-03 (review), Azis: onboarding |
-| 3-4 | Fathan: Fase 05-06, Ihsan: Fase 06-07, Sprint 1 execution |
-| 5-6 | Fathan: Fase 09, Ihsan: Fase 08, Sprint 2 planning |
-| 7-8 | Review & adjustment, Sprint 2 execution |
+| 1-2 | **Sprint 1 — Setup:** Sinkronisasi docs, instalasi (Bun, NeonDB, PostgreSQL), setup Sanctum & Spatie. Fathan: React dasar + TypeScript. Ihsan: Laravel Service Layer + PostgreSQL. Azis: Onboarding + fasilitasi setup |
+| 3-4 | **Sprint 2 — Auth:** Login/register Sanctum, RBAC Spatie, halaman profile (React+Inertia). Fathan: InertiaJS + React hooks. Ihsan: API Sanctum, Spatie middleware |
+| 5-6 | **Sprint 3 — Presensi:** Presensi dengan geolokasi, swafoto. Fathan: React advanced. Ihsan: API presensi, upload foto |
+| 7-8 | **Sprint 4 — Laporan:** Laporan presensi, admin panel, UAT. Review & final assessment |
 
 **Catatan:** Timeline fleksibel — yang penting **pahami konsep** sebelum lanjut.
 

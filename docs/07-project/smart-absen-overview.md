@@ -21,7 +21,8 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 | **Developer** | PT Koneksi Jaringan Indonesia |
 | **Project Manager** | Sandikodev |
 | **Product Analyst** | Ahmad Hanif Hasan Rosyidi |
-| **Developers** | Fathan Mubina, Ihsan |
+| **Developers** | Fathan Mubina (Frontend), Ihsan (Backend) |
+| **Learning Mentor** | Azis |
 | **Stakeholder** | Pak Mahfud (IT Manager SMA UII) |
 | **Timeline** | 8 minggu (2 bulan) |
 | **Budget** | Rp 8.500.000 |
@@ -33,7 +34,7 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 
 ## 🏗️ Architecture
 
-### Current Architecture (MVP — Bulan 1)
+### Current Architecture (MVP — Fase 1: Monolith + Inertia)
 
 ```
 ┌─────────────────────────────────────┐
@@ -43,22 +44,26 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
                │
                ▼
 ┌─────────────────────────────────────┐
-│      Laravel 13 + Livewire 3        │
-│      (Monolithic Application)       │
+│    Laravel 13 + InertiaJS 3         │
+│    (Monolith with API-ready)        │
 ├─────────────────────────────────────┤
-│  ┌──────────┐  ┌──────────┐        │
-│  │  Blade   │  │ Livewire │        │
-│  │  Views   │  │ Components│       │
-│  └──────────┘  └──────────┘        │
-│  ┌──────────┐  ┌──────────┐        │
-│  │ Tailwind │  │  Alpine  │        │
-│  │   CSS    │  │    JS    │        │
-│  └──────────┘  └──────────┘        │
+│  ┌────────┐  ┌────────────────────┐ │
+│  │ React  │  │  Inertia Bridge   │ │
+│  │ 19+TS  │  │  (Server->Client) │ │
+│  └────────┘  └────────────────────┘ │
+│  ┌────────────┐  ┌────────────────┐ │
+│  │ Tailwind   │  │  Vite 8 + Bun  │ │
+│  │ CSS 4      │  │  (HMR)         │ │
+│  └────────────┘  └────────────────┘ │
+│  ┌────────────────────────────────┐ │
+│  │ Service Layer (app/Services/)   │ │
+│  └────────────────────────────────┘ │
 └──────────────┬──────────────────────┘
                │
                ▼
 ┌─────────────────────────────────────┐
-│       MySQL 8.0.30 Database         │
+│    PostgreSQL 16 via NeonDB         │
+│    (Serverless, auto-scale)         │
 │                                     │
 │  ┌─────────────────────────────┐   │
 │  │  Tables (10 total):         │   │
@@ -76,32 +81,34 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 └─────────────────────────────────────┘
 ```
 
----
-
-### Target Architecture (Bulan 2+)
+### Target Architecture (Fase 2 — API-Only + Multi Client)
 
 ```
-┌─────────────────┐         ┌─────────────────┐
-│   Web Browser   │         │   Mobile App    │
-│   (Next.js 14)  │         │   (Flutter)     │
-└────────┬────────┘         └────────┬────────┘
-         │                           │
-         │         REST API          │
-         └───────────┬───────────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │   Laravel 13 API      │
-         │   (Core Backend)      │
-         │   + Sanctum Auth      │
-         └───────────┬───────────┘
-                     │
-                     ▼
-         ┌───────────────────────┐
-         │   MySQL 8.0.30        │
-         │   + Redis Cache       │
-         └───────────────────────┘
+┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐
+│   Web Browser   │  │   Mobile App    │  │   Third-Party   │
+│   (Next.js)     │  │ (RN / Flutter)  │  │   (SIAD, dll)   │
+└────────┬────────┘  └────────┬────────┘  └────────┬────────┘
+         │                    │                     │
+         └────────────────────┼─────────────────────┘
+                              │
+                    ┌─────────▼───────────┐
+                    │  Laravel 13 API     │
+                    │  (Core Backend)     │
+                    │  — Sanctum SSO      │
+                    │  — Spatie RBAC      │
+                    │  — Service Layer    │
+                    │  — Queue/Job        │
+                    └─────────┬───────────┘
+                              │
+                              ▼
+                  ┌───────────────────────┐
+                  │   PostgreSQL 16       │
+                  │   via NeonDB          │
+                  │   + Redis Cache       │
+                  └───────────────────────┘
 ```
+
+**Porting Strategy:** Service Layer + dual controller (Web + API) sejak Fase 1 — zero rewrite saat migrasi ke Fase 2. Lihat [`ADR-005`](../05-adr/005-porting-strategy.md) untuk detail.
 
 ---
 
@@ -164,18 +171,25 @@ Membangun sistem presensi yang modern, akurat, dan real-time untuk meningkatkan 
 ## 🗺️ Roadmap
 
 ```
-Week 1-2  → Sprint 1: Authentication & SSO
-            └─ Login, Logout, Role Management
+Week 1-2  → Sprint 1: Setup & Auth Foundation
+            └─ Sinkronisasi docs, instalasi, setup NeonDB
+            └─ Sanctum, Spatie, Service Layer
+            └─ Learning: React dasar, TypeScript, PostgreSQL
 
-Week 3-4  → Sprint 2: Presensi Module (MVP)
-            └─ Presensi Siswa, Guru, Dashboard
+Week 3-4  → Sprint 2: Authentication & SSO
+            └─ Login/Register, RBAC, Session Management
+            └─ Halaman Profile, Dashboard dasar
 
-Week 5-6  → Sprint 3: Laporan & Admin Panel
-            └─ Export Excel/PDF, Admin Features
+Week 5-6  → Sprint 3: Presensi Module (MVP)
+            └─ Presensi Siswa (geolokasi + swafoto)
+            └─ Presensi Guru, Dashboard masing-masing role
 
-Week 7-8  → Production Audit, Testing, Refining
-            └─ Bug fixing, Performance optimization, UAT
+Week 7-8  → Sprint 4: Laporan & Production
+            └─ Export Excel/PDF, Admin Panel
+            └─ UAT, Bug fixing, Performance, Deployment
 ```
+
+> **Catatan:** Timeline ini merefleksikan reset stack dari Livewire/MySQL ke Inertia+React/PostgreSQL di minggu 1-2. MVP target bergeser ke akhir Sprint 3. Lihat ADR-002-v2 dan ADR-003-v2 untuk detail keputusan.
 
 ---
 
@@ -239,8 +253,9 @@ core/ (Backend Laravel)
 |---|---|---|
 | **Project Manager** | Sandikodev | Planning, Architecture, Code Review, Mentoring |
 | **Product Analyst** | Ahmad Hanif | Requirement, User Story, UAT, Stakeholder Communication |
-| **Frontend Developer** | Fathan Mubina | Livewire, Blade, Tailwind, React (later) |
+| **Frontend Developer** | Fathan Mubina | React, TypeScript, Tailwind CSS, InertiaJS |
 | **Backend Developer** | Ihsan | Laravel API, Database, Validation, Testing |
+| **Learning Mentor** | Azis | Mentoring, Code Review, Konseptor, Debugging Buddy |
 
 ---
 
@@ -249,31 +264,38 @@ core/ (Backend Laravel)
 ### Backend
 - **Framework:** Laravel 13
 - **PHP:** 8.4 NTS
-- **Database:** MySQL 8.0.30
+- **Architecture:** Service Layer (`app/Services/`) — controller tipis
+- **Database:** PostgreSQL 16 via NeonDB (production), PostgreSQL 16 (local)
 - **Cache:** Redis 7.0 (optional)
-- **Queue:** Database driver
-- **Auth:** Laravel Sanctum
+- **Queue:** Database driver (Redis nanti)
+- **Auth:** Laravel Sanctum (session untuk Inertia, token untuk API)
+- **RBAC:** Spatie Laravel Permission
 - **Validation:** Form Request
-- **Testing:** PHPUnit
+- **Testing:** PHPUnit + Feature Test
 
-### Frontend (MVP)
-- **Templating:** Blade
-- **Components:** Livewire 3
+### Frontend (MVP — Fase 1)
+- **Framework:** InertiaJS 3 + React 19 + TypeScript 5.7
 - **Styling:** Tailwind CSS 4
-- **JavaScript:** Alpine.js
-- **Build:** Vite 5
+- **Build:** Vite 8
+- **Package Manager:** Bun
+- **Testing:** Jest + React Testing Library
 
-### Frontend (Phase 2)
-- **Framework:** Next.js 14
+### Frontend (Fase 2 — Dedicated)
+- **Framework:** Next.js (Web App)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS 4
-- **State:** Zustand / React Context
+- **State:** TanStack Query + React Context
+
+### Mobile (Fase 2 — Dipertimbangkan)
+- **Option 1:** React Native (reuse React knowledge)
+- **Option 2:** Flutter (cross-platform)
 
 ### Infrastructure
-- **Local Dev:** Laragon 6.0
+- **Local Dev:** Laragon 6.0 + PostgreSQL
+- **Database Cloud:** NeonDB (serverless PostgreSQL)
 - **Production:** Nginx + PHP-FPM
 - **SSL:** Let's Encrypt
-- **Storage:** Local / S3-compatible
+- **Storage:** Wasabi / MinIO (S3-compatible)
 - **Monitoring:** Laravel Telescope, Sentry
 
 ---

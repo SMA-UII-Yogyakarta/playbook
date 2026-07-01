@@ -24,6 +24,7 @@
 
 **Stakeholder:**
 - Pak Mahfud — IT Manager SMA UII (no GitHub account needed)
+- Azis — Learning Mentor (GitHub TBD)
 
 ---
 
@@ -498,7 +499,7 @@ updates:
     schedule:
       interval: "weekly"
 
-  - package-ecosystem: "npm"
+  - package-ecosystem: "npm" # Bun-compatible, tracked via bun.lock
     directory: "/"
     schedule:
       interval: "weekly"

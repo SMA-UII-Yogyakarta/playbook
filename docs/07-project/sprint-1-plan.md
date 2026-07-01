@@ -1,33 +1,35 @@
 # Sprint 1 Plan — Authentication & SSO
 
-> Sprint 1 (Minggu 1-2): Authentication & Authorization System
+> Sprint 1 (Minggu 1-2): Setup & Authentication Foundation
 
 ---
 
 ## 📋 Sprint Overview
 
 **Duration:** 2 minggu  
-**Start Date:** 24 Juni 2026  
-**End Date:** 5 Juli 2026  
-**Sprint Goal:** Login, Logout, Role Management berfungsi penuh
+**Start Date:** 30 Juni 2026  
+**End Date:** 11 Juli 2026  
+**Sprint Goal:** Stack ter-install & running, Learning path berjalan, Auth dasar berfungsi
 
-**Theme:** "Foundation & Security"
+**Theme:** "Reset & Foundation"
 
 ---
 
 ## 🎯 Sprint Goal
 
 **Objective:**
-Selesaikan sistem authentication dengan Laravel Sanctum untuk SSO (Single Sign-On) yang akan digunakan di semua modul SMART Absen.
+Setup foundation: install stack baru (Bun, PostgreSQL/NeonDB, Sanctum, Spatie), sinkronisasi dokumentasi, dan membangun auth dasar.
 
 **Key Results:**
-- [ ] Login dengan email & password berfungsi
+- [ ] Semua dokumentasi (playbook, aksesekolah, core) sinkron dengan stack aktual
+- [ ] Bun, Vite 8, InertiaJS + React berjalan di local
+- [ ] PostgreSQL/NeonDB terhubung
+- [ ] Laravel Sanctum + Spatie Permission ter-install
+- [ ] Login dengan email & password berfungsi (Inertia + React)
 - [ ] Logout berfungsi
 - [ ] Role-based access control (RBAC) berfungsi
-- [ ] Session management OK
-- [ ] Middleware protection untuk route
-- [ ] UAT passed
-- [ ] Deploy staging
+- [ ] Fathan & Ihsan paham dasar React/TypeScript
+- [ ] Azis onboarding completed
 
 ---
 
@@ -75,21 +77,26 @@ Scenario: Login dengan credentials invalid
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #1: Setup Laravel Sanctum
-- [ ] Issue #2: Buat User model dengan role
-- [ ] Issue #3: Login API endpoint (POST /api/login)
-- [ ] Issue #4: Logout API endpoint (POST /api/logout)
+- [ ] Issue #1: Setup Laravel Sanctum + Spatie Permission
+- [ ] Issue #2: Buat User model + migration (PostgreSQL)
+- [ ] Issue #3: Buat AuthService (login, register, logout — Service Layer)
+- [ ] Issue #4: Login Web controller (Controllers/Web/AuthController)
 - [ ] Issue #5: Unit test untuk authentication
 
 Frontend (Fathan):
-- [ ] Issue #6: Login page (Blade + Livewire)
-- [ ] Issue #7: Form validation
-- [ ] Issue #8: Error handling
-- [ ] Issue #9: Redirect setelah login
-- [ ] Issue #10: Responsive design
+- [ ] Issue #6: Login page (React + Inertia + Tailwind)
+- [ ] Issue #7: TypeScript types untuk auth (User, LoginPayload, AuthResponse)
+- [ ] Issue #8: Form validation + error display
+- [ ] Issue #9: Redirect setelah login (Inertia router)
+- [ ] Issue #10: Responsive design (mobile-first)
+
+Learning Mentor (Azis):
+- [ ] Issue #L1: Fasilitasi setup environment Fathan & Ihsan
+- [ ] Issue #L2: Pair programming React dasar + TypeScript untuk Fathan
+- [ ] Issue #L3: Pair programming Service Layer + Sanctum untuk Ihsan
 ```
 
-**Dependencies:** None  
+**Dependencies:** Setup environment (Bun, PostgreSQL, Vite)  
 **Priority:** 🔥 Critical
 
 ---
@@ -118,13 +125,13 @@ Scenario: Logout berhasil
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #11: Revoke Sanctum token di logout
-- [ ] Issue #12: Clear session
+- [ ] Issue #11: Tambah method logout di AuthService
+- [ ] Issue #12: Clear session + revoke token (Sanctum)
 
 Frontend (Fathan):
-- [ ] Issue #13: Logout button di navbar
+- [ ] Issue #13: Logout button di navbar (React component)
 - [ ] Issue #14: Confirmation modal (optional)
-- [ ] Issue #15: Redirect setelah logout
+- [ ] Issue #15: Redirect setelah logout via Inertia
 ```
 
 **Dependencies:** US-001 ✅  
@@ -167,14 +174,14 @@ staff  → Dashboard staff, laporan
 **Tasks:**
 ```
 Backend (Ihsan):
-- [ ] Issue #16: Role enum di User model
-- [ ] Issue #17: Middleware untuk role check
+- [ ] Issue #16: Setup Spatie Permission — seeder role & permission
+- [ ] Issue #17: Middleware role + permission (Spatie middleware)
 - [ ] Issue #18: Policy untuk setiap resource
 - [ ] Issue #19: Unit test untuk role access
 
 Frontend (Fathan):
-- [ ] Issue #20: Hide/show menu berdasarkan role
-- [ ] Issue #21: 403 page (Blade view)
+- [ ] Issue #20: Hide/show menu berdasarkan role (Inertia shared data)
+- [ ] Issue #21: 403 page (React component)
 ```
 
 **Dependencies:** US-001 ✅  
@@ -184,50 +191,52 @@ Frontend (Fathan):
 
 ## 📅 Sprint Schedule
 
-### Week 1
+> **Catatan:** Sprint 1 difokuskan pada setup stack baru dan learning. Fathan & Ihsan perlu waktu untuk adaptasi ke React/TypeScript/PostgreSQL.
+
+### Week 1 — Setup & Learning
 
 ```
 Monday (Day 1):
-├─ 09:00-10:30 → Sprint Planning Meeting
-├─ 10:30-12:00 → Setup environment & Sanctum (Ihsan)
-├─ 13:00-15:00 → Login page design (Fathan)
-├─ 15:00-17:00 → User model + role (Ihsan)
+├─ 09:00-10:30 → Sprint Planning Meeting (semua)
+├─ 10:30-12:00 → Install Bun, setup Vite + Inertia + React (Fathan + Azis)
+├─ 13:00-15:00 → Setup PostgreSQL + NeonDB + Sanctum + Spatie (Ihsan + Azis)
+├─ 15:00-17:00 → Learning: React hooks + TypeScript (Fathan + Azis)
 
 Tuesday (Day 2):
-├─ 09:00-12:00 → Login API endpoint (Ihsan)
-├─ 13:00-17:00 → Login form Livewire (Fathan)
+├─ 09:00-12:00 → Learning: Service Layer + Eloquent PostgreSQL (Ihsan + Azis)
+├─ 13:00-17:00 → Learning: React component + Tailwind (Fathan + Azis)
 
 Wednesday (Day 3):
-├─ 09:00-12:00 → Login form validation (Fathan)
-├─ 13:00-17:00 → Login integration test (Ihsan + Fathan)
+├─ 09:00-12:00 → AuthService + Sanctum setup (Ihsan)
+├─ 13:00-17:00 → Login page wireframe → React component (Fathan)
 
 Thursday (Day 4):
-├─ 09:00-12:00 → Logout endpoint (Ihsan)
-├─ 13:00-17:00 → Logout button + integration (Fathan)
+├─ 09:00-12:00 → Login API + Web controller (Ihsan)
+├─ 13:00-17:00 → Login form + validation (Fathan)
 
 Friday (Day 5):
-├─ 09:00-12:00 → Role middleware (Ihsan)
-├─ 13:00-17:00 → Code review PR #1-10
+├─ 09:00-12:00 → Code review minggu 1
+├─ 13:00-17:00 → Sinkronisasi dokumentasi (Sandikodev)
 ```
 
-### Week 2
+### Week 2 — Auth Core
 
 ```
 Monday (Day 6):
-├─ 09:00-12:00 → Role policy (Ihsan)
-├─ 13:00-17:00 → Menu role-based (Fathan)
+├─ 09:00-12:00 → Spatie Permission seeder + middleware (Ihsan)
+├─ 13:00-17:00 → Navbar + logout button (Fathan), testing login flow
 
 Tuesday (Day 7):
-├─ 09:00-12:00 → Unit test authentication (Ihsan)
-├─ 13:00-17:00 → Responsive testing (Fathan)
+├─ 09:00-12:00 → Logout endpoint + revoke token (Ihsan)
+├─ 13:00-17:00 → Responsive design + integration (Fathan)
 
 Wednesday (Day 8):
-├─ 09:00-12:00 → Bug fixing
-├─ 13:00-17:00 → Bug fixing
+├─ 09:00-12:00 → Unit test authentication (Ihsan + Azis)
+├─ 13:00-17:00 → Bug fixing + role-based menu (Fathan)
 
 Thursday (Day 9):
 ├─ 09:00-12:00 → UAT preparation (Ahmad)
-├─ 13:00-17:00 → Deploy staging
+├─ 13:00-17:00 → Deploy staging + test
 
 Friday (Day 10):
 ├─ 09:00-12:00 → UAT testing (Ahmad)
@@ -346,7 +355,7 @@ Friday (Day 10):
 **Individual Success:**
 ```
 Fathan:
-✅ Livewire component mastery
+✅ React component mastery
 ✅ Form validation OK
 ✅ Responsive design OK
 
@@ -397,10 +406,12 @@ Sprint 1 berjalan paralel dengan learning journey tim junior. **Learning Mentor 
 |  | 06-05 | Model & Eloquent ORM | [06-05-model-dan-eloquent-orm.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-05-model-dan-eloquent-orm.md) |
 |  | 06-07 | Middleware & Auth | [06-07-middleware-dan-auth.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-07-middleware-dan-auth.md) |
 | **Fathan** (Frontend) | FASE-06 | Laravel Deep Dive | [`journey/FASE-06-LARAVEL-DEEP-DIVE/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-06-LARAVEL-DEEP-DIVE) |
-|  | 06-06 | Blade Template Engine | [06-06-blade-template-engine.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-06-blade-template-engine.md) |
-|  | FASE-09 | Frontend di Laravel | [`journey/FASE-09-FRONTEND-DI-LARAVEL/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-09-FRONTEND-DI-LARAVEL) |
-|  | 09-02 | Tailwind CSS | [09-02-tailwind-css.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-09-FRONTEND-DI-LARAVEL/09-02-tailwind-css.md) |
-|  | 09-03 | Alpine.js | [09-03-alpine-js.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-09-FRONTEND-DI-LARAVEL/09-03-alpine-js.md) |
+|  | 06-06 | Blade Template (email/notification only) | [06-06-blade-template-engine.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-06-LARAVEL-DEEP-DIVE/06-06-blade-template-engine.md) |
+|  | FASE-12 | React + TypeScript + Inertia | [`journey/FASE-12-REACT-TS-INERTIA/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-12-REACT-TS-INERTIA) |
+|  | 12-01 | React Fundamentals + Hooks | [12-01-react-hooks.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-01-react-hooks.md) |
+|  | 12-02 | TypeScript untuk React | [12-02-typescript-react.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-02-typescript-react.md) |
+|  | 12-03 | InertiaJS + React Setup | [12-03-inertia-react.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-03-inertia-react.md) |
+|  | 12-04 | Tailwind CSS 4 + Vite 8 | [12-04-tailwind-vite.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-12-REACT-TS-INERTIA/12-04-tailwind-vite.md) |
 | **Azis** (Mentor) | FASE-10 | Infrastruktur | [`journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT) |
 |  | 10-03 | Laragon di Windows | [10-03-laragon-di-windows.md](https://github.com/konxc/openkb-for-junior/blob/main/journey/FASE-10-INFRASTRUKTUR-DAN-DEPLOYMENT/10-03-laragon-di-windows.md) |
 |  | FASE-11 | Tools & Workflow | [`journey/FASE-11-TOOLS-DAN-WORKFLOW/`](https://github.com/konxc/openkb-for-junior/tree/main/journey/FASE-11-TOOLS-DAN-WORKFLOW) |
@@ -439,7 +450,7 @@ Junior (Fathan/Ihsan)
 
 - **Full curriculum:** [openkb-for-junior](https://github.com/konxc/openkb-for-junior)
 - **Learning path detail:** [`learning-resources.md`](../01-getting-started/learning-resources.md)
-- **Mentor role:** [`learning-mentor.md`](../ROLES/learning-mentor.md)
+- **Mentor role:** [`learning-mentor.md`](../../ROLES/learning-mentor.md)
 
 ---
 

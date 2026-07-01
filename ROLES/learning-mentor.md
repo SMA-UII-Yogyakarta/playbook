@@ -1,120 +1,78 @@
 # Learning Mentor — Role Definition
 
-> **Role:** Learning Mentor / Technical Guide  
+> **Role:** Learning Mentor / Technical Buddy  
 > **Reports to:** Project Manager (Sandikodev)  
-> **Level:** Mid-Senior (technical generalist)
+> **Level:** Junior+ (konseptual matang, eksplorasi aktif)
 
 ---
 
 ## 📋 Ringkasan
 
-**Learning Mentor** adalah technical guide yang bertanggung jawab untuk mempercepat onboarding dan pembelajaran anggota tim junior. Fokus utama: **environment setup, debugging, dan concept explanation** — bukan code review final atau architecture decision.
+**Learning Mentor** adalah technical buddy untuk Fathan (Junior Frontend) dan Ihsan (Junior Backend). Azis ditempatkan sebagai **teman diskusi** — bukan menggurui, tapi *ngoding bareng*. Tugas utamanya adalah membantu Fathan & Ihsan menyelesaikan blocker teknis, menjelaskan konsep, dan mempersiapkan code review sebelum dikirim ke Sandikodev.
+
+Azis tidak mengerjakan task fitur — task-nya adalah **membantu Fathan & Ihsan menyelesaikan task mereka**.
 
 ---
 
 ## 🎯 Tanggung Jawab
 
-### 1. Environment Setup & Troubleshooting
+### 1. Discussion Partner (30%)
 
 | Task | Deskripsi |
 |------|-----------|
-| **Laragon setup** | Install, konfigurasi PHP/Apache/MySQL, switch version |
-| **Database local** | MySQL setup, user creation, import/export SQL |
-| **Node.js & NPM** | Install, version management, troubleshooting |
-| **Git & GitHub** | SSH key, clone repo, basic workflow |
-| **Composer** | Install, dependency management |
-| **Virtual hosts** | `.test` domain setup, SSL certificate |
+| **Diskusi teknis** | Teman ngobrol untuk masalah coding — bukan "guru", tapi "teman yang lebih dulu paham" |
+| **Pair coding** | Duduk bareng (screen share) untuk resolve task yang Fathan/Ihsan anggap sulit |
+| **Code review prep** | Review awal sebelum PR dikirim ke Sandikodev — cari typo, N+1, logical error, TypeScript type issue |
+| **Alternative solutions** | Diskusikan "apa kata Stack Overflow vs dokumentasi resmi" |
 
-**Tools yang digunakan:**
-- Laragon 6.0
-- MySQL Workbench / HeidiSQL
-- Windows Terminal / PowerShell
-- Git Bash
+### 2. Concept Explainer (25%)
 
----
-
-### 2. Debugging Session
-
-| Task | Deskripsi |
-|------|-----------|
-| **Log reading** | Laravel log (`storage/logs/laravel.log`), Apache error log |
-| **Telescope** | Laravel Telescope untuk request monitoring, query debug |
-| **Tinker** | REPL interaktif untuk testing code snippet |
-| **Browser DevTools** | Console, Network tab, debugging JavaScript |
-| **Error analysis** | Stack trace reading, common error patterns |
-
-**Tools yang digunakan:**
-- Laravel Telescope
-- Artisan Tinker
-- Chrome/Firefox DevTools
-- VS Code debugger
-
----
-
-### 3. Concept Explanation
-
-| Topik | Deskripsi |
-|-------|-----------|
-| **Laravel lifecycle** | Request → Bootstrap → Middleware → Controller → Response |
-| **MVC architecture** | Model-View-Controller pattern di Laravel |
-| **Eloquent ORM** | Relationship, query builder, eager loading |
-| **Middleware** | Authentication, role-based access control |
-| **Livewire/Inertia** | Reactive frontend tanpa write JavaScript |
-| **SPA vs MPA vs SSR** | Rendering strategies comparison |
-| **Git workflow** | Branching, PR, code review process |
+| Topik | Siapa | Prioritas |
+|-------|------|-----------|
+| **React hooks + TypeScript** | Fathan | 🔴 High |
+| **InertiaJS (routing, form, page)** | Fathan | 🔴 High |
+| **Tailwind CSS 4 + responsive** | Fathan | 🟠 Medium |
+| **Laravel Service Layer** | Ihsan | 🔴 High |
+| **Eloquent + PostgreSQL** | Ihsan | 🔴 High |
+| **Sanctum + Spatie RBAC** | Ihsan | 🟠 Medium |
+| **Git workflow & PR** | Keduanya | 🟠 Medium |
+| **Architecture overview** | Keduanya | 🟢 Low (cukup overview) |
 
 **Metode:**
-- 1-on-1 session (30-60 menit)
-- Pair debugging
-- Whiteboard explanation
-- Link ke openkb-for-junior docs
+- 1-on-1 session (30-60 menit) — jadwal flexible
+- Pair debugging — duduk bareng selesaiin error
+- Live coding — demo konsep sambil ngetik
+- Whiteboard / Excalidraw untuk arsitektur
+
+### 3. Debugging Buddy (25%)
+
+| Area | Tools | Target |
+|------|-------|--------|
+| **PHP/Laravel** | Artisan Tinker, Telescope, log (storage/logs) | Debugging mandiri dalam < 1 jam |
+| **React/TypeScript** | Browser DevTools (Console, Network, Components), Vite HMR | Debugging mandiri dalam < 1 jam |
+| **Database** | pgAdmin / DBeaver, EXPLAIN ANALYZE, Telescope queries | Identifikasi N+1 dan slow query |
+| **Git** | git log, git diff, git bisect | Resolve merge conflict mandiri |
+
+### 4. Learning Tracker (20%)
+
+| Task | Detail |
+|------|--------|
+| **Environment setup** | Fasilitasi install Laragon, Bun, PostgreSQL, NeonDB — target < 1 hari |
+| **Trello tracker** | Maintain card `📚 Learning Path` untuk Fathan & Ihsan |
+| **Progress check** | Daily check-in 15 menit — "Ada blocker? Butuh bantuan apa?" |
+| **Document common issues** | Catat error yang sering muncul + solusi di playbook atau openkb |
 
 ---
 
-### 4. Code Review Awal
+## ❌ Batasan (Apa yang Azis TIDAK lakukan)
 
-| Aspek | Scope Learning Mentor | Scope PM/Senior |
-|-------|----------------------|-----------------|
-| **Syntax error** | ✅ Check & fix bersama junior | - |
-| **Logic error** | ✅ Debug bersama | - |
-| **Best practices** | ⚠️ Suggest improvement | ✅ Final approval |
-| **Architecture** | ⚠️ Consult PM/Senior | ✅ Decision |
-| **Security** | ⚠️ Basic check (SQL injection, XSS) | ✅ Deep review |
-| **Performance** | ⚠️ Basic check (N+1 query) | ✅ Deep review |
-
-**Workflow:**
-1. Junior selesai task → submit ke Learning Mentor
-2. Learning Mentor review awal → fix minor issues bersama
-3. Submit ke PM/Senior untuk final review & merge
-
----
-
-## 📚 Learning Path (Untuk Learning Mentor)
-
-Sebelum mulai mentoring, Azis harus menguasai topik berikut dari [openkb-for-junior](https://github.com/konxc/openkb-for-junior):
-
-### Wajib (Priority ✅)
-
-| Fase | Topik | Dokumen Kunci |
-|------|-------|---------------|
-| 06 | Laravel Deep Dive | `06-02-arsitektur-laravel.md`, `06-07-middleware-dan-auth.md`, `06-08-service-layer.md` |
-| 07 | Database & SQL | `07-03-relationship-dan-join.md`, `07-06-n-plus-one-problem.md` |
-| 10 | Infrastruktur | `10-03-laragon-di-windows.md`, `10-05-ssh-dan-terminal.md` |
-| 11 | Tools | `11-04-artisan-cli.md`, `11-05-tinker-dan-repl.md` |
-| 12 | Testing | `12-05-debugging-strategy.md` |
-
-### Pendukung (Priority ⚡)
-
-| Fase | Topik | Dokumen Kunci |
-|------|-------|---------------|
-| 09 | Frontend | `09-01-cara-kerja-vite.md`, `09-03-alpine-js.md` |
-| 08 | Design Pattern | `08-02-mvc-architecture.md`, `08-03-service-pattern.md` |
-
-###Referensi Tambahan
-
-- [`laravel-telescope.md`](https://github.com/konxc/openkb-for-junior/blob/main/laravel-telescope.md)
-- [`laragon-vs-artisan-serve.md`](https://github.com/konxc/openkb-for-junior/blob/main/laragon-vs-artisan-serve.md)
-- [`memahami-ekosistem-web-laravel.md`](https://github.com/konxc/openkb-for-junior/blob/main/memahami-ekosistem-web-laravel.md)
+| Area | Penjelasan |
+|------|------------|
+| **Keputusan arsitektur** | Bukan ranah Learning Mentor. Jika ditanya arsitektur → "Tanya Sandikodev" |
+| **Final code review** | Azis bisa liat-liat, tapi final approve PR tetap Sandikodev |
+| **Sprint / backlog management** | Handle sama Sandikodev & Hanif |
+| **Komunikasi stakeholder** | Handle sama Sandikodev & Hanif |
+| **Mengerjakan task fitur** | Azis bukan junior developer — task-nya adalah membantu Fathan & Ihsan |
 
 ---
 
@@ -141,6 +99,7 @@ Sebelum mulai mentoring, Azis harus menguasai topik berikut dari [openkb-for-jun
 | Tool | Akses | Catatan |
 |------|-------|---------|
 | **Laragon** | Full access | Install di laptop masing-masing |
+| **NeonDB** | Read-write | Dashboard untuk monitor query, branching |
 | **Staging server** | SSH access | `staging.smauiiyk.sch.id` (setup nanti) |
 | **Wasabi S3** | Read access | Testing object storage |
 | **Cloudflare DNS** | No access | Hanya PM/Senior |
@@ -163,14 +122,17 @@ Sebelum mulai mentoring, Azis harus menguasai topik berikut dari [openkb-for-jun
 ```
 Junior Developer (Fathan/Ihsan)
     │
-    ├── Question tentang environment/setup
+    ├── Quick question / stuck < 30 menit
     │   └── → Learning Mentor (Azis)
     │
-    ├── Question tentang architecture/decision
+    ├── Butuh debugging / pair programming
+    │   └── → Learning Mentor (Azis)
+    │
+    ├── Blocker > 2 jam / arsitektur question
     │   └── → PM/Senior (Sandikodev)
     │
-    └── Blocker > 1 hari
-        └── → PM/Senior (Sandikodev)
+    └── Requirement ambiguity
+        └── → Product Analyst (Hanif) + PM/Senior (Sandikodev)
 ```
 
 ---
@@ -181,9 +143,10 @@ Junior Developer (Fathan/Ihsan)
 |--------|--------|-----------|
 | **Environment setup time** | < 1 hari per junior | Time from clone to first successful run |
 | **Blocker resolution time** | < 4 jam | Time from question to solution |
-| **Learning progress** | 1-2 fase/minggu | Trello checklist completion |
+| **Learning progress** | 1 sprint = 2 fase | Trello checklist completion |
 | **Code review turnaround** | < 24 jam | Time from submit to first review |
 | **Junior satisfaction** | > 4.0/5.0 | Monthly survey (qualitative) |
+| **Junior independence** | Mandiri di Sprint 4 | Final assessment (Level 3) |
 
 ---
 
@@ -192,35 +155,30 @@ Junior Developer (Fathan/Ihsan)
 ### Week 1: Orientation
 
 - [ ] Clone semua repo: `core`, `aksesekolah`, `playbook`, `openkb-for-junior`
-- [ ] Setup Laragon di laptop sendiri
+- [ ] Setup Laragon + PostgreSQL + Bun di laptop sendiri
 - [ ] Baca `learning-resources.md` — pahami learning path Fathan & Ihsan
 - [ ] Baca `sprint-1-plan.md` — pahami target Sprint 1
+- [ ] Baca ADR-002-v2, ADR-003-v2, ADR-004, ADR-005
 - [ ] Invite ke Trello board + GitHub org
 - [ ] Meeting kickoff dengan PM (Sandikodev)
 
-### Week 2: Mentoring dimulai
+### Week 2+ : Mentoring dimulai
 
 - [ ] Fasilitasi setup environment Fathan & Ihsan
-- [ ] Review Fase 01-03 bersama (cepat)
-- [ ] Mulai Fase 06 (Laravel) — session 1-on-1
-- [ ] Setup Telescope untuk debugging
+- [ ] Review skill baseline Fathan & Ihsan
+- [ ] Mulai pair programming sesuai jadwal
 - [ ] Create Trello cards untuk learning tracker
-
-### Week 3-4: Full mentoring
-
-- [ ] Daily check-in (15 menit standup)
-- [ ] Debugging session sesuai kebutuhan
-- [ ] Review progress learning path
-- [ ] Adjust pace berdasarkan pemahaman junior
+- [ ] Daily check-in (15 menit)
 
 ---
 
 ## 📝 Notes
 
 - **Learning Mentor bukan "walking encyclopedia"** — tidak harus tahu semua jawaban. Tapi harus tahu **cara mencari** jawaban (dokumentasi, Stack Overflow, Tinker).
-- **Fokus pada empowerment** — tujuannya junior bisa mandiri, bukan tergantung mentor selamanya.
+- **Fokus pada empowerment** — tujuannya Fathan & Ihsan bisa mandiri di akhir Sprint 4, bukan tergantung Azis selamanya.
 - **Document common issues** — jika ada pertanyaan yang sering muncul, buat catatan di playbook atau suggest improvement ke openkb-for-junior.
-- **Eskalasi tepat waktu** — jika blocker > 1 hari atau ada architectural question, segera konsultasi PM/Senior.
+- **Eskalasi tepat waktu** — jika blocker > 2 jam atau ada architectural question, segera konsultasi ke Sandikodev.
+- **Azis gap year, kuliah, eksplorasi aktif** — kelebihan: cara berpikir terstruktur, cepat adaptasi tool baru. Kekurangan: pengalaman lapangan masih kurang seperti Fathan & Ihsan.
 
 ---
 

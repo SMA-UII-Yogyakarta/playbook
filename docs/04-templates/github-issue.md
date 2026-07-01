@@ -188,9 +188,9 @@ Jelaskan task yang harus dikerjakan.
 - [ ] Policy: `AttendancePolicy.php`
 
 ### Frontend
-- [ ] Livewire Component: `AttendanceForm.php`
-- [ ] Blade View: `attendance/form.blade.php`
-- [ ] JavaScript: `attendance.js`
+- [ ] React Component: `AttendanceForm.tsx`
+- [ ] Inertia Page: `resources/js/Pages/Presensi.tsx`
+- [ ] TypeScript: `resources/js/types/presensi.ts`
 - [ ] Tailwind CSS: Styling
 
 ### Testing
