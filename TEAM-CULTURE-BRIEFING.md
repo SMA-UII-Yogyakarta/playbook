@@ -1115,6 +1115,292 @@ Khusus untuk **Fathan** — karena dia sudah punya habit rutin ngirim hasil chat
 
 Ini memecah bottleneck sekaligus melatih Azis untuk benar-benar menjalankan peran mentoring-nya.
 
+### 5.7. Role Rotation — Melampaui Silos Peran
+
+#### 5.7.1. Filosofi
+
+Di dokumen ini, kita bicara tentang 5 peran:
+- Sandikodev — Lead Developer / Manager
+- Azis — Senior Developer / Mentor
+- Fathan — Junior Frontend Developer
+- Ihsan — Junior Backend Developer
+- Hanif — UI/UX & Documentation
+
+Tapi kenyataan sebuah tim digital agency tidak sesederhana itu. **Seorang "Frontend Developer" bukan berarti cuma bisa React. Seorang "Junior Backend" bukan berarti cuma boleh ngerjain API.** Label peran hanyalah **titik awal**, bukan **kandang**.
+
+Masalah dari peran yang terlalu kaku:
+
+| Masalah | Dampak |
+|---------|--------|
+| Azis cuma jadi mentor — tidak pernah nulis kode | Kemampuan teknis Azis menurun — *use it or lose it* |
+| Fathan cuma ngerjain frontend | Tidak paham endpoint yang dia consume — debugging setengah-setengah |
+| Ihsan cuma ngerjain backend | Tidak paham bagaimana frontend render data — bikin API yang tidak user-friendly |
+| Hanif cuma bikin dokumen & desain | Tidak paham constraint teknis — desain sering impractical |
+| Sandiko selalu jadi "yang paling tahu" | Tim jadi dependen — tidak ada backup |
+
+**Role Rotation** adalah jawabannya. Bukan untuk membingungkan orang, tapi untuk:
+
+> **"Setiap anggota tim harus pernah mengalami posisi orang lain, supaya yang kita bangun bukan cuma fitur — tapi pemahaman kolektif."**
+
+Ini bukan soal "Azis harus jago React". Ini soal: **literasi**. Semakin banyak perspektif yang pernah dialami seseorang, semakin baik keputusan yang dia buat — baik sebagai mentor, sebagai developer, maupun sebagai teman diskusi.
+
+#### 5.7.2. Apa Itu "Role" Sebenarnya?
+
+Tim ini perlu paham bahwa "role" dalam software engineering bukanlah kotak hitam-putih. Ini spektrum:
+
+```
+  FRONTEND ◄───────────────► BACKEND
+       ▲                        ▲
+       │                        │
+       │      FULLSTACK         │
+       │    (bisa semua)        │
+       │                        │
+  DESIGN ◄────────────────► INFRA
+       ▲                        ▲
+       │                        │
+       │      DevOps/SRE        │
+       │                        │
+ MOBILE ◄────────────────► EMBEDDED
+```
+
+Bahkan di tim kecil seperti ini, setiap orang punya overlap:
+
+```
+     Azis
+  ┌──────────┐
+  │ Laravel  │───► Bisa backend, bisa mentor
+  │ React    │───► Bisa frontend dasar
+  │ Design   │───► Paham konsep UI/UX
+  └──────────┘
+
+     Fathan
+  ┌──────────┐
+  │ React    │───► Spesialisasi utama
+  │ Laravel  │───► Mulai belajar
+  │ API      │───► Ingin paham endpoint
+  └──────────┘
+
+     Ihsan
+  ┌──────────┐
+  │ Laravel  │───► Spesialisasi utama
+  │ DB       │───► Mulai paham query
+  │ Frontend │───► Belum pernah coba
+  └──────────┘
+
+     Hanif
+  ┌──────────┐
+  │ Design   │───► Spesialisasi utama
+  │ Docs     │───► Dokumentasi
+  │ Frontend │───► Paham cara komponen bekerja
+  └──────────┘
+```
+
+Tujuan Role Rotation adalah **memperbesar overlap** ini — sehingga tim bisa saling menggantikan dan berdiskusi dengan bahasa yang sama.
+
+#### 5.7.3. Format Rotasi
+
+Ada 3 level rotasi, dari yang paling ringan sampai paling intens:
+
+##### Level 1: Pair Task (Ringan — per task)
+
+Dua orang dari domain berbeda mengerjakan SATU task bersama:
+
+| Pair | Task Contoh | Tujuan |
+|------|-------------|--------|
+| Azis (backend) + Fathan (frontend) | "Bikin fitur export PDF" | Azis handle logika export, Fathan handle tampilan |
+| Ihsan (backend) + Hanif (UI/UX) | "Desain halaman dashboard" | Ihsan belajar constraint frontend dari Hanif |
+| Fathan (frontend) + Ihsan (backend) | "Bikin endpoint + consume" | Fathan bikin endpoint, Ihsan consume — **terbalik** dari biasanya |
+| Azis + Hanif | "Dokumentasi API + screenshot" | Azis ajarin Hanif baca Postman |
+
+**Durasi:** 1-2 hari per task  
+**Frekuensi:** 1x per sprint
+
+##### Level 2: Role Swap Day (Sedang — 1 hari penuh)
+
+Satu hari penuh, seseorang mengambil peran orang lain:
+
+| Swap | Aktivitas |
+|------|-----------|
+| Azis → Junior | Ngerjain 1 task frontend sendirian (Fathan jadi mentor) |
+| Fathan → Mentor Backend | Bantuin Ihsan debugging error Laravel |
+| Ihsan → Frontend | Bikin 1 komponen React sederhana (Fathan jadi mentor) |
+| Hanif → Developer | Nulis 1 unit test atau bikin 1 migration |
+| Sandiko → Developer | Ngerjain 1 task teknis murni tanpa koordinasi |
+
+**Durasi:** 1 hari penuh (misal: Jumat setelah demo)  
+**Frekuensi:** 1x per 2 sprint (dijadwalkan)
+
+##### Level 3: Mini Project Rotation (Berat — 1 sprint)
+
+Setiap anggota dapat 1 task di luar peran utamanya, dikerjakan selama 1 sprint:
+
+| Orang | Task Luar Peran | Mentor |
+|-------|-----------------|--------|
+| Azis | 1 fitur backend non-kritis | Sandiko |
+| Fathan | 1 endpoint Laravel + test | Ihsan (Ihsan jadi mentor!) |
+| Ihsan | 1 halaman React sederhana | Fathan (Fathan jadi mentor!) |
+| Hanif | 1 migration + seeder | Azis |
+
+**⚠️ Syarat:**
+- Task harus **non-kritis** — tidak masuk jalur utama MVP
+- Mentor **bukan Sandiko** — biar senior lain belajar ngajar
+- Code review tetap oleh Sandiko
+
+#### 5.7.4. Skenario Konkret Role Play Antar Anggota
+
+##### Skenario A: Azis Jadi Junior, Fathan Jadi Diskusi Partner
+
+```
+Task: Bikin fitur "forgot password" (backend + frontend)
+
+Setting:
+• Azis diminta ngerjain dari awal — tanpa petunjuk detail
+• Azis harus cari sendiri docs Laravel, coba sendiri
+• Kalau stuck, Azis bertanya ke ... Fathan!
+• Fathan bukan jawab, tapi jadi "discussion partner":
+  - "Menurutmu kenapa error ini muncul?"
+  - "Udah coba cek vendor bin?"
+  - "Coba baca docs-nya lagi, bagian authentication"
+
+Tujuan: Azis mengalami sendiri jadi junior — biar ngerti
+kenapa "coba sendiri" itu sulit kalau ilmunya belum cukup.
+```
+
+##### Skenario B: Ihsan Jadi Discussion Partner Azis
+
+```
+Task: Code review PR Fathan (biasanya Azis doang)
+
+Setting:
+• Azis review dulu, tapi dia wajib jelasin ke Ihsan:
+  - "Menurutmu baris ini masalahnya apa?"
+  - "Kenapa Fathan pakai query builder instead of Eloquent?"
+• Ihsan harus kasih pendapat
+• Kalau pendapat Ihsan bener → Ihsan yang comment di PR
+• Kalau salah → Azis jelasin kenapa
+
+Tujuan: Ihsan belajar code review tanpa pressure.
+Azis belajar menjelaskan — menguatkan pemahamannya sendiri.
+```
+
+##### Skenario C: Hanif Jadi Developer, Azis Jadi Dokumentator
+
+```
+Task: Bikin dokumentasi API untuk modul Attendance
+
+Setting:
+• Azis nulis dokumentasi (biasanya Hanif yang nulis)
+• Hanif nulis kode untuk 1 utility function (biasanya Azis)
+• Azis harus nanya ke Hanif: "Logika ini gimana cara kerjanya?"
+• Hanif jelasin — karena dia yang nulis
+• Tujuan: Hanif paham bagaimana kode bekerja.
+  Azis paham bagaimana dokumentasi yang baik ditulis.
+```
+
+##### Skenario D: Diskusi Teknis 3 Arah (Tanpa Sandiko)
+
+```
+Topik: "Service Pattern atau Langsung di Controller?"
+
+Peserta: Fathan (backend learner) + Ihsan (backend) + Azis (senior)
+
+Alur:
+1. Ihsan jelasin pendapatnya: "Pakai service biar rapi"
+2. Fathan kasih counter: "Tapi untuk fitur sederhana,
+   overhead service gak perlu kali?"
+3. Azis jadi moderator: "Kapan service diperlukan?
+   Kapan tidak?"
+4. Mereka bertiga sepakat — baru tanya Sandiko untuk validasi
+
+Tujuan: Diskusi tanpa Sandiko. Azis belajar memfasilitasi.
+Ihsan belajar argue dengan argumen teknis.
+Fathan belajar bahwa "praktik baik" tidak selalu absolut.
+```
+
+#### 5.7.5. Aturan Main Role Rotation
+
+| Aturan | Detail |
+|--------|--------|
+| **Safety Net** | Semua hasil rotasi tetap di-review Sandiko sebelum merge. Rotasi bukan alibi untuk kode rusak. |
+| **Non-Kritis Dulu** | Task rotasi harus P2 atau P3 — jangan P0/P1 (MVP-critical) |
+| **Mentor Bukan Sandiko** | Di rotasi, mentor adalah anggota tim lain. Sandiko hanya fallback. |
+| **No Blame** | Error saat rotasi bukan bahan evaluasi negatif. Justru ini pembelajaran. |
+| **Wajib Refleksi** | Setelah rotasi, tulis 3 paragraf: (1) Apa yang dipelajari, (2) Apa yang sulit, (3) Apa yang akan dilakukan berbeda |
+| **Frekuensi Maksimal** | 1 orang max 1 rotasi level 2-3 per sprint. Jangan sampai mengganggu produktivitas. |
+| **Hak Tolak** | Setiap orang boleh menolak rotasi jika sedang overload. Tidak boleh dipaksa. |
+
+#### 5.7.6. Glosarium yang Harus Dipahami Semua Anggota
+
+Role rotation tidak akan efektif jika tim tidak punya **bahasa yang sama**. Berikut literasi minimum yang harus dipahami setiap anggota — bukan harus jago, tapi **paham konsepnya**:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   GLOSARIUM TIM — Literasi Minimum                              │
+│                                                             │
+│   FRONTEND                                                   │
+│   • Component, Props, State — bahasa dasar React             │
+│   • Client-side vs Server-side rendering (CSR/SSR)           │
+│   • API call (fetch/axios) — bagaimana data sampai ke layar  │
+│   • Responsive design — bukan cuma "pakai Tailwind"          │
+│                                                             │
+│   BACKEND                                                    │
+│   • Route, Controller, Model, Migration — arsitektur         │
+│   • RESTful API — method, status code, endpoint design       │
+│   • Eloquent ORM vs Query Builder — kapan pakai yang mana    │
+│   • Validation & Authorization — bedanya                    │
+│                                                             │
+│   DATABASE                                                   │
+│   • Relasi: one-to-one, one-to-many, many-to-many            │
+│   • Index — kenapa query cepat/lambat                        │
+│   • Migration — version control untuk database               │
+│   • N+1 problem — penyebab dan solusi                        │
+│                                                             │
+│   DEVOPS / INFRA                                             │
+│   • CI/CD — apa yang terjadi setelah git push                │
+│   • Environment: local, staging, production                  │
+│   • Environment variables — bedanya dengan hardcode          │
+│                                                             │
+│   UI/UX & DOCS                                               │
+│   • User flow — bagaimana user menggunakan fitur             │
+│   • Acceptance criteria — bedanya dengan technical spec     │
+│   • Readme, API docs, changelog — kapan nulis yang mana     │
+│                                                             │
+│   GIT                                                        │
+│   • Branch, commit, merge, rebase — dasar                    │
+│   • Conventional commit — kenapa format pesan itu penting    │
+│   • Pull request & code review — alurnya                     │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Target:** Dalam 3 bulan, setiap anggota minimal bisa menjelaskan 70% glosarium di atas dengan bahasa sendiri.
+
+#### 5.7.7. Jadwal Role Rotation
+
+| Sprint | Level | Aktivitas | PIC Koordinasi |
+|--------|-------|-----------|----------------|
+| Sprint 3 | Level 1 | Pair Task: Fathan + Ihsan (endpoint + consume terbalik) | Azis |
+| Sprint 4 | Level 1 | Pair Task: Azis + Hanif (dokumentasi + utility function) | Azis |
+| Sprint 5 | Level 2 | Role Swap Day: Azis → Junior, Fathan → Mentor Backend | Sandiko |
+| Sprint 6 | Level 1 | Pair Task: Hanif + Ihsan (desain halaman + implementasi) | Azis |
+| Sprint 7 | Level 3 | Mini Project Rotation: semua dapat 1 task luar peran | Sandiko |
+| Sprint 8 | Evaluasi | Review hasil rotasi — lanjut atau iterasi | Sandiko |
+
+**Catatan:** Jadwal ini fleksibel tergantung beban kerja MVP. Jika sprint sedang kritis (deadline fitting), rotasi ditunda. Prioritaskan pengiriman.
+
+#### 5.7.8. Dampak yang Diharapkan
+
+| Dampak | Waktu | Tolak Ukur |
+|--------|-------|------------|
+| Setiap anggota bisa menjelaskan 1 konsep di luar perannya | Bulan 1 | Bisa ngajar 1 topik di #belajar-bareng |
+| Azis bisa nulis kode produksi lagi (bukan cuma review) | Bulan 2 | Ada 1 PR dari Azis di sprint |
+| Fathan paham endpoint Laravel — gak butuh tiap detik | Bulan 2 | Fathan bisa nge-debug API error sendiri |
+| Ihsan pernah pegang frontend — bikin API yang lebih user-friendly | Bulan 2 | Ihsan nanya: "Ini response-nya cocok ga buat FE?" |
+| Hanif paham constraint teknis — desain lebih realistis | Bulan 3 | Desain Hanif 90% bisa diimplementasi tanpa revisi besar |
+| Tim bisa diskusi teknis 30 menit tanpa Sandiko | Bulan 3 | Azis + Fathan + Ihsan solve masalah tanpa eskalasi |
+| Sandiko tidak jadi satu-satunya "t tempat bertanya" | Bulan 3 | Pertanyaan ke Sandiko turun 50% |
+
 ---
 
 ## 6. WORKFLOW & SOP
