@@ -1,11 +1,11 @@
 # DOKUMEN BRIEFING TIM
-## PT Koneksi Jaringan Indonesia — Software House Culture
+## PT Koneksi Jaringan Indonesia — Budaya Kerja Digital Agency
 
 > **Versi:** 1.0  
 > **Tanggal:** 2026-07-07 (Selasa Malam — *malam Rabu*)  
 > **Durasi Meeting:** 18:00 - 23:00 WIB  
 > **Peserta:** Sandikodev, Azis, Fathan, Ihsan, Hanif  
-> **Tujuan:** Evaluasi menyeluruh + sosialisasi budaya kerja software house yang sehat, selaras tagline **TERARAH — TERAMPIL — TERUKUR**
+> **Tujuan:** Evaluasi menyeluruh + sosialisasi budaya kerja yang sehat sebagai tim digital agency yang sedang merintis dari ranah software engineering, selaras tagline **TERARAH — TERAMPIL — TERUKUR**
 
 ---
 
@@ -36,8 +36,9 @@ Setelah Sprint 1 berjalan, ditemukan masalah sistemik yang **tidak bisa dibiarka
 |---------|--------|
 | Sandikodev mengerjakan hampir semua | Bottleneck — tim tidak berkembang |
 | Azis pasif, tidak menjalankan peran mentor | Junior tidak punya tempat bertanya |
-| Fathan & Ihsan tidak escalate saat stuck | Mandek berhari-hari tanpa progress |
-| Dokumen tidak dibaca | Pengetahuan tidak terserap |
+| Ihsan kurang inisiatif bertanya, sering salah paham | Task meleset, perlu banyak koreksi |
+| Fathan rajin bertanya & verifikasi, tapi response lambat dari mentor | Antusiasme bisa padam |
+| Dokumen tidak dibaca (Azis, Ihsan) | Pengetahuan tidak terserap |
 | Tidak ada daily standup | Tidak ada akuntabilitas harian |
 | Tidak ada rasa urgensi | Deadline terlewat, kualitas turun |
 
@@ -56,7 +57,7 @@ Setelah Sprint 1 berjalan, ditemukan masalah sistemik yang **tidak bisa dibiarka
 │   • Tim solid = setiap orang menjalankan perannya   │
 │     dengan kesadaran penuh                          │
 │                                                     │
-│   • Software house = pabrik kode berkualitas,        │
+│   • Tim software = pabrik kode berkualitas,          │
 │     bukan tempat nunggu perintah                    │
 │                                                     │
 └─────────────────────────────────────────────────────┘
@@ -66,15 +67,65 @@ Setelah Sprint 1 berjalan, ditemukan masalah sistemik yang **tidak bisa dibiarka
 
 ## 2. IDENTITAS & VISI
 
-### 2.1. PT Koneksi Jaringan Indonesia
+### 2.1. PT Koneksi Jaringan Indonesia — Digital Agency yang Merintis dari Bawah
 
-PT Koneksi Jaringan Indonesia adalah **software house** — perusahaan yang menjual **solusi perangkat lunak** kepada klien. Kita tidak bekerja untuk diri sendiri; kita bekerja untuk klien yang membayar.
+**Pertama, mari luruskan persepsi:** PT Koneksi Jaringan Indonesia bukanlah *software house* — setidaknya bukan dalam definisi inti bisnisnya. Koneksi adalah **Agensi Digital** yang bergerak di industri digital dengan fokus utama pada **marketing**.
 
-**Konsekuensi:**
-- Klien tidak peduli masalah internal tim
-- Klien hanya peduli: **apakah produk selesai?** **apakah berkualitas?**
+Namun, realita perjalanan sebuah perusahaan rintisan tidak selalu linier. Koneksi saat ini sedang dalam fase **merangkak dari bawah** — cash flow belum stabil, nama belum besar, dan setiap proyek adalah batu loncatan untuk naik ke level berikutnya. Dalam fase ini, Koneksi mau tidak mau harus sangat **teknis** dan mengerjakan sendiri apa yang bisa dikerjakan.
+
+**Mengapa software engineering?**
+
+Jawabannya ada pada latar belakang personilnya — **habit dan kompetensi yang kami bawa dari pendidikan sebelumnya**:
+
+| Person | Latar Belakang | Kompetensi Bawaan |
+|--------|---------------|-------------------|
+| **Sandikodev** | SMK TKJ → Teknik Komputer → Teknik Industri | Infrastructure, programming, system design |
+| **Azis** | Teknik Informatika (Kuliah) | Software engineering, structured thinking |
+| **Fathan** | SMK TKJ | Jaringan, hardware, dasar programming |
+| **Ihsan** | SMK RPL | Rekayasa perangkat lunak, programming |
+| **Hanif** | Informatika (Kuliah) | Software engineering, analisis sistem |
+
+Seluruh personil Koneksi memiliki akar yang kuat di ranah **teknik dan teknologi**. Maka wajar dan sangat logis jika pintu masuk Koneksi ke industri dimulai dari **Software Engineering** atau lebih tepat disebut **Software House Agency** — agensi yang bergerak di bidang pengembangan perangkat lunak.
+
+**Ini BUKAN identitas permanen. Ini adalah TITIK MULAI.**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│   POSISI KITA SAAT INI                                          │
+│                                                                 │
+│   Digital Agency (cita-cita)                                    │
+│       ↑                                                         │
+│       │  (masih dalam perjalanan)                                │
+│       │                                                         │
+│   Software House Agency (posisi saat ini)                       │
+│       ↑                                                         │
+│       │  (titik masuk natural karena habit tim)                  │
+│       │                                                         │
+│   Teknikal / Engineering (fondasi dari latar belakang)          │
+│                                                                 │
+│   Filosofi: "Kita mulai dari yang kita bisa, sambil merangkak   │
+│   menuju yang kita impikan."                                    │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+**Apa artinya ini untuk kerja kita sehari-hari?**
+
+Meskipun kita bukan *pure software house*, proyek yang kita kerjakan saat ini (SMART Absen SMA UII) adalah **proyek software engineering riil** yang harus selesai dengan kualitas enterprise. Dalam posisi merangkak dari bawah, **reputasi kita ada di setiap proyek yang kita selesaikan.**
+
+| Realita | Implikasi |
+|---------|-----------|
+| Koneksi butuh cash flow stabil | Proyek ini adalah sumber pendapatan — tidak bisa gagal |
+| Koneksi butuh portofolio | SMART Absen = portofolio untuk proyek berikutnya |
+| Koneksi butuh tim solid | Tim yang tidak solid = proyek molor = reputasi turun |
+| Koneksi butuh bukti ke klien | "Kami bisa dipercaya mengerjakan proyek X" |
+
+**Konsekuensi untuk tim:**
+- Klien tidak peduli masalah internal tim — mereka hanya peduli: **apakah produk selesai?** dan **apakah berkualitas?**
 - Deadline adalah janji — janji harus ditepati
-- Setiap keterlambatan = kehilangan kepercayaan + potensi denda
+- Setiap keterlambatan = kehilangan kepercayaan + sulit dapat proyek berikutnya
+- Setiap proyek yang sukses = satu langkah Koneksi naik kelas
 
 ### 2.2. Tagline: TERARAH — TERAMPIL — TERUKUR
 
@@ -147,14 +198,31 @@ Ini bukan slogan kosong. Ini adalah **tiga pilar** yang harus meresap ke setiap 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   ⚠️  MASALAH #1 — ESKALASI RUSAK                          │
+│   ⚠️  MASALAH #1 — ESKALASI & INISIATIF TIMBAL BALIK        │
 │                                                             │
-│   Fathan stuck (Figma → TSX)       →  diam 2+ minggu        │
-│   Ihsan bingung mulai dari mana   →  diam, ganti-ganti task │
-│   Azis tidak check-in             →  tidak tahu kondisi     │
+│   Fathan:                                                    │
+│   • Rajin bertanya, sering kirim chat ChatGPT ke Sandiko    │
+│     untuk verifikasi pemahaman & mental model                │
+│   • Sanguinis, aktif sosialisasi, verifikasi meta-kognitif  │
+│   • Tapi response dari mentor (Azis) lambat — akhirnya      │
+│     inisiatifnya tidak tersalurkan maksimal                  │
 │                                                             │
-│   AKIBAT: Sandiko baru tahu saat ditanya "kok belum         │
-│   selesai?" — ini terlalu lambat.                           │
+│   Ihsan:                                                     │
+│   • Kurang inisiatif bertanya — cenderung diam               │
+│   • Paling sering salah paham dibanding personil lain        │
+│   • Kemungkinan karena kepribadian introvert & autistik,     │
+│     jarang bergaul — perlu pendekatan khusus                 │
+│   • Sering ganti-ganti task tanpa selesai                    │
+│                                                             │
+│   Azis:                                                      │
+│   • Tidak check-in harian                                   │
+│   • Tidak merespon pertanyaan Fathan tepat waktu            │
+│   • Tidak menjalankan peran mentor sama sekali              │
+│                                                             │
+│   AKIBAT:                                                    │
+│   • Fathan yang sudah proaktif jadi tidak terarahkan        │
+│   • Ihsan bekerja sendiri dengan pemahaman yang keliru      │
+│   • Sandiko baru tahu masalah saat sudah terlambat           │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -194,8 +262,44 @@ Ini bukan slogan kosong. Ini adalah **tiga pilar** yang harus meresap ke setiap 
 │   ├── Learning tracker         ❌ Card LP tidak diurus       │
 │   └── Eskalasi > 2 jam         ❌ Tidak ada                  │
 │                                                             │
-│   DAMPAK: Fathan & Ihsan tidak punya tempat bertanya,       │
-│   akhirnya stuck dan diam.                                  │
+│   AKAR MASALAH:                                              │
+│   1. Belum bisa menyempatkan fokus untuk Koneksi             │
+│      di tengah kesibukan kuliah                              │
+│   2. Mungkin belum benar-benar memahami apa manfaatnya       │
+│      belajar sambil membangun tim di industri nyata          │
+│   3. Masih cenderung lebih aktif di kelas daripada           │
+│      memanfaatkan relasi & pengalaman industri               │
+│                                                             │
+│   DAMPAK:                                                    │
+│   • Fathan yang sudah proaktif bertanya tidak               │
+│     mendapatkan respon tepat waktu                           │
+│   • Ihsan tidak punya tempat bertanya                       │
+│   • Sandiko harus turun tangan ke masalah teknis            │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   ⚠️  MASALAH #4 — FATHAN PROAKTIF TAPI TAK TERARAHKAN     │
+│                                                             │
+│   Fathan adalah personil yang PALING RAJIN bertanya dan     │
+│   memverifikasi pemahamannya:                               │
+│   • Sering mengirim hasil chat ChatGPT ke Sandiko           │
+│     untuk divalidasi bersama                                │
+│   • Aktif membangun mental model & meta-kognisi             │
+│   • Lebih banyak bertanya & verifikasi daripada             │
+│     personil lain                                           │
+│   • Sanguinis, aktif bersosialisasi, mudah diajak diskusi   │
+│                                                             │
+│   TAPI inisiatif ini tidak selalu tersalurkan dengan baik   │
+│   karena:                                                   │
+│   • Azis tidak merespon tepat waktu                         │
+│   • Tidak ada pair programming yang mengarahkan             │
+│   • Akhirnya Sandiko yang harus menampung semua diskusi     │
+│                                                             │
+│   DAMPAK: Antusiasme dan rasa ingin tahu Fathan bisa        │
+│   padam jika tidak ada yang merespon.                       │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
@@ -203,7 +307,7 @@ Ini bukan slogan kosong. Ini adalah **tiga pilar** yang harus meresap ke setiap 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│   ⚠️  MASALAH #4 — SAN DIKO BOTTLENECK                      │
+│   ⚠️  MASALAH #5 — SANDIKO BOTTLENECK                       │
 │                                                             │
 │   Playbook bilang: Sandiko coding ≤ 30% waktu               │
 │   Realita: Sandiko coding ~80% waktu                        │
@@ -277,39 +381,243 @@ Ini bukan slogan kosong. Ini adalah **tiga pilar** yang harus meresap ke setiap 
         └──────────────┘
 ```
 
-### 3.4. Diagram: ALUR KERJA SEHARUSNYA
+### 3.4. Diagram: ALUR KERJA DINAMIS (Hybrid Team)
+
+> **Realita tim:** Tidak semua anggota tim全职 (*fulltime*) di proyek ini.  
+> Fathan bekerja pukul 08:00-18:00 di Industri Desain & Percetakan Gigi Palsu.  
+> Hanif adalah staff teknis SMA UII pukul 07:00-15:00.  
+> Azis adalah mahasiswa Alma Atta dengan jam kelas fleksibel.  
+> Ihsan [?? — isi sesuai kondisi masing-masing].  
+> Sandikodev [?? — isi sesuai kondisi masing-masing].  
+
+Maka workflow tidak bisa linier 9-to-5. Kita perlu **async-first, sync-when-needed**.
 
 ```
-HARI KERJA NORMAL
-═══════════════════
+PRINSIP DASAR
+═══════════════════════════════════════════════════════════════
 
-09:00  ┌─ Daily Standup (WA Group) ─────────────────────┐
-       │  Format:                                       │
-       │  ✅ Kemarin: [card yang selesai]               │
+1. ASYNC FIRST → Semua komunikasi standup & update progress
+   dilakukan async (WA group, Trello comment) agar tidak
+   bergantung pada jam kerja yang sama.
+
+2. OVERLAP WINDOW → Cari waktu dimana sebagian besar tim
+   available secara bersamaan untuk diskusi sinkron.
+
+3. FLEXIBLE BLOCK → Setiap orang punya jadwal coding sendiri
+   yang menyesuaikan main job masing-masing.
+
+4. DEADLINE IS DEADLINE → Waktu coding fleksibel, tapi
+   deadline sprint adalah harga mati.
+```
+
+```
+REALITA JADWAL MASING-MASING
+═══════════════════════════════════════════════════════════════
+
+WAKTU        FATHAN         AZIS           HANIF          IHSAN          SANDIKO
+             (Fulltime      (Mahasiswa     (Staff Teknis  [??]           [??]
+              Gigi Palsu)    Alma Atta)     SMA UII)
+             ═════════      ═════════      ═════════      ═════════      ═════════
+07:00        ─              ─              ● SMA UII      ─              ─
+08:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+09:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+10:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+11:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+12:00        ● KERJA UTAMA  ▽ ishoma       ● SMA UII      ─              ─
+13:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+14:00        ● KERJA UTAMA  sela kelas     ● SMA UII      ─              ─
+15:00        ● KERJA UTAMA  sela kelas     ○ SELESAI      ─              ─
+16:00        ● KERJA UTAMA  sela kelas     ○ READY        ─              ─
+17:00        ● KERJA UTAMA  sela kelas     ○ READY        ─              ─
+18:00        ○ READY        ○ READY        ○ READY        ─              ─
+19:00        ○ READY        ○ READY        ○ READY        ─              ─
+20:00        ○ READY        ○ READY        ○ READY        ─              ─
+21:00        ○ READY        ○ READY        ─              ─              ─
+22:00        ─              ─              ─              ─              ─
+
+● = Wajib (main job / kuliah)
+○ = Available untuk coding SMART Absen
+▽ = Istirahat / fleksibel
+```
+
+```
+ALUR KERJA HARI — VERSI ASYNC-FIRST
+═══════════════════════════════════════════════════════════════
+
+SESI PAGI (07:00 - 08:00) — JENDELA STANDUP
+───────────────────────────────────────────────────────────────
+
+07:00  ┌─ ASYNC DAILY STANDUP (WA Group) ────────────────┐
+       │  Format:                                        │
+       │  ✅ Kemarin: [card yang selesai / progress]     │
        │  🎯 Hari ini: [card yang dikerjakan]           │
-       │  🚫 Blocker: [ada/tidak]                       │
-       └────────────────────────────────────────────────┘
+       │  🚫 Blocker: [ada/tidak + detail]              │
+       │                                                 │
+       │  Aturan:                                        │
+       │  • Posting sebelum mulai aktivitas utama         │
+       │  • Hanif: standup ~07:00 (sebelum mulai SMA UII)│
+       │  • Fathan: standup ~07:45 (sebelum berangkat)   │
+       │  • Azis: standup sela kelas atau pagi           │
+       │  • Ihsan/Sandiko: standup sesuai jadwal         │
+       │  • Tidak wajib semua online bersamaan!          │
+       └──────────────────────────────────────────────────┘
 
-09:15  ┌─ Kerja (Pomodoro 25/5) ────────────────────────┐
-       │  • 25 menit fokus                               │
-       │  • 5 menit istirahat                            │
+       ┌─ TRELLO CHECK ────────────────────────────────────┐
+       │  • Buka Trello, lihat card yang diassign          │
+       │  • Baca comment & progress dari kemarin           │
+       │  • Pastikan tahu apa yang harus dikerjakan hari   │
+       │    ini                                            │
+       └──────────────────────────────────────────────────┘
+
+
+SESI SIANG (08:00 - 15:00) — MAIN JOB / KULIAH
+───────────────────────────────────────────────────────────────
+
+       ┌─ FOKUS DI MAIN JOB MASING-MASING ─────────────┐
+       │  • Fathan: Desain & Cetak Gigi Palsu           │
+       │  • Hanif: Tugas teknis SMA UII                 │
+       │  • Azis: Kuliah Alma Atta (jadwal fleksibel)   │
+       │  • Ihsan: [??]                                 │
+       │                                                 │
+       │  ⚠️  SELAMA SESI INI:                          │
+       │  • Tidak wajib respon WA instan                 │
+       │  • Cek WA setiap 2-3 jam untuk urgent blocker   │
+       │  • Jika ada task SMART yang bisa dikerjakan di  │
+       │    sela (kecil/mandiri), silakan lanjutkan      │
+       │  • Jangan paksakan coding penuh — fokus ke      │
+       │    main job dulu                                │
+       └─────────────────────────────────────────────────┘
+
+
+TRANSISI (15:00 - 18:00) — HANIF MULAI, FATHAN MASIH KERJA
+───────────────────────────────────────────────────────────────
+
+15:00  ┌─ HANIF: SIAP CODING SMART ABSEN ───────────────┐
+       │  • Mulai kerjakan task Trello                   │
+       │  • Prioritaskan yang butuh overlap dengan       │
+       │    Azis & Fathan nanti malam                    │
+       │  • Persiapan pertanyaan untuk pair programming  │
+       └─────────────────────────────────────────────────┘
+
+       ┌─ AZIS (jika tidak ada kelas): ──────────────────┐
+       │  • Coding mandiri                               │
+       │  • Baca dokumen yang belum dibaca               │
+       └─────────────────────────────────────────────────┘
+
+
+SESI MALAM (18:00 - 22:00) — OVERLAP WINDOW 🟢
+───────────────────────────────────────────────────────────────
+     SEMUA (atau sebagian besar) AVAILABLE BERSAMAAN
+───────────────────────────────────────────────────────────────
+
+18:00  ┌─ FATHAN SELESAI KERJA UTAMA ───────────────────┐
+       │  • Ganti konteks: buka laptop, baca Trello      │
+       │  • Baca progress dari Hanif & Azis di siang     │
+       │  • Siap coding sampai ~22:00                    │
+       └─────────────────────────────────────────────────┘
+
+18:30  ┌─ CODE / PAIR PROGRAMMING SESSION ──────────────┐
+       │  • Pair programming (Azis + Fathan /            │
+       │    Azis + Ihsan) sesuai jadwal                  │
+       │  • Diskusi sinkron via Discord / Google Meet    │
+       │  • Code review — Azis prep, Sandiko final       │
+       │  • Pomodoro 25/5 tetap dijalankan               │
+       │                                                 │
+       │  PRINSIP:                                       │
        │  • Kalau stuck >15 menit → tanya Azis           │
-       └────────────────────────────────────────────────┘
+       │  • Kalau >2 jam → escalate ke Sandiko           │
+       └─────────────────────────────────────────────────┘
 
-12:00  ┌─ Istirahat ────────────────────────────────────┐
-       └────────────────────────────────────────────────┘
+20:00  ┌─ ISTIRAHAT (15-30 menit) ──────────────────────┐
+       │  • Makan malam, sholat, recharge                │
+       └─────────────────────────────────────────────────┘
 
-13:00  ┌─ Kerja lanjutan ───────────────────────────────┐
-       │  • Pair programming (jadwal)                    │
-       │  • Code review                                  │
-       │  • Self-learning / baca dokumen                 │
-       └────────────────────────────────────────────────┘
+20:30  ┌─ CODING LANJUTAN ──────────────────────────────┐
+       │  • Fitur baru / bug fix / testing               │
+       │  • Self-learning: baca dokumen, tutorial        │
+       │  • Diskusi teknis lanjutan                       │
+       │  • Code review final oleh Sandiko (jika ada)    │
+       └─────────────────────────────────────────────────┘
 
-17:00  ┌─ End of day ───────────────────────────────────┐
-       │  • Update Trello card status                    │
-       │  • Commit progress                              │
-       │  • Catat blocker untuk besok                    │
-       └────────────────────────────────────────────────┘
+
+PENUTUP HARI (22:00)
+───────────────────────────────────────────────────────────────
+
+22:00  ┌─ END OF DAY ───────────────────────────────────┐
+       │  • Update Trello card — pindahkan sesuai       │
+       │    status (In Progress / Code Review / Done)   │
+       │  • Commit progress dengan conventional commit  │
+       │  • Catat blocker di Trello comment             │
+       │  • Catat pertanyaan untuk besok                │
+       │  • Matikan laptop — istirahat 🛌               │
+       └─────────────────────────────────────────────────┘
+
+
+POLA KOMUNIKASI ASYNC
+═══════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────┐
+│                                                         │
+│  KOMUNIKASI                CHANNEL         RESPON SLA   │
+│  ─────────────────────────────────────────────────────  │
+│  Daily standup           WA Group         Sebelum 10:00 │
+│  Urgent blocker          WA (tag Azis)    < 1 jam       │
+│  Pertanyaan teknis       WA / Discord     < 2 jam       │
+│  Task discussion         Trello comment   < 4 jam       │
+│  Code review             GitHub PR        < 24 jam      │
+│  Pair programming        Google Meet      Sesuai jadwal │
+│  Requirement clarif.     Trello + tag     < 24 jam      │
+│                          Hanif                          │
+│                                                         │
+│  CATATAN:                                                │
+│  • Selama jam main job (08:00-18:00 Fathan,             │
+│    07:00-15:00 Hanif), respon WA bisa lebih lambat.     │
+│    Harap maklum dan sabar menunggu.                     │
+│  • Urgent = error yang bikin gak bisa coding sama       │
+│    sekali, bukan "lagi males".                          │
+│  • Diskusi panjang → pindah ke Trello comment atau      │
+│    simpan untuk overlap window malam.                   │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+
+
+JADWAL PAIR PROGRAMMING FLEKSIBEL
+═══════════════════════════════════════════════════════════════
+
+Pair programming dilakukan di OVERLAP WINDOW (18:00-22:00).
+
+│ Hari      │ Sesi                │ Mode                      │
+│───────────┼─────────────────────┼───────────────────────────│
+│ Senin     │ Azis + Fathan      │ Discord, screen share     │
+│ Selasa    │ Azis + Ihsan       │ Discord, screen share     │
+│ Rabu      │ Azis + Fathan      │ Discord, screen share     │
+│ Kamis     │ Azis + Ihsan       │ Discord, screen share     │
+│ Jumat     │ All team (15:00-   │ Demo + review + planning  │
+│           │ 16:00)             │ (bisa siang, Hanif masih  │
+│           │                    │ di SMA UII — join dari    │
+│           │                    │ situ)                     │
+│ Sabtu/    │ Bebas              │ Catch-up, sisa task       │
+│ Minggu    │                    │                           │
+
+Catatan: Jadwal bisa digeser jika ada kelas mendadak
+Azis atau lembur Fathan di pekerjaan utama. Yang penting
+komunikasi — jangan silent cancel.
+
+
+RINGKASAN: APA YANG BERUBAH?
+═══════════════════════════════════════════════════════════════
+
+│ Aspek            │ Dulu (9-to-5)           │ Sekarang (Async)          │
+│──────────────────┼─────────────────────────┼───────────────────────────│
+│ Daily standup    │ 09:00 semua online      │ Async, posting sebelum    │
+│                  │                         │ mulai aktivitas           │
+│ Waktu coding     │ 09:15-17:00 serentak    │ Terbagi: sesi siang       │
+│                  │                         │ + sesi malam overlap      │
+│ Komunikasi       │ Sync, realtime          │ Async-first, sync malam  │
+│ Pair programming │ Jadwal tetap            │ Jadwal tetap tapi bisa    │
+│                  │                         │ digeser ke overlap window │
+│ Code review      │ Siang hari              │ Malam hari (overlap)      │
+│ Deadline         │ Sama                    │ Sama — harga mati         │
 ```
 
 ---
@@ -367,6 +675,32 @@ HARI KERJA NORMAL
 └────────────────────────────────────────────────────────┘
 ```
 
+**Refleksi untuk Azis: Kampus vs Industri Nyata**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   KAMPUS (Alma Atta)          INDUSTRI (PT Koneksi)        │
+│   ─────────────────────       ────────────────────────      │
+│   • Teori & konsep            • Praktik & realita           │
+│   • Tugas terjadwal           • Deadline nyata              │
+│   • Nilai dari dosen          • Reputasi dari klien         │
+│   • Aman salah                • Konsekuensi nyata           │
+│   • Sendiri                   • Tim & kolaborasi            │
+│   • Ijazah + IPK              • Portofolio + relasi         │
+│                                                             │
+│   KAMPARAN:                                                 │
+│   "Apa yang lebih berharga di dunia kerja nanti:            │
+│    IPK 4.0 tanpa pengalaman, atau IPK 3.0 dengan            │
+│    portofolio proyek nyata yang dipakai 760+ siswa?"        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Pesan untuk Azis:** Kamu tidak perlu memilih antara kampus dan Koneksi. Keduanya bisa berjalan bersamaan — asal kamu bisa manage waktu. Tapi kalau kamu tidak pernah hadir (secara mental) di Koneksi, kamu kehilangan kesempatan yang tidak diajarkan di kampus: cara kerja tim, menghadapi klien, deadline, dan tanggung jawab profesional.
+
+Mulailah dengan: daily check-in 5 menit, 1 sesi pair programming, 1 code review. Tidak perlu langsung sempurna. Tapi harus konsisten.
+
 **Komitmen Azis:**
 - [ ] Saya akan daily check-in setiap hari pukul 09:00
 - [ ] Saya akan melakukan pair programming sesuai jadwal
@@ -376,46 +710,47 @@ HARI KERJA NORMAL
 
 ### 4.3. Fathan Mubina — Junior Frontend Developer
 
-> **Prinsip:** "Tidak tahu itu wajar. Tidak bertanya itu masalah."
+> **Prinsip:** "Terus bertanya, terus verifikasi, jangan biarkan rasa ingin tahumu padam."
 
 | Area | Harus | Tidak Boleh |
 |------|-------|-------------|
 | **Coding** | Ikuti Trello card, 1 card selesai → commit | Ganti-ganti task tanpa selesai |
-| **Dokumen** | Baca dokumen yang diberikan | Mengabaikan dokumen |
-| **Escalasi** | Stuck > 15 menit → tanya Azis | Diam berhari-hari |
+| **Eskalasi** | Lanjutkan tanya — Azis tidak respon → tag Sandiko | Berhenti bertanya karena lambat respon |
 | **Pair programming** | Ikuti jadwal dengan Azis | Tidak datang tanpa konfirmasi |
 | **Daily standup** | Lapor progress setiap 09:00 | Tidak merespon |
+| **Share learning** | Terus kirim hasil eksplorasi ke Sandiko | — |
 | **Commit** | 1 task = 1 commit, meaningful message | Commit asal-asalan |
 
-**Panduan: Saat Stuck**
+**Catatan untuk Fathan:** Kamu sudah melakukan hal yang benar — bertanya, verifikasi, sharing. Masalahnya saat ini adalah pipeline responnya yang tidak jalan. Jangan berhenti. Terus kirim pertanyaanmu ke grup. Kalau Azis tidak respon dalam 1 jam, langsung tag Sandiko.
 
 ```
 ┌─────────────────────────────────────────────────────┐
 │                                                     │
-│   SAAT STUCK — LANGKAH WAJIB                       │
+│   STRATEGI BARU UNTUK FATHAN:                       │
 │                                                     │
-│   1. Baca error dari paling bawah (stack trace)     │
-│   2. Cari di kode: grep "namaMethod" atau cek docs  │
-│   3. Coba 2 pendekatan berbeda (max 15 menit)       │
-│   4. KALAU MENTOK → TANYA AZIS                      │
+│   1. Kalau bingung → tanya Azis di WA               │
+│   2. Jika > 1 jam tidak direspon → tag Sandiko      │
+│   3. Kirim hasil chat ChatGPT ke grup —              │
+│      itu cara belajarmu, itu bagus                  │
+│   4. Share link, screenshot, atau cuplikan kode      │
+│   5. Jangan pindah task sebelum dapat arahan         │
 │                                                     │
-│   ⚠️  TIDAK BOLEH:                                  │
-│      • Diam > 15 menit tanpa progress              │
-│      • Ganti task lain tanpa menyelesaikan blocker  │
-│      • Nunggu ditanya Sandiko baru ngomong          │
+│   INISIATIFMU ADALAH ASET — JANGAN PADAMKAN          │
 │                                                     │
 └─────────────────────────────────────────────────────┘
 ```
 
 **Komitmen Fathan:**
-- [ ] Saya akan membaca dokumen yang diberikan sebelum bertanya
-- [ ] Saya akan bertanya ke Azis dalam 15 menit jika stuck
+- [ ] Saya akan terus bertanya dan verifikasi seperti biasa
+- [ ] Saya akan tag Sandiko jika Azis tidak respon > 1 jam
 - [ ] Saya akan mengerjakan 1 card sampai selesai sebelum pindah
 - [ ] Saya akan ikut daily standup & pair programming
 
 ### 4.4. Ihsan — Junior Backend Developer
 
-> **Prinsip:** Sama dengan Fathan, beda stack.
+> **Prinsip:** "Diam tidak menyelesaikan masalah. Satu pertanyaan bisa menghemat 3 hari."
+
+Ihsan memiliki tantangan yang berbeda dari Fathan. Kepribadiannya lebih introvert dan mungkin cenderung autistik — yang membuatnya jarang bertanya dan lebih suka menyelesaikan sendiri. Sayangnya, pendekatan ini sering berujung pada **salah paham** yang baru ketahuan setelah task dikerjakan.
 
 | Area | Harus | Tidak Boleh |
 |------|-------|-------------|
@@ -423,11 +758,46 @@ HARI KERJA NORMAL
 | **Testing** | Tulis test setelah fitur | Merge tanpa test |
 | **Database** | PostgreSQL syntax, no MySQL | Pakai MySQL-specific syntax |
 | **Service Layer** | Logic di Service, controller tipis | Logic di controller |
-| **Escalasi** | Sama seperti Fathan | Diam |
+| **Verifikasi** | Setelah baca task, kirim "Yang saya pahami adalah..." ke Azis | Langsung coding tanpa verifikasi pemahaman |
+| **Escalasi** | Minimal 1 pertanyaan per hari di Trello comment, atau DM Azis, atau voice note | Diam sampai Sandiko bertanya |
+
+**Pendekatan Khusus untuk Ihsan:**
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   IHSAN — CARA BARU BEKERJA                                │
+│                                                             │
+│   1. SETELAH BACA TASK:                                     │
+│      → Tulis 1 kalimat: "Yang saya pahami, saya harus      │
+│        membuat fitur X yang melakukan Y"                   │
+│      → Kirim ke Azis / Trello comment                      │
+│      → Tunggu konfirmasi sebelum coding                     │
+│                                                             │
+│   2. SAAT CODING:                                           │
+│      → Kerjakan 1 file sampai selesai                      │
+│      → Jangan buka file lain sebelum selesai                │
+│      → Kalau bingung > 30 menit → STOP, tanya              │
+│                                                             │
+│   3. SEBELUM COMMIT:                                        │
+│      → Cek: "Apakah ini sesuai dengan yang diminta?"       │
+│      → Coba jalanin dulu                                   │
+│      → Baru commit                                         │
+│                                                             │
+│   INGAT:                                                    │
+│   • Kamu tidak perlu malu bertanya                          │
+│   • Setiap pertanyaan yang kamu tulis = menghemat           │
+│     waktu 3 hari ke depan                                  │
+│   • Azis akan lebih proaktif jemput bola ke kamu           │
+│   • Tapi kamu juga harus berusaha — minimal 1 tanya/hari   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
 **Komitmen Ihsan:**
+- [ ] Saya akan melakukan verifikasi pemahaman sebelum coding (tulis 1 kalimat)
+- [ ] Saya akan bertanya jika stuck > 30 menit — via DM/WA/Trello/voice note
 - [ ] Saya akan menyelesaikan 1 card sebelum memulai yang lain
-- [ ] Saya akan bertanya dalam 15 menit jika stuck
 - [ ] Saya akan menulis test untuk setiap fitur yang saya buat
 - [ ] Saya akan ikut daily standup & pair programming
 
@@ -532,7 +902,8 @@ HARI KERJA NORMAL
 
 ```
 ❌ Stuck > 15 menit → diam, buka YouTube, ganti task lain
-❌ Stuck > 1 jam → tetap diam, nunggu ditanya
+❌ Stuck > 1 jam (Ihsan) → tetap diam, nunggu ditanya
+❌ Fathan tanya tapi tidak direspon Azis > 1 jam
 ❌ Stuck > 1 hari → pura-pura sibuk, tidak ada progress
 ❌ Stuck → tanya langsung Sandiko (skip Azis)
 ```
@@ -712,7 +1083,8 @@ Ini bukan tentang menghukum — ini tentang **kesepakatan bersama**. Setiap oran
 | Pelanggaran | 1x | 2x | 3x+ |
 |------------|-----|-----|------|
 | **Tidak daily standup** | Teguran lisan | Teguran WA grup | Evaluasi keterlibatan |
-| **Stuck > 1 jam tidak tanya** | Azis diingatkan | Diskusi 1-on-1 | Evaluasi peran |
+| **Ihsan tidak tanya > 1 jam** | Azis jemput bola | Azis 1-on-1 dengan Ihsan | Evaluasi peran |
+| **Azis tidak respon Fathan > 1 jam** | Pengingat | 1-on-1 dengan Sandiko | Evaluasi peran mentor |
 | **Azis tidak check-in** | Pengingat | 1-on-1 dengan Sandiko | Evaluasi peran mentor |
 | **Dokumen tidak dibaca** | Pengingat | Diskusi kenapa | Cari metode alternatif |
 | **Task tidak selesai tanpa komunikasi** | Peringatan | Review beban kerja | Realokasi task |
@@ -875,7 +1247,9 @@ LEVEL 4 — MASTER (Minggu 8+)
 
 Pertanyaan yang akan dijawab:
 1. ✅ Apakah Azis daily check-in setiap hari?
-2. ✅ Apakah Fathan & Ihsan escalate saat stuck?
+2. ✅ Apakah Ihsan bertanya minimal 1x per hari?
+   ✅ Apakah Fathan mendapat respon dari Azis < 1 jam?
+   ✅ Apakah Azis proaktif jemput bola ke Ihsan?
 3. ✅ Apakah pair programming berjalan sesuai jadwal?
 4. ✅ Berapa card yang selesai minggu ini?
 5. ✅ Apakah dokumen mulai dibaca?
@@ -920,14 +1294,30 @@ Tanggal: 7 Juli 2026
 
 ### 10.2. Pesan dari Sandiko ke Tim
 
-**Untuk Fathan:**
-Kamu punya potensi besar. Masalahmu bukan di skill — tapi di keberanian untuk bertanya. Figma → composable component memang susah kalau baru pertama kali. Tapi kalau kamu diam, saya tidak bisa bantu. Azis sudah disiapkan untuk jadi partner coding kamu. Manfaatkan. Jangan malu, jangan takut. Kita semua pernah junior.
+**Untuk Fathan — pertahankan sifat ingin tahumu:**
+Kamu adalah personil yang paling rajin bertanya dan memverifikasi pemahaman. Saya sering melihat kiriman chat ChatGPT-mu, dan itu cara belajar yang sangat baik — kamu tidak hanya menerima informasi, tapi kamu mengolahnya, memvalidasinya, dan membangun mental model. Pertahankan itu.
 
-**Untuk Ihsan:**
-Kamu perlu fokus. Kerjakan 1 card sampai selesai. Kalau bingung urutannya, tanya. Jangan ambil card baru kalau yang lama belum selesai. Backend itu soal disiplin — ikuti pola yang sudah ada (Service Layer, Form Request, Dual Controller), dan kamu akan lihat semuanya jadi lebih mudah.
+Masalah Figma → composable component bukan soal kamu tidak berani tanya — kamu sudah tanya. Masalahnya adalah respon yang kamu dapatkan tidak cepat atau tidak mengarahkan. Azis seharusnya menjadi partner coding-mu, tapi belum berjalan.
 
-**Untuk Azis:**
-Peranmu adalah yang paling krusial sekarang. Tanpa mentor yang aktif, Fathan dan Ihsan akan terus stuck. Saya butuh kamu jadi jembatan antara saya dan mereka. Kamu bukan cuma anggota tim — kamu adalah **penggerak** tim. Kalau kamu jalan, tim jalan. Kalau kamu diam, tim mandek.
+Saran saya: terus kirim pertanyaan, terus kirim hasil eksplorasimu. Tapi kalau Azis tidak merespon dalam 1 jam, jangan ragu tag saya langsung. Jangan biarkan antusiasme kamu padam karena lambatnya respon. Kamu punya potensi besar — dan cara kamu belajar (sharing, verifikasi, meta-kognisi) adalah cara yang benar.
+
+**Untuk Ihsan — butuh pendekatan yang berbeda:**
+Kamu jarang bertanya, dan ketika mengerjakan task, sering terjadi salah paham. Saya paham kamu mungkin merasa tidak nyaman untuk bertanya — mungkin karena kepribadian yang lebih introvert. Tidak apa-apa. Tapi dalam tim, diam itu berbahaya.
+
+Kita perlu cari cara yang lebih nyaman buat kamu. Kalau tidak enak tanya di WA grup, kamu bisa DM Azis atau DM saya langsung. Atau tulis di Trello comment. Atau kirim voice note. Yang penting jangan diam.
+
+Saya juga minta Azis untuk lebih proaktif menjemput bola ke kamu — karena saya tahu kamu tidak akan datang duluan. Tapi saya juga minta kamu untuk mencoba: setiap kali bingung, tulis pertanyaan di Trello card. Minimal 1 pertanyaan per hari.
+
+**Untuk Azis — waktunya memilih:**
+Kamu sedang kuliah di Alma Atta, dan wajar kalau kuliah adalah prioritas. Tapi kamu perlu jujur sama diri sendiri: apa yang kamu cari dengan bergabung di Koneksi?
+
+Apakah kamu hanya ingin nilai tambah di CV? Atau kamu benar-benar ingin belajar bagaimana industri nyata bekerja, bagaimana membangun produk dari nol, bagaimana relasi dan kerja tim yang profesional?
+
+Kelas di kampus memberimu teori. Tapi Koneksi memberimu pengalaman nyata — klien nyata, deadline nyata, uang nyata, konsekuensi nyata. Ini yang tidak bisa diajarkan di kelas.
+
+Peranmu sebagai learning mentor adalah yang PALING KRUSIAL sekarang. Fathan sudah proaktif bertanya — tapi tidak ada yang merespon. Ihsan butuh dijemput — tapi kamu tidak ada. Saya butuh kamu jadi jembatan antara saya dan mereka. Kalau kamu jalan, tim jalan. Kalau kamu diam, tim mandek.
+
+Saya tidak minta kamu keluar dari Koneksi. Saya minta kamu memutuskan: apakah kamu serius? Kalau serius, buktikan dengan daily check-in, pair programming, dan respon ke Fathan & Ihsan. Kalau tidak sanggup, bicarakan dengan saya — kita cari solusi.
 
 **Untuk Hanif:**
 Jaga requirement tetap jelas. Kalau ada yang ambigu, segera klarifikasi. UAT adalah benteng terakhir sebelum produk sampai ke klien.
