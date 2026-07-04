@@ -279,6 +279,8 @@ Ini bukan slogan kosong. Ini adalah **tiga pilar** yang harus meresap ke setiap 
 └─────────────────────────────────────────────────────────────┘
 
 ```
+
+```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
 │   ⚠️  MASALAH #4 — FATHAN PROAKTIF TAPI TAK TERARAHKAN     │
@@ -946,6 +948,172 @@ FORMAT BERTANYA:
 | Rabu | 10:00 - 10:45 | Azis + Fathan (Frontend) | Azis |
 | Kamis | 10:00 - 10:45 | Azis + Ihsan (Backend) | Azis |
 | Jumat | 15:00 - 16:00 | All team (demo + review) | Sandiko |
+
+### 5.6. Budaya Belajar Bareng (#belajar-bareng)
+
+#### 5.6.1. Filosofi
+
+Salah satu masalah terbesar tim ini adalah **pengetahuan hanya mengalir dua arah** (Fathan → Sandiko, atau Ihsan → Sandiko). Ilmu berhenti di satu orang dan tidak menyebar. Akibatnya:
+- Sandiko jadi bottleneck — harus menjawab pertanyaan yang sama berulang kali
+- Azis tidak terekspos cara berpikir junior — tidak tahu di level mana mereka
+- Ihsan & Hanif kehilangan kesempatan belajar dari diskusi Fathan
+- Tim tumbuh secara individu, bukan sebagai kolektif
+
+**#belajar-bareng** adalah obat untuk masalah ini. Bukan sekadar "share link", tapi membangun **budaya transparansi belajar** — di mana setiap proses belajar, eksplorasi, error, dan solusi menjadi konsumsi publik tim.
+
+> **Prinsip:** "Belajar sendiri itu cepat, belajar bareng itu dalam."
+
+#### 5.6.2. Apa yang Wajib Di-share
+
+Setiap anggota tim **WAJIB** memposting ke channel #belajar-bareng (WA Group atau thread khusus) ketika mengalami salah satu dari situasi berikut:
+
+| Situasi | Contoh | Prioritas |
+|---------|--------|-----------|
+| **Discovery** — Menemukan konsep/fitur baru | "Baru tahu Laravel punya `withCount()` buat eager loading count" | ⭐ Wajib |
+| **Error Unik** — Error yang butuh waktu >15 menit untuk solve | "Tadi error 'Method Illuminate...' ternyata solusinya pake facade" | ⭐ Wajib |
+| **Best Practice** — Cara yang lebih bersih/efisien | "Ternyata validasi bisa pake Form Request, gak perlu inline" | ⭐ Wajib |
+| **Diskusi AI** — Hasil chat dengan AI yang relevan | "Ini hasil obrolan saya sama Claude soal service pattern" | ✅ Sangat dianjurkan |
+| **Insight Dokumentasi** — Baca docs dan nemu hal penting | "Di docs Laravel 13, ada perubahan di middleware API" | ✅ Sangat dianjurkan |
+| **Tutorial / Artikel** — Link bacaan yang bagus | "Artikel bagus soal database indexing" | 👍 Boleh |
+| **Code Snippet** — Potongan kode yang reusable | "Function helper buat format tanggal ini bisa dipakai siapa aja" | ✅ Sangat dianjurkan |
+
+**⚠️ Aturan Emas:** Jangan takut posting hal yang "terlalu dasar". Apa yang mudah bagi kamu, mungkin adalah terobosan bagi orang lain. Tidak ada yang terlalu sederhana untuk di-share.
+
+#### 5.6.3. Format Posting Wajib
+
+Setiap post di #belajar-bareng harus mengikuti format berikut:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   🧠 #belajar-bareng                                        │
+│                                                             │
+│   TOPIK: [Judul singkat, max 10 kata]                       │
+│   KATEGORI: [Discovery / Error / Best Practice / AI /       │
+│              Docs / Snippet]                                 │
+│                                                             │
+│   ─── KONTEKS ───                                           │
+│   [2-3 kalimat: lagi ngerjain apa? kenapa topik ini         │
+│    relevan?]                                                 │
+│                                                             │
+│   ─── ISI ───                                               │
+│   [Inti pembahasan: link chat AI, error log, kode,          │
+│    insight, atau penjelasan]                                 │
+│                                                             │
+│   ─── KESIMPULAN ───                                        │
+│   [1-2 kalimat: takeaway utama biar yang baca cepat         │
+│    paham]                                                    │
+│                                                             │
+│   TAG: [@azis @fathan @ihsan @hanif — siapa yang            │
+│         relevan diajak diskusi]                              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+#### 5.6.4. Alur #belajar-bareng
+
+```
+┌──────────────┐
+│              │
+│  1. TEMUKAN  │  — Error unik, discovery, insight dari AI/docs
+│              │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│              │
+│  2. TULIS    │  — Pakai format di atas (5-10 menit)
+│              │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│              │
+│  3. POST     │  — Kirim ke channel #belajar-bareng
+│              │     Beri reaksi 👍 atau 💡 begitu baca
+│              │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│              │
+│  4. DISKUSI  │  — Yang di-tag WAJIB baca & comment
+│              │     Minimal 1 pertanyaan atau insight
+│              │
+└──────┬───────┘
+       │
+       ▼
+┌──────────────┐
+│              │
+│  5. KUTIP    │  — Azis kumpulkan yang paling berbobot
+│              │     tiap minggu → masukkan ke meeting notes
+│              │
+└──────────────┘
+```
+
+#### 5.6.5. Contoh Posting Riil
+
+```
+🧠 #belajar-bareng
+
+TOPIK: Service Pattern vs Langsung di Controller
+KATEGORI: Best Practice
+
+─── KONTEKS ───
+Lagi ngerjain fitur approval leave request. Tadinya
+logic validasi + approval + notifikasi semua di
+controller. Jadi controller-nya >200 baris.
+
+─── ISI ───
+Saya tanya ke Claude gimana cara bersihin controller:
+[link chat AI]
+
+Intinya: pindahin logic ke service class.
+- App\Services\LeaveApprovalService
+- Controller cuma 15 baris — panggil service
+- Service punya method: validate(), approve(), notify()
+
+─── KESIMPULAN ───
+Controller harus setipis mungkin. Service layer
+menampung semua logic bisnis. Lebih gampang di-test
+dan di-read.
+
+TAG: @azis @ihsan — ini relevant buat backend
+```
+
+#### 5.6.6. Aturan & Konsekuensi
+
+| Aturan | Siapa | Konsekuensi Jika Dilanggar |
+|--------|-------|---------------------------|
+| Wajib posting minimal **1x per minggu** | Semua | Dibahas di weekly retro — alasan kenapa tidak ada |
+| Wajib baca & respon jika di-tag | Yang di-tag | Diingatkan Azis |
+| Tidak boleh posting link doang tanpa konteks | Semua | Post akan di-delete, diingatkan format |
+| Azis wajib kompilasi tiap Jumat | Azis | Dibahas di review dengan Sandiko |
+| Sandiko wajib komen minimal 1x per minggu | Sandiko | — (self-accountability) |
+
+#### 5.6.7. Target & Dampak yang Diharapkan
+
+| Dampak | Waktu | Tolak Ukur |
+|--------|-------|------------|
+| Semua anggota aktif posting | Minggu 1 | Min 4 post per minggu |
+| Diskusi terjadi antar junior, bukan cuma ke Sandiko | Minggu 2 | Ada reply thread minimal 3 pesan |
+| Azis bisa menjawab pertanyaan berdasarkan post yang sudah ada | Minggu 3 | Azis refer ke post sebelumnya |
+| Sandiko tidak perlu jawab pertanyaan yang sudah dibahas di #belajar-bareng | Bulan 2 | 0 pertanyaan duplikat |
+| #belajar-bareng jadi habit alami tanpa diingatkan | Bulan 3 | Post muncul tanpa dorongan |
+
+#### 5.6.8. Inisiatif Khusus: "Fathan's Chat Dulu, Dibahas Bareng"
+
+Khusus untuk **Fathan** — karena dia sudah punya habit rutin ngirim hasil chat AI ke Sandiko:
+
+1. Fathan tetap kirim hasil chat seperti biasa ke group #belajar-bareng (bukan personal)
+2. Sebelum Sandiko respon, **Azis wajib respon dulu** dalam 2 jam:
+   - "Menurutku ini bener, tambahan..."
+   - "Ini kurang tepat karena..."
+   - "Aku pernah coba cara lain..."
+3. Jika Azis tidak merespon dalam 2 jam, **Ihsan** boleh merespon duluan
+4. Jika masih kurang, baru Sandiko turun tangan
+
+Ini memecah bottleneck sekaligus melatih Azis untuk benar-benar menjalankan peran mentoring-nya.
 
 ---
 
