@@ -22,49 +22,71 @@
 |----------------------|
 ```
 
-**Strategy:**
-- **70% Unit Test** — Fast, cheap, isolated (PHPUnit + Jest)
-- **20% Integration Test** — API endpoint, database
-- **10% E2E Test** — Critical user journey
+**Strategy & Multi-Layer Testing Pyramid:**
+- **Layer 1: Backend PHP Testing (PHPUnit)** — 50% (Domain services, RBAC, database integrity, S3 storage)
+- **Layer 2: Fast TypeScript Logic (Bun Test)** — 25% (Zod schemas, zodHelper, Haversine geofence calculation)
+- **Layer 3: UI Component & A11y (Vitest + Axe-Core)** — 15% (Interactive Action Drawers, Modals, WCAG 2.1 AA)
+- **Layer 4: End-to-End Browser Testing (Playwright)** — 10% (Camera selfie mock, GPS geolocation, Multi-Role journey)
 
-### Frontend — Jest + React Testing Library
+### Frontend — Bun Test + Vitest + React Testing Library
 
 **Location:**
 ```
 resources/js/
-├── Components/
-│   └── __tests__/
-│       ├── LoginForm.test.tsx
-│       └── AttendanceForm.test.tsx
-├── Pages/
-│   └── __tests__/
-│       ├── Dashboard.test.tsx
-│       └── Login.test.tsx
+├── __tests__/
+│   ├── a11y.test.tsx            # Accessibility testing (Axe-Core)
+│   ├── schemas/                 # Bun unit test untuk Zod schemas
+│   │   ├── student.schema.test.ts
+│   │   ├── teacher.schema.test.ts
+│   │   └── attendance.schema.test.ts
+│   └── utils/
+│       └── zodHelper.test.ts    # Error formatting helper test
+└── Components/
+    └── common/
+        └── Drawer.tsx
 ```
 
-**Running:**
+**Running Commands:**
 ```bash
-# Run all frontend tests
+# Run all frontend tests (Vitest)
 bun run test
+
+# Run pure TypeScript & Zod schemas tests (Bun Test)
+bun run test:bun
 
 # Watch mode
 bun run test:watch
 
-# Coverage
-bun run test:coverage
+# Accessibility test suite
+bun run test:a11y
+
+# Run Playwright E2E browser tests
+bun run test:e2e
 ```
 
 **What to test in frontend:**
-- Component rendering (with various props)
-- User interaction (button click, form submit)
-- State changes (loading, error, success)
-- Conditional rendering (role-based menu)
-- Form validation (error messages)
+- Zod schema validation (success and failure edge-cases)
+- Component rendering (with various props and role permissions)
+- User interaction (Drawer open/close, form submit, button states)
+- State changes (loading spinner, error alerts, success toast)
+- Form validation (field error messages under inputs)
+- Accessibility WCAG 2.1 AA compliance (color contrast, aria-labels)
 
 **What NOT to test:**
-- Inertia routing behavior (tested in feature test)
-- Browser APIs (geolocation, camera — mock them)
+- Inertia routing behavior (tested in backend feature tests)
 - Third-party library internals
+
+---
+
+## 🎭 E2E Testing with Playwright (Camera & Geolocation Emulation)
+
+Playwright digunakan untuk mensimulasikan alur pengguna nyata dengan kapabilitas khusus:
+- **Simulasi GPS SMA UII:** `context.setGeolocation({ latitude: -7.797061, longitude: 110.399583 })`
+- **Virtual Camera Selfie Mocking:** `--use-fake-ui-for-media-stream` & `--use-fake-device-for-media-stream`
+- **Multi-Role Journey:** Admin daftarkan siswa ➔ Siswa presensi kamera/GPS ➔ Guru Piket monitor live ➔ Wali Murid ajukan izin ➔ Wali Kelas verifikasi.
+
+Panduan teknis lengkap dapat dibaca di:
+👉 **[Panduan Lengkap Testing & Quality Assurance (TESTING-GUIDE.md)](../../../../core/docs/TESTING-GUIDE.md)**
 
 ---
 
