@@ -146,6 +146,15 @@ DB_PORT=5432
 DB_DATABASE=smauii_core
 DB_USERNAME=postgres
 DB_PASSWORD=
+
+# Object Storage (RustFS for native Lerd dev / preview, MinIO as alternative):
+FILESYSTEM_DISK=s3
+AWS_ACCESS_KEY_ID=rustfs
+AWS_SECRET_ACCESS_KEY=rustfs123
+AWS_DEFAULT_REGION=us-east-1
+AWS_BUCKET=smauii-attendance
+AWS_ENDPOINT=http://127.0.0.1:9000
+AWS_USE_PATH_STYLE_ENDPOINT=true
 ```
 
 **Option B — NeonDB (Cloud):**

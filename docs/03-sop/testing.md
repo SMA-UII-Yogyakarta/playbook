@@ -641,6 +641,17 @@ public function it_sends_sms_after_attendance()
 
 ---
 
+## 🎭 UAT & Manual Testing Persona Reference
+
+Untuk pelaksanaan **User Acceptance Testing (UAT)** bersama tim sekolah (Kepala Sekolah, Guru Piket, Wali Kelas, Wali Murid, Siswa) maupun verifikasi manual oleh tim QA:
+
+- Seluruh data pengujian berbasis **100% Data Mockup Sintetis** (Aman & Mematuhi UU PDP).
+- Password default seluruh akun: `password`.
+- Dokumentasi katalog lengkap akun, pembagian kelas, jadwal piket, dan skenario per-role tercatat di:
+  👉 **[Panduan Data Seeding & Kredensial Pengujian (SEED-DATA-TESTING-GUIDE.md)](../../../../core/docs/SEED-DATA-TESTING-GUIDE.md)**
+
+---
+
 ## 📚 Resources
 
 - [Laravel Testing Documentation](https://laravel.com/docs/testing)
@@ -651,5 +662,5 @@ public function it_sends_sms_after_attendance()
 ---
 
 **Next:** —  
-**Last Updated:** June 2026  
+**Last Updated:** Agustus 2026  
 **Maintained by:** Sandikodev
