@@ -62,6 +62,12 @@ bun run test:a11y
 
 # Run Playwright E2E browser tests
 bun run test:e2e
+
+# Run Storybook component development server
+bun run storybook
+
+# Build Storybook static production bundle
+bun run build-storybook
 ```
 
 **What to test in frontend:**
@@ -78,7 +84,15 @@ bun run test:e2e
 
 ---
 
-## 🎭 E2E Testing with Playwright (Camera & Geolocation Emulation)
+## 🎭 E2E Testing with Playwright & Laravel Dusk Resilient Selectors
+
+### Resilient Selectors Standard (`dusk="..."` & `data-testid="..."`)
+Semua komponen interaktif (tombol, input form, dialog drawer) harus memiliki atribut `dusk` dan `data-testid`:
+```html
+<button type="submit" dusk="student-submit-btn" data-testid="student-submit-btn">Simpan Siswa</button>
+```
+* **Playwright:** `page.locator('[dusk="student-submit-btn"]').click()`
+* **Laravel Dusk:** `$browser->click('@student-submit-btn')`
 
 Playwright digunakan untuk mensimulasikan alur pengguna nyata dengan kapabilitas khusus:
 - **Simulasi GPS SMA UII:** `context.setGeolocation({ latitude: -7.797061, longitude: 110.399583 })`
@@ -87,6 +101,7 @@ Playwright digunakan untuk mensimulasikan alur pengguna nyata dengan kapabilitas
 
 Panduan teknis lengkap dapat dibaca di:
 👉 **[Panduan Lengkap Testing & Quality Assurance (TESTING-GUIDE.md)](../../../../core/docs/TESTING-GUIDE.md)**
+👉 **[Panduan Design System & Storybook (DESIGN-SYSTEM-STORYBOOK.md)](../../../../core/docs/DESIGN-SYSTEM-STORYBOOK.md)**
 
 ---
 
